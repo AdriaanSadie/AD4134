@@ -1,0 +1,48 @@
+----------------------------------------------------------------------------------
+-- Company: 
+-- Engineer: 
+-- 
+-- Create Date: 09/07/2022 10:19:01 PM
+-- Design Name: 
+-- Module Name: ad5270_tester - rtl
+-- Project Name: 
+-- Target Devices: 
+-- Tool Versions: 
+-- Description: 
+-- 
+-- Dependencies: 
+-- 
+-- Revision:
+-- Revision 0.01 - File Created
+-- Additional Comments:
+-- 
+----------------------------------------------------------------------------------
+
+
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+
+
+entity ad5270_tester is
+    Port ( sclk : in STD_LOGIC;
+           mosi : in STD_LOGIC;
+           miso : out STD_LOGIC;
+           cs : in STD_LOGIC);
+end ad5270_tester;
+
+architecture rtl of ad5270_tester is
+
+  constant C_RETURN_WORD : std_logic_vector(15 downto 0) := "BEEF";
+
+  signal counter : integer range 0 to 15;
+
+begin
+
+  write_p : process(sclk, cs) is
+  begin
+  
+  end process;
+
+end rtl;

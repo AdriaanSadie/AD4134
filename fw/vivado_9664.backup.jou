@@ -1,0 +1,86 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Mon Dec 18 16:24:10 2023
+# Process ID: 9664
+# Current directory: C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/btt_sccv2_fw/fw
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent6360 C:\Users\adria\OneDrive\Documents\Adriaan\Werk Goedjies\BTT\fw\btt_sccv2_fw\fw\1_led_blink.xpr
+# Log file: C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/btt_sccv2_fw/fw/vivado.log
+# Journal file: C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/btt_sccv2_fw/fw\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/btt_sccv2_fw/fw/1_led_blink.xpr}
+update_compile_order -fileset sources_1
+open_bd_design {C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/btt_sccv2_fw/fw/1_led_blink.srcs/sources_1/bd/system/system.bd}
+validate_bd_design
+save_bd_design
+set_property file_type VHDL [get_files  {{C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/btt_sccv2_fw/fw/1_led_blink.srcs/sources_1/new/i2c_expander.vhd}}]
+create_bd_cell -type module -reference i2c_expander i2c_expander_0
+connect_bd_net [get_bd_pins i2c_expander_0/clk_in] [get_bd_pins clk_wiz_0/clk_out2]
+connect_bd_net [get_bd_pins i2c_expander_0/rstn] [get_bd_pins PS_Subsystem/axi_rst]
+delete_bd_objs [get_bd_nets scc_config_gpio_io_o] [get_bd_cells scc_config_0]
+update_compile_order -fileset sources_1
+connect_bd_net [get_bd_pins scc_config/gpio_io_o] [get_bd_pins i2c_expander_0/axi_gpio_in]
+delete_bd_objs [get_bd_ports gain_ctrl_1_1_0]
+delete_bd_objs [get_bd_ports gain_ctrl_1_0_0]
+delete_bd_objs [get_bd_ports gain_ctrl_2_1_0]
+delete_bd_objs [get_bd_ports gain_ctrl_2_0_0]
+delete_bd_objs [get_bd_ports n_enable_switch_0]
+delete_bd_objs [get_bd_ports switch_2_0]
+delete_bd_objs [get_bd_ports switch_1_0]
+delete_bd_objs [get_bd_ports led_2_0]
+delete_bd_objs [get_bd_ports led_1_0]
+create_bd_port -dir O -type clk i2c_scl
+set_property location {1577 698} [get_bd_ports i2c_scl]
+delete_bd_objs [get_bd_ports i2c_scl]
+create_bd_port -dir O i2c_scl
+set_property location {1584 699} [get_bd_ports i2c_scl]
+connect_bd_net [get_bd_ports i2c_scl] [get_bd_pins i2c_expander_0/axi_gpio_out]
+delete_bd_objs [get_bd_nets i2c_expander_0_axi_gpio_out]
+delete_bd_objs [get_bd_ports i2c_scl]
+startgroup
+make_bd_pins_external  [get_bd_cells i2c_expander_0]
+make_bd_intf_pins_external  [get_bd_cells i2c_expander_0]
+endgroup
+delete_bd_objs [get_bd_nets i2c_expander_0_axi_gpio_out] [get_bd_ports axi_gpio_out_0]
+update_module_reference system_i2c_expander_0_0
+update_compile_order -fileset sources_1
+delete_bd_objs [get_bd_nets Net] [get_bd_ports scl_0]
+delete_bd_objs [get_bd_nets Net1] [get_bd_ports sda_0]
+connect_bd_net [get_bd_pins i2c_expander_0/clk_in] [get_bd_pins clk_wiz_0/clk_out2]
+connect_bd_net [get_bd_pins i2c_expander_0/rstn] [get_bd_pins PS_Subsystem/axi_rst]
+delete_bd_objs [get_bd_nets scc_config_gpio_io_o] [get_bd_cells i2c_expander_0_upgraded_ipi]
+update_compile_order -fileset sources_1
+connect_bd_net [get_bd_pins scc_config/gpio_io_o] [get_bd_pins i2c_expander_0/axi_gpio_in]
+startgroup
+make_bd_pins_external  [get_bd_cells i2c_expander_0]
+make_bd_intf_pins_external  [get_bd_cells i2c_expander_0]
+endgroup
+delete_bd_objs [get_bd_nets i2c_expander_0_axi_gpio_out] [get_bd_ports axi_gpio_out_0]
+delete_bd_objs [get_bd_nets Net] [get_bd_ports scl_0]
+delete_bd_objs [get_bd_nets Net1] [get_bd_ports sda_0]
+delete_bd_objs [get_bd_nets scc_config_gpio_io_o] [get_bd_cells i2c_expander_0]
+create_bd_cell -type module -reference i2c_expander i2c_expander_0
+startgroup
+make_bd_pins_external  [get_bd_cells i2c_expander_0]
+make_bd_intf_pins_external  [get_bd_cells i2c_expander_0]
+endgroup
+delete_bd_objs [get_bd_nets i2c_expander_0_axi_gpio_out] [get_bd_ports axi_gpio_out_0]
+delete_bd_objs [get_bd_nets rstn_0_1] [get_bd_ports rstn_0]
+delete_bd_objs [get_bd_nets clk_in_0_1] [get_bd_ports clk_in_0]
+delete_bd_objs [get_bd_nets axi_gpio_in_0_1] [get_bd_ports axi_gpio_in_0]
+connect_bd_net [get_bd_pins i2c_expander_0/axi_gpio_in] [get_bd_pins scc_config/gpio_io_o]
+connect_bd_net [get_bd_pins i2c_expander_0/clk_in] [get_bd_pins clk_wiz_0/clk_out2]
+connect_bd_net [get_bd_pins i2c_expander_0/rstn] [get_bd_pins PS_Subsystem/axi_rst]
+save_bd_design
+update_compile_order -fileset sources_1
+reset_run system_clk_wiz_0_0_synth_1
+reset_run system_axi_gpio_0_0_synth_1
+reset_run system_axi_gpio_0_1_synth_1
+reset_run system_spi_gpio_write_0_synth_1
+reset_run system_xbar_0_synth_1
+reset_run system_proc_sys_reset_0_0_synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 6
+wait_on_run synth_1

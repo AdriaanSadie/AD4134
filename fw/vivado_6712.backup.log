@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Sat Jan 20 14:37:36 2024
+# Process ID: 6712
+# Current directory: C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/btt_sccv2_fw/fw
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11348 C:\Users\adria\OneDrive\Documents\Adriaan\Werk Goedjies\BTT\fw\btt_sccv2_fw\fw\1_led_blink.xpr
+# Log file: C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/btt_sccv2_fw/fw/vivado.log
+# Journal file: C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/btt_sccv2_fw/fw\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/btt_sccv2_fw/fw/1_led_blink.xpr}
+INFO: [Project 1-313] Project file moved from 'C:/work_other/FW/btt_sccv2_fw/fw' since last save.
+WARNING: [filemgmt 56-2] IP Repository Path: Could not find the directory 'C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/btt_sccv2_fw/cores', nor could it be found using path 'C:/work_other/FW/btt_sccv2_fw/cores'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'c:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/btt_sccv2_fw/cores'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.2/data/ip'.
+open_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:12 . Memory (MB): peak = 1083.828 ; gain = 0.000
+exit
+INFO: [Common 17-206] Exiting Vivado at Sat Jan 20 14:38:24 2024...

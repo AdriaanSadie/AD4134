@@ -1,0 +1,47 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Wed Sep  7 22:42:14 2022
+# Process ID: 11940
+# Current directory: C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/redpitaya_guide/tmp/1_led_blink
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8552 C:\Users\adria\OneDrive\Documents\Adriaan\Werk Goedjies\BTT\fw\redpitaya_guide\tmp\1_led_blink\1_led_blink.xpr
+# Log file: C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/redpitaya_guide/tmp/1_led_blink/vivado.log
+# Journal file: C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/redpitaya_guide/tmp/1_led_blink\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/redpitaya_guide/tmp/1_led_blink/1_led_blink.xpr}
+generate_target Simulation [get_files {C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/redpitaya_guide/tmp/1_led_blink/1_led_blink.srcs/sources_1/bd/system/system.bd}]
+export_ip_user_files -of_objects [get_files {C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/redpitaya_guide/tmp/1_led_blink/1_led_blink.srcs/sources_1/bd/system/system.bd}] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files {{C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/redpitaya_guide/tmp/1_led_blink/1_led_blink.srcs/sources_1/bd/system/system.bd}}] -directory {C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/redpitaya_guide/tmp/1_led_blink/1_led_blink.ip_user_files/sim_scripts} -ip_user_files_dir {C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/redpitaya_guide/tmp/1_led_blink/1_led_blink.ip_user_files} -ipstatic_source_dir {C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/redpitaya_guide/tmp/1_led_blink/1_led_blink.ip_user_files/ipstatic} -lib_map_path [list {modelsim=C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/redpitaya_guide/tmp/1_led_blink/1_led_blink.cache/compile_simlib/modelsim} {questa=C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/redpitaya_guide/tmp/1_led_blink/1_led_blink.cache/compile_simlib/questa} {riviera=C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/redpitaya_guide/tmp/1_led_blink/1_led_blink.cache/compile_simlib/riviera} {activehdl=C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/redpitaya_guide/tmp/1_led_blink/1_led_blink.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+launch_simulation
+generate_target Simulation [get_files {C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/redpitaya_guide/tmp/1_led_blink/1_led_blink.srcs/sources_1/bd/system/system.bd}]
+export_ip_user_files -of_objects [get_files {C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/redpitaya_guide/tmp/1_led_blink/1_led_blink.srcs/sources_1/bd/system/system.bd}] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files {{C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/redpitaya_guide/tmp/1_led_blink/1_led_blink.srcs/sources_1/bd/system/system.bd}}] -directory {C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/redpitaya_guide/tmp/1_led_blink/1_led_blink.ip_user_files/sim_scripts} -ip_user_files_dir {C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/redpitaya_guide/tmp/1_led_blink/1_led_blink.ip_user_files} -ipstatic_source_dir {C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/redpitaya_guide/tmp/1_led_blink/1_led_blink.ip_user_files/ipstatic} -lib_map_path [list {modelsim=C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/redpitaya_guide/tmp/1_led_blink/1_led_blink.cache/compile_simlib/modelsim} {questa=C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/redpitaya_guide/tmp/1_led_blink/1_led_blink.cache/compile_simlib/questa} {riviera=C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/redpitaya_guide/tmp/1_led_blink/1_led_blink.cache/compile_simlib/riviera} {activehdl=C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/redpitaya_guide/tmp/1_led_blink/1_led_blink.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+launch_simulation
+generate_target Simulation [get_files {C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/redpitaya_guide/tmp/1_led_blink/1_led_blink.srcs/sources_1/bd/system/system.bd}]
+export_ip_user_files -of_objects [get_files {C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/redpitaya_guide/tmp/1_led_blink/1_led_blink.srcs/sources_1/bd/system/system.bd}] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files {{C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/redpitaya_guide/tmp/1_led_blink/1_led_blink.srcs/sources_1/bd/system/system.bd}}] -directory {C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/redpitaya_guide/tmp/1_led_blink/1_led_blink.ip_user_files/sim_scripts} -ip_user_files_dir {C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/redpitaya_guide/tmp/1_led_blink/1_led_blink.ip_user_files} -ipstatic_source_dir {C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/redpitaya_guide/tmp/1_led_blink/1_led_blink.ip_user_files/ipstatic} -lib_map_path [list {modelsim=C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/redpitaya_guide/tmp/1_led_blink/1_led_blink.cache/compile_simlib/modelsim} {questa=C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/redpitaya_guide/tmp/1_led_blink/1_led_blink.cache/compile_simlib/questa} {riviera=C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/redpitaya_guide/tmp/1_led_blink/1_led_blink.cache/compile_simlib/riviera} {activehdl=C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/redpitaya_guide/tmp/1_led_blink/1_led_blink.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+launch_simulation
+source spi_tb.tcl
+restart
+run 50 us
+relaunch_sim
+restart
+run 50 us
+relaunch_sim
+restart
+run 50 us
+relaunch_sim
+restart
+run 50 us
+relaunch_sim
+restart
+run 50 us
+relaunch_sim
+restart
+run 50 us
+relaunch_sim
+restart
+run 50 us
+close_sim

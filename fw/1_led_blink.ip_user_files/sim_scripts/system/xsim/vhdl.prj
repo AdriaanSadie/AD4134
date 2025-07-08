@@ -1,0 +1,67 @@
+vhdl xpm  \
+"C:/Xilinx/Vivado/2020.2/data/ip/xpm/xpm_VCOMP.vhd" \
+
+vhdl xbip_utils_v3_0_10  \
+"../../../../1_led_blink.gen/sources_1/bd/system/ipshared/d117/hdl/xbip_utils_v3_0_vh_rfs.vhd" \
+
+vhdl c_reg_fd_v12_0_6  \
+"../../../../1_led_blink.gen/sources_1/bd/system/ipshared/edec/hdl/c_reg_fd_v12_0_vh_rfs.vhd" \
+
+vhdl xbip_dsp48_wrapper_v3_0_4  \
+"../../../../1_led_blink.gen/sources_1/bd/system/ipshared/cdbf/hdl/xbip_dsp48_wrapper_v3_0_vh_rfs.vhd" \
+
+vhdl xbip_pipe_v3_0_6  \
+"../../../../1_led_blink.gen/sources_1/bd/system/ipshared/7468/hdl/xbip_pipe_v3_0_vh_rfs.vhd" \
+
+vhdl xbip_dsp48_addsub_v3_0_6  \
+"../../../../1_led_blink.gen/sources_1/bd/system/ipshared/910d/hdl/xbip_dsp48_addsub_v3_0_vh_rfs.vhd" \
+
+vhdl xbip_addsub_v3_0_6  \
+"../../../../1_led_blink.gen/sources_1/bd/system/ipshared/cfdd/hdl/xbip_addsub_v3_0_vh_rfs.vhd" \
+
+vhdl c_addsub_v12_0_14  \
+"../../../../1_led_blink.gen/sources_1/bd/system/ipshared/ebb8/hdl/c_addsub_v12_0_vh_rfs.vhd" \
+
+vhdl c_gate_bit_v12_0_6  \
+"../../../../1_led_blink.gen/sources_1/bd/system/ipshared/7161/hdl/c_gate_bit_v12_0_vh_rfs.vhd" \
+
+vhdl xbip_counter_v3_0_6  \
+"../../../../1_led_blink.gen/sources_1/bd/system/ipshared/9ac8/hdl/xbip_counter_v3_0_vh_rfs.vhd" \
+
+vhdl c_counter_binary_v12_0_14  \
+"../../../../1_led_blink.gen/sources_1/bd/system/ipshared/1f12/hdl/c_counter_binary_v12_0_vh_rfs.vhd" \
+
+vhdl xil_defaultlib  \
+"../../../bd/system/ip/system_c_counter_binary_0_0/sim/system_c_counter_binary_0_0.vhd" \
+
+vhdl lib_cdc_v1_0_2  \
+"../../../../1_led_blink.gen/sources_1/bd/system/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd" \
+
+vhdl proc_sys_reset_v5_0_13  \
+"../../../../1_led_blink.gen/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd" \
+
+vhdl xil_defaultlib  \
+"../../../bd/system/ip/system_proc_sys_reset_0_0/sim/system_proc_sys_reset_0_0.vhd" \
+
+vhdl fifo_generator_v13_2_5  \
+"../../../../1_led_blink.gen/sources_1/bd/system/ipshared/276e/hdl/fifo_generator_v13_2_rfs.vhd" \
+
+vhdl axi_lite_ipif_v3_0_4  \
+"../../../../1_led_blink.gen/sources_1/bd/system/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd" \
+
+vhdl interrupt_control_v3_1_4  \
+"../../../../1_led_blink.gen/sources_1/bd/system/ipshared/a040/hdl/interrupt_control_v3_1_vh_rfs.vhd" \
+
+vhdl axi_gpio_v2_0_24  \
+"../../../../1_led_blink.gen/sources_1/bd/system/ipshared/4318/hdl/axi_gpio_v2_0_vh_rfs.vhd" \
+
+vhdl xil_defaultlib  \
+"../../../bd/system/ip/system_axi_gpio_0_0/sim/system_axi_gpio_0_0.vhd" \
+"../../../bd/system/ip/system_axi_gpio_0_1/sim/system_axi_gpio_0_1.vhd" \
+"../../../bd/system/ip/system_spi_gpio_write_0/sim/system_spi_gpio_write_0.vhd" \
+"../../../bd/system/ip/system_axi_gpio_0_2/sim/system_axi_gpio_0_2.vhd" \
+"../../../bd/system/ip/system_spi_0_0/sim/system_spi_0_0.vhd" \
+"../../../bd/system/ip/system_i2c_expander_0_1/sim/system_i2c_expander_0_1.vhd" \
+"../../../bd/system/sim/system.vhd" \
+
+nosort
