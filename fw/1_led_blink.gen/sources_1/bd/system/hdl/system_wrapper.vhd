@@ -1,8 +1,8 @@
 --Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
---Date        : Wed Dec 20 11:11:57 2023
---Host        : ZA-WASADIE running 64-bit major release  (build 9200)
+--Date        : Tue Jul  8 22:23:47 2025
+--Host        : DESKTOP-NG70LRJ running 64-bit major release  (build 9200)
 --Command     : generate_target system_wrapper.bd
 --Design      : system_wrapper
 --Purpose     : IP block netlist
@@ -34,14 +34,8 @@ entity system_wrapper is
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
     FIXED_IO_ps_srstb : inout STD_LOGIC;
-    ad5270_cs : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    ad5270_miso : in STD_LOGIC;
-    ad5270_mosi : out STD_LOGIC;
-    ad5270_sclk : out STD_LOGIC;
     led_hb : out STD_LOGIC_VECTOR ( 0 to 0 );
-    led_o : out STD_LOGIC_VECTOR ( 6 downto 0 );
-    scl_0 : out STD_LOGIC;
-    sda_0 : inout STD_LOGIC
+    led_o : out STD_LOGIC_VECTOR ( 6 downto 0 )
   );
 end system_wrapper;
 
@@ -50,12 +44,6 @@ architecture STRUCTURE of system_wrapper is
   port (
     led_hb : out STD_LOGIC_VECTOR ( 0 to 0 );
     led_o : out STD_LOGIC_VECTOR ( 6 downto 0 );
-    ad5270_sclk : out STD_LOGIC;
-    ad5270_mosi : out STD_LOGIC;
-    ad5270_miso : in STD_LOGIC;
-    ad5270_cs : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    scl_0 : out STD_LOGIC;
-    sda_0 : inout STD_LOGIC;
     FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
     FIXED_IO_ddr_vrn : inout STD_LOGIC;
     FIXED_IO_ddr_vrp : inout STD_LOGIC;
@@ -103,13 +91,7 @@ system_i: component system
       FIXED_IO_ps_clk => FIXED_IO_ps_clk,
       FIXED_IO_ps_porb => FIXED_IO_ps_porb,
       FIXED_IO_ps_srstb => FIXED_IO_ps_srstb,
-      ad5270_cs(3 downto 0) => ad5270_cs(3 downto 0),
-      ad5270_miso => ad5270_miso,
-      ad5270_mosi => ad5270_mosi,
-      ad5270_sclk => ad5270_sclk,
       led_hb(0) => led_hb(0),
-      led_o(6 downto 0) => led_o(6 downto 0),
-      scl_0 => scl_0,
-      sda_0 => sda_0
+      led_o(6 downto 0) => led_o(6 downto 0)
     );
 end STRUCTURE;

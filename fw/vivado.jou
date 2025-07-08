@@ -2,22 +2,93 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Sat Jan 20 14:38:30 2024
-# Process ID: 4788
-# Current directory: C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/btt_sccv2_fw/fw
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent10268 C:\Users\adria\OneDrive\Documents\Adriaan\Werk Goedjies\BTT\fw\btt_sccv2_fw\fw\1_led_blink.xpr
-# Log file: C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/btt_sccv2_fw/fw/vivado.log
-# Journal file: C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/btt_sccv2_fw/fw\vivado.jou
+# Start of session at: Tue Jul  8 22:18:21 2025
+# Process ID: 18284
+# Current directory: C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/AD4134/fw
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent15276 C:\Users\adria\OneDrive\Documents\Adriaan\Werk Goedjies\BTT\fw\AD4134\fw\1_led_blink.xpr
+# Log file: C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/AD4134/fw/vivado.log
+# Journal file: C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/AD4134/fw\vivado.jou
 #-----------------------------------------------------------
 start_gui
-open_project {C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/btt_sccv2_fw/fw/1_led_blink.xpr}
+open_project {C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/AD4134/fw/1_led_blink.xpr}
+open_bd_design {C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/AD4134/fw/1_led_blink.srcs/sources_1/bd/system/system.bd}
 update_compile_order -fileset sources_1
-open_bd_design {C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/btt_sccv2_fw/fw/1_led_blink.srcs/sources_1/bd/system/system.bd}
-set_property location {4 1064 813} [get_bd_cells i2c_expander_0]
-set_property location {4 1061 798} [get_bd_cells i2c_expander_0]
-set_property location {4 1064 588} [get_bd_cells ad5270_spi_core]
-set_property location {1556 601} [get_bd_ports ad5270_cs]
-set_property location {1562 621} [get_bd_ports ad5270_miso]
-set_property location {1564 493} [get_bd_ports ad5270_miso]
-set_property location {1563 623} [get_bd_ports ad5270_mosi]
-set_property location {1564 577} [get_bd_ports ad5270_sclk]
+export_ip_user_files -of_objects  [get_files {{C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/AD4134/fw/1_led_blink.srcs/sources_1/new/dac_controller.vhd}}] -no_script -reset -force -quiet
+remove_files  {{C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/AD4134/fw/1_led_blink.srcs/sources_1/new/dac_controller.vhd}}
+file delete -force {C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/AD4134/fw/1_led_blink.srcs/sources_1/new/dac_controller.vhd}
+export_ip_user_files -of_objects  [get_files {{C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/AD4134/fw/1_led_blink.srcs/sources_1/new/i2c_expander.vhd}}] -no_script -reset -force -quiet
+remove_files  {{C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/AD4134/fw/1_led_blink.srcs/sources_1/new/i2c_expander.vhd}}
+file delete -force {C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/AD4134/fw/1_led_blink.srcs/sources_1/new/i2c_expander.vhd}
+export_ip_user_files -of_objects  [get_files {{C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/AD4134/fw/1_led_blink.srcs/sources_1/new/scc_config.vhd}}] -no_script -reset -force -quiet
+remove_files  {{C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/AD4134/fw/1_led_blink.srcs/sources_1/new/scc_config.vhd}}
+file delete -force {C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/AD4134/fw/1_led_blink.srcs/sources_1/new/scc_config.vhd}
+export_ip_user_files -of_objects  [get_files {{C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/AD4134/fw/1_led_blink.srcs/sources_1/new/spi.vhd}}] -no_script -reset -force -quiet
+remove_files  {{C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/AD4134/fw/1_led_blink.srcs/sources_1/new/spi.vhd}}
+file delete -force {C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/AD4134/fw/1_led_blink.srcs/sources_1/new/spi.vhd}
+export_ip_user_files -of_objects  [get_files {{C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/AD4134/fw/1_led_blink.srcs/sim_1/new/i2c_expander_tb.vhd}}] -no_script -reset -force -quiet
+remove_files  -fileset sim_1 {{C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/AD4134/fw/1_led_blink.srcs/sim_1/new/i2c_expander_tb.vhd}}
+file delete -force {C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/AD4134/fw/1_led_blink.srcs/sim_1/new/i2c_expander_tb.vhd}
+export_ip_user_files -of_objects  [get_files {{C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/AD4134/fw/1_led_blink.srcs/sim_1/new/spi_tb.vhd}}] -no_script -reset -force -quiet
+remove_files  -fileset sim_1 {{C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/AD4134/fw/1_led_blink.srcs/sim_1/new/spi_tb.vhd}}
+file delete -force {C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/AD4134/fw/1_led_blink.srcs/sim_1/new/spi_tb.vhd}
+export_ip_user_files -of_objects  [get_files {{C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/AD4134/fw/1_led_blink.gen/sources_1/bd/system/hdl/system_wrapper.vhd}}] -no_script -reset -force -quiet
+remove_files  {{C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/AD4134/fw/1_led_blink.gen/sources_1/bd/system/hdl/system_wrapper.vhd}}
+file delete -force {C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/AD4134/fw/1_led_blink.gen/sources_1/bd/system/hdl/system_wrapper.vhd}
+export_ip_user_files -of_objects  [get_files {{C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/AD4134/fw/i2c_expander_tb_behav.wcfg}}] -no_script -reset -force -quiet
+remove_files  -fileset sim_1 {{C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/AD4134/fw/i2c_expander_tb_behav.wcfg}}
+update_module_reference system_dac_controller_0_0
+delete_bd_objs [get_bd_nets spi_gpio_write_gpio_io_o] [get_bd_nets spi_0_axi_gpio_out] [get_bd_nets spi_0_sclk] [get_bd_nets spi_0_csn] [get_bd_nets spi_0_mosi] [get_bd_nets ad5270_miso_1] [get_bd_cells ad5270_spi_core]
+delete_bd_objs [get_bd_nets clk_wiz_0_clk_out2] [get_bd_nets scc_config_gpio_io_o] [get_bd_nets i2c_expander_0_scl] [get_bd_nets Net] [get_bd_cells i2c_expander_0]
+delete_bd_objs [get_bd_cells dac_controller_0]
+delete_bd_objs [get_bd_ports ad5270_cs]
+delete_bd_objs [get_bd_ports ad5270_miso]
+delete_bd_objs [get_bd_ports ad5270_mosi]
+delete_bd_objs [get_bd_ports ad5270_sclk]
+delete_bd_objs [get_bd_ports scl_0]
+delete_bd_objs [get_bd_ports sda_0]
+delete_bd_objs [get_bd_intf_nets PS_Subsystem_M02_AXI_0] [get_bd_cells spi_gpio_read]
+delete_bd_objs [get_bd_intf_nets PS_Subsystem_M01_AXI_0] [get_bd_cells spi_gpio_write]
+delete_bd_objs [get_bd_intf_nets PS_Subsystem_M03_AXI_0] [get_bd_cells scc_config]
+delete_bd_objs [get_bd_intf_nets PS_Subsystem/Conn4] [get_bd_intf_pins PS_Subsystem/M03_AXI_0]
+delete_bd_objs [get_bd_intf_nets PS_Subsystem/Conn3] [get_bd_intf_pins PS_Subsystem/M02_AXI_0]
+delete_bd_objs [get_bd_intf_nets PS_Subsystem/Conn2] [get_bd_intf_pins PS_Subsystem/M01_AXI_0]
+startgroup
+set_property -dict [list CONFIG.NUM_MI {1}] [get_bd_cells PS_Subsystem/axi_interconnect_0]
+endgroup
+save_bd_design
+make_wrapper -files [get_files {{C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/AD4134/fw/1_led_blink.srcs/sources_1/bd/system/system.bd}}] -top
+add_files -norecurse {{c:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/AD4134/fw/1_led_blink.gen/sources_1/bd/system/hdl/system_wrapper.vhd}}
+close [ open {C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/AD4134/fw/1_led_blink.srcs/sources_1/new/ad4134_slave.vhd} w ]
+add_files {{C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/AD4134/fw/1_led_blink.srcs/sources_1/new/ad4134_slave.vhd}}
+update_compile_order -fileset sources_1
+create_bd_cell -type module -reference ad4134_slave ad4134_slave_0
+set_property location {4.5 1066 487} [get_bd_cells ad4134_slave_0]
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open {C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/AD4134/fw/1_led_blink.srcs/sim_1/new/ad4134_slave_tb.vhd} w ]
+add_files -fileset sim_1 {{C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/AD4134/fw/1_led_blink.srcs/sim_1/new/ad4134_slave_tb.vhd}}
+update_compile_order -fileset sim_1
+update_module_reference system_ad4134_slave_0_0
+update_compile_order -fileset sources_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top ad4134_slave_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+source ad4134_slave_tb.tcl
+close_sim
+launch_simulation
+source ad4134_slave_tb.tcl
+close_sim
+launch_simulation
+source ad4134_slave_tb.tcl
+current_wave_config {Untitled 3}
+add_wave {{/ad4134_slave_tb/uut/shift_reg0}} 
+relaunch_sim
+add_bp {C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/AD4134/fw/1_led_blink.srcs/sim_1/new/ad4134_slave_tb.vhd} 77
+remove_bps -file {C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/AD4134/fw/1_led_blink.srcs/sim_1/new/ad4134_slave_tb.vhd} -line 77
+add_bp {C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/AD4134/fw/1_led_blink.srcs/sim_1/new/ad4134_slave_tb.vhd} 69
+remove_bps -file {C:/Users/adria/OneDrive/Documents/Adriaan/Werk Goedjies/BTT/fw/AD4134/fw/1_led_blink.srcs/sim_1/new/ad4134_slave_tb.vhd} -line 69
+close_sim
