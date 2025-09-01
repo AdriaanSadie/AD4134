@@ -24,7 +24,9 @@
       "clk_wiz_0": "",
       "leds_gpio": "",
       "xlslice_1": "",
-      "ad4134_slave_0": ""
+      "ad4134_slave_0": "",
+      "spi_controller_0": "",
+      "ad4134_control_0": ""
     },
     "interface_ports": {
       "DDR": {
@@ -1931,16 +1933,16 @@
               "axi_interconnect_0/M00_AXI"
             ]
           },
-          "processing_system7_0_M_AXI_GP0": {
-            "interface_ports": [
-              "processing_system7_0/M_AXI_GP0",
-              "axi_interconnect_0/S00_AXI"
-            ]
-          },
           "processing_system7_0_FIXED_IO": {
             "interface_ports": [
               "FIXED_IO",
               "processing_system7_0/FIXED_IO"
+            ]
+          },
+          "processing_system7_0_M_AXI_GP0": {
+            "interface_ports": [
+              "processing_system7_0/M_AXI_GP0",
+              "axi_interconnect_0/S00_AXI"
             ]
           }
         },
@@ -2120,6 +2122,137 @@
             "direction": "O",
             "left": "31",
             "right": "0"
+          }
+        }
+      },
+      "spi_controller_0": {
+        "vlnv": "xilinx.com:module_ref:spi_controller:1.0",
+        "xci_name": "system_spi_controller_0_0",
+        "xci_path": "ip\\system_spi_controller_0_0\\system_spi_controller_0_0.xci",
+        "inst_hier_path": "spi_controller_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "spi_controller",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rstn",
+                "value_src": "constant"
+              }
+            }
+          },
+          "rstn": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "write": {
+            "direction": "I"
+          },
+          "read": {
+            "direction": "I"
+          },
+          "datain": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "dataout": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "spiaddr": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "spidone": {
+            "direction": "O"
+          },
+          "mosi": {
+            "direction": "O"
+          },
+          "miso": {
+            "direction": "I"
+          },
+          "cs_n": {
+            "direction": "O"
+          }
+        }
+      },
+      "ad4134_control_0": {
+        "vlnv": "xilinx.com:module_ref:ad4134_control:1.0",
+        "xci_name": "system_ad4134_control_0_0",
+        "xci_path": "ip\\system_ad4134_control_0_0\\system_ad4134_control_0_0.xci",
+        "inst_hier_path": "ad4134_control_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "ad4134_control",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rstn",
+                "value_src": "constant"
+              }
+            }
+          },
+          "rstn": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "write": {
+            "direction": "O"
+          },
+          "read": {
+            "direction": "O"
+          },
+          "datain": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "dataout": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "spiaddr": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "ch_en": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "spi_clk_en": {
+            "direction": "O"
+          },
+          "spidone": {
+            "direction": "I"
           }
         }
       }
