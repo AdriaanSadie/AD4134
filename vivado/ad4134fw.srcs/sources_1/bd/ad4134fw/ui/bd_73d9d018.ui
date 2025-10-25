@@ -1,0 +1,36 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.94382",
+   "Default View_TopLeft":"-301,-7",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0
+#  -string -flagsOSRD
+preplace port port-id_clk -pg 1 -lvl 0 -x 0 -y 60 -defaultsOSRD
+preplace port port-id_rstn -pg 1 -lvl 0 -x 0 -y 80 -defaultsOSRD
+preplace port port-id_spi_clk -pg 1 -lvl 3 -x 660 -y 230 -defaultsOSRD
+preplace port port-id_mosi -pg 1 -lvl 3 -x 660 -y 420 -defaultsOSRD
+preplace port port-id_miso -pg 1 -lvl 0 -x 0 -y 470 -defaultsOSRD
+preplace port port-id_spi_cs_n -pg 1 -lvl 3 -x 660 -y 440 -defaultsOSRD
+preplace portBus debug -pg 1 -lvl 3 -x 660 -y 150 -defaultsOSRD
+preplace inst ad4134_clock_generator -pg 1 -lvl 2 -x 520 -y 230 -defaultsOSRD
+preplace inst ad4134_control_0 -pg 1 -lvl 1 -x 210 -y 100 -defaultsOSRD
+preplace inst spi_controller_0 -pg 1 -lvl 1 -x 210 -y 410 -defaultsOSRD
+preplace netloc ad4134_control_0_spi_clk_en 1 1 1 400 130n
+preplace netloc ad4134_control_0_write 1 0 2 40 250 360
+preplace netloc ad4134_control_0_read 1 0 2 60 280 390
+preplace netloc ad4134_control_0_datain 1 0 2 50 270 350
+preplace netloc spi_controller_0_dataout 1 0 2 40 240 370
+preplace netloc ad4134_control_0_spiaddr 1 0 2 70 290 380
+preplace netloc spi_controller_0_spidone 1 0 2 70 260 360
+preplace netloc Processing_Subsystem_global_clk 1 0 2 30 210 NJ
+preplace netloc Processing_Subsystem_global_rst_n 1 0 2 20 230 NJ
+preplace netloc ad4134_clock_generat_0_spi_clk 1 2 1 NJ 230
+preplace netloc ad4134_control_0_debug 1 1 2 NJ 150 NJ
+preplace netloc spi_controller_0_mosi 1 1 2 NJ 420 NJ
+preplace netloc miso_1 1 0 1 NJ 470
+preplace netloc spi_controller_0_cs_n 1 1 2 NJ 440 NJ
+levelinfo -pg 1 0 210 520 660
+pagesize -pg 1 -db -bbox -sgen -80 0 780 520
+"
+}
+

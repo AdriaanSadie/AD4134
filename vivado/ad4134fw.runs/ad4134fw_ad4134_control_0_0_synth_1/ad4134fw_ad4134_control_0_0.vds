@@ -1,0 +1,306 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Sat Oct 25 15:07:52 2025
+# Process ID         : 11972
+# Current directory  : C:/work/AD4134/vivado/ad4134fw.runs/ad4134fw_ad4134_control_0_0_synth_1
+# Command line       : vivado.exe -log ad4134fw_ad4134_control_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ad4134fw_ad4134_control_0_0.tcl
+# Log file           : C:/work/AD4134/vivado/ad4134fw.runs/ad4134fw_ad4134_control_0_0_synth_1/ad4134fw_ad4134_control_0_0.vds
+# Journal file       : C:/work/AD4134/vivado/ad4134fw.runs/ad4134fw_ad4134_control_0_0_synth_1\vivado.jou
+# Running On         : DESKTOP-NG70LRJ
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 19045
+# Processor Detail   : Intel(R) Core(TM) i5-8600K CPU @ 3.60GHz
+# CPU Frequency      : 3600 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 6
+# Host memory        : 17119 MB
+# Swap memory        : 5368 MB
+# Total Virtual      : 22488 MB
+# Available Virtual  : 4306 MB
+#-----------------------------------------------------------
+source ad4134fw_ad4134_control_0_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'E:/Xilinx/Vivado/2024.2/data/ip'.
+Command: synth_design -top ad4134fw_ad4134_control_0_0 -part xc7z010clg400-1 -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 9776
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1056.320 ; gain = 467.148
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'ad4134fw_ad4134_control_0_0' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_ad4134_control_0_0/synth/ad4134fw_ad4134_control_0_0.v:53]
+INFO: [Synth 8-638] synthesizing module 'ad4134_control' [C:/work/AD4134/src/ad4134_control.vhd:25]
+INFO: [Synth 8-256] done synthesizing module 'ad4134_control' (0#1) [C:/work/AD4134/src/ad4134_control.vhd:25]
+INFO: [Synth 8-6155] done synthesizing module 'ad4134fw_ad4134_control_0_0' (0#1) [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_ad4134_control_0_0/synth/ad4134fw_ad4134_control_0_0.v:53]
+WARNING: [Synth 8-7129] Port dataout[7] in module ad4134_control is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataout[6] in module ad4134_control is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataout[5] in module ad4134_control is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataout[4] in module ad4134_control is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataout[3] in module ad4134_control is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataout[2] in module ad4134_control is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataout[1] in module ad4134_control is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataout[0] in module ad4134_control is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ch_en[3] in module ad4134_control is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ch_en[2] in module ad4134_control is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ch_en[1] in module ad4134_control is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ch_en[0] in module ad4134_control is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 1168.199 ; gain = 579.027
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:12 . Memory (MB): peak = 1168.199 ; gain = 579.027
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:12 . Memory (MB): peak = 1168.199 ; gain = 579.027
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.438 . Memory (MB): peak = 1168.199 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1244.977 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.682 . Memory (MB): peak = 1244.977 ; gain = 0.000
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:34 . Memory (MB): peak = 1244.977 ; gain = 655.805
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:34 . Memory (MB): peak = 1244.977 ; gain = 655.805
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:34 . Memory (MB): peak = 1244.977 ; gain = 655.805
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'setup_state_reg' in module 'ad4134_control'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 adreset |                    0000000000001 |                             0010
+               resetwait |                    0000000000010 |                             0001
+          deviceconfig_0 |                    0000000000100 |                             0101
+          deviceconfig_1 |                    0000000001000 |                             0110
+        datapacketconfig |                    0000000010000 |                             0111
+  digitalinterfaceconfig |                    0000000100000 |                             1000
+            powercontrol |                    0000001000000 |                             1001
+               odrconfig |                    0000010000000 |                             0011
+              odrchannel |                    0000100000000 |                             0100
+            filterconfig |                    0001000000000 |                             1010
+              gpioconfig |                    0010000000000 |                             1011
+        transferregister |                    0100000000000 |                             1100
+                    idle |                    1000000000000 |                             0000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'setup_state_reg' using encoding 'one-hot' in module 'ad4134_control'
+WARNING: [Synth 8-327] inferring latch for variable 'ODR_VAL_FLT_MSB_reg' [C:/work/AD4134/src/ad4134_control.vhd:208]
+WARNING: [Synth 8-327] inferring latch for variable 'ODR_VAL_FLT_MID1_reg' [C:/work/AD4134/src/ad4134_control.vhd:207]
+WARNING: [Synth 8-327] inferring latch for variable 'ODR_VAL_FLT_MID0_reg' [C:/work/AD4134/src/ad4134_control.vhd:206]
+WARNING: [Synth 8-327] inferring latch for variable 'ODR_VAL_FLT_LSB_reg' [C:/work/AD4134/src/ad4134_control.vhd:205]
+WARNING: [Synth 8-327] inferring latch for variable 'ODR_VAL_INT_MSB_reg' [C:/work/AD4134/src/ad4134_control.vhd:204]
+WARNING: [Synth 8-327] inferring latch for variable 'ODR_VAL_INT_MID_reg' [C:/work/AD4134/src/ad4134_control.vhd:203]
+WARNING: [Synth 8-327] inferring latch for variable 'ODR_VAL_INT_LSB_reg' [C:/work/AD4134/src/ad4134_control.vhd:202]
+WARNING: [Synth 8-327] inferring latch for variable 'CHANNEL_ODR_SELECT_reg' [C:/work/AD4134/src/ad4134_control.vhd:209]
+WARNING: [Synth 8-327] inferring latch for variable 'DEVICE_CONFIG_reg' [C:/work/AD4134/src/ad4134_control.vhd:184]
+WARNING: [Synth 8-327] inferring latch for variable 'DEVICE_CONFIG_1_reg' [C:/work/AD4134/src/ad4134_control.vhd:196]
+WARNING: [Synth 8-327] inferring latch for variable 'DATA_PACKET_CONFIG_reg' [C:/work/AD4134/src/ad4134_control.vhd:197]
+WARNING: [Synth 8-327] inferring latch for variable 'DIGITAL_INTERFACE_CONFIG_reg' [C:/work/AD4134/src/ad4134_control.vhd:198]
+WARNING: [Synth 8-327] inferring latch for variable 'CHAN_DIG_FILTER_SEL_reg' [C:/work/AD4134/src/ad4134_control.vhd:210]
+WARNING: [Synth 8-327] inferring latch for variable 'GPIO_DIR_CTRL_reg' [C:/work/AD4134/src/ad4134_control.vhd:212]
+WARNING: [Synth 8-327] inferring latch for variable 'TRANSFER_REGISTER_reg' [C:/work/AD4134/src/ad4134_control.vhd:195]
+WARNING: [Synth 8-327] inferring latch for variable 'INTERFACE_CONFIG_A_reg' [C:/work/AD4134/src/ad4134_control.vhd:182]
+WARNING: [Synth 8-327] inferring latch for variable 'ODR_VAL_FLT_reg' [C:/work/AD4134/src/ad4134_control.vhd:256]
+WARNING: [Synth 8-327] inferring latch for variable 'ODR_VAL_INT_reg' [C:/work/AD4134/src/ad4134_control.vhd:255]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:35 . Memory (MB): peak = 1244.977 ; gain = 655.805
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 6     
++---Muxes : 
+	  13 Input   13 Bit        Muxes := 1     
+	   2 Input   13 Bit        Muxes := 1     
+	  13 Input    8 Bit        Muxes := 2     
+	  13 Input    4 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 1     
+	   8 Input    3 Bit        Muxes := 1     
+	  13 Input    3 Bit        Muxes := 1     
+	   8 Input    1 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 1     
+	  13 Input    1 Bit        Muxes := 9     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-7129] Port dataout[7] in module ad4134fw_ad4134_control_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataout[6] in module ad4134fw_ad4134_control_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataout[5] in module ad4134fw_ad4134_control_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataout[4] in module ad4134fw_ad4134_control_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataout[3] in module ad4134fw_ad4134_control_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataout[2] in module ad4134fw_ad4134_control_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataout[1] in module ad4134fw_ad4134_control_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataout[0] in module ad4134fw_ad4134_control_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ch_en[3] in module ad4134fw_ad4134_control_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ch_en[2] in module ad4134fw_ad4134_control_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ch_en[1] in module ad4134fw_ad4134_control_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ch_en[0] in module ad4134fw_ad4134_control_0_0 is either unconnected or has no load
+INFO: [Synth 8-3332] Sequential element (inst/ODR_VAL_INT_reg[13]) is unused and will be removed from module ad4134fw_ad4134_control_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/GPIO_DIR_CTRL_reg[5]) is unused and will be removed from module ad4134fw_ad4134_control_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/ODR_VAL_FLT_MID1_reg[6]) is unused and will be removed from module ad4134fw_ad4134_control_0_0.
+INFO: [Synth 8-3332] Sequential element (inst/ODR_VAL_FLT_reg[23]) is unused and will be removed from module ad4134fw_ad4134_control_0_0.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:39 . Memory (MB): peak = 1244.977 ; gain = 655.805
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:26 ; elapsed = 00:00:47 . Memory (MB): peak = 1358.387 ; gain = 769.215
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:47 . Memory (MB): peak = 1358.387 ; gain = 769.215
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:26 ; elapsed = 00:00:47 . Memory (MB): peak = 1368.465 ; gain = 779.293
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:32 ; elapsed = 00:00:58 . Memory (MB): peak = 1584.445 ; gain = 995.273
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:32 ; elapsed = 00:00:58 . Memory (MB): peak = 1584.445 ; gain = 995.273
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:32 ; elapsed = 00:00:59 . Memory (MB): peak = 1584.445 ; gain = 995.273
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:32 ; elapsed = 00:00:59 . Memory (MB): peak = 1584.445 ; gain = 995.273
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:32 ; elapsed = 00:00:59 . Memory (MB): peak = 1584.445 ; gain = 995.273
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:32 ; elapsed = 00:00:59 . Memory (MB): peak = 1584.445 ; gain = 995.273
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |CARRY4 |     4|
+|2     |LUT1   |     2|
+|3     |LUT2   |     7|
+|4     |LUT3   |     6|
+|5     |LUT4   |     5|
+|6     |LUT5   |     7|
+|7     |LUT6   |    17|
+|8     |FDCE   |    51|
+|9     |FDPE   |     1|
+|10    |FDRE   |     1|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:32 ; elapsed = 00:00:59 . Memory (MB): peak = 1584.445 ; gain = 995.273
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 31 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:22 ; elapsed = 00:00:48 . Memory (MB): peak = 1584.445 ; gain = 918.496
+Synthesis Optimization Complete : Time (s): cpu = 00:00:32 ; elapsed = 00:01:02 . Memory (MB): peak = 1584.445 ; gain = 995.273
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.124 . Memory (MB): peak = 1584.445 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1584.445 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 9ae929a4
+INFO: [Common 17-83] Releasing license: Synthesis
+28 Infos, 43 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:37 ; elapsed = 00:01:23 . Memory (MB): peak = 1584.445 ; gain = 1202.934
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.324 . Memory (MB): peak = 1584.445 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/work/AD4134/vivado/ad4134fw.runs/ad4134fw_ad4134_control_0_0_synth_1/ad4134fw_ad4134_control_0_0.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file ad4134fw_ad4134_control_0_0_utilization_synth.rpt -pb ad4134fw_ad4134_control_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sat Oct 25 15:09:26 2025...

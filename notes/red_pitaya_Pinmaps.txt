@@ -1,0 +1,22 @@
+LED0 - F16
+LED1 - F17
+LED2 - G15
+LED3 - H15
+LED4 - K14
+LED5 - G14
+LED6 - J15
+LED7 - J14
+
+SPI_OUT - G17 - Pin 3
+SPI_IN - H16 - Pin 5
+SPI_CLK - J18 - Pin 7
+SPI_CS - K17 - Pin  9
+
+Debug0 - L14 - Pin 11
+Debug1 - L16 - Pin 13
+Debug2 - K16 - Pin 15
+Debug3 - M14 - Pin 17
+
+Clk_out - M15 - Pin 18
+
+HB - G18 - Pin 4

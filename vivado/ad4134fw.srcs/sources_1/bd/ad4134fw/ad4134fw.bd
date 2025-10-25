@@ -1,0 +1,917 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x7CD2B09AC3AC2612",
+      "device": "xc7z010clg400-1",
+      "gen_directory": "../../../../ad4134fw.gen/sources_1/bd/ad4134fw",
+      "name": "ad4134fw",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2024.2",
+      "validated": "true"
+    },
+    "design_tree": {
+      "Processing_Subsystem": {
+        "processing_system7_0": "",
+        "proc_sys_reset_0": "",
+        "clk_wiz_0": "",
+        "smartconnect_0": ""
+      },
+      "SPI_Control": {
+        "ad4134_clock_generator": "",
+        "ad4134_control_0": "",
+        "spi_controller_0": ""
+      },
+      "LEDS": {
+        "xlslice_0": "",
+        "xlslice_1": "",
+        "c_counter_binary_0": "",
+        "axi_gpio_0": ""
+      }
+    },
+    "ports": {
+      "spi_clk": {
+        "direction": "O",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "ad4134fw_ad4134_clock_generat_0_0_spi_clk",
+            "value_src": "default_prop"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default_prop"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default_prop"
+          }
+        }
+      },
+      "miso": {
+        "direction": "I"
+      },
+      "mosi": {
+        "direction": "O"
+      },
+      "spi_cs_n": {
+        "direction": "O"
+      },
+      "debug": {
+        "direction": "O",
+        "left": "3",
+        "right": "0"
+      },
+      "LEDS": {
+        "direction": "O",
+        "left": "6",
+        "right": "0"
+      },
+      "hb_led": {
+        "direction": "O",
+        "left": "0",
+        "right": "0"
+      }
+    },
+    "components": {
+      "Processing_Subsystem": {
+        "interface_ports": {
+          "AXI_GPIO": {
+            "mode": "Master",
+            "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
+          }
+        },
+        "ports": {
+          "global_rst_n": {
+            "direction": "O",
+            "left": "0",
+            "right": "0"
+          },
+          "global_clk": {
+            "direction": "O"
+          }
+        },
+        "components": {
+          "processing_system7_0": {
+            "vlnv": "xilinx.com:ip:processing_system7:5.5",
+            "ip_revision": "6",
+            "xci_name": "ad4134fw_processing_system7_0_0",
+            "xci_path": "ip\\ad4134fw_processing_system7_0_0\\ad4134fw_processing_system7_0_0.xci",
+            "inst_hier_path": "Processing_Subsystem/processing_system7_0",
+            "parameters": {
+              "PCW_FPGA_FCLK0_ENABLE": {
+                "value": "1"
+              }
+            },
+            "interface_ports": {
+              "M_AXI_GP0": {
+                "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
+                "mode": "Master",
+                "address_space_ref": "Data",
+                "base_address": {
+                  "minimum": "0x40000000",
+                  "maximum": "0x7FFFFFFF",
+                  "width": "32"
+                }
+              }
+            },
+            "addressing": {
+              "address_spaces": {
+                "Data": {
+                  "range": "4G",
+                  "width": "32",
+                  "local_memory_map": {
+                    "name": "Data",
+                    "description": "Address Space Segments",
+                    "address_blocks": {
+                      "segment1": {
+                        "name": "segment1",
+                        "display_name": "segment1",
+                        "base_address": "0x00000000",
+                        "range": "256K",
+                        "width": "18",
+                        "usage": "register"
+                      },
+                      "segment2": {
+                        "name": "segment2",
+                        "display_name": "segment2",
+                        "base_address": "0x00040000",
+                        "range": "256K",
+                        "width": "19",
+                        "usage": "register"
+                      },
+                      "segment3": {
+                        "name": "segment3",
+                        "display_name": "segment3",
+                        "base_address": "0x00080000",
+                        "range": "512K",
+                        "width": "20",
+                        "usage": "register"
+                      },
+                      "segment4": {
+                        "name": "segment4",
+                        "display_name": "segment4",
+                        "base_address": "0x00100000",
+                        "range": "1023M",
+                        "width": "30",
+                        "usage": "register"
+                      },
+                      "M_AXI_GP0": {
+                        "name": "M_AXI_GP0",
+                        "display_name": "M_AXI_GP0",
+                        "base_address": "0x40000000",
+                        "range": "1G",
+                        "width": "31",
+                        "usage": "register"
+                      },
+                      "M_AXI_GP1": {
+                        "name": "M_AXI_GP1",
+                        "display_name": "M_AXI_GP1",
+                        "base_address": "0x80000000",
+                        "range": "1G",
+                        "width": "32",
+                        "usage": "register"
+                      },
+                      "IO_Peripheral_Registers": {
+                        "name": "IO_Peripheral_Registers",
+                        "display_name": "IO Peripheral Registers",
+                        "base_address": "0xE0000000",
+                        "range": "3M",
+                        "width": "32",
+                        "usage": "register"
+                      },
+                      "SMC_Memories": {
+                        "name": "SMC_Memories",
+                        "display_name": "SMC Memories",
+                        "base_address": "0xE1000000",
+                        "range": "80M",
+                        "width": "32",
+                        "usage": "register"
+                      },
+                      "SLCR_Registers": {
+                        "name": "SLCR_Registers",
+                        "display_name": "SLCR Registers",
+                        "base_address": "0xF8000000",
+                        "range": "3K",
+                        "width": "32",
+                        "usage": "register"
+                      },
+                      "PS_System_Registers": {
+                        "name": "PS_System_Registers",
+                        "display_name": "PS System Registers",
+                        "base_address": "0xF8001000",
+                        "range": "8252K",
+                        "width": "32",
+                        "usage": "register"
+                      },
+                      "CPU_Private_Registers": {
+                        "name": "CPU_Private_Registers",
+                        "display_name": "CPU Private Registers",
+                        "base_address": "0xF8900000",
+                        "range": "6156K",
+                        "width": "32",
+                        "usage": "register"
+                      },
+                      "segment5": {
+                        "name": "segment5",
+                        "display_name": "segment5",
+                        "base_address": "0xFC000000",
+                        "range": "32M",
+                        "width": "32",
+                        "usage": "register"
+                      },
+                      "segment6": {
+                        "name": "segment6",
+                        "display_name": "segment6",
+                        "base_address": "0xFFFC0000",
+                        "range": "256K",
+                        "width": "32",
+                        "usage": "register"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "proc_sys_reset_0": {
+            "vlnv": "xilinx.com:ip:proc_sys_reset:5.0",
+            "ip_revision": "16",
+            "xci_name": "ad4134fw_proc_sys_reset_0_0",
+            "xci_path": "ip\\ad4134fw_proc_sys_reset_0_0\\ad4134fw_proc_sys_reset_0_0.xci",
+            "inst_hier_path": "Processing_Subsystem/proc_sys_reset_0"
+          },
+          "clk_wiz_0": {
+            "vlnv": "xilinx.com:ip:clk_wiz:6.0",
+            "ip_revision": "15",
+            "xci_name": "ad4134fw_clk_wiz_0_0",
+            "xci_path": "ip\\ad4134fw_clk_wiz_0_0\\ad4134fw_clk_wiz_0_0.xci",
+            "inst_hier_path": "Processing_Subsystem/clk_wiz_0",
+            "parameters": {
+              "CLKOUT1_JITTER": {
+                "value": "192.113"
+              },
+              "CLKOUT1_REQUESTED_OUT_FREQ": {
+                "value": "50.000"
+              },
+              "MMCM_CLKOUT0_DIVIDE_F": {
+                "value": "20.000"
+              },
+              "USE_LOCKED": {
+                "value": "false"
+              },
+              "USE_RESET": {
+                "value": "false"
+              }
+            }
+          },
+          "smartconnect_0": {
+            "vlnv": "xilinx.com:ip:smartconnect:1.0",
+            "ip_revision": "25",
+            "xci_name": "ad4134fw_smartconnect_0_0",
+            "xci_path": "ip\\ad4134fw_smartconnect_0_0\\ad4134fw_smartconnect_0_0.xci",
+            "inst_hier_path": "Processing_Subsystem/smartconnect_0",
+            "parameters": {
+              "NUM_SI": {
+                "value": "1"
+              }
+            },
+            "interface_ports": {
+              "S00_AXI": {
+                "mode": "Slave",
+                "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
+                "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
+                "parameters": {
+                  "NUM_READ_OUTSTANDING": {
+                    "value": "8"
+                  },
+                  "NUM_WRITE_OUTSTANDING": {
+                    "value": "8"
+                  }
+                },
+                "bridges": [
+                  "M00_AXI"
+                ]
+              },
+              "M00_AXI": {
+                "mode": "Master",
+                "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
+                "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
+                "parameters": {
+                  "NUM_READ_OUTSTANDING": {
+                    "value": "8"
+                  },
+                  "NUM_READ_THREADS": {
+                    "value": "1"
+                  },
+                  "NUM_WRITE_OUTSTANDING": {
+                    "value": "8"
+                  },
+                  "NUM_WRITE_THREADS": {
+                    "value": "1"
+                  },
+                  "RUSER_BITS_PER_BYTE": {
+                    "value": "0"
+                  },
+                  "WUSER_BITS_PER_BYTE": {
+                    "value": "0"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "interface_nets": {
+          "Conn1": {
+            "interface_ports": [
+              "smartconnect_0/M00_AXI",
+              "AXI_GPIO"
+            ]
+          },
+          "processing_system7_0_M_AXI_GP0": {
+            "interface_ports": [
+              "smartconnect_0/S00_AXI",
+              "processing_system7_0/M_AXI_GP0"
+            ]
+          }
+        },
+        "nets": {
+          "clk_wiz_0_clk_out1": {
+            "ports": [
+              "clk_wiz_0/clk_out1",
+              "smartconnect_0/aclk",
+              "processing_system7_0/M_AXI_GP0_ACLK",
+              "global_clk"
+            ]
+          },
+          "proc_sys_reset_0_peripheral_aresetn": {
+            "ports": [
+              "proc_sys_reset_0/peripheral_aresetn",
+              "smartconnect_0/aresetn",
+              "global_rst_n"
+            ]
+          },
+          "processing_system7_0_FCLK_CLK0": {
+            "ports": [
+              "processing_system7_0/FCLK_CLK0",
+              "proc_sys_reset_0/slowest_sync_clk",
+              "clk_wiz_0/clk_in1"
+            ]
+          },
+          "processing_system7_0_FCLK_RESET0_N": {
+            "ports": [
+              "processing_system7_0/FCLK_RESET0_N",
+              "proc_sys_reset_0/ext_reset_in"
+            ]
+          }
+        }
+      },
+      "SPI_Control": {
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "rstn": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "spi_clk": {
+            "type": "clk",
+            "direction": "O"
+          },
+          "debug": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "mosi": {
+            "direction": "O"
+          },
+          "miso": {
+            "direction": "I"
+          },
+          "spi_cs_n": {
+            "direction": "O"
+          }
+        },
+        "components": {
+          "ad4134_clock_generator": {
+            "vlnv": "xilinx.com:module_ref:ad4134_clock_generator:1.0",
+            "ip_revision": "1",
+            "xci_name": "ad4134fw_ad4134_clock_generat_0_0",
+            "xci_path": "ip\\ad4134fw_ad4134_clock_generat_0_0\\ad4134fw_ad4134_clock_generat_0_0.xci",
+            "inst_hier_path": "SPI_Control/ad4134_clock_generator",
+            "reference_info": {
+              "ref_type": "hdl",
+              "ref_name": "ad4134_clock_generator",
+              "boundary_crc": "0x0"
+            },
+            "ports": {
+              "clk": {
+                "type": "clk",
+                "direction": "I",
+                "parameters": {
+                  "FREQ_HZ": {
+                    "value": "50000000",
+                    "value_src": "ip_prop"
+                  },
+                  "PHASE": {
+                    "value": "0.0",
+                    "value_src": "ip_prop"
+                  },
+                  "CLK_DOMAIN": {
+                    "value": "/Processing_Subsystem/clk_wiz_0_clk_out1",
+                    "value_src": "ip_prop"
+                  }
+                }
+              },
+              "rstn": {
+                "type": "rst",
+                "direction": "I",
+                "parameters": {
+                  "POLARITY": {
+                    "value": "ACTIVE_LOW",
+                    "value_src": "constant"
+                  }
+                }
+              },
+              "spi_clk": {
+                "type": "clk",
+                "direction": "O"
+              },
+              "spi_clk_en": {
+                "direction": "I"
+              }
+            }
+          },
+          "ad4134_control_0": {
+            "vlnv": "xilinx.com:module_ref:ad4134_control:1.0",
+            "ip_revision": "1",
+            "xci_name": "ad4134fw_ad4134_control_0_0",
+            "xci_path": "ip\\ad4134fw_ad4134_control_0_0\\ad4134fw_ad4134_control_0_0.xci",
+            "inst_hier_path": "SPI_Control/ad4134_control_0",
+            "reference_info": {
+              "ref_type": "hdl",
+              "ref_name": "ad4134_control",
+              "boundary_crc": "0x0"
+            },
+            "ports": {
+              "clk": {
+                "type": "clk",
+                "direction": "I",
+                "parameters": {
+                  "ASSOCIATED_RESET": {
+                    "value": "rstn",
+                    "value_src": "constant"
+                  },
+                  "FREQ_HZ": {
+                    "value": "50000000",
+                    "value_src": "ip_prop"
+                  },
+                  "PHASE": {
+                    "value": "0.0",
+                    "value_src": "ip_prop"
+                  },
+                  "CLK_DOMAIN": {
+                    "value": "/Processing_Subsystem/clk_wiz_0_clk_out1",
+                    "value_src": "ip_prop"
+                  }
+                }
+              },
+              "rstn": {
+                "type": "rst",
+                "direction": "I",
+                "parameters": {
+                  "POLARITY": {
+                    "value": "ACTIVE_LOW",
+                    "value_src": "constant"
+                  }
+                }
+              },
+              "write": {
+                "direction": "O"
+              },
+              "read": {
+                "direction": "O"
+              },
+              "datain": {
+                "direction": "O",
+                "left": "7",
+                "right": "0"
+              },
+              "dataout": {
+                "direction": "I",
+                "left": "7",
+                "right": "0"
+              },
+              "spiaddr": {
+                "direction": "O",
+                "left": "7",
+                "right": "0"
+              },
+              "ch_en": {
+                "direction": "I",
+                "left": "3",
+                "right": "0"
+              },
+              "spi_clk_en": {
+                "direction": "O"
+              },
+              "spidone": {
+                "direction": "I"
+              },
+              "debug": {
+                "direction": "O",
+                "left": "3",
+                "right": "0"
+              }
+            }
+          },
+          "spi_controller_0": {
+            "vlnv": "xilinx.com:module_ref:spi_controller:1.0",
+            "ip_revision": "1",
+            "xci_name": "ad4134fw_spi_controller_0_0",
+            "xci_path": "ip\\ad4134fw_spi_controller_0_0\\ad4134fw_spi_controller_0_0.xci",
+            "inst_hier_path": "SPI_Control/spi_controller_0",
+            "reference_info": {
+              "ref_type": "hdl",
+              "ref_name": "spi_controller",
+              "boundary_crc": "0x0"
+            },
+            "ports": {
+              "clk": {
+                "type": "clk",
+                "direction": "I",
+                "parameters": {
+                  "ASSOCIATED_RESET": {
+                    "value": "rstn",
+                    "value_src": "constant"
+                  },
+                  "FREQ_HZ": {
+                    "value": "50000000",
+                    "value_src": "ip_prop"
+                  },
+                  "PHASE": {
+                    "value": "0.0",
+                    "value_src": "ip_prop"
+                  },
+                  "CLK_DOMAIN": {
+                    "value": "/Processing_Subsystem/clk_wiz_0_clk_out1",
+                    "value_src": "ip_prop"
+                  }
+                }
+              },
+              "rstn": {
+                "type": "rst",
+                "direction": "I",
+                "parameters": {
+                  "POLARITY": {
+                    "value": "ACTIVE_LOW",
+                    "value_src": "constant"
+                  }
+                }
+              },
+              "write": {
+                "direction": "I"
+              },
+              "read": {
+                "direction": "I"
+              },
+              "datain": {
+                "direction": "I",
+                "left": "7",
+                "right": "0"
+              },
+              "dataout": {
+                "direction": "O",
+                "left": "7",
+                "right": "0"
+              },
+              "spiaddr": {
+                "direction": "I",
+                "left": "7",
+                "right": "0"
+              },
+              "spidone": {
+                "direction": "O"
+              },
+              "mosi": {
+                "direction": "O"
+              },
+              "miso": {
+                "direction": "I"
+              },
+              "cs_n": {
+                "direction": "O"
+              }
+            }
+          }
+        },
+        "nets": {
+          "Processing_Subsystem_global_clk": {
+            "ports": [
+              "clk",
+              "ad4134_control_0/clk",
+              "spi_controller_0/clk",
+              "ad4134_clock_generator/clk"
+            ]
+          },
+          "Processing_Subsystem_global_rst_n": {
+            "ports": [
+              "rstn",
+              "spi_controller_0/rstn",
+              "ad4134_control_0/rstn",
+              "ad4134_clock_generator/rstn"
+            ]
+          },
+          "ad4134_clock_generat_0_spi_clk": {
+            "ports": [
+              "ad4134_clock_generator/spi_clk",
+              "spi_clk"
+            ]
+          },
+          "ad4134_control_0_datain": {
+            "ports": [
+              "ad4134_control_0/datain",
+              "spi_controller_0/datain"
+            ]
+          },
+          "ad4134_control_0_debug": {
+            "ports": [
+              "ad4134_control_0/debug",
+              "debug"
+            ]
+          },
+          "ad4134_control_0_read": {
+            "ports": [
+              "ad4134_control_0/read",
+              "spi_controller_0/read"
+            ]
+          },
+          "ad4134_control_0_spi_clk_en": {
+            "ports": [
+              "ad4134_control_0/spi_clk_en",
+              "ad4134_clock_generator/spi_clk_en"
+            ]
+          },
+          "ad4134_control_0_spiaddr": {
+            "ports": [
+              "ad4134_control_0/spiaddr",
+              "spi_controller_0/spiaddr"
+            ]
+          },
+          "ad4134_control_0_write": {
+            "ports": [
+              "ad4134_control_0/write",
+              "spi_controller_0/write"
+            ]
+          },
+          "miso_1": {
+            "ports": [
+              "miso",
+              "spi_controller_0/miso"
+            ]
+          },
+          "spi_controller_0_cs_n": {
+            "ports": [
+              "spi_controller_0/cs_n",
+              "spi_cs_n"
+            ]
+          },
+          "spi_controller_0_dataout": {
+            "ports": [
+              "spi_controller_0/dataout",
+              "ad4134_control_0/dataout"
+            ]
+          },
+          "spi_controller_0_mosi": {
+            "ports": [
+              "spi_controller_0/mosi",
+              "mosi"
+            ]
+          },
+          "spi_controller_0_spidone": {
+            "ports": [
+              "spi_controller_0/spidone",
+              "ad4134_control_0/spidone"
+            ]
+          }
+        }
+      },
+      "LEDS": {
+        "interface_ports": {
+          "S_AXI": {
+            "mode": "Slave",
+            "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
+          }
+        },
+        "ports": {
+          "LEDS": {
+            "direction": "O",
+            "left": "6",
+            "right": "0"
+          },
+          "hb_led": {
+            "direction": "O",
+            "left": "0",
+            "right": "0"
+          },
+          "s_axi_aclk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "s_axi_aresetn": {
+            "type": "rst",
+            "direction": "I"
+          }
+        },
+        "components": {
+          "xlslice_0": {
+            "vlnv": "xilinx.com:ip:xlslice:1.0",
+            "ip_revision": "4",
+            "xci_name": "ad4134fw_xlslice_0_0",
+            "xci_path": "ip\\ad4134fw_xlslice_0_0\\ad4134fw_xlslice_0_0.xci",
+            "inst_hier_path": "LEDS/xlslice_0",
+            "parameters": {
+              "DIN_FROM": {
+                "value": "6"
+              }
+            }
+          },
+          "xlslice_1": {
+            "vlnv": "xilinx.com:ip:xlslice:1.0",
+            "ip_revision": "4",
+            "xci_name": "ad4134fw_xlslice_1_0",
+            "xci_path": "ip\\ad4134fw_xlslice_1_0\\ad4134fw_xlslice_1_0.xci",
+            "inst_hier_path": "LEDS/xlslice_1",
+            "parameters": {
+              "DIN_FROM": {
+                "value": "25"
+              },
+              "DIN_TO": {
+                "value": "25"
+              }
+            }
+          },
+          "c_counter_binary_0": {
+            "vlnv": "xilinx.com:ip:c_counter_binary:12.0",
+            "ip_revision": "20",
+            "xci_name": "ad4134fw_c_counter_binary_0_0",
+            "xci_path": "ip\\ad4134fw_c_counter_binary_0_0\\ad4134fw_c_counter_binary_0_0.xci",
+            "inst_hier_path": "LEDS/c_counter_binary_0",
+            "parameters": {
+              "Increment_Value": {
+                "value": "1"
+              },
+              "Output_Width": {
+                "value": "32"
+              }
+            }
+          },
+          "axi_gpio_0": {
+            "vlnv": "xilinx.com:ip:axi_gpio:2.0",
+            "ip_revision": "35",
+            "xci_name": "ad4134fw_axi_gpio_0_0",
+            "xci_path": "ip\\ad4134fw_axi_gpio_0_0\\ad4134fw_axi_gpio_0_0.xci",
+            "inst_hier_path": "LEDS/axi_gpio_0",
+            "parameters": {
+              "C_ALL_OUTPUTS": {
+                "value": "1"
+              }
+            }
+          }
+        },
+        "interface_nets": {
+          "Processing_Subsystem_AXI_GPIO": {
+            "interface_ports": [
+              "S_AXI",
+              "axi_gpio_0/S_AXI"
+            ]
+          }
+        },
+        "nets": {
+          "Processing_Subsystem_global_clk": {
+            "ports": [
+              "s_axi_aclk",
+              "axi_gpio_0/s_axi_aclk",
+              "c_counter_binary_0/CLK"
+            ]
+          },
+          "Processing_Subsystem_global_rst_n": {
+            "ports": [
+              "s_axi_aresetn",
+              "axi_gpio_0/s_axi_aresetn"
+            ]
+          },
+          "axi_gpio_0_gpio_io_o": {
+            "ports": [
+              "axi_gpio_0/gpio_io_o",
+              "xlslice_0/Din"
+            ]
+          },
+          "c_counter_binary_0_Q": {
+            "ports": [
+              "c_counter_binary_0/Q",
+              "xlslice_1/Din"
+            ]
+          },
+          "xlslice_0_Dout": {
+            "ports": [
+              "xlslice_0/Dout",
+              "LEDS"
+            ]
+          },
+          "xlslice_1_Dout": {
+            "ports": [
+              "xlslice_1/Dout",
+              "hb_led"
+            ]
+          }
+        }
+      }
+    },
+    "interface_nets": {
+      "Processing_Subsystem_AXI_GPIO": {
+        "interface_ports": [
+          "LEDS/S_AXI",
+          "Processing_Subsystem/AXI_GPIO"
+        ]
+      }
+    },
+    "nets": {
+      "Processing_Subsystem_global_clk": {
+        "ports": [
+          "Processing_Subsystem/global_clk",
+          "SPI_Control/clk",
+          "LEDS/s_axi_aclk"
+        ]
+      },
+      "Processing_Subsystem_global_rst_n": {
+        "ports": [
+          "Processing_Subsystem/global_rst_n",
+          "SPI_Control/rstn",
+          "LEDS/s_axi_aresetn"
+        ]
+      },
+      "ad4134_clock_generat_0_spi_clk": {
+        "ports": [
+          "SPI_Control/spi_clk",
+          "spi_clk"
+        ]
+      },
+      "ad4134_control_0_debug": {
+        "ports": [
+          "SPI_Control/debug",
+          "debug"
+        ]
+      },
+      "miso_1": {
+        "ports": [
+          "miso",
+          "SPI_Control/miso"
+        ]
+      },
+      "spi_controller_0_cs_n": {
+        "ports": [
+          "SPI_Control/spi_cs_n",
+          "spi_cs_n"
+        ]
+      },
+      "spi_controller_0_mosi": {
+        "ports": [
+          "SPI_Control/mosi",
+          "mosi"
+        ]
+      },
+      "xlslice_0_Dout": {
+        "ports": [
+          "LEDS/LEDS",
+          "LEDS"
+        ]
+      },
+      "xlslice_1_Dout": {
+        "ports": [
+          "LEDS/hb_led",
+          "hb_led"
+        ]
+      }
+    },
+    "addressing": {
+      "/Processing_Subsystem/processing_system7_0": {
+        "address_spaces": {
+          "Data": {
+            "segments": {
+              "SEG_axi_gpio_0_Reg": {
+                "address_block": "/LEDS/axi_gpio_0/S_AXI/Reg",
+                "offset": "0x41200000",
+                "range": "64K"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
