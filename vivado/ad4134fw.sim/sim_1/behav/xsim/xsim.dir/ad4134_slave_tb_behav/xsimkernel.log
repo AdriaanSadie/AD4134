@@ -1,4 +1,7 @@
-Running: xsim.dir/ad4134_slave_tb_behav/xsimk.exe -simmode gui -wdb ad4134_slave_tb_behav.wdb -simrunnum 0 -socket 64670
+Running: xsim.dir/ad4134_slave_tb_behav/xsimk.exe -simmode gui -wdb ad4134_slave_tb_behav.wdb -simrunnum 0 -socket 50193
 Design successfully loaded
-Design Loading Memory Usage: 26412 KB (Peak: 26412 KB)
-Design Loading CPU Usage: 781 ms
+Design Loading Memory Usage: 26468 KB (Peak: 26468 KB)
+Design Loading CPU Usage: 827 ms
+Simulation completed
+Simulation Memory Usage: 27276 KB (Peak: 27276 KB)
+Simulation CPU Usage: 921 ms
