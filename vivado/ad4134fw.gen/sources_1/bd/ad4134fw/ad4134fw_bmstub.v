@@ -12,7 +12,9 @@ module ad4134fw (
   spi_cs_n,
   debug,
   LEDS,
-  hb_led
+  hb_led,
+  dclk_out,
+  odr_out
 );
 
   (* X_INTERFACE_IGNORE = "true" *)
@@ -29,6 +31,10 @@ module ad4134fw (
   output [6:0]LEDS;
   (* X_INTERFACE_IGNORE = "true" *)
   output [0:0]hb_led;
+  (* X_INTERFACE_IGNORE = "true" *)
+  output dclk_out;
+  (* X_INTERFACE_IGNORE = "true" *)
+  output odr_out;
 
   // stub module has no contents
 

@@ -56,6 +56,8 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 1
+set_param bd.open.in_stealth_mode 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z010clg400-1
 
@@ -67,12 +69,12 @@ set_property webtalk.parent_dir C:/work/AD4134/vivado/ad4134fw.cache/wt [current
 set_property parent.project_path C:/work/AD4134/vivado/ad4134fw.xpr [current_project]
 set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
-set_property target_language Verilog [current_project]
+set_property target_language VHDL [current_project]
 set_property ip_output_repo c:/work/AD4134/vivado/ad4134fw.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_verilog -library xil_defaultlib c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/hdl/ad4134fw_wrapper.v
+read_vhdl -library xil_defaultlib c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/hdl/ad4134fw_wrapper.vhd
 add_files C:/work/AD4134/vivado/ad4134fw.srcs/sources_1/bd/ad4134fw/ad4134fw.bd
 set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_processing_system7_0_0/ad4134fw_processing_system7_0_0.xdc]
 set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_proc_sys_reset_0_0/ad4134fw_proc_sys_reset_0_0_board.xdc]

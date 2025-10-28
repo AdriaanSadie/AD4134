@@ -31,3 +31,7 @@ set_property src_info {type:XDC file:1 line:31 export:INPUT save:INPUT read:READ
 set_property PACKAGE_PIN G17 [get_ports mosi]
 set_property src_info {type:XDC file:1 line:32 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN K17 [get_ports spi_cs_n]
+set_property src_info {type:XDC file:1 line:34 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN J16 [get_ports dclk_out]
+set_property src_info {type:XDC file:1 line:36 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN L17 [get_ports odr_out]

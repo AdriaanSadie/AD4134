@@ -30,3 +30,8 @@ set_property IOSTANDARD LVCMOS33 [get_ports spi_cs_n]
 set_property PACKAGE_PIN H16 [get_ports miso]
 set_property PACKAGE_PIN G17 [get_ports mosi]
 set_property PACKAGE_PIN K17 [get_ports spi_cs_n]
+
+set_property PACKAGE_PIN J16 [get_ports dclk_out]
+set_property IOSTANDARD LVCMOS33 [get_ports dclk_out]
+set_property PACKAGE_PIN L17 [get_ports odr_out]
+set_property IOSTANDARD LVCMOS33 [get_ports odr_out]

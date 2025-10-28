@@ -2,10 +2,10 @@
 // Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-// Date        : Sat Oct 25 15:10:59 2025
+// Date        : Tue Oct 28 21:32:22 2025
 // Host        : DESKTOP-NG70LRJ running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub
-//               c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/ad4134fw_smartconnect_0_0_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top ad4134fw_smartconnect_0_0 -prefix
+//               ad4134fw_smartconnect_0_0_ ad4134fw_smartconnect_0_0_stub.v
 // Design      : ad4134fw_smartconnect_0_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z010clg400-1
@@ -14,7 +14,7 @@
 // This empty module with port declaration file causes synthesis tools to infer a black box for IP.
 // The synthesis directives are for Synopsys Synplify support to prevent IO buffer insertion.
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
-(* CHECK_LICENSE_TYPE = "ad4134fw_smartconnect_0_0,bd_5956,{}" *) (* CORE_GENERATION_INFO = "ad4134fw_smartconnect_0_0,bd_5956,{x_ipProduct=Vivado 2024.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=smartconnect,x_ipVersion=1.0,x_ipCoreRevision=25,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) 
+(* CHECK_LICENSE_TYPE = "ad4134fw_smartconnect_0_0,bd_5956,{}" *) (* CORE_GENERATION_INFO = "ad4134fw_smartconnect_0_0,bd_5956,{x_ipProduct=Vivado 2024.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=smartconnect,x_ipVersion=1.0,x_ipCoreRevision=25,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) 
 (* X_CORE_INFO = "bd_5956,Vivado 2024.2" *) 
 module ad4134fw_smartconnect_0_0(aclk, aresetn, S00_AXI_awid, S00_AXI_awaddr, 
   S00_AXI_awlen, S00_AXI_awsize, S00_AXI_awburst, S00_AXI_awlock, S00_AXI_awcache, 

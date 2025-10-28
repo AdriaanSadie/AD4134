@@ -1,63 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z010clg400-1" LaunchTime="1761398189">
+<GenRun Id="impl_1" LaunchPart="xc7z010clg400-1" LaunchTime="1761682053">
+  <File Type="PA-TCL" Name="ad4134fw_wrapper.tcl"/>
   <File Type="REPORTS-TCL" Name="ad4134fw_wrapper_reports.tcl"/>
-  <File Type="ROUTE-PWR-SUM" Name="ad4134fw_wrapper_power_summary_routed.pb"/>
-  <File Type="BITSTR-MMI" Name="ad4134fw_wrapper.mmi"/>
+  <File Type="INIT-TIMING" Name="ad4134fw_wrapper_timing_summary_init.rpt"/>
+  <File Type="OPT-DCP" Name="ad4134fw_wrapper_opt.dcp"/>
   <File Type="OPT-DRC" Name="ad4134fw_wrapper_drc_opted.rpt"/>
-  <File Type="BG-DRC" Name="ad4134fw_wrapper.drc"/>
-  <File Type="ROUTE-STATUS-PB" Name="ad4134fw_wrapper_route_status.pb"/>
-  <File Type="BG-BGN" Name="ad4134fw_wrapper.bgn"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="ad4134fw_wrapper_methodology_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="ad4134fw_wrapper.hwdef"/>
+  <File Type="OPT-TIMING" Name="ad4134fw_wrapper_timing_summary_opted.rpt"/>
+  <File Type="OPT-RQA-PB" Name="ad4134fw_wrapper_rqa_opted.pb"/>
+  <File Type="PWROPT-DCP" Name="ad4134fw_wrapper_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="ad4134fw_wrapper_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="ad4134fw_wrapper_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="ad4134fw_wrapper_placed.dcp"/>
+  <File Type="PLACE-IO" Name="ad4134fw_wrapper_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="ad4134fw_wrapper_clock_utilization_placed.rpt"/>
   <File Type="PLACE-UTIL" Name="ad4134fw_wrapper_utilization_placed.rpt"/>
   <File Type="PLACE-UTIL-PB" Name="ad4134fw_wrapper_utilization_placed.pb"/>
-  <File Type="PLACE-IO" Name="ad4134fw_wrapper_io_placed.rpt"/>
-  <File Type="BG-BIN" Name="ad4134fw_wrapper.bin"/>
   <File Type="PLACE-CTRL" Name="ad4134fw_wrapper_control_sets_placed.rpt"/>
-  <File Type="ROUTE-PWR-RPX" Name="ad4134fw_wrapper_power_routed.rpx"/>
+  <File Type="PLACE-SIMILARITY" Name="ad4134fw_wrapper_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="ad4134fw_wrapper_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-TIMING" Name="ad4134fw_wrapper_timing_summary_placed.rpt"/>
+  <File Type="PLACE-RQA-PB" Name="ad4134fw_wrapper_rqa_placed.pb"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="ad4134fw_wrapper_postplace_pwropt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="ad4134fw_wrapper_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="ad4134fw_wrapper_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="ad4134fw_wrapper_drc_physopted.rpt"/>
+  <File Type="PHYSOPT-TIMING" Name="ad4134fw_wrapper_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="ad4134fw_wrapper_routed_error.dcp"/>
   <File Type="ROUTE-DCP" Name="ad4134fw_wrapper_routed.dcp"/>
-  <File Type="BITSTR-MSK" Name="ad4134fw_wrapper.msk"/>
-  <File Type="BITSTR-RBT" Name="ad4134fw_wrapper.rbt"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="ad4134fw_wrapper_timing_summary_routed.rpt"/>
-  <File Type="ROUTE-TIMING-RPX" Name="ad4134fw_wrapper_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-STATUS" Name="ad4134fw_wrapper_route_status.rpt"/>
-  <File Type="PA-TCL" Name="ad4134fw_wrapper.tcl"/>
-  <File Type="ROUTE-PWR" Name="ad4134fw_wrapper_power_routed.rpt"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="ad4134fw_wrapper_routed_bb.dcp"/>
   <File Type="ROUTE-DRC" Name="ad4134fw_wrapper_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-RPX" Name="ad4134fw_wrapper_drc_routed.rpx"/>
   <File Type="ROUTE-DRC-PB" Name="ad4134fw_wrapper_drc_routed.pb"/>
-  <File Type="BITSTR-SYSDEF" Name="ad4134fw_wrapper.sysdef"/>
+  <File Type="ROUTE-DRC-RPX" Name="ad4134fw_wrapper_drc_routed.rpx"/>
   <File Type="ROUTE-METHODOLOGY-DRC" Name="ad4134fw_wrapper_methodology_drc_routed.rpt"/>
   <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="ad4134fw_wrapper_methodology_drc_routed.rpx"/>
-  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="ad4134fw_wrapper.ltx"/>
   <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="ad4134fw_wrapper_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR" Name="ad4134fw_wrapper_power_routed.rpt"/>
+  <File Type="ROUTE-PWR-SUM" Name="ad4134fw_wrapper_power_summary_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="ad4134fw_wrapper_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="ad4134fw_wrapper_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="ad4134fw_wrapper_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="ad4134fw_wrapper_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="ad4134fw_wrapper_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="ad4134fw_wrapper_timing_summary_routed.rpx"/>
   <File Type="ROUTE-SIMILARITY" Name="ad4134fw_wrapper_incremental_reuse_routed.rpt"/>
-  <File Type="RDI-RDI" Name="ad4134fw_wrapper.vdi"/>
   <File Type="ROUTE-CLK" Name="ad4134fw_wrapper_clock_utilization_routed.rpt"/>
   <File Type="ROUTE-BUS-SKEW" Name="ad4134fw_wrapper_bus_skew_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW-RPX" Name="ad4134fw_wrapper_bus_skew_routed.rpx"/>
   <File Type="ROUTE-BUS-SKEW-PB" Name="ad4134fw_wrapper_bus_skew_routed.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="ad4134fw_wrapper_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="ad4134fw_wrapper_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="ad4134fw_wrapper_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="ad4134fw_wrapper_bus_skew_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="ad4134fw_wrapper_bus_skew_postroute_physopted.rpx"/>
-  <File Type="BG-BIT" Name="ad4134fw_wrapper.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="ad4134fw_wrapper_bus_skew_postroute_physopted.pb"/>
-  <File Type="BITSTR-NKY" Name="ad4134fw_wrapper.nky"/>
-  <File Type="BITSTR-BMM" Name="ad4134fw_wrapper_bd.bmm"/>
-  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
-  <File Type="OPT-HWDEF" Name="ad4134fw_wrapper.hwdef"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="ad4134fw_wrapper_incremental_reuse_pre_placed.rpt"/>
-  <File Type="ROUTE-ERROR-DCP" Name="ad4134fw_wrapper_routed_error.dcp"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="ad4134fw_wrapper_routed_bb.dcp"/>
-  <File Type="ROUTE-TIMING-PB" Name="ad4134fw_wrapper_timing_summary_routed.pb"/>
-  <File Type="OPT-DCP" Name="ad4134fw_wrapper_opt.dcp"/>
-  <File Type="PLACE-DCP" Name="ad4134fw_wrapper_placed.dcp"/>
-  <File Type="PWROPT-DCP" Name="ad4134fw_wrapper_pwropt.dcp"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="ad4134fw_wrapper_postplace_pwropt.dcp"/>
-  <File Type="PHYSOPT-DCP" Name="ad4134fw_wrapper_physopt.dcp"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="ad4134fw_wrapper_bus_skew_routed.rpx"/>
+  <File Type="ROUTE-RQS-PB" Name="ad4134fw_wrapper_rqs_routed.pb"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="ad4134fw_wrapper_postroute_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="ad4134fw_wrapper_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="ad4134fw_wrapper_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="ad4134fw_wrapper_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="ad4134fw_wrapper_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="ad4134fw_wrapper_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="ad4134fw_wrapper_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="ad4134fw_wrapper_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BG-BIT" Name="ad4134fw_wrapper.bit"/>
+  <File Type="BG-BIN" Name="ad4134fw_wrapper.bin"/>
+  <File Type="BITSTR-MSK" Name="ad4134fw_wrapper.msk"/>
+  <File Type="BITSTR-RBT" Name="ad4134fw_wrapper.rbt"/>
+  <File Type="BITSTR-NKY" Name="ad4134fw_wrapper.nky"/>
+  <File Type="BITSTR-BMM" Name="ad4134fw_wrapper_bd.bmm"/>
+  <File Type="BITSTR-MMI" Name="ad4134fw_wrapper.mmi"/>
   <File Type="PDI-FILE" Name="ad4134fw_wrapper.pdi"/>
   <File Type="BOOT-PDI-FILE" Name="ad4134fw_wrapper_boot.pdi"/>
   <File Type="PL-PDI-FILE" Name="ad4134fw_wrapper_pld.pdi"/>
@@ -66,6 +73,13 @@
   <File Type="RNPI_FILE" Name="ad4134fw_wrapper.rnpi"/>
   <File Type="NPI_FILE" Name="ad4134fw_wrapper.npi"/>
   <File Type="RBD_FILE" Name="ad4134fw_wrapper.rbd"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="ad4134fw_wrapper.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="ad4134fw_wrapper.sysdef"/>
+  <File Type="BG-BGN" Name="ad4134fw_wrapper.bgn"/>
+  <File Type="BG-DRC" Name="ad4134fw_wrapper.drc"/>
+  <File Type="RDI-RDI" Name="ad4134fw_wrapper.vdi"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <File Type="ROUTE-RQS" Name="ad4134fw_wrapper_routed.rqs"/>
   <File Type="POSTROUTE-PHYSOPT-RQS" Name="ad4134fw_wrapper_postroute_physopted.rqs"/>
   <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
@@ -90,6 +104,12 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PPRDIR/../src/ad4134_data.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/bd/ad4134fw/ad4134fw.bd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -97,10 +117,9 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PGENDIR/sources_1/bd/ad4134fw/hdl/ad4134fw_wrapper.v">
+    <File Path="$PGENDIR/sources_1/bd/ad4134fw/hdl/ad4134fw_wrapper.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
@@ -144,7 +163,9 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2024"/>
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2024">
+      <Desc>Default settings for Implementation.</Desc>
+    </StratHandle>
     <Step Id="init_design"/>
     <Step Id="opt_design"/>
     <Step Id="power_opt_design"/>
@@ -154,15 +175,14 @@
     <Step Id="route_design"/>
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
-    <Step Id="write_device_image"/>
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="ad4134fw_ad4134_control_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="ad4134fw_axi_gpio_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="ad4134fw_processing_system7_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="ad4134fw_proc_sys_reset_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="ad4134fw_clk_wiz_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="ad4134fw_ad4134_clock_generat_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="ad4134fw_smartconnect_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ad4134fw_clk_wiz_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ad4134fw_proc_sys_reset_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="ad4134fw_c_counter_binary_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="ad4134fw_spi_controller_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ad4134fw_ad4134_data_0_0"/>
 </GenRun>

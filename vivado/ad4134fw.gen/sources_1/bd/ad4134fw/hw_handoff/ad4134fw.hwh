@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sat Oct 25 15:07:39 2025" VIVADOVERSION="2024.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Oct 28 22:05:31 2025" VIVADOVERSION="2024.2">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z010" NAME="ad4134fw" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -7,6 +7,11 @@
     <PORT DIR="O" LEFT="6" NAME="LEDS" RIGHT="0" SIGIS="undef" SIGNAME="LEDS_xlslice_0_Dout">
       <CONNECTIONS>
         <CONNECTION INSTANCE="LEDS_xlslice_0" PORT="Dout"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="dclk_out" SIGIS="undef" SIGNAME="ad4134_data_0_dclk_out">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="ad4134_data_0" PORT="dclk_out"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="O" LEFT="3" NAME="debug" RIGHT="0" SIGIS="undef" SIGNAME="SPI_Control_ad4134_control_0_debug">
@@ -27,6 +32,11 @@
     <PORT DIR="O" NAME="mosi" SIGIS="undef" SIGNAME="SPI_Control_spi_controller_0_mosi">
       <CONNECTIONS>
         <CONNECTION INSTANCE="SPI_Control_spi_controller_0" PORT="mosi"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="odr_out" SIGIS="undef" SIGNAME="ad4134_data_0_odr_out">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="ad4134_data_0" PORT="odr_out"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="O" NAME="spi_clk" SIGIS="undef" SIGNAME="SPI_Control_ad4134_clock_generator_spi_clk">
@@ -539,7 +549,7 @@
         <PARAMETER NAME="C_CLKOUT0_ACTUAL_FREQ" VALUE="50.00000"/>
         <PARAMETER NAME="C_CLKOUT1_1" VALUE="0000"/>
         <PARAMETER NAME="C_CLKOUT1_2" VALUE="0000"/>
-        <PARAMETER NAME="C_CLKOUT1_ACTUAL_FREQ" VALUE="100.000"/>
+        <PARAMETER NAME="C_CLKOUT1_ACTUAL_FREQ" VALUE="10.00000"/>
         <PARAMETER NAME="C_CLKOUT1_DRIVES" VALUE="BUFG"/>
         <PARAMETER NAME="C_CLKOUT1_DUTY_CYCLE" VALUE="50.0"/>
         <PARAMETER NAME="C_CLKOUT1_MATCHED_ROUTING" VALUE="false"/>
@@ -553,12 +563,12 @@
         <PARAMETER NAME="C_CLKOUT2_2" VALUE="0000"/>
         <PARAMETER NAME="C_CLKOUT2_ACTUAL_FREQ" VALUE="100.000"/>
         <PARAMETER NAME="C_CLKOUT2_DRIVES" VALUE="BUFG"/>
-        <PARAMETER NAME="C_CLKOUT2_DUTY_CYCLE" VALUE="50.000"/>
+        <PARAMETER NAME="C_CLKOUT2_DUTY_CYCLE" VALUE="50.0"/>
         <PARAMETER NAME="C_CLKOUT2_MATCHED_ROUTING" VALUE="false"/>
-        <PARAMETER NAME="C_CLKOUT2_OUT_FREQ" VALUE="100.000"/>
+        <PARAMETER NAME="C_CLKOUT2_OUT_FREQ" VALUE="10.00000"/>
         <PARAMETER NAME="C_CLKOUT2_PHASE" VALUE="0.000"/>
         <PARAMETER NAME="C_CLKOUT2_REQUESTED_DUTY_CYCLE" VALUE="50.000"/>
-        <PARAMETER NAME="C_CLKOUT2_REQUESTED_OUT_FREQ" VALUE="100.000"/>
+        <PARAMETER NAME="C_CLKOUT2_REQUESTED_OUT_FREQ" VALUE="10.000"/>
         <PARAMETER NAME="C_CLKOUT2_REQUESTED_PHASE" VALUE="0.000"/>
         <PARAMETER NAME="C_CLKOUT2_SEQUENCE_NUMBER" VALUE="1"/>
         <PARAMETER NAME="C_CLKOUT2_USED" VALUE="0"/>
@@ -627,7 +637,7 @@
         <PARAMETER NAME="C_CLKOUTPHY_MODE" VALUE="VCO"/>
         <PARAMETER NAME="C_CLK_IN_SEL_PORT" VALUE="clk_in_sel"/>
         <PARAMETER NAME="C_CLK_OUT1_PORT" VALUE="clk_out1"/>
-        <PARAMETER NAME="C_CLK_OUT2_PORT" VALUE="clk_out2"/>
+        <PARAMETER NAME="C_CLK_OUT2_PORT" VALUE="data_clk"/>
         <PARAMETER NAME="C_CLK_OUT3_PORT" VALUE="clk_out3"/>
         <PARAMETER NAME="C_CLK_OUT4_PORT" VALUE="clk_out4"/>
         <PARAMETER NAME="C_CLK_OUT5_PORT" VALUE="clk_out5"/>
@@ -862,11 +872,11 @@
         <PARAMETER NAME="CLKOUT1_SEQUENCE_NUMBER" VALUE="1"/>
         <PARAMETER NAME="CLKOUT1_USED" VALUE="true"/>
         <PARAMETER NAME="CLKOUT2_DRIVES" VALUE="BUFG"/>
-        <PARAMETER NAME="CLKOUT2_JITTER" VALUE="0.0"/>
+        <PARAMETER NAME="CLKOUT2_JITTER" VALUE="285.743"/>
         <PARAMETER NAME="CLKOUT2_MATCHED_ROUTING" VALUE="false"/>
-        <PARAMETER NAME="CLKOUT2_PHASE_ERROR" VALUE="0.0"/>
+        <PARAMETER NAME="CLKOUT2_PHASE_ERROR" VALUE="164.985"/>
         <PARAMETER NAME="CLKOUT2_REQUESTED_DUTY_CYCLE" VALUE="50.000"/>
-        <PARAMETER NAME="CLKOUT2_REQUESTED_OUT_FREQ" VALUE="100.000"/>
+        <PARAMETER NAME="CLKOUT2_REQUESTED_OUT_FREQ" VALUE="10.000"/>
         <PARAMETER NAME="CLKOUT2_REQUESTED_PHASE" VALUE="0.000"/>
         <PARAMETER NAME="CLKOUT2_SEQUENCE_NUMBER" VALUE="1"/>
         <PARAMETER NAME="CLKOUT2_USED" VALUE="false"/>
@@ -921,7 +931,7 @@
         <PARAMETER NAME="CLK_IN_SEL_PORT" VALUE="clk_in_sel"/>
         <PARAMETER NAME="CLK_OUT1_PORT" VALUE="clk_out1"/>
         <PARAMETER NAME="CLK_OUT1_USE_FINE_PS_GUI" VALUE="false"/>
-        <PARAMETER NAME="CLK_OUT2_PORT" VALUE="clk_out2"/>
+        <PARAMETER NAME="CLK_OUT2_PORT" VALUE="data_clk"/>
         <PARAMETER NAME="CLK_OUT2_USE_FINE_PS_GUI" VALUE="false"/>
         <PARAMETER NAME="CLK_OUT3_PORT" VALUE="clk_out3"/>
         <PARAMETER NAME="CLK_OUT3_USE_FINE_PS_GUI" VALUE="false"/>
@@ -1108,6 +1118,7 @@
             <CONNECTION INSTANCE="SPI_Control_ad4134_clock_generator" PORT="clk"/>
             <CONNECTION INSTANCE="LEDS_axi_gpio_0" PORT="s_axi_aclk"/>
             <CONNECTION INSTANCE="LEDS_c_counter_binary_0" PORT="CLK"/>
+            <CONNECTION INSTANCE="ad4134_data_0" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -1151,6 +1162,7 @@
             <CONNECTION INSTANCE="SPI_Control_ad4134_control_0" PORT="rstn"/>
             <CONNECTION INSTANCE="SPI_Control_ad4134_clock_generator" PORT="rstn"/>
             <CONNECTION INSTANCE="LEDS_axi_gpio_0" PORT="s_axi_aresetn"/>
+            <CONNECTION INSTANCE="ad4134_data_0" PORT="rst_n"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="0" NAME="peripheral_reset" POLARITY="ACTIVE_HIGH" RIGHT="0" SIGIS="rst"/>
@@ -3039,6 +3051,46 @@
         <PORT DIR="I" NAME="write" SIGIS="undef" SIGNAME="SPI_Control_ad4134_control_0_write">
           <CONNECTIONS>
             <CONNECTION INSTANCE="SPI_Control_ad4134_control_0" PORT="write"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/ad4134_data_0" HWVERSION="1.0" INSTANCE="ad4134_data_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="ad4134_data" VLNV="xilinx.com:module_ref:ad4134_data:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="DATA_WIDTH" VALUE="24"/>
+        <PARAMETER NAME="Component_Name" VALUE="ad4134fw_ad4134_data_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="50000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="Processing_Subsystem_clk_wiz_0_clk_out1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Processing_Subsystem_clk_wiz_0" PORT="clk_out1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="data_in0" SIGIS="undef"/>
+        <PORT DIR="I" NAME="data_in1" SIGIS="undef"/>
+        <PORT DIR="I" NAME="data_in2" SIGIS="undef"/>
+        <PORT DIR="I" NAME="data_in3" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="23" NAME="data_out0" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="23" NAME="data_out1" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="23" NAME="data_out2" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="23" NAME="data_out3" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" NAME="data_rdy" SIGIS="undef"/>
+        <PORT DIR="O" NAME="dclk_out" SIGIS="undef" SIGNAME="ad4134_data_0_dclk_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="dclk_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="odr_out" SIGIS="undef" SIGNAME="ad4134_data_0_odr_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="odr_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="rst_n" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="Processing_Subsystem_proc_sys_reset_0_peripheral_aresetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Processing_Subsystem_proc_sys_reset_0" PORT="peripheral_aresetn"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

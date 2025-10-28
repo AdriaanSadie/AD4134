@@ -59,7 +59,7 @@
     <Option Name="IPUserFilesDir" Val="$PIPUSERFILESDIR"/>
     <Option Name="IPStaticSourceDir" Val="$PIPUSERFILESDIR/ipstatic"/>
     <Option Name="EnableBDX" Val="FALSE"/>
-    <Option Name="WTXSimLaunchSim" Val="19"/>
+    <Option Name="WTXSimLaunchSim" Val="25"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
@@ -108,6 +108,12 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PPRDIR/../src/ad4134_data.vhd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sources_1/bd/ad4134fw/ad4134fw.bd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -119,6 +125,9 @@
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="ad4134fw.bd" FileRelPathName="ip/ad4134fw_ad4134_control_0_0/ad4134fw_ad4134_control_0_0.xci">
           <Proxy FileSetName="ad4134fw_ad4134_control_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="ad4134fw.bd" FileRelPathName="ip/ad4134fw_ad4134_data_0_0/ad4134fw_ad4134_data_0_0.xci">
+          <Proxy FileSetName="ad4134fw_ad4134_data_0_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="ad4134fw.bd" FileRelPathName="ip/ad4134fw_axi_gpio_0_0/ad4134fw_axi_gpio_0_0.xci">
           <Proxy FileSetName="ad4134fw_axi_gpio_0_0"/>
@@ -135,28 +144,17 @@
         <CompFileExtendedInfo CompFileName="ad4134fw.bd" FileRelPathName="ip/ad4134fw_processing_system7_0_0/ad4134fw_processing_system7_0_0.xci">
           <Proxy FileSetName="ad4134fw_processing_system7_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="ad4134fw.bd" FileRelPathName="ip/ad4134fw_smartconnect_0_0/ad4134fw_smartconnect_0_0.xci">
-          <Proxy FileSetName="ad4134fw_smartconnect_0_0"/>
-        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="ad4134fw.bd" FileRelPathName="ip/ad4134fw_spi_controller_0_0/ad4134fw_spi_controller_0_0.xci">
           <Proxy FileSetName="ad4134fw_spi_controller_0_0"/>
         </CompFileExtendedInfo>
       </File>
-      <File Path="$PGENDIR/sources_1/bd/ad4134fw/hdl/ad4134fw_wrapper.v">
+      <File Path="$PGENDIR/sources_1/bd/ad4134fw/hdl/ad4134fw_wrapper.vhd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
       <File Path="$PPRDIR/../src/ad4134_slave.vhd">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PPRDIR/../src/ad4134_data.vhd">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -225,7 +223,7 @@
         <Option Name="CosimPdi" Val=""/>
         <Option Name="CosimPlatform" Val=""/>
         <Option Name="CosimElf" Val=""/>
-        <Option Name="xsim.simulate.runtime" Val="10 us"/>
+        <Option Name="xsim.simulate.runtime" Val="100 us"/>
       </Config>
     </FileSet>
     <FileSet Name="utils_1" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
@@ -278,12 +276,6 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="ad4134fw_smartconnect_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ad4134fw_smartconnect_0_0" RelGenDir="$PGENDIR/ad4134fw_smartconnect_0_0">
-      <Config>
-        <Option Name="TopModule" Val="ad4134fw_smartconnect_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
     <FileSet Name="ad4134fw_c_counter_binary_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ad4134fw_c_counter_binary_0_0" RelGenDir="$PGENDIR/ad4134fw_c_counter_binary_0_0">
       <Config>
         <Option Name="TopModule" Val="ad4134fw_c_counter_binary_0_0"/>
@@ -293,6 +285,12 @@
     <FileSet Name="ad4134fw_spi_controller_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ad4134fw_spi_controller_0_0" RelGenDir="$PGENDIR/ad4134fw_spi_controller_0_0">
       <Config>
         <Option Name="TopModule" Val="ad4134fw_spi_controller_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="ad4134fw_ad4134_data_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ad4134fw_ad4134_data_0_0" RelGenDir="$PGENDIR/ad4134fw_ad4134_data_0_0">
+      <Config>
+        <Option Name="TopModule" Val="ad4134fw_ad4134_data_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -388,16 +386,6 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="ad4134fw_smartconnect_0_0_synth_1" Type="Ft3:Synth" SrcSet="ad4134fw_smartconnect_0_0" Part="xc7z010clg400-1" ConstrsSet="ad4134fw_smartconnect_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/ad4134fw_smartconnect_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/ad4134fw_smartconnect_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/ad4134fw_smartconnect_0_0_synth_1" ParallelReportGen="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2024"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
     <Run Id="ad4134fw_c_counter_binary_0_0_synth_1" Type="Ft3:Synth" SrcSet="ad4134fw_c_counter_binary_0_0" Part="xc7z010clg400-1" ConstrsSet="ad4134fw_c_counter_binary_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/ad4134fw_c_counter_binary_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/ad4134fw_c_counter_binary_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/ad4134fw_c_counter_binary_0_0_synth_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
@@ -411,6 +399,18 @@
     <Run Id="ad4134fw_spi_controller_0_0_synth_1" Type="Ft3:Synth" SrcSet="ad4134fw_spi_controller_0_0" Part="xc7z010clg400-1" ConstrsSet="ad4134fw_spi_controller_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/ad4134fw_spi_controller_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/ad4134fw_spi_controller_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/ad4134fw_spi_controller_0_0_synth_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2024"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="ad4134fw_ad4134_data_0_0_synth_1" Type="Ft3:Synth" SrcSet="ad4134fw_ad4134_data_0_0" Part="xc7z010clg400-1" ConstrsSet="ad4134fw_ad4134_data_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/ad4134fw_ad4134_data_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/ad4134fw_ad4134_data_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/ad4134fw_ad4134_data_0_0_synth_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -540,23 +540,6 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="ad4134fw_smartconnect_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="ad4134fw_smartconnect_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="ad4134fw_smartconnect_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/ad4134fw_smartconnect_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/ad4134fw_smartconnect_0_0_impl_1" ParallelReportGen="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2024"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2024"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
     <Run Id="ad4134fw_c_counter_binary_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="ad4134fw_c_counter_binary_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="ad4134fw_c_counter_binary_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/ad4134fw_c_counter_binary_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/ad4134fw_c_counter_binary_0_0_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2024"/>
@@ -577,6 +560,25 @@
     <Run Id="ad4134fw_spi_controller_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="ad4134fw_spi_controller_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="ad4134fw_spi_controller_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/ad4134fw_spi_controller_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/ad4134fw_spi_controller_0_0_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2024"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2024"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="ad4134fw_ad4134_data_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="ad4134fw_ad4134_data_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="ad4134fw_ad4134_data_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/ad4134fw_ad4134_data_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/ad4134fw_ad4134_data_0_0_impl_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2024">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>

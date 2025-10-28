@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-| Date             : Sat Oct 25 15:18:40 2025
+| Date             : Tue Oct 28 22:08:45 2025
 | Host             : DESKTOP-NG70LRJ running 64-bit major release  (build 9200)
 | Command          : report_power -file ad4134fw_wrapper_power_routed.rpt -pb ad4134fw_wrapper_power_summary_routed.pb -rpx ad4134fw_wrapper_power_routed.rpx
 | Design           : ad4134fw_wrapper
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.755        |
+| Total On-Chip Power (W)  | 1.756        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.635        |
+| Dynamic (W)              | 1.636        |
 | Device Static (W)        | 0.120        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 64.8         |
-| Junction Temperature (C) | 45.2         |
+| Max Ambient (C)          | 64.7         |
+| Junction Temperature (C) | 45.3         |
 | Confidence Level         | Medium       |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -53,19 +53,19 @@ Table of Contents
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
 | Clocks                  |     0.003 |        6 |       --- |             --- |
-| Slice Logic             |    <0.001 |     1748 |       --- |             --- |
-|   LUT as Logic          |    <0.001 |      508 |     17600 |            2.89 |
-|   Register              |    <0.001 |      807 |     35200 |            2.29 |
+| Slice Logic             |    <0.001 |     1781 |       --- |             --- |
+|   LUT as Logic          |    <0.001 |      524 |     17600 |            2.98 |
+|   Register              |    <0.001 |      822 |     35200 |            2.34 |
 |   CARRY4                |    <0.001 |       16 |      4400 |            0.36 |
 |   F7/F8 Muxes           |    <0.001 |        3 |     17600 |            0.02 |
-|   Others                |     0.000 |      248 |       --- |             --- |
+|   Others                |     0.000 |      249 |       --- |             --- |
 |   LUT as Shift Register |     0.000 |        2 |      6000 |            0.03 |
-| Signals                 |    <0.001 |     1251 |       --- |             --- |
+| Signals                 |    <0.001 |     1277 |       --- |             --- |
 | MMCM                    |     0.105 |        1 |         2 |           50.00 |
-| I/O                     |    <0.001 |       15 |       100 |           15.00 |
+| I/O                     |     0.001 |       17 |       100 |           17.00 |
 | PS7                     |     1.525 |        1 |       --- |             --- |
 | Static Power            |     0.120 |          |           |                 |
-| Total                   |     1.755 |          |           |                 |
+| Total                   |     1.756 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -75,7 +75,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.012 |       0.004 |      0.007 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.012 |       0.005 |      0.007 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.067 |       0.058 |      0.008 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -154,7 +154,7 @@ Table of Contents
 +----------------------------+-----------+
 | Name                       | Power (W) |
 +----------------------------+-----------+
-| ad4134fw_wrapper           |     1.635 |
+| ad4134fw_wrapper           |     1.636 |
 |   ad4134fw_i               |     1.635 |
 |     Processing_Subsystem   |     1.634 |
 |       clk_wiz_0            |     0.105 |

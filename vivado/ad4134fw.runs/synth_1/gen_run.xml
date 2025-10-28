@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1761398189" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/ad4134fw_wrapper.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1761681938" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/ad4134fw_wrapper.dcp">
+  <File Type="PA-TCL" Name="ad4134fw_wrapper.tcl"/>
   <File Type="REPORTS-TCL" Name="ad4134fw_wrapper_reports.tcl"/>
+  <File Type="RDS-RDS" Name="ad4134fw_wrapper.vds"/>
+  <File Type="RDS-PROPCONSTRS" Name="ad4134fw_wrapper_drc_synth.rpt"/>
   <File Type="RDS-UTIL" Name="ad4134fw_wrapper_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="ad4134fw_wrapper_utilization_synth.pb"/>
-  <File Type="PA-TCL" Name="ad4134fw_wrapper.tcl"/>
-  <File Type="RDS-RDS" Name="ad4134fw_wrapper.vds"/>
   <File Type="RDS-DCP" Name="ad4134fw_wrapper.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="ad4134fw_wrapper_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="ad4134fw_wrapper_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/../src/ad4134_clock_generator.vhd">
@@ -26,6 +29,12 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PPRDIR/../src/ad4134_data.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/bd/ad4134fw/ad4134fw.bd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -33,10 +42,9 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PGENDIR/sources_1/bd/ad4134fw/hdl/ad4134fw_wrapper.v">
+    <File Path="$PGENDIR/sources_1/bd/ad4134fw/hdl/ad4134fw_wrapper.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
@@ -80,16 +88,18 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024">
+      <Desc>Vivado Synthesis Defaults</Desc>
+    </StratHandle>
     <Step Id="synth_design"/>
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="ad4134fw_ad4134_control_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="ad4134fw_proc_sys_reset_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="ad4134fw_processing_system7_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="ad4134fw_axi_gpio_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="ad4134fw_clk_wiz_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="ad4134fw_smartconnect_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ad4134fw_processing_system7_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="ad4134fw_ad4134_clock_generat_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ad4134fw_clk_wiz_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ad4134fw_proc_sys_reset_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="ad4134fw_c_counter_binary_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="ad4134fw_spi_controller_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ad4134fw_ad4134_data_0_0"/>
 </GenRun>

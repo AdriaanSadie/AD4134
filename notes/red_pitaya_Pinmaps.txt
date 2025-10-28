@@ -20,3 +20,6 @@ Debug3 - M14 - Pin 17
 Clk_out - M15 - Pin 18
 
 HB - G18 - Pin 4
+
+DCLK_OUT - J16 - Pin 16
+ODR_OUT - L17 - Pin 14

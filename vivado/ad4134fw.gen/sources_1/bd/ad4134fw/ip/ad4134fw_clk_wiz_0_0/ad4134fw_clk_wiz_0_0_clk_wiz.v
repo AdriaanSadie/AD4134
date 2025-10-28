@@ -88,7 +88,7 @@ wire clk_in2_ad4134fw_clk_wiz_0_0;
   //    * Unused outputs are labeled unused
 
   wire        clk_out1_ad4134fw_clk_wiz_0_0;
-  wire        clk_out2_ad4134fw_clk_wiz_0_0;
+  wire        data_clk_ad4134fw_clk_wiz_0_0;
   wire        clk_out3_ad4134fw_clk_wiz_0_0;
   wire        clk_out4_ad4134fw_clk_wiz_0_0;
   wire        clk_out5_ad4134fw_clk_wiz_0_0;

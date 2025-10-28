@@ -52,7 +52,7 @@
 
 (* X_CORE_INFO = "bd_5956,Vivado 2024.2" *)
 (* CHECK_LICENSE_TYPE = "ad4134fw_smartconnect_0_0,bd_5956,{}" *)
-(* CORE_GENERATION_INFO = "ad4134fw_smartconnect_0_0,bd_5956,{x_ipProduct=Vivado 2024.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=smartconnect,x_ipVersion=1.0,x_ipCoreRevision=25,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED}" *)
+(* CORE_GENERATION_INFO = "ad4134fw_smartconnect_0_0,bd_5956,{x_ipProduct=Vivado 2024.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=smartconnect,x_ipVersion=1.0,x_ipCoreRevision=25,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module ad4134fw_smartconnect_0_0 (
   aclk,

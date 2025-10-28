@@ -34,7 +34,7 @@ architecture rtl of ad4134_data is
     constant ODR_HIGH_TIME  : integer := 3;
     constant ODR_LOW_TIME   : integer := 24;
     constant ODR_WAIT_FIRST : integer := 1;
-    constant ODR_WAIT_LAST  : integer := 2;
+    constant ODR_WAIT_LAST  : integer := 10;
 
     -- Internal control registers:
     signal odr_cnt   : integer range 0 to ODR_LOW_TIME + ODR_HIGH_TIME;
@@ -48,21 +48,47 @@ architecture rtl of ad4134_data is
     signal shift_reg3 : std_logic_vector(DATA_WIDTH - 1 downto 0);
 
     -- ODR Tracker signals:
-    constant ODR_TOTAL_CLKS : integer := ODR_HIGH_TIME + ODR_WAIT_FIRST + ODR_LOW_TIME + ODR_WAIT_LAST;
+    constant ODR_TOTAL_CLKS : integer := ODR_HIGH_TIME + ODR_WAIT_FIRST + ODR_LOW_TIME + ODR_WAIT_LAST; -- 30 clock cycles, @ 10 MHz that is 
     signal   odr_tracker    : integer range 0 to ODR_TOTAL_CLKS;
 
     -- Flags:
     signal dclk_active : std_logic;
 
+    -- Slower clocks for data interface:
+    signal slow_clk : std_logic;
+    constant SLOW_CLK_MAX : integer := 50;
+    signal slow_clk_counter : integer range 0 to SLOW_CLK_MAX;
+
 begin
 
-    dclk_int <= clk; -- FOR NOW. Have to add generics to set up the clock and sample speeds
+    dclk_int <= slow_clk; -- FOR NOW. Have to add generics to set up the clock and sample speeds
 
     dclk_out <= dclk_int when dclk_active = '1' else '0';
     
     odr_out <= odr_int;
 
-    odr_p : process(clk, rst_n) is
+
+    slow_clk_p : process(clk, rst_n) is
+    begin
+        if (rst_n = '0') then
+
+            slow_clk <= '0';
+            slow_clk_counter <= 0;
+
+        elsif (rising_edge(clk)) then
+
+            if (slow_clk_counter < SLOW_CLK_MAX) then
+                slow_clk_counter <= slow_clk_counter + 1;
+            else
+                slow_clk_counter <= 0;
+                slow_clk <= not slow_clk;
+            end if;
+
+        end if;
+    end process;
+
+
+    odr_p : process(slow_clk, rst_n) is
     begin
         if (rst_n = '0') then
 
@@ -72,7 +98,7 @@ begin
             -- Flags:
             dclk_active <= '0';
 
-        elsif (rising_edge(clk)) then
+        elsif (rising_edge(slow_clk)) then
 
             case odr_tracker is
 

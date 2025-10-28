@@ -2,7 +2,7 @@
 -- Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
--- Date        : Sat Oct 25 15:10:30 2025
+-- Date        : Tue Oct 28 21:31:55 2025
 -- Host        : DESKTOP-NG70LRJ running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_spi_controller_0_0/ad4134fw_spi_controller_0_0_sim_netlist.vhdl
@@ -868,26 +868,26 @@ entity ad4134fw_spi_controller_0_0 is
   attribute NotValidForBitStream of ad4134fw_spi_controller_0_0 : entity is true;
   attribute CHECK_LICENSE_TYPE : string;
   attribute CHECK_LICENSE_TYPE of ad4134fw_spi_controller_0_0 : entity is "ad4134fw_spi_controller_0_0,spi_controller,{}";
-  attribute DowngradeIPIdentifiedWarnings : string;
-  attribute DowngradeIPIdentifiedWarnings of ad4134fw_spi_controller_0_0 : entity is "yes";
-  attribute IP_DEFINITION_SOURCE : string;
-  attribute IP_DEFINITION_SOURCE of ad4134fw_spi_controller_0_0 : entity is "module_ref";
-  attribute X_CORE_INFO : string;
-  attribute X_CORE_INFO of ad4134fw_spi_controller_0_0 : entity is "spi_controller,Vivado 2024.2";
+  attribute downgradeipidentifiedwarnings : string;
+  attribute downgradeipidentifiedwarnings of ad4134fw_spi_controller_0_0 : entity is "yes";
+  attribute ip_definition_source : string;
+  attribute ip_definition_source of ad4134fw_spi_controller_0_0 : entity is "module_ref";
+  attribute x_core_info : string;
+  attribute x_core_info of ad4134fw_spi_controller_0_0 : entity is "spi_controller,Vivado 2024.2";
 end ad4134fw_spi_controller_0_0;
 
 architecture STRUCTURE of ad4134fw_spi_controller_0_0 is
-  attribute X_INTERFACE_INFO : string;
-  attribute X_INTERFACE_INFO of clk : signal is "xilinx.com:signal:clock:1.0 clk CLK";
-  attribute X_INTERFACE_MODE : string;
-  attribute X_INTERFACE_MODE of clk : signal is "slave";
-  attribute X_INTERFACE_PARAMETER : string;
-  attribute X_INTERFACE_PARAMETER of clk : signal is "XIL_INTERFACENAME clk, ASSOCIATED_RESET rstn, FREQ_HZ 50000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /Processing_Subsystem/clk_wiz_0_clk_out1, INSERT_VIP 0";
-  attribute X_INTERFACE_INFO of rstn : signal is "xilinx.com:signal:reset:1.0 rstn RST";
-  attribute X_INTERFACE_MODE of rstn : signal is "slave";
-  attribute X_INTERFACE_PARAMETER of rstn : signal is "XIL_INTERFACENAME rstn, POLARITY ACTIVE_LOW, INSERT_VIP 0";
+  attribute x_interface_info : string;
+  attribute x_interface_info of clk : signal is "xilinx.com:signal:clock:1.0 clk CLK";
+  attribute x_interface_mode : string;
+  attribute x_interface_mode of clk : signal is "slave clk";
+  attribute x_interface_parameter : string;
+  attribute x_interface_parameter of clk : signal is "XIL_INTERFACENAME clk, ASSOCIATED_RESET rstn, FREQ_HZ 50000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /Processing_Subsystem/clk_wiz_0_clk_out1, INSERT_VIP 0";
+  attribute x_interface_info of rstn : signal is "xilinx.com:signal:reset:1.0 rstn RST";
+  attribute x_interface_mode of rstn : signal is "slave rstn";
+  attribute x_interface_parameter of rstn : signal is "XIL_INTERFACENAME rstn, POLARITY ACTIVE_LOW, INSERT_VIP 0";
 begin
-inst: entity work.ad4134fw_spi_controller_0_0_spi_controller
+U0: entity work.ad4134fw_spi_controller_0_0_spi_controller
      port map (
       clk => clk,
       cs_n => cs_n,

@@ -2,10 +2,10 @@
 -- Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
--- Date        : Sat Oct 25 15:10:59 2025
+-- Date        : Tue Oct 28 21:32:22 2025
 -- Host        : DESKTOP-NG70LRJ running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub
---               c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/ad4134fw_smartconnect_0_0_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top ad4134fw_smartconnect_0_0 -prefix
+--               ad4134fw_smartconnect_0_0_ ad4134fw_smartconnect_0_0_stub.vhdl
 -- Design      : ad4134fw_smartconnect_0_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z010clg400-1
@@ -79,7 +79,7 @@ entity ad4134fw_smartconnect_0_0 is
   attribute CHECK_LICENSE_TYPE : string;
   attribute CHECK_LICENSE_TYPE of ad4134fw_smartconnect_0_0 : entity is "ad4134fw_smartconnect_0_0,bd_5956,{}";
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of ad4134fw_smartconnect_0_0 : entity is "ad4134fw_smartconnect_0_0,bd_5956,{x_ipProduct=Vivado 2024.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=smartconnect,x_ipVersion=1.0,x_ipCoreRevision=25,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED}";
+  attribute CORE_GENERATION_INFO of ad4134fw_smartconnect_0_0 : entity is "ad4134fw_smartconnect_0_0,bd_5956,{x_ipProduct=Vivado 2024.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=smartconnect,x_ipVersion=1.0,x_ipCoreRevision=25,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED}";
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of ad4134fw_smartconnect_0_0 : entity is "yes";
 end ad4134fw_smartconnect_0_0;

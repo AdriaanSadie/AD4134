@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x7CD2B09AC3AC2612",
+      "boundary_crc": "0x912B7571030D8BA5",
       "device": "xc7z010clg400-1",
       "gen_directory": "../../../../ad4134fw.gen/sources_1/bd/ad4134fw",
       "name": "ad4134fw",
@@ -27,7 +27,8 @@
         "xlslice_1": "",
         "c_counter_binary_0": "",
         "axi_gpio_0": ""
-      }
+      },
+      "ad4134_data_0": ""
     },
     "ports": {
       "spi_clk": {
@@ -70,6 +71,12 @@
         "direction": "O",
         "left": "0",
         "right": "0"
+      },
+      "dclk_out": {
+        "direction": "O"
+      },
+      "odr_out": {
+        "direction": "O"
       }
     },
     "components": {
@@ -251,11 +258,38 @@
               "CLKOUT1_JITTER": {
                 "value": "192.113"
               },
+              "CLKOUT1_PHASE_ERROR": {
+                "value": "164.985"
+              },
               "CLKOUT1_REQUESTED_OUT_FREQ": {
                 "value": "50.000"
               },
+              "CLKOUT2_JITTER": {
+                "value": "285.743"
+              },
+              "CLKOUT2_PHASE_ERROR": {
+                "value": "164.985"
+              },
+              "CLKOUT2_REQUESTED_OUT_FREQ": {
+                "value": "10.000"
+              },
+              "CLKOUT2_USED": {
+                "value": "false"
+              },
+              "CLK_OUT2_PORT": {
+                "value": "data_clk"
+              },
+              "MMCM_CLKFBOUT_MULT_F": {
+                "value": "20.000"
+              },
               "MMCM_CLKOUT0_DIVIDE_F": {
                 "value": "20.000"
+              },
+              "MMCM_CLKOUT1_DIVIDE": {
+                "value": "1"
+              },
+              "NUM_OUT_CLKS": {
+                "value": "1"
               },
               "USE_LOCKED": {
                 "value": "false"
@@ -830,6 +864,89 @@
             ]
           }
         }
+      },
+      "ad4134_data_0": {
+        "vlnv": "xilinx.com:module_ref:ad4134_data:1.0",
+        "ip_revision": "1",
+        "xci_name": "ad4134fw_ad4134_data_0_0",
+        "xci_path": "ip\\ad4134fw_ad4134_data_0_0\\ad4134fw_ad4134_data_0_0.xci",
+        "inst_hier_path": "ad4134_data_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "ad4134_data",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "50000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "/Processing_Subsystem/clk_wiz_0_clk_out1",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "rst_n": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "data_in0": {
+            "direction": "I"
+          },
+          "data_in1": {
+            "direction": "I"
+          },
+          "data_in2": {
+            "direction": "I"
+          },
+          "data_in3": {
+            "direction": "I"
+          },
+          "dclk_out": {
+            "direction": "O"
+          },
+          "odr_out": {
+            "direction": "O"
+          },
+          "data_out0": {
+            "direction": "O",
+            "left": "23",
+            "right": "0"
+          },
+          "data_out1": {
+            "direction": "O",
+            "left": "23",
+            "right": "0"
+          },
+          "data_out2": {
+            "direction": "O",
+            "left": "23",
+            "right": "0"
+          },
+          "data_out3": {
+            "direction": "O",
+            "left": "23",
+            "right": "0"
+          },
+          "data_rdy": {
+            "direction": "O"
+          }
+        }
       }
     },
     "interface_nets": {
@@ -845,14 +962,16 @@
         "ports": [
           "Processing_Subsystem/global_clk",
           "SPI_Control/clk",
-          "LEDS/s_axi_aclk"
+          "LEDS/s_axi_aclk",
+          "ad4134_data_0/clk"
         ]
       },
       "Processing_Subsystem_global_rst_n": {
         "ports": [
           "Processing_Subsystem/global_rst_n",
           "SPI_Control/rstn",
-          "LEDS/s_axi_aresetn"
+          "LEDS/s_axi_aresetn",
+          "ad4134_data_0/rst_n"
         ]
       },
       "ad4134_clock_generat_0_spi_clk": {
@@ -865,6 +984,18 @@
         "ports": [
           "SPI_Control/debug",
           "debug"
+        ]
+      },
+      "ad4134_data_0_dclk_out": {
+        "ports": [
+          "ad4134_data_0/dclk_out",
+          "dclk_out"
+        ]
+      },
+      "ad4134_data_0_odr_out": {
+        "ports": [
+          "ad4134_data_0/odr_out",
+          "odr_out"
         ]
       },
       "miso_1": {

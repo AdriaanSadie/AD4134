@@ -52,7 +52,7 @@
 
 (* X_CORE_INFO = "xlslice_v1_0_4_xlslice,Vivado 2024.2" *)
 (* CHECK_LICENSE_TYPE = "ad4134fw_xlslice_0_0,xlslice_v1_0_4_xlslice,{}" *)
-(* CORE_GENERATION_INFO = "ad4134fw_xlslice_0_0,xlslice_v1_0_4_xlslice,{x_ipProduct=Vivado 2024.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=xlslice,x_ipVersion=1.0,x_ipCoreRevision=4,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,DIN_WIDTH=32,DIN_FROM=6,DIN_TO=0}" *)
+(* CORE_GENERATION_INFO = "ad4134fw_xlslice_0_0,xlslice_v1_0_4_xlslice,{x_ipProduct=Vivado 2024.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=xlslice,x_ipVersion=1.0,x_ipCoreRevision=4,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,DIN_WIDTH=32,DIN_FROM=6,DIN_TO=0}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module ad4134fw_xlslice_0_0 (
   Din,
