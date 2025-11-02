@@ -59,6 +59,9 @@ architecture rtl of ad4134_data is
     constant SLOW_CLK_MAX : integer := 50;
     signal slow_clk_counter : integer range 0 to SLOW_CLK_MAX;
 
+    -- Read flags:
+    signal data_rdy_flag : std_logic;
+
 begin
 
     dclk_int <= slow_clk; -- FOR NOW. Have to add generics to set up the clock and sample speeds
@@ -142,5 +145,83 @@ begin
 
         end if;
     end process;
+
+    read_p : process(slow_clk, rst_n) is 
+    begin
+        if (rst_n = '0') then
+
+            bit_count <= DATA_WIDTH;
+
+            shift_reg0 <= (others => '0');
+            shift_reg1 <= (others => '0');
+            shift_reg2 <= (others => '0');
+            shift_reg3 <= (others => '0');
+
+            data_out0 <= (others => '0');
+            data_out1 <= (others => '0');
+            data_out2 <= (others => '0');
+            data_out3 <= (others => '0');
+
+            data_rdy <= '0';
+
+            data_rdy_flag <= '0';
+
+        elsif (falling_edge(slow_clk)) then
+
+            if (dclk_active = '1') then
+
+                if (bit_count > 0) then
+
+                    shift_reg0(bit_count - 1) <= data_in0;
+                    shift_reg1(bit_count - 1) <= data_in1; 
+                    shift_reg2(bit_count - 1) <= data_in2; 
+                    shift_reg3(bit_count - 1) <= data_in3; 
+
+                    bit_count <= bit_count - 1;
+
+                else
+
+                    data_out0 <= shift_reg0;
+                    data_out1 <= shift_reg1;
+                    data_out2 <= shift_reg2;
+                    data_out3 <= shift_reg3;
+
+                    bit_count <= DATA_WIDTH;
+
+
+                end if;
+
+                data_rdy <= '0';
+
+            else
+
+                if (bit_count = 0 and data_rdy_flag = '0') then -- this means the previous else was skipped
+
+                    data_out0 <= shift_reg0;
+                    data_out1 <= shift_reg1;
+                    data_out2 <= shift_reg2;
+                    data_out3 <= shift_reg3;
+
+                    data_rdy_flag <= '1';
+
+                    bit_count <= DATA_WIDTH;
+
+                elsif (data_rdy_flag = '1') then
+
+                    data_rdy <= '1';
+                    data_rdy_flag <= '0';
+
+                else
+
+                    data_rdy_flag <= '0';
+                    data_rdy <= '0';
+
+                end if;
+
+            end if;
+
+        end if;
+    end process;
+
 
 end rtl;

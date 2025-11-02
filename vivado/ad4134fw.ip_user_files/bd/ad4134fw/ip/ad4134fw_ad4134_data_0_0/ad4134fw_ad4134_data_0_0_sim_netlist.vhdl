@@ -2,7 +2,7 @@
 -- Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
--- Date        : Tue Oct 28 21:31:55 2025
+-- Date        : Tue Oct 28 22:06:24 2025
 -- Host        : DESKTOP-NG70LRJ running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_ad4134_data_0_0/ad4134fw_ad4134_data_0_0_sim_netlist.vhdl
@@ -28,36 +28,36 @@ end ad4134fw_ad4134_data_0_0_ad4134_data;
 
 architecture STRUCTURE of ad4134fw_ad4134_data_0_0_ad4134_data is
   signal \dclk_active__0\ : STD_LOGIC;
+  signal dclk_active_n_0 : STD_LOGIC;
   signal odr_int_i_1_n_0 : STD_LOGIC;
   signal odr_int_n_0 : STD_LOGIC;
   signal \odr_tracker[0]_i_1_n_0\ : STD_LOGIC;
-  signal odr_tracker_reg : STD_LOGIC_VECTOR ( 4 downto 0 );
-  signal p_0_in : STD_LOGIC;
-  signal \p_0_in__0\ : STD_LOGIC_VECTOR ( 4 downto 1 );
-  attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of odr_int : label is "soft_lutpair0";
-  attribute SOFT_HLUTNM of \odr_tracker[0]_i_1\ : label is "soft_lutpair0";
-  attribute SOFT_HLUTNM of \odr_tracker[1]_i_1\ : label is "soft_lutpair1";
-  attribute SOFT_HLUTNM of \odr_tracker[2]_i_1\ : label is "soft_lutpair2";
-  attribute SOFT_HLUTNM of \odr_tracker[3]_i_1\ : label is "soft_lutpair1";
-  attribute SOFT_HLUTNM of \odr_tracker[4]_i_1\ : label is "soft_lutpair2";
+  signal odr_tracker_reg : STD_LOGIC_VECTOR ( 5 downto 0 );
+  signal p_0_in : STD_LOGIC_VECTOR ( 5 downto 1 );
+  signal \p_0_in__0\ : STD_LOGIC_VECTOR ( 5 downto 1 );
+  signal slow_clk : STD_LOGIC;
+  signal \slow_clk_counter[0]_i_1_n_0\ : STD_LOGIC;
+  signal slow_clk_counter_reg : STD_LOGIC_VECTOR ( 5 downto 1 );
+  signal \slow_clk_counter_reg_n_0_[0]\ : STD_LOGIC;
+  signal slow_clk_i_1_n_0 : STD_LOGIC;
 begin
-dclk_active: unisim.vcomponents.LUT3
+dclk_active: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"7E"
+      INIT => X"007E"
     )
         port map (
-      I0 => odr_tracker_reg(4),
+      I0 => odr_tracker_reg(2),
       I1 => odr_tracker_reg(3),
-      I2 => odr_tracker_reg(2),
-      O => p_0_in
+      I2 => odr_tracker_reg(4),
+      I3 => odr_tracker_reg(5),
+      O => dclk_active_n_0
     );
 dclk_active_reg: unisim.vcomponents.FDCE
      port map (
-      C => clk,
+      C => slow_clk,
       CE => '1',
       CLR => odr_int_i_1_n_0,
-      D => p_0_in,
+      D => dclk_active_n_0,
       Q => \dclk_active__0\
     );
 dclk_out_INST_0: unisim.vcomponents.LUT2
@@ -66,19 +66,20 @@ dclk_out_INST_0: unisim.vcomponents.LUT2
     )
         port map (
       I0 => \dclk_active__0\,
-      I1 => clk,
+      I1 => slow_clk,
       O => dclk_out
     );
-odr_int: unisim.vcomponents.LUT5
+odr_int: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"00000111"
+      INIT => X"0000000000000111"
     )
         port map (
-      I0 => odr_tracker_reg(3),
-      I1 => odr_tracker_reg(4),
-      I2 => odr_tracker_reg(1),
-      I3 => odr_tracker_reg(0),
+      I0 => odr_tracker_reg(4),
+      I1 => odr_tracker_reg(5),
+      I2 => odr_tracker_reg(0),
+      I3 => odr_tracker_reg(1),
       I4 => odr_tracker_reg(2),
+      I5 => odr_tracker_reg(3),
       O => odr_int_n_0
     );
 odr_int_i_1: unisim.vcomponents.LUT1
@@ -94,78 +95,95 @@ odr_int_reg: unisim.vcomponents.FDCE
       INIT => '0'
     )
         port map (
-      C => clk,
+      C => slow_clk,
       CE => '1',
       CLR => odr_int_i_1_n_0,
       D => odr_int_n_0,
       Q => odr_out
     );
-\odr_tracker[0]_i_1\: unisim.vcomponents.LUT5
+\odr_tracker[0]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"00007FFF"
+      INIT => X"0000000055555777"
     )
         port map (
-      I0 => odr_tracker_reg(4),
-      I1 => odr_tracker_reg(3),
+      I0 => odr_tracker_reg(5),
+      I1 => odr_tracker_reg(4),
       I2 => odr_tracker_reg(2),
       I3 => odr_tracker_reg(1),
-      I4 => odr_tracker_reg(0),
+      I4 => odr_tracker_reg(3),
+      I5 => odr_tracker_reg(0),
       O => \odr_tracker[0]_i_1_n_0\
     );
-\odr_tracker[1]_i_1\: unisim.vcomponents.LUT5
+\odr_tracker[1]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"1555AAAA"
+      INIT => X"1111222211152A2A"
     )
         port map (
       I0 => odr_tracker_reg(0),
-      I1 => odr_tracker_reg(4),
-      I2 => odr_tracker_reg(3),
+      I1 => odr_tracker_reg(5),
+      I2 => odr_tracker_reg(4),
       I3 => odr_tracker_reg(2),
       I4 => odr_tracker_reg(1),
+      I5 => odr_tracker_reg(3),
       O => \p_0_in__0\(1)
     );
-\odr_tracker[2]_i_1\: unisim.vcomponents.LUT5
+\odr_tracker[2]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"15AAFF00"
+      INIT => X"11223300112A3F00"
     )
         port map (
       I0 => odr_tracker_reg(0),
-      I1 => odr_tracker_reg(4),
-      I2 => odr_tracker_reg(3),
+      I1 => odr_tracker_reg(5),
+      I2 => odr_tracker_reg(4),
       I3 => odr_tracker_reg(2),
       I4 => odr_tracker_reg(1),
+      I5 => odr_tracker_reg(3),
       O => \p_0_in__0\(2)
     );
 \odr_tracker[3]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"1AF0F0F0"
+      INIT => X"13332000"
     )
         port map (
       I0 => odr_tracker_reg(0),
-      I1 => odr_tracker_reg(4),
-      I2 => odr_tracker_reg(3),
-      I3 => odr_tracker_reg(2),
-      I4 => odr_tracker_reg(1),
+      I1 => odr_tracker_reg(5),
+      I2 => odr_tracker_reg(2),
+      I3 => odr_tracker_reg(1),
+      I4 => odr_tracker_reg(3),
       O => \p_0_in__0\(3)
     );
-\odr_tracker[4]_i_1\: unisim.vcomponents.LUT5
+\odr_tracker[4]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"2CCCCCCC"
+      INIT => X"1230303030303030"
     )
         port map (
       I0 => odr_tracker_reg(0),
-      I1 => odr_tracker_reg(4),
-      I2 => odr_tracker_reg(3),
+      I1 => odr_tracker_reg(5),
+      I2 => odr_tracker_reg(4),
       I3 => odr_tracker_reg(2),
       I4 => odr_tracker_reg(1),
+      I5 => odr_tracker_reg(3),
       O => \p_0_in__0\(4)
+    );
+\odr_tracker[5]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"20000000000C0C0C"
+    )
+        port map (
+      I0 => odr_tracker_reg(0),
+      I1 => odr_tracker_reg(5),
+      I2 => odr_tracker_reg(4),
+      I3 => odr_tracker_reg(2),
+      I4 => odr_tracker_reg(1),
+      I5 => odr_tracker_reg(3),
+      O => \p_0_in__0\(5)
     );
 \odr_tracker_reg[0]\: unisim.vcomponents.FDCE
     generic map(
       INIT => '0'
     )
         port map (
-      C => clk,
+      C => slow_clk,
       CE => '1',
       CLR => odr_int_i_1_n_0,
       D => \odr_tracker[0]_i_1_n_0\,
@@ -176,7 +194,7 @@ odr_int_reg: unisim.vcomponents.FDCE
       INIT => '0'
     )
         port map (
-      C => clk,
+      C => slow_clk,
       CE => '1',
       CLR => odr_int_i_1_n_0,
       D => \p_0_in__0\(1),
@@ -187,7 +205,7 @@ odr_int_reg: unisim.vcomponents.FDCE
       INIT => '0'
     )
         port map (
-      C => clk,
+      C => slow_clk,
       CE => '1',
       CLR => odr_int_i_1_n_0,
       D => \p_0_in__0\(2),
@@ -198,7 +216,7 @@ odr_int_reg: unisim.vcomponents.FDCE
       INIT => '0'
     )
         port map (
-      C => clk,
+      C => slow_clk,
       CE => '1',
       CLR => odr_int_i_1_n_0,
       D => \p_0_in__0\(3),
@@ -209,11 +227,189 @@ odr_int_reg: unisim.vcomponents.FDCE
       INIT => '0'
     )
         port map (
-      C => clk,
+      C => slow_clk,
       CE => '1',
       CLR => odr_int_i_1_n_0,
       D => \p_0_in__0\(4),
       Q => odr_tracker_reg(4)
+    );
+\odr_tracker_reg[5]\: unisim.vcomponents.FDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => slow_clk,
+      CE => '1',
+      CLR => odr_int_i_1_n_0,
+      D => \p_0_in__0\(5),
+      Q => odr_tracker_reg(5)
+    );
+\slow_clk_counter[0]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"000000007777777F"
+    )
+        port map (
+      I0 => slow_clk_counter_reg(5),
+      I1 => slow_clk_counter_reg(4),
+      I2 => slow_clk_counter_reg(3),
+      I3 => slow_clk_counter_reg(1),
+      I4 => slow_clk_counter_reg(2),
+      I5 => \slow_clk_counter_reg_n_0_[0]\,
+      O => \slow_clk_counter[0]_i_1_n_0\
+    );
+\slow_clk_counter[1]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"15152A2A15152AAA"
+    )
+        port map (
+      I0 => \slow_clk_counter_reg_n_0_[0]\,
+      I1 => slow_clk_counter_reg(5),
+      I2 => slow_clk_counter_reg(4),
+      I3 => slow_clk_counter_reg(3),
+      I4 => slow_clk_counter_reg(1),
+      I5 => slow_clk_counter_reg(2),
+      O => p_0_in(1)
+    );
+\slow_clk_counter[2]_i_1\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"153F2A00"
+    )
+        port map (
+      I0 => \slow_clk_counter_reg_n_0_[0]\,
+      I1 => slow_clk_counter_reg(5),
+      I2 => slow_clk_counter_reg(4),
+      I3 => slow_clk_counter_reg(1),
+      I4 => slow_clk_counter_reg(2),
+      O => p_0_in(2)
+    );
+\slow_clk_counter[3]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"152A3F003F003F00"
+    )
+        port map (
+      I0 => \slow_clk_counter_reg_n_0_[0]\,
+      I1 => slow_clk_counter_reg(5),
+      I2 => slow_clk_counter_reg(4),
+      I3 => slow_clk_counter_reg(3),
+      I4 => slow_clk_counter_reg(1),
+      I5 => slow_clk_counter_reg(2),
+      O => p_0_in(3)
+    );
+\slow_clk_counter[4]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"1A303030303030F0"
+    )
+        port map (
+      I0 => \slow_clk_counter_reg_n_0_[0]\,
+      I1 => slow_clk_counter_reg(5),
+      I2 => slow_clk_counter_reg(4),
+      I3 => slow_clk_counter_reg(3),
+      I4 => slow_clk_counter_reg(1),
+      I5 => slow_clk_counter_reg(2),
+      O => p_0_in(4)
+    );
+\slow_clk_counter[5]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"2C0C0C0C0C0C0CCC"
+    )
+        port map (
+      I0 => \slow_clk_counter_reg_n_0_[0]\,
+      I1 => slow_clk_counter_reg(5),
+      I2 => slow_clk_counter_reg(4),
+      I3 => slow_clk_counter_reg(3),
+      I4 => slow_clk_counter_reg(1),
+      I5 => slow_clk_counter_reg(2),
+      O => p_0_in(5)
+    );
+\slow_clk_counter_reg[0]\: unisim.vcomponents.FDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => clk,
+      CE => '1',
+      CLR => odr_int_i_1_n_0,
+      D => \slow_clk_counter[0]_i_1_n_0\,
+      Q => \slow_clk_counter_reg_n_0_[0]\
+    );
+\slow_clk_counter_reg[1]\: unisim.vcomponents.FDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => clk,
+      CE => '1',
+      CLR => odr_int_i_1_n_0,
+      D => p_0_in(1),
+      Q => slow_clk_counter_reg(1)
+    );
+\slow_clk_counter_reg[2]\: unisim.vcomponents.FDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => clk,
+      CE => '1',
+      CLR => odr_int_i_1_n_0,
+      D => p_0_in(2),
+      Q => slow_clk_counter_reg(2)
+    );
+\slow_clk_counter_reg[3]\: unisim.vcomponents.FDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => clk,
+      CE => '1',
+      CLR => odr_int_i_1_n_0,
+      D => p_0_in(3),
+      Q => slow_clk_counter_reg(3)
+    );
+\slow_clk_counter_reg[4]\: unisim.vcomponents.FDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => clk,
+      CE => '1',
+      CLR => odr_int_i_1_n_0,
+      D => p_0_in(4),
+      Q => slow_clk_counter_reg(4)
+    );
+\slow_clk_counter_reg[5]\: unisim.vcomponents.FDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => clk,
+      CE => '1',
+      CLR => odr_int_i_1_n_0,
+      D => p_0_in(5),
+      Q => slow_clk_counter_reg(5)
+    );
+slow_clk_i_1: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"7777777F88888880"
+    )
+        port map (
+      I0 => slow_clk_counter_reg(5),
+      I1 => slow_clk_counter_reg(4),
+      I2 => slow_clk_counter_reg(3),
+      I3 => slow_clk_counter_reg(1),
+      I4 => slow_clk_counter_reg(2),
+      I5 => slow_clk,
+      O => slow_clk_i_1_n_0
+    );
+slow_clk_reg: unisim.vcomponents.FDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => clk,
+      CE => '1',
+      CLR => odr_int_i_1_n_0,
+      D => slow_clk_i_1_n_0,
+      Q => slow_clk
     );
 end STRUCTURE;
 library IEEE;
@@ -255,7 +451,7 @@ architecture STRUCTURE of ad4134fw_ad4134_data_0_0 is
   attribute x_interface_mode : string;
   attribute x_interface_mode of clk : signal is "slave clk";
   attribute x_interface_parameter : string;
-  attribute x_interface_parameter of clk : signal is "XIL_INTERFACENAME clk, FREQ_HZ 10000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /Processing_Subsystem/clk_wiz_0_clk_out1, INSERT_VIP 0";
+  attribute x_interface_parameter of clk : signal is "XIL_INTERFACENAME clk, FREQ_HZ 50000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /Processing_Subsystem/clk_wiz_0_clk_out1, INSERT_VIP 0";
   attribute x_interface_info of rst_n : signal is "xilinx.com:signal:reset:1.0 rst_n RST";
   attribute x_interface_mode of rst_n : signal is "slave rst_n";
   attribute x_interface_parameter of rst_n : signal is "XIL_INTERFACENAME rst_n, POLARITY ACTIVE_LOW, INSERT_VIP 0";

@@ -7,14 +7,14 @@ end ad4134_data_tb;
 
 architecture behav of ad4134_data_tb is
 
-    constant CLK_PERIOD : time := 100 ns; -- 10 MHz
+    constant CLK_PERIOD : time := 10 ns; -- 10 MHz
 
     signal clk_tb       : std_logic;
     signal rst_n_tb     : std_logic;
-    signal data_in0_tb  : std_logic;
-    signal data_in1_tb  : std_logic;
-    signal data_in2_tb  : std_logic;
-    signal data_in3_tb  : std_logic;
+    signal data_in0_tb  : std_logic := '0';
+    signal data_in1_tb  : std_logic := '0';
+    signal data_in2_tb  : std_logic := '0';
+    signal data_in3_tb  : std_logic := '0';
     signal dclk_out_tb  : std_logic;
     signal odr_out_tb   : std_logic;
     signal data_out0_tb : std_logic_vector(23 downto 0);
@@ -22,6 +22,12 @@ architecture behav of ad4134_data_tb is
     signal data_out2_tb : std_logic_vector(23 downto 0);
     signal data_out3_tb : std_logic_vector(23 downto 0);
     signal data_rdy_tb  : std_logic;
+
+    constant test_data0 : std_logic_vector(23 downto 0) := x"ABCDEF";
+    constant test_data1 : std_logic_vector(23 downto 0) := x"123456";
+    constant test_data2 : std_logic_vector(23 downto 0) := x"A5A5A5";
+    constant test_data3 : std_logic_vector(23 downto 0) := x"BABBAB";
+
 
 begin
 
@@ -40,7 +46,8 @@ begin
             data_out0 => data_out0_tb,
             data_out1 => data_out1_tb,
             data_out2 => data_out2_tb,
-            data_out3 => data_out3_tb
+            data_out3 => data_out3_tb,
+            data_rdy => data_rdy_tb
         );
 
 
@@ -62,6 +69,22 @@ begin
         rst_n_tb <= '0';
         wait for 100 ns;
         rst_n_tb <= '1';
+
+        wait until rising_edge(odr_out_tb);
+
+        wait until rising_edge(dclk_out_tb);
+
+        for i in 23 downto 0 loop
+            
+            data_in0_tb <= test_data0(i);
+            data_in1_tb <= test_data1(i);
+            data_in2_tb <= test_data2(i);
+            data_in3_tb <= test_data3(i);
+
+            wait until rising_edge(dclk_out_tb);
+
+        end loop;
+
 
         wait;
 

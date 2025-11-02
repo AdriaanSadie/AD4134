@@ -2,7 +2,7 @@
 // Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-// Date        : Tue Oct 28 21:31:55 2025
+// Date        : Tue Oct 28 22:06:24 2025
 // Host        : DESKTOP-NG70LRJ running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_ad4134_data_0_0/ad4134fw_ad4134_data_0_0_sim_netlist.v
@@ -30,7 +30,7 @@ module ad4134fw_ad4134_data_0_0
     data_out2,
     data_out3,
     data_rdy);
-  (* x_interface_info = "xilinx.com:signal:clock:1.0 clk CLK" *) (* x_interface_mode = "slave clk" *) (* x_interface_parameter = "XIL_INTERFACENAME clk, FREQ_HZ 10000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /Processing_Subsystem/clk_wiz_0_clk_out1, INSERT_VIP 0" *) input clk;
+  (* x_interface_info = "xilinx.com:signal:clock:1.0 clk CLK" *) (* x_interface_mode = "slave clk" *) (* x_interface_parameter = "XIL_INTERFACENAME clk, FREQ_HZ 50000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /Processing_Subsystem/clk_wiz_0_clk_out1, INSERT_VIP 0" *) input clk;
   (* x_interface_info = "xilinx.com:signal:reset:1.0 rst_n RST" *) (* x_interface_mode = "slave rst_n" *) (* x_interface_parameter = "XIL_INTERFACENAME rst_n, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input rst_n;
   input data_in0;
   input data_in1;
@@ -169,44 +169,51 @@ module ad4134fw_ad4134_data_0_0_ad4134_data
 
   wire clk;
   wire dclk_active__0;
+  wire dclk_active_n_0;
   wire dclk_out;
   wire odr_int_i_1_n_0;
   wire odr_int_n_0;
   wire odr_out;
   wire \odr_tracker[0]_i_1_n_0 ;
-  wire [4:0]odr_tracker_reg;
-  wire p_0_in;
-  wire [4:1]p_0_in__0;
+  wire [5:0]odr_tracker_reg;
+  wire [5:1]p_0_in;
+  wire [5:1]p_0_in__0;
   wire rst_n;
+  wire slow_clk;
+  wire \slow_clk_counter[0]_i_1_n_0 ;
+  wire [5:1]slow_clk_counter_reg;
+  wire \slow_clk_counter_reg_n_0_[0] ;
+  wire slow_clk_i_1_n_0;
 
-  LUT3 #(
-    .INIT(8'h7E)) 
+  LUT4 #(
+    .INIT(16'h007E)) 
     dclk_active
-       (.I0(odr_tracker_reg[4]),
+       (.I0(odr_tracker_reg[2]),
         .I1(odr_tracker_reg[3]),
-        .I2(odr_tracker_reg[2]),
-        .O(p_0_in));
+        .I2(odr_tracker_reg[4]),
+        .I3(odr_tracker_reg[5]),
+        .O(dclk_active_n_0));
   FDCE dclk_active_reg
-       (.C(clk),
+       (.C(slow_clk),
         .CE(1'b1),
         .CLR(odr_int_i_1_n_0),
-        .D(p_0_in),
+        .D(dclk_active_n_0),
         .Q(dclk_active__0));
   LUT2 #(
     .INIT(4'h8)) 
     dclk_out_INST_0
        (.I0(dclk_active__0),
-        .I1(clk),
+        .I1(slow_clk),
         .O(dclk_out));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
-  LUT5 #(
-    .INIT(32'h00000111)) 
+  LUT6 #(
+    .INIT(64'h0000000000000111)) 
     odr_int
-       (.I0(odr_tracker_reg[3]),
-        .I1(odr_tracker_reg[4]),
-        .I2(odr_tracker_reg[1]),
-        .I3(odr_tracker_reg[0]),
+       (.I0(odr_tracker_reg[4]),
+        .I1(odr_tracker_reg[5]),
+        .I2(odr_tracker_reg[0]),
+        .I3(odr_tracker_reg[1]),
         .I4(odr_tracker_reg[2]),
+        .I5(odr_tracker_reg[3]),
         .O(odr_int_n_0));
   LUT1 #(
     .INIT(2'h1)) 
@@ -216,65 +223,74 @@ module ad4134fw_ad4134_data_0_0_ad4134_data
   FDCE #(
     .INIT(1'b0)) 
     odr_int_reg
-       (.C(clk),
+       (.C(slow_clk),
         .CE(1'b1),
         .CLR(odr_int_i_1_n_0),
         .D(odr_int_n_0),
         .Q(odr_out));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
-  LUT5 #(
-    .INIT(32'h00007FFF)) 
+  LUT6 #(
+    .INIT(64'h0000000055555777)) 
     \odr_tracker[0]_i_1 
-       (.I0(odr_tracker_reg[4]),
-        .I1(odr_tracker_reg[3]),
+       (.I0(odr_tracker_reg[5]),
+        .I1(odr_tracker_reg[4]),
         .I2(odr_tracker_reg[2]),
         .I3(odr_tracker_reg[1]),
-        .I4(odr_tracker_reg[0]),
+        .I4(odr_tracker_reg[3]),
+        .I5(odr_tracker_reg[0]),
         .O(\odr_tracker[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
-  LUT5 #(
-    .INIT(32'h1555AAAA)) 
+  LUT6 #(
+    .INIT(64'h1111222211152A2A)) 
     \odr_tracker[1]_i_1 
        (.I0(odr_tracker_reg[0]),
-        .I1(odr_tracker_reg[4]),
-        .I2(odr_tracker_reg[3]),
+        .I1(odr_tracker_reg[5]),
+        .I2(odr_tracker_reg[4]),
         .I3(odr_tracker_reg[2]),
         .I4(odr_tracker_reg[1]),
+        .I5(odr_tracker_reg[3]),
         .O(p_0_in__0[1]));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
-  LUT5 #(
-    .INIT(32'h15AAFF00)) 
+  LUT6 #(
+    .INIT(64'h11223300112A3F00)) 
     \odr_tracker[2]_i_1 
        (.I0(odr_tracker_reg[0]),
-        .I1(odr_tracker_reg[4]),
-        .I2(odr_tracker_reg[3]),
+        .I1(odr_tracker_reg[5]),
+        .I2(odr_tracker_reg[4]),
         .I3(odr_tracker_reg[2]),
         .I4(odr_tracker_reg[1]),
+        .I5(odr_tracker_reg[3]),
         .O(p_0_in__0[2]));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT5 #(
-    .INIT(32'h1AF0F0F0)) 
+    .INIT(32'h13332000)) 
     \odr_tracker[3]_i_1 
        (.I0(odr_tracker_reg[0]),
-        .I1(odr_tracker_reg[4]),
-        .I2(odr_tracker_reg[3]),
-        .I3(odr_tracker_reg[2]),
-        .I4(odr_tracker_reg[1]),
+        .I1(odr_tracker_reg[5]),
+        .I2(odr_tracker_reg[2]),
+        .I3(odr_tracker_reg[1]),
+        .I4(odr_tracker_reg[3]),
         .O(p_0_in__0[3]));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
-  LUT5 #(
-    .INIT(32'h2CCCCCCC)) 
+  LUT6 #(
+    .INIT(64'h1230303030303030)) 
     \odr_tracker[4]_i_1 
        (.I0(odr_tracker_reg[0]),
-        .I1(odr_tracker_reg[4]),
-        .I2(odr_tracker_reg[3]),
+        .I1(odr_tracker_reg[5]),
+        .I2(odr_tracker_reg[4]),
         .I3(odr_tracker_reg[2]),
         .I4(odr_tracker_reg[1]),
+        .I5(odr_tracker_reg[3]),
         .O(p_0_in__0[4]));
+  LUT6 #(
+    .INIT(64'h20000000000C0C0C)) 
+    \odr_tracker[5]_i_1 
+       (.I0(odr_tracker_reg[0]),
+        .I1(odr_tracker_reg[5]),
+        .I2(odr_tracker_reg[4]),
+        .I3(odr_tracker_reg[2]),
+        .I4(odr_tracker_reg[1]),
+        .I5(odr_tracker_reg[3]),
+        .O(p_0_in__0[5]));
   FDCE #(
     .INIT(1'b0)) 
     \odr_tracker_reg[0] 
-       (.C(clk),
+       (.C(slow_clk),
         .CE(1'b1),
         .CLR(odr_int_i_1_n_0),
         .D(\odr_tracker[0]_i_1_n_0 ),
@@ -282,7 +298,7 @@ module ad4134fw_ad4134_data_0_0_ad4134_data
   FDCE #(
     .INIT(1'b0)) 
     \odr_tracker_reg[1] 
-       (.C(clk),
+       (.C(slow_clk),
         .CE(1'b1),
         .CLR(odr_int_i_1_n_0),
         .D(p_0_in__0[1]),
@@ -290,7 +306,7 @@ module ad4134fw_ad4134_data_0_0_ad4134_data
   FDCE #(
     .INIT(1'b0)) 
     \odr_tracker_reg[2] 
-       (.C(clk),
+       (.C(slow_clk),
         .CE(1'b1),
         .CLR(odr_int_i_1_n_0),
         .D(p_0_in__0[2]),
@@ -298,7 +314,7 @@ module ad4134fw_ad4134_data_0_0_ad4134_data
   FDCE #(
     .INIT(1'b0)) 
     \odr_tracker_reg[3] 
-       (.C(clk),
+       (.C(slow_clk),
         .CE(1'b1),
         .CLR(odr_int_i_1_n_0),
         .D(p_0_in__0[3]),
@@ -306,11 +322,144 @@ module ad4134fw_ad4134_data_0_0_ad4134_data
   FDCE #(
     .INIT(1'b0)) 
     \odr_tracker_reg[4] 
-       (.C(clk),
+       (.C(slow_clk),
         .CE(1'b1),
         .CLR(odr_int_i_1_n_0),
         .D(p_0_in__0[4]),
         .Q(odr_tracker_reg[4]));
+  FDCE #(
+    .INIT(1'b0)) 
+    \odr_tracker_reg[5] 
+       (.C(slow_clk),
+        .CE(1'b1),
+        .CLR(odr_int_i_1_n_0),
+        .D(p_0_in__0[5]),
+        .Q(odr_tracker_reg[5]));
+  LUT6 #(
+    .INIT(64'h000000007777777F)) 
+    \slow_clk_counter[0]_i_1 
+       (.I0(slow_clk_counter_reg[5]),
+        .I1(slow_clk_counter_reg[4]),
+        .I2(slow_clk_counter_reg[3]),
+        .I3(slow_clk_counter_reg[1]),
+        .I4(slow_clk_counter_reg[2]),
+        .I5(\slow_clk_counter_reg_n_0_[0] ),
+        .O(\slow_clk_counter[0]_i_1_n_0 ));
+  LUT6 #(
+    .INIT(64'h15152A2A15152AAA)) 
+    \slow_clk_counter[1]_i_1 
+       (.I0(\slow_clk_counter_reg_n_0_[0] ),
+        .I1(slow_clk_counter_reg[5]),
+        .I2(slow_clk_counter_reg[4]),
+        .I3(slow_clk_counter_reg[3]),
+        .I4(slow_clk_counter_reg[1]),
+        .I5(slow_clk_counter_reg[2]),
+        .O(p_0_in[1]));
+  LUT5 #(
+    .INIT(32'h153F2A00)) 
+    \slow_clk_counter[2]_i_1 
+       (.I0(\slow_clk_counter_reg_n_0_[0] ),
+        .I1(slow_clk_counter_reg[5]),
+        .I2(slow_clk_counter_reg[4]),
+        .I3(slow_clk_counter_reg[1]),
+        .I4(slow_clk_counter_reg[2]),
+        .O(p_0_in[2]));
+  LUT6 #(
+    .INIT(64'h152A3F003F003F00)) 
+    \slow_clk_counter[3]_i_1 
+       (.I0(\slow_clk_counter_reg_n_0_[0] ),
+        .I1(slow_clk_counter_reg[5]),
+        .I2(slow_clk_counter_reg[4]),
+        .I3(slow_clk_counter_reg[3]),
+        .I4(slow_clk_counter_reg[1]),
+        .I5(slow_clk_counter_reg[2]),
+        .O(p_0_in[3]));
+  LUT6 #(
+    .INIT(64'h1A303030303030F0)) 
+    \slow_clk_counter[4]_i_1 
+       (.I0(\slow_clk_counter_reg_n_0_[0] ),
+        .I1(slow_clk_counter_reg[5]),
+        .I2(slow_clk_counter_reg[4]),
+        .I3(slow_clk_counter_reg[3]),
+        .I4(slow_clk_counter_reg[1]),
+        .I5(slow_clk_counter_reg[2]),
+        .O(p_0_in[4]));
+  LUT6 #(
+    .INIT(64'h2C0C0C0C0C0C0CCC)) 
+    \slow_clk_counter[5]_i_1 
+       (.I0(\slow_clk_counter_reg_n_0_[0] ),
+        .I1(slow_clk_counter_reg[5]),
+        .I2(slow_clk_counter_reg[4]),
+        .I3(slow_clk_counter_reg[3]),
+        .I4(slow_clk_counter_reg[1]),
+        .I5(slow_clk_counter_reg[2]),
+        .O(p_0_in[5]));
+  FDCE #(
+    .INIT(1'b0)) 
+    \slow_clk_counter_reg[0] 
+       (.C(clk),
+        .CE(1'b1),
+        .CLR(odr_int_i_1_n_0),
+        .D(\slow_clk_counter[0]_i_1_n_0 ),
+        .Q(\slow_clk_counter_reg_n_0_[0] ));
+  FDCE #(
+    .INIT(1'b0)) 
+    \slow_clk_counter_reg[1] 
+       (.C(clk),
+        .CE(1'b1),
+        .CLR(odr_int_i_1_n_0),
+        .D(p_0_in[1]),
+        .Q(slow_clk_counter_reg[1]));
+  FDCE #(
+    .INIT(1'b0)) 
+    \slow_clk_counter_reg[2] 
+       (.C(clk),
+        .CE(1'b1),
+        .CLR(odr_int_i_1_n_0),
+        .D(p_0_in[2]),
+        .Q(slow_clk_counter_reg[2]));
+  FDCE #(
+    .INIT(1'b0)) 
+    \slow_clk_counter_reg[3] 
+       (.C(clk),
+        .CE(1'b1),
+        .CLR(odr_int_i_1_n_0),
+        .D(p_0_in[3]),
+        .Q(slow_clk_counter_reg[3]));
+  FDCE #(
+    .INIT(1'b0)) 
+    \slow_clk_counter_reg[4] 
+       (.C(clk),
+        .CE(1'b1),
+        .CLR(odr_int_i_1_n_0),
+        .D(p_0_in[4]),
+        .Q(slow_clk_counter_reg[4]));
+  FDCE #(
+    .INIT(1'b0)) 
+    \slow_clk_counter_reg[5] 
+       (.C(clk),
+        .CE(1'b1),
+        .CLR(odr_int_i_1_n_0),
+        .D(p_0_in[5]),
+        .Q(slow_clk_counter_reg[5]));
+  LUT6 #(
+    .INIT(64'h7777777F88888880)) 
+    slow_clk_i_1
+       (.I0(slow_clk_counter_reg[5]),
+        .I1(slow_clk_counter_reg[4]),
+        .I2(slow_clk_counter_reg[3]),
+        .I3(slow_clk_counter_reg[1]),
+        .I4(slow_clk_counter_reg[2]),
+        .I5(slow_clk),
+        .O(slow_clk_i_1_n_0));
+  FDCE #(
+    .INIT(1'b0)) 
+    slow_clk_reg
+       (.C(clk),
+        .CE(1'b1),
+        .CLR(odr_int_i_1_n_0),
+        .D(slow_clk_i_1_n_0),
+        .Q(slow_clk));
 endmodule
 `ifndef GLBL
 `define GLBL

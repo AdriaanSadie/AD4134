@@ -190,6 +190,24 @@
             },
             "V3": {
                 "VT": "AC",
+                "BA": "0x40000000",
+                "HA": "0x40001FFF",
+                "BP": "C_S_AXI_BASEADDR",
+                "HP": "C_S_AXI_HIGHADDR",
+                "MA": "Data",
+                "MX": "/Processing_Subsystem/processing_system7_0",
+                "MI": "M_AXI_GP0",
+                "MS": "SEG_axi_bram_ctrl_0_Mem0",
+                "MV": "xilinx.com:ip:processing_system7:5.5",
+                "SX": "/bram_tester/bram_read",
+                "SI": "S_AXI",
+                "SS": "Mem0",
+                "SV": "xilinx.com:ip:axi_bram_ctrl:4.1",
+                "TM": "both",
+                "TU": "memory"
+            },
+            "V4": {
+                "VT": "AC",
                 "BA": "0x41200000",
                 "HA": "0x4120FFFF",
                 "BP": "C_BASEADDR",
@@ -205,6 +223,42 @@
                 "SV": "xilinx.com:ip:axi_gpio:2.0",
                 "TM": "both",
                 "TU": "register"
+            },
+            "V5": {
+                "VT": "AC",
+                "BA": "0x41210000",
+                "HA": "0x4121FFFF",
+                "BP": "C_BASEADDR",
+                "HP": "C_HIGHADDR",
+                "MA": "Data",
+                "MX": "/Processing_Subsystem/processing_system7_0",
+                "MI": "M_AXI_GP0",
+                "MS": "SEG_bram_test_control_Reg",
+                "MV": "xilinx.com:ip:processing_system7:5.5",
+                "SX": "/bram_tester/bram_test_control",
+                "SI": "S_AXI",
+                "SS": "Reg",
+                "SV": "xilinx.com:ip:axi_gpio:2.0",
+                "TM": "both",
+                "TU": "register"
+            },
+            "V6": {
+                "VT": "AC",
+                "BA": "0x42000000",
+                "HA": "0x42001FFF",
+                "BP": "C_S_AXI_BASEADDR",
+                "HP": "C_S_AXI_HIGHADDR",
+                "MA": "Data",
+                "MX": "/Processing_Subsystem/processing_system7_0",
+                "MI": "M_AXI_GP0",
+                "MS": "SEG_axi_bram_ctrl_0_Mem0_1",
+                "MV": "xilinx.com:ip:processing_system7:5.5",
+                "SX": "/ADC_BRAM/ADC_BRAM_READ",
+                "SI": "S_AXI",
+                "SS": "Mem0",
+                "SV": "xilinx.com:ip:axi_bram_ctrl:4.1",
+                "TM": "both",
+                "TU": "memory"
             }
         },
         "edges": [
@@ -218,6 +272,21 @@
             },
             {
                 "src": "V3",
+                "trg": "V2",
+                "EH": "2"
+            },
+            {
+                "src": "V4",
+                "trg": "V2",
+                "EH": "2"
+            },
+            {
+                "src": "V5",
+                "trg": "V2",
+                "EH": "2"
+            },
+            {
+                "src": "V6",
                 "trg": "V2",
                 "EH": "2"
             }

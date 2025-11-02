@@ -1,0 +1,11 @@
+WORKFLOW_OPERATION simulation,dialog;
+
+DEFINE_MEMORY_TYPE bram_tester_blk_mem_gen_0_MEM_DEVICE [0x00002000] 32;
+
+ADDRESS_MAP Processing_Subsystem_processing_system7_0 ARM 100 Processing_Subsystem/processing_system7_0
+   ADDRESS_SPACE bram_tester_blk_mem_gen_0_ADDR_SPACE bram_tester_blk_mem_gen_0_MEM_DEVICE  [0x40000000:0x40001FFF] bram_tester/bram_read
+     BUS_BLOCK
+      bram_tester_blk_mem_gen_0_BUS_BLK [31:0] INPUT = "ad4134fw_blk_mem_gen_0_0.mem";
+     END_BUS_BLOCK;
+   END_ADDRESS_SPACE;
+END_ADDRESS_MAP;

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1761681938" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/ad4134fw_wrapper.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1762113047" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/ad4134fw_wrapper.dcp">
   <File Type="PA-TCL" Name="ad4134fw_wrapper.tcl"/>
   <File Type="REPORTS-TCL" Name="ad4134fw_wrapper_reports.tcl"/>
   <File Type="RDS-RDS" Name="ad4134fw_wrapper.vds"/>
@@ -30,6 +30,18 @@
       </FileInfo>
     </File>
     <File Path="$PPRDIR/../src/ad4134_data.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../src/bram_tester.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../src/ad4134_to_bram.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -88,18 +100,22 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
     <Step Id="synth_design"/>
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="ad4134fw_ad4134_control_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="ad4134fw_axi_gpio_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ad4134fw_bram_writer_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="ad4134fw_processing_system7_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ad4134fw_smartconnect_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="ad4134fw_ad4134_clock_generat_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="ad4134fw_clk_wiz_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="ad4134fw_proc_sys_reset_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="ad4134fw_c_counter_binary_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="ad4134fw_spi_controller_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ad4134fw_blk_mem_gen_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="ad4134fw_ad4134_data_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ad4134fw_axi_bram_ctrl_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ad4134fw_blk_mem_gen_0_2"/>
+  <BlockFileSet Type="BlockSrcs" Name="ad4134fw_ad4134_to_bram_0_0"/>
 </GenRun>

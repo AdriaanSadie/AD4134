@@ -23,3 +23,7 @@ HB - G18 - Pin 4
 
 DCLK_OUT - J16 - Pin 16
 ODR_OUT - L17 - Pin 14
+Din0 - L15 - Pin 12
+Din1 - K18 - Pin 10
+Din2 - H18 - Pin 8
+Din3 - H17 - Pin 6

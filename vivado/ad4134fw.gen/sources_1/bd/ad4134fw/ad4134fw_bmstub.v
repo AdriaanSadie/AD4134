@@ -14,7 +14,11 @@ module ad4134fw (
   LEDS,
   hb_led,
   dclk_out,
-  odr_out
+  odr_out,
+  data_in0,
+  data_in1,
+  data_in2,
+  data_in3
 );
 
   (* X_INTERFACE_IGNORE = "true" *)
@@ -35,6 +39,14 @@ module ad4134fw (
   output dclk_out;
   (* X_INTERFACE_IGNORE = "true" *)
   output odr_out;
+  (* X_INTERFACE_IGNORE = "true" *)
+  input data_in0;
+  (* X_INTERFACE_IGNORE = "true" *)
+  input data_in1;
+  (* X_INTERFACE_IGNORE = "true" *)
+  input data_in2;
+  (* X_INTERFACE_IGNORE = "true" *)
+  input data_in3;
 
   // stub module has no contents
 

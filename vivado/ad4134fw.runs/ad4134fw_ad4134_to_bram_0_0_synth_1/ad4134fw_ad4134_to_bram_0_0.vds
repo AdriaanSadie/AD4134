@@ -1,0 +1,355 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Sun Nov  2 21:33:05 2025
+# Process ID         : 4740
+# Current directory  : C:/work/AD4134/vivado/ad4134fw.runs/ad4134fw_ad4134_to_bram_0_0_synth_1
+# Command line       : vivado.exe -log ad4134fw_ad4134_to_bram_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ad4134fw_ad4134_to_bram_0_0.tcl
+# Log file           : C:/work/AD4134/vivado/ad4134fw.runs/ad4134fw_ad4134_to_bram_0_0_synth_1/ad4134fw_ad4134_to_bram_0_0.vds
+# Journal file       : C:/work/AD4134/vivado/ad4134fw.runs/ad4134fw_ad4134_to_bram_0_0_synth_1\vivado.jou
+# Running On         : DESKTOP-NG70LRJ
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 19045
+# Processor Detail   : Intel(R) Core(TM) i5-8600K CPU @ 3.60GHz
+# CPU Frequency      : 3600 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 6
+# Host memory        : 17119 MB
+# Swap memory        : 6174 MB
+# Total Virtual      : 23293 MB
+# Available Virtual  : 7568 MB
+#-----------------------------------------------------------
+source ad4134fw_ad4134_to_bram_0_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'E:/Xilinx/Vivado/2024.2/data/ip'.
+Command: synth_design -top ad4134fw_ad4134_to_bram_0_0 -part xc7z010clg400-1 -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 15280
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1055.449 ; gain = 466.570
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'ad4134fw_ad4134_to_bram_0_0' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_ad4134_to_bram_0_0/synth/ad4134fw_ad4134_to_bram_0_0.vhd:72]
+	Parameter DATA_WIDTH bound to: 24 - type: integer 
+INFO: [Synth 8-3491] module 'ad4134_to_bram' declared at 'C:/work/AD4134/src/ad4134_to_bram.vhd:5' bound to instance 'U0' of component 'ad4134_to_bram' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_ad4134_to_bram_0_0/synth/ad4134fw_ad4134_to_bram_0_0.vhd:111]
+INFO: [Synth 8-638] synthesizing module 'ad4134_to_bram' [C:/work/AD4134/src/ad4134_to_bram.vhd:27]
+INFO: [Synth 8-256] done synthesizing module 'ad4134_to_bram' (0#1) [C:/work/AD4134/src/ad4134_to_bram.vhd:27]
+INFO: [Synth 8-256] done synthesizing module 'ad4134fw_ad4134_to_bram_0_0' (0#1) [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_ad4134_to_bram_0_0/synth/ad4134fw_ad4134_to_bram_0_0.vhd:72]
+WARNING: [Synth 8-3848] Net done in module/entity ad4134_to_bram does not have driver. [C:/work/AD4134/src/ad4134_to_bram.vhd:23]
+WARNING: [Synth 8-7129] Port done in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in1[23] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in1[22] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in1[21] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in1[20] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in1[19] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in1[18] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in1[17] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in1[16] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in1[15] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in1[14] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in1[13] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in1[12] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in1[11] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in1[10] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in1[9] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in1[8] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in1[7] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in1[6] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in1[5] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in1[4] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in1[3] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in1[2] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in1[1] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in1[0] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in2[23] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in2[22] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in2[21] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in2[20] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in2[19] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in2[18] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in2[17] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in2[16] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in2[15] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in2[14] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in2[13] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in2[12] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in2[11] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in2[10] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in2[9] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in2[8] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in2[7] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in2[6] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in2[5] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in2[4] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in2[3] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in2[2] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in2[1] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in2[0] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in3[23] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in3[22] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in3[21] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in3[20] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in3[19] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in3[18] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in3[17] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in3[16] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in3[15] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in3[14] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in3[13] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in3[12] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in3[11] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in3[10] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in3[9] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in3[8] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in3[7] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in3[6] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in3[5] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in3[4] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in3[3] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in3[2] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in3[1] in module ad4134_to_bram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in3[0] in module ad4134_to_bram is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1166.664 ; gain = 577.785
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1166.664 ; gain = 577.785
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1166.664 ; gain = 577.785
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1166.664 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1252.105 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.174 . Memory (MB): peak = 1252.328 ; gain = 0.223
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1252.328 ; gain = 663.449
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1252.328 ; gain = 663.449
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1252.328 ; gain = 663.449
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'ad4134_to_bram'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  idle_s |                               00 |                               00
+                 write_s |                               01 |                               01
+              finished_s |                               10 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'ad4134_to_bram'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 1252.328 ; gain = 663.449
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   13 Bit       Adders := 1     
++---Registers : 
+	               24 Bit    Registers := 1     
+	               15 Bit    Registers := 3     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   3 Input    2 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 1     
+	   3 Input    1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+INFO: [Synth 8-3917] design ad4134fw_ad4134_to_bram_0_0 has port dia[31] driven by constant 0
+INFO: [Synth 8-3917] design ad4134fw_ad4134_to_bram_0_0 has port dia[30] driven by constant 0
+INFO: [Synth 8-3917] design ad4134fw_ad4134_to_bram_0_0 has port dia[29] driven by constant 0
+INFO: [Synth 8-3917] design ad4134fw_ad4134_to_bram_0_0 has port dia[28] driven by constant 0
+INFO: [Synth 8-3917] design ad4134fw_ad4134_to_bram_0_0 has port dia[27] driven by constant 0
+INFO: [Synth 8-3917] design ad4134fw_ad4134_to_bram_0_0 has port dia[26] driven by constant 0
+INFO: [Synth 8-3917] design ad4134fw_ad4134_to_bram_0_0 has port dia[25] driven by constant 0
+INFO: [Synth 8-3917] design ad4134fw_ad4134_to_bram_0_0 has port dia[24] driven by constant 0
+WARNING: [Synth 8-7129] Port done in module ad4134fw_ad4134_to_bram_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in1[23] in module ad4134fw_ad4134_to_bram_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in1[22] in module ad4134fw_ad4134_to_bram_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in1[21] in module ad4134fw_ad4134_to_bram_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in1[20] in module ad4134fw_ad4134_to_bram_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in1[19] in module ad4134fw_ad4134_to_bram_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in1[18] in module ad4134fw_ad4134_to_bram_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in1[17] in module ad4134fw_ad4134_to_bram_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in1[16] in module ad4134fw_ad4134_to_bram_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in1[15] in module ad4134fw_ad4134_to_bram_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in1[14] in module ad4134fw_ad4134_to_bram_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in1[13] in module ad4134fw_ad4134_to_bram_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in1[12] in module ad4134fw_ad4134_to_bram_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in1[11] in module ad4134fw_ad4134_to_bram_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in1[10] in module ad4134fw_ad4134_to_bram_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in1[9] in module ad4134fw_ad4134_to_bram_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in1[8] in module ad4134fw_ad4134_to_bram_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in1[7] in module ad4134fw_ad4134_to_bram_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in1[6] in module ad4134fw_ad4134_to_bram_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in1[5] in module ad4134fw_ad4134_to_bram_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in1[4] in module ad4134fw_ad4134_to_bram_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in1[3] in module ad4134fw_ad4134_to_bram_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in1[2] in module ad4134fw_ad4134_to_bram_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in1[1] in module ad4134fw_ad4134_to_bram_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in1[0] in module ad4134fw_ad4134_to_bram_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in2[23] in module ad4134fw_ad4134_to_bram_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in2[22] in module ad4134fw_ad4134_to_bram_0_0 is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 1252.328 ; gain = 663.449
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 1359.832 ; gain = 770.953
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 1359.832 ; gain = 770.953
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 1369.910 ; gain = 781.031
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1586.113 ; gain = 997.234
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1586.113 ; gain = 997.234
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1586.113 ; gain = 997.234
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1586.113 ; gain = 997.234
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1586.113 ; gain = 997.234
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1586.113 ; gain = 997.234
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |CARRY4 |     3|
+|2     |LUT1   |     2|
+|3     |LUT2   |     1|
+|4     |LUT4   |     3|
+|5     |LUT5   |     2|
+|6     |LUT6   |     2|
+|7     |FDCE   |    30|
+|8     |FDPE   |     1|
+|9     |FDRE   |    37|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1586.113 ; gain = 997.234
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 74 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:30 . Memory (MB): peak = 1586.113 ; gain = 911.570
+Synthesis Optimization Complete : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1586.113 ; gain = 997.234
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1586.113 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 3 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1586.113 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 41466e6e
+INFO: [Common 17-83] Releasing license: Synthesis
+34 Infos, 102 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:34 ; elapsed = 00:00:42 . Memory (MB): peak = 1586.113 ; gain = 1204.859
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1586.113 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/work/AD4134/vivado/ad4134fw.runs/ad4134fw_ad4134_to_bram_0_0_synth_1/ad4134fw_ad4134_to_bram_0_0.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file ad4134fw_ad4134_to_bram_0_0_utilization_synth.rpt -pb ad4134fw_ad4134_to_bram_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sun Nov  2 21:33:55 2025...

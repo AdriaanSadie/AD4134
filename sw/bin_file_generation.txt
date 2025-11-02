@@ -1,0 +1,9 @@
+cmd:
+
+cd C:\work\AD4134\vivado\ad4134fw.runs\impl_1\
+
+echo all:{ ad4134fw_wrapper.bit } > ad4134fw_wrapper.bif
+
+vivado:
+
+bootgen -image ad4134fw_wrapper.bif -arch zynq -process_bitstream bin -o ad4134fw_wrapper.bit.bin -w

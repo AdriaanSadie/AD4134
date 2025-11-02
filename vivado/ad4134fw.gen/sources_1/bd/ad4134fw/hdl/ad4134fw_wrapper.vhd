@@ -2,7 +2,7 @@
 --Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
---Date        : Tue Oct 28 22:05:26 2025
+--Date        : Sun Nov  2 21:32:44 2025
 --Host        : DESKTOP-NG70LRJ running 64-bit major release  (build 9200)
 --Command     : generate_target ad4134fw_wrapper.bd
 --Design      : ad4134fw_wrapper
@@ -15,6 +15,10 @@ use UNISIM.VCOMPONENTS.ALL;
 entity ad4134fw_wrapper is
   port (
     LEDS : out STD_LOGIC_VECTOR ( 6 downto 0 );
+    data_in0 : in STD_LOGIC;
+    data_in1 : in STD_LOGIC;
+    data_in2 : in STD_LOGIC;
+    data_in3 : in STD_LOGIC;
     dclk_out : out STD_LOGIC;
     debug : out STD_LOGIC_VECTOR ( 3 downto 0 );
     hb_led : out STD_LOGIC_VECTOR ( 0 to 0 );
@@ -37,13 +41,21 @@ architecture STRUCTURE of ad4134fw_wrapper is
     LEDS : out STD_LOGIC_VECTOR ( 6 downto 0 );
     hb_led : out STD_LOGIC_VECTOR ( 0 to 0 );
     dclk_out : out STD_LOGIC;
-    odr_out : out STD_LOGIC
+    odr_out : out STD_LOGIC;
+    data_in0 : in STD_LOGIC;
+    data_in1 : in STD_LOGIC;
+    data_in2 : in STD_LOGIC;
+    data_in3 : in STD_LOGIC
   );
   end component ad4134fw;
 begin
 ad4134fw_i: component ad4134fw
      port map (
       LEDS(6 downto 0) => LEDS(6 downto 0),
+      data_in0 => data_in0,
+      data_in1 => data_in1,
+      data_in2 => data_in2,
+      data_in3 => data_in3,
       dclk_out => dclk_out,
       debug(3 downto 0) => debug(3 downto 0),
       hb_led(0) => hb_led(0),

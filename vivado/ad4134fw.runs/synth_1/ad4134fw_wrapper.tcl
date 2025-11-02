@@ -56,8 +56,6 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 1
-set_param bd.open.in_stealth_mode 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z010clg400-1
 
@@ -74,7 +72,7 @@ set_property ip_output_repo c:/work/AD4134/vivado/ad4134fw.cache/ip [current_pro
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_vhdl -library xil_defaultlib c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/hdl/ad4134fw_wrapper.vhd
+read_vhdl -library xil_defaultlib C:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/hdl/ad4134fw_wrapper.vhd
 add_files C:/work/AD4134/vivado/ad4134fw.srcs/sources_1/bd/ad4134fw/ad4134fw.bd
 set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_processing_system7_0_0/ad4134fw_processing_system7_0_0.xdc]
 set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_proc_sys_reset_0_0/ad4134fw_proc_sys_reset_0_0_board.xdc]
@@ -85,19 +83,54 @@ set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/
 set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_clk_wiz_0_0/ad4134fw_clk_wiz_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/bd_0/ip/ip_1/bd_5956_psr_aclk_0_board.xdc]
 set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/bd_0/ip/ip_1/bd_5956_psr_aclk_0.xdc]
-set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/bd_0/ip/ip_5/bd_5956_s00a2s_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/bd_0/ip/ip_6/bd_5956_sarn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/bd_0/ip/ip_7/bd_5956_srn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/bd_0/ip/ip_8/bd_5956_sawn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/bd_0/ip/ip_9/bd_5956_swn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/bd_0/ip/ip_10/bd_5956_sbn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/bd_0/ip/ip_11/bd_5956_m00s2a_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/bd_0/ip/ip_2/bd_5956_arsw_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/bd_0/ip/ip_3/bd_5956_rsw_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/bd_0/ip/ip_4/bd_5956_awsw_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/bd_0/ip/ip_5/bd_5956_wsw_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/bd_0/ip/ip_6/bd_5956_bsw_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/bd_0/ip/ip_10/bd_5956_s00a2s_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/bd_0/ip/ip_11/bd_5956_sarn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/bd_0/ip/ip_12/bd_5956_srn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/bd_0/ip/ip_13/bd_5956_sawn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/bd_0/ip/ip_14/bd_5956_swn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/bd_0/ip/ip_15/bd_5956_sbn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/bd_0/ip/ip_16/bd_5956_m00s2a_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/bd_0/ip/ip_17/bd_5956_m00arn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/bd_0/ip/ip_18/bd_5956_m00rn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/bd_0/ip/ip_19/bd_5956_m00awn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/bd_0/ip/ip_20/bd_5956_m00wn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/bd_0/ip/ip_21/bd_5956_m00bn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/bd_0/ip/ip_23/bd_5956_m01s2a_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/bd_0/ip/ip_24/bd_5956_m01arn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/bd_0/ip/ip_25/bd_5956_m01rn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/bd_0/ip/ip_26/bd_5956_m01awn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/bd_0/ip/ip_27/bd_5956_m01wn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/bd_0/ip/ip_28/bd_5956_m01bn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/bd_0/ip/ip_30/bd_5956_m02s2a_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/bd_0/ip/ip_31/bd_5956_m02arn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/bd_0/ip/ip_32/bd_5956_m02rn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/bd_0/ip/ip_33/bd_5956_m02awn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/bd_0/ip/ip_34/bd_5956_m02wn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/bd_0/ip/ip_35/bd_5956_m02bn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/bd_0/ip/ip_37/bd_5956_m03s2a_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/bd_0/ip/ip_38/bd_5956_m03arn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/bd_0/ip/ip_39/bd_5956_m03rn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/bd_0/ip/ip_40/bd_5956_m03awn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/bd_0/ip/ip_41/bd_5956_m03wn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/bd_0/ip/ip_42/bd_5956_m03bn_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/smartconnect.xdc]
 set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_c_counter_binary_0_0/ad4134fw_c_counter_binary_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_axi_gpio_0_0/ad4134fw_axi_gpio_0_0_board.xdc]
 set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_axi_gpio_0_0/ad4134fw_axi_gpio_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_axi_gpio_0_0/ad4134fw_axi_gpio_0_0.xdc]
+set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_blk_mem_gen_0_0/ad4134fw_blk_mem_gen_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_axi_bram_ctrl_0_0/ad4134fw_axi_bram_ctrl_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_axi_gpio_0_1/ad4134fw_axi_gpio_0_1_board.xdc]
+set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_axi_gpio_0_1/ad4134fw_axi_gpio_0_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_axi_gpio_0_1/ad4134fw_axi_gpio_0_1.xdc]
+set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_blk_mem_gen_0_2/ad4134fw_blk_mem_gen_0_2_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_axi_bram_ctrl_0_2/ad4134fw_axi_bram_ctrl_0_2_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ad4134fw_ooc.xdc]
 
 OPTRACE "Adding files" END { }

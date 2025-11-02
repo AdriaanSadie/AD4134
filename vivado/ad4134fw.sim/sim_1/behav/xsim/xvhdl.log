@@ -1,4 +1,4 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/work/AD4134/src/ad4134_data.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'ad4134_data'
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/work/AD4134/src/ad4134_data_tb.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'ad4134_data_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/work/AD4134/src/ad4134_to_bram.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ad4134_to_bram'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/work/AD4134/src/ad4134_to_bram_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ad4134_to_bram_tb'

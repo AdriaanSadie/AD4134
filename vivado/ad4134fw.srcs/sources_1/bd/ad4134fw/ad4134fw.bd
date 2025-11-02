@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x912B7571030D8BA5",
+      "boundary_crc": "0x7D4FCF288D8E259",
       "device": "xc7z010clg400-1",
       "gen_directory": "../../../../ad4134fw.gen/sources_1/bd/ad4134fw",
       "name": "ad4134fw",
@@ -28,7 +28,19 @@
         "c_counter_binary_0": "",
         "axi_gpio_0": ""
       },
-      "ad4134_data_0": ""
+      "ad4134_data_0": "",
+      "bram_tester": {
+        "bram_writer_0": "",
+        "blk_mem_gen_0": "",
+        "bram_read": "",
+        "bram_test_control": "",
+        "xlslice_0": ""
+      },
+      "ADC_BRAM": {
+        "blk_mem_gen_0": "",
+        "ADC_BRAM_READ": "",
+        "ad4134_to_bram_0": ""
+      }
     },
     "ports": {
       "spi_clk": {
@@ -77,12 +89,39 @@
       },
       "odr_out": {
         "direction": "O"
+      },
+      "data_in0": {
+        "direction": "I"
+      },
+      "data_in1": {
+        "direction": "I"
+      },
+      "data_in2": {
+        "direction": "I"
+      },
+      "data_in3": {
+        "direction": "I"
       }
     },
     "components": {
       "Processing_Subsystem": {
         "interface_ports": {
           "AXI_GPIO": {
+            "mode": "Master",
+            "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
+          },
+          "M01_AXI_0": {
+            "mode": "Master",
+            "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
+          },
+          "M02_AXI_0": {
+            "mode": "Master",
+            "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
+          },
+          "M03_AXI_0": {
             "mode": "Master",
             "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
             "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
@@ -239,6 +278,16 @@
                   }
                 }
               }
+            },
+            "hdl_attributes": {
+              "BMM_INFO_PROCESSOR": {
+                "value": "arm > ad4134fw bram_tester/bram_read ad4134fw ADC_BRAM/ADC_BRAM_READ",
+                "value_src": "default"
+              },
+              "KEEP_HIERARCHY": {
+                "value": "yes",
+                "value_src": "default"
+              }
             }
           },
           "proc_sys_reset_0": {
@@ -306,6 +355,9 @@
             "xci_path": "ip\\ad4134fw_smartconnect_0_0\\ad4134fw_smartconnect_0_0.xci",
             "inst_hier_path": "Processing_Subsystem/smartconnect_0",
             "parameters": {
+              "NUM_MI": {
+                "value": "4"
+              },
               "NUM_SI": {
                 "value": "1"
               }
@@ -324,7 +376,10 @@
                   }
                 },
                 "bridges": [
-                  "M00_AXI"
+                  "M00_AXI",
+                  "M01_AXI",
+                  "M02_AXI",
+                  "M03_AXI"
                 ]
               },
               "M00_AXI": {
@@ -332,6 +387,9 @@
                 "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
                 "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
                 "parameters": {
+                  "MAX_BURST_LENGTH": {
+                    "value": "1"
+                  },
                   "NUM_READ_OUTSTANDING": {
                     "value": "8"
                   },
@@ -347,6 +405,102 @@
                   "RUSER_BITS_PER_BYTE": {
                     "value": "0"
                   },
+                  "SUPPORTS_NARROW_BURST": {
+                    "value": "0"
+                  },
+                  "WUSER_BITS_PER_BYTE": {
+                    "value": "0"
+                  }
+                }
+              },
+              "M01_AXI": {
+                "mode": "Master",
+                "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
+                "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
+                "parameters": {
+                  "MAX_BURST_LENGTH": {
+                    "value": "1"
+                  },
+                  "NUM_READ_OUTSTANDING": {
+                    "value": "8"
+                  },
+                  "NUM_READ_THREADS": {
+                    "value": "1"
+                  },
+                  "NUM_WRITE_OUTSTANDING": {
+                    "value": "8"
+                  },
+                  "NUM_WRITE_THREADS": {
+                    "value": "1"
+                  },
+                  "RUSER_BITS_PER_BYTE": {
+                    "value": "0"
+                  },
+                  "SUPPORTS_NARROW_BURST": {
+                    "value": "0"
+                  },
+                  "WUSER_BITS_PER_BYTE": {
+                    "value": "0"
+                  }
+                }
+              },
+              "M02_AXI": {
+                "mode": "Master",
+                "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
+                "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
+                "parameters": {
+                  "MAX_BURST_LENGTH": {
+                    "value": "16"
+                  },
+                  "NUM_READ_OUTSTANDING": {
+                    "value": "8"
+                  },
+                  "NUM_READ_THREADS": {
+                    "value": "1"
+                  },
+                  "NUM_WRITE_OUTSTANDING": {
+                    "value": "8"
+                  },
+                  "NUM_WRITE_THREADS": {
+                    "value": "1"
+                  },
+                  "RUSER_BITS_PER_BYTE": {
+                    "value": "0"
+                  },
+                  "SUPPORTS_NARROW_BURST": {
+                    "value": "0"
+                  },
+                  "WUSER_BITS_PER_BYTE": {
+                    "value": "0"
+                  }
+                }
+              },
+              "M03_AXI": {
+                "mode": "Master",
+                "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
+                "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
+                "parameters": {
+                  "MAX_BURST_LENGTH": {
+                    "value": "16"
+                  },
+                  "NUM_READ_OUTSTANDING": {
+                    "value": "8"
+                  },
+                  "NUM_READ_THREADS": {
+                    "value": "1"
+                  },
+                  "NUM_WRITE_OUTSTANDING": {
+                    "value": "8"
+                  },
+                  "NUM_WRITE_THREADS": {
+                    "value": "1"
+                  },
+                  "RUSER_BITS_PER_BYTE": {
+                    "value": "0"
+                  },
+                  "SUPPORTS_NARROW_BURST": {
+                    "value": "0"
+                  },
                   "WUSER_BITS_PER_BYTE": {
                     "value": "0"
                   }
@@ -360,6 +514,24 @@
             "interface_ports": [
               "smartconnect_0/M00_AXI",
               "AXI_GPIO"
+            ]
+          },
+          "Conn2": {
+            "interface_ports": [
+              "smartconnect_0/M01_AXI",
+              "M01_AXI_0"
+            ]
+          },
+          "Conn3": {
+            "interface_ports": [
+              "smartconnect_0/M02_AXI",
+              "M02_AXI_0"
+            ]
+          },
+          "Conn4": {
+            "interface_ports": [
+              "smartconnect_0/M03_AXI",
+              "M03_AXI_0"
             ]
           },
           "processing_system7_0_M_AXI_GP0": {
@@ -947,6 +1119,479 @@
             "direction": "O"
           }
         }
+      },
+      "bram_tester": {
+        "interface_ports": {
+          "BRAM_INIT": {
+            "mode": "Slave",
+            "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
+          },
+          "BRAM_READ": {
+            "mode": "Slave",
+            "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
+          }
+        },
+        "ports": {
+          "clk": {
+            "direction": "I"
+          },
+          "rst_n": {
+            "direction": "I"
+          }
+        },
+        "components": {
+          "bram_writer_0": {
+            "vlnv": "xilinx.com:module_ref:bram_writer:1.0",
+            "ip_revision": "1",
+            "xci_name": "ad4134fw_bram_writer_0_0",
+            "xci_path": "ip\\ad4134fw_bram_writer_0_0\\ad4134fw_bram_writer_0_0.xci",
+            "inst_hier_path": "bram_tester/bram_writer_0",
+            "reference_info": {
+              "ref_type": "hdl",
+              "ref_name": "bram_writer",
+              "boundary_crc": "0x0"
+            },
+            "ports": {
+              "clk": {
+                "type": "clk",
+                "direction": "I",
+                "parameters": {
+                  "FREQ_HZ": {
+                    "value": "50000000",
+                    "value_src": "ip_prop"
+                  },
+                  "PHASE": {
+                    "value": "0.0",
+                    "value_src": "ip_prop"
+                  },
+                  "CLK_DOMAIN": {
+                    "value": "/Processing_Subsystem/clk_wiz_0_clk_out1",
+                    "value_src": "ip_prop"
+                  }
+                }
+              },
+              "reset_n": {
+                "type": "rst",
+                "direction": "I",
+                "parameters": {
+                  "POLARITY": {
+                    "value": "ACTIVE_LOW",
+                    "value_src": "const_prop"
+                  }
+                }
+              },
+              "start": {
+                "direction": "I"
+              },
+              "addra": {
+                "direction": "O",
+                "left": "12",
+                "right": "0"
+              },
+              "dia": {
+                "direction": "O",
+                "left": "31",
+                "right": "0"
+              },
+              "wea": {
+                "direction": "O"
+              },
+              "done": {
+                "direction": "O"
+              }
+            }
+          },
+          "blk_mem_gen_0": {
+            "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
+            "ip_revision": "9",
+            "xci_name": "ad4134fw_blk_mem_gen_0_0",
+            "xci_path": "ip\\ad4134fw_blk_mem_gen_0_0\\ad4134fw_blk_mem_gen_0_0.xci",
+            "inst_hier_path": "bram_tester/blk_mem_gen_0",
+            "parameters": {
+              "Enable_A": {
+                "value": "Always_Enabled"
+              },
+              "Enable_B": {
+                "value": "Always_Enabled"
+              },
+              "Memory_Type": {
+                "value": "Simple_Dual_Port_RAM"
+              },
+              "use_bram_block": {
+                "value": "Stand_Alone"
+              }
+            }
+          },
+          "bram_read": {
+            "vlnv": "xilinx.com:ip:axi_bram_ctrl:4.1",
+            "ip_revision": "11",
+            "xci_name": "ad4134fw_axi_bram_ctrl_0_0",
+            "xci_path": "ip\\ad4134fw_axi_bram_ctrl_0_0\\ad4134fw_axi_bram_ctrl_0_0.xci",
+            "inst_hier_path": "bram_tester/bram_read",
+            "parameters": {
+              "SINGLE_PORT_BRAM": {
+                "value": "1"
+              }
+            },
+            "hdl_attributes": {
+              "BMM_INFO_ADDRESS_SPACE": {
+                "value": "byte  0x40000000 32 > ad4134fw bram_tester/blk_mem_gen_0",
+                "value_src": "default"
+              },
+              "KEEP_HIERARCHY": {
+                "value": "yes",
+                "value_src": "default"
+              }
+            }
+          },
+          "bram_test_control": {
+            "vlnv": "xilinx.com:ip:axi_gpio:2.0",
+            "ip_revision": "35",
+            "xci_name": "ad4134fw_axi_gpio_0_1",
+            "xci_path": "ip\\ad4134fw_axi_gpio_0_1\\ad4134fw_axi_gpio_0_1.xci",
+            "inst_hier_path": "bram_tester/bram_test_control",
+            "parameters": {
+              "C_ALL_OUTPUTS": {
+                "value": "1"
+              }
+            }
+          },
+          "xlslice_0": {
+            "vlnv": "xilinx.com:ip:xlslice:1.0",
+            "ip_revision": "4",
+            "xci_name": "ad4134fw_xlslice_0_1",
+            "xci_path": "ip\\ad4134fw_xlslice_0_1\\ad4134fw_xlslice_0_1.xci",
+            "inst_hier_path": "bram_tester/xlslice_0"
+          }
+        },
+        "interface_nets": {
+          "Conn1": {
+            "interface_ports": [
+              "bram_test_control/S_AXI",
+              "BRAM_INIT"
+            ]
+          },
+          "Conn2": {
+            "interface_ports": [
+              "bram_read/S_AXI",
+              "BRAM_READ"
+            ]
+          },
+          "axi_bram_ctrl_0_BRAM_PORTA": {
+            "interface_ports": [
+              "bram_read/BRAM_PORTA",
+              "blk_mem_gen_0/BRAM_PORTB"
+            ]
+          }
+        },
+        "nets": {
+          "bram_test_control_gpio_io_o": {
+            "ports": [
+              "bram_test_control/gpio_io_o",
+              "xlslice_0/Din"
+            ]
+          },
+          "bram_writer_0_addra": {
+            "ports": [
+              "bram_writer_0/addra",
+              "blk_mem_gen_0/addra"
+            ]
+          },
+          "bram_writer_0_dia": {
+            "ports": [
+              "bram_writer_0/dia",
+              "blk_mem_gen_0/dina"
+            ]
+          },
+          "bram_writer_0_wea": {
+            "ports": [
+              "bram_writer_0/wea",
+              "blk_mem_gen_0/wea"
+            ]
+          },
+          "clk_1": {
+            "ports": [
+              "clk",
+              "bram_test_control/s_axi_aclk",
+              "bram_read/s_axi_aclk",
+              "bram_writer_0/clk",
+              "blk_mem_gen_0/clka"
+            ]
+          },
+          "rst_n_1": {
+            "ports": [
+              "rst_n",
+              "bram_test_control/s_axi_aresetn",
+              "bram_read/s_axi_aresetn",
+              "bram_writer_0/reset_n"
+            ]
+          },
+          "xlslice_0_Dout": {
+            "ports": [
+              "xlslice_0/Dout",
+              "bram_writer_0/start"
+            ]
+          }
+        }
+      },
+      "ADC_BRAM": {
+        "interface_ports": {
+          "ADC_BRAM_Reader": {
+            "mode": "Slave",
+            "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
+          }
+        },
+        "ports": {
+          "clk": {
+            "direction": "I"
+          },
+          "rst_n": {
+            "direction": "I"
+          },
+          "data_in0_0": {
+            "direction": "I",
+            "left": "23",
+            "right": "0"
+          },
+          "data_in1_0": {
+            "direction": "I",
+            "left": "23",
+            "right": "0"
+          },
+          "data_in2_0": {
+            "direction": "I",
+            "left": "23",
+            "right": "0"
+          },
+          "data_in3_0": {
+            "direction": "I",
+            "left": "23",
+            "right": "0"
+          },
+          "data_rdy_0": {
+            "direction": "I"
+          },
+          "done_0": {
+            "direction": "O"
+          }
+        },
+        "components": {
+          "blk_mem_gen_0": {
+            "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
+            "ip_revision": "9",
+            "xci_name": "ad4134fw_blk_mem_gen_0_2",
+            "xci_path": "ip\\ad4134fw_blk_mem_gen_0_2\\ad4134fw_blk_mem_gen_0_2.xci",
+            "inst_hier_path": "ADC_BRAM/blk_mem_gen_0",
+            "parameters": {
+              "Enable_A": {
+                "value": "Always_Enabled"
+              },
+              "Enable_B": {
+                "value": "Always_Enabled"
+              },
+              "Memory_Type": {
+                "value": "Simple_Dual_Port_RAM"
+              },
+              "Write_Depth_A": {
+                "value": "32768"
+              },
+              "use_bram_block": {
+                "value": "Stand_Alone"
+              }
+            }
+          },
+          "ADC_BRAM_READ": {
+            "vlnv": "xilinx.com:ip:axi_bram_ctrl:4.1",
+            "ip_revision": "11",
+            "xci_name": "ad4134fw_axi_bram_ctrl_0_2",
+            "xci_path": "ip\\ad4134fw_axi_bram_ctrl_0_2\\ad4134fw_axi_bram_ctrl_0_2.xci",
+            "inst_hier_path": "ADC_BRAM/ADC_BRAM_READ",
+            "parameters": {
+              "SINGLE_PORT_BRAM": {
+                "value": "1"
+              }
+            },
+            "hdl_attributes": {
+              "BMM_INFO_ADDRESS_SPACE": {
+                "value": "byte  0x42000000 32 > ad4134fw ADC_BRAM/blk_mem_gen_0",
+                "value_src": "default"
+              },
+              "KEEP_HIERARCHY": {
+                "value": "yes",
+                "value_src": "default"
+              }
+            }
+          },
+          "ad4134_to_bram_0": {
+            "vlnv": "xilinx.com:module_ref:ad4134_to_bram:1.0",
+            "ip_revision": "1",
+            "xci_name": "ad4134fw_ad4134_to_bram_0_0",
+            "xci_path": "ip\\ad4134fw_ad4134_to_bram_0_0\\ad4134fw_ad4134_to_bram_0_0.xci",
+            "inst_hier_path": "ADC_BRAM/ad4134_to_bram_0",
+            "reference_info": {
+              "ref_type": "hdl",
+              "ref_name": "ad4134_to_bram",
+              "boundary_crc": "0x0"
+            },
+            "ports": {
+              "clk": {
+                "type": "clk",
+                "direction": "I",
+                "parameters": {
+                  "FREQ_HZ": {
+                    "value": "50000000",
+                    "value_src": "ip_prop"
+                  },
+                  "PHASE": {
+                    "value": "0.0",
+                    "value_src": "ip_prop"
+                  },
+                  "CLK_DOMAIN": {
+                    "value": "/Processing_Subsystem/clk_wiz_0_clk_out1",
+                    "value_src": "ip_prop"
+                  }
+                }
+              },
+              "rst_n": {
+                "type": "rst",
+                "direction": "I",
+                "parameters": {
+                  "POLARITY": {
+                    "value": "ACTIVE_LOW",
+                    "value_src": "constant"
+                  }
+                }
+              },
+              "data_in0": {
+                "direction": "I",
+                "left": "23",
+                "right": "0"
+              },
+              "data_in1": {
+                "direction": "I",
+                "left": "23",
+                "right": "0"
+              },
+              "data_in2": {
+                "direction": "I",
+                "left": "23",
+                "right": "0"
+              },
+              "data_in3": {
+                "direction": "I",
+                "left": "23",
+                "right": "0"
+              },
+              "data_rdy": {
+                "direction": "I"
+              },
+              "addra": {
+                "direction": "O",
+                "left": "14",
+                "right": "0"
+              },
+              "dia": {
+                "direction": "O",
+                "left": "31",
+                "right": "0"
+              },
+              "wea": {
+                "direction": "O"
+              },
+              "done": {
+                "direction": "O"
+              }
+            }
+          }
+        },
+        "interface_nets": {
+          "Conn1": {
+            "interface_ports": [
+              "ADC_BRAM_READ/S_AXI",
+              "ADC_BRAM_Reader"
+            ]
+          },
+          "axi_bram_ctrl_0_BRAM_PORTA": {
+            "interface_ports": [
+              "ADC_BRAM_READ/BRAM_PORTA",
+              "blk_mem_gen_0/BRAM_PORTB"
+            ]
+          }
+        },
+        "nets": {
+          "ad4134_to_bram_0_addra": {
+            "ports": [
+              "ad4134_to_bram_0/addra",
+              "blk_mem_gen_0/addra"
+            ]
+          },
+          "ad4134_to_bram_0_dia": {
+            "ports": [
+              "ad4134_to_bram_0/dia",
+              "blk_mem_gen_0/dina"
+            ]
+          },
+          "ad4134_to_bram_0_done": {
+            "ports": [
+              "ad4134_to_bram_0/done",
+              "done_0"
+            ]
+          },
+          "ad4134_to_bram_0_wea": {
+            "ports": [
+              "ad4134_to_bram_0/wea",
+              "blk_mem_gen_0/wea"
+            ]
+          },
+          "clk_1": {
+            "ports": [
+              "clk",
+              "ADC_BRAM_READ/s_axi_aclk",
+              "blk_mem_gen_0/clka",
+              "ad4134_to_bram_0/clk"
+            ]
+          },
+          "data_in0_0_1": {
+            "ports": [
+              "data_in0_0",
+              "ad4134_to_bram_0/data_in0"
+            ]
+          },
+          "data_in1_0_1": {
+            "ports": [
+              "data_in1_0",
+              "ad4134_to_bram_0/data_in1"
+            ]
+          },
+          "data_in2_0_1": {
+            "ports": [
+              "data_in2_0",
+              "ad4134_to_bram_0/data_in2"
+            ]
+          },
+          "data_in3_0_1": {
+            "ports": [
+              "data_in3_0",
+              "ad4134_to_bram_0/data_in3"
+            ]
+          },
+          "data_rdy_0_1": {
+            "ports": [
+              "data_rdy_0",
+              "ad4134_to_bram_0/data_rdy"
+            ]
+          },
+          "rst_n_1": {
+            "ports": [
+              "rst_n",
+              "ADC_BRAM_READ/s_axi_aresetn",
+              "ad4134_to_bram_0/rst_n"
+            ]
+          }
+        }
       }
     },
     "interface_nets": {
@@ -954,6 +1599,24 @@
         "interface_ports": [
           "LEDS/S_AXI",
           "Processing_Subsystem/AXI_GPIO"
+        ]
+      },
+      "Processing_Subsystem_M01_AXI_0": {
+        "interface_ports": [
+          "Processing_Subsystem/M01_AXI_0",
+          "bram_tester/BRAM_INIT"
+        ]
+      },
+      "Processing_Subsystem_M02_AXI_0": {
+        "interface_ports": [
+          "Processing_Subsystem/M02_AXI_0",
+          "bram_tester/BRAM_READ"
+        ]
+      },
+      "Processing_Subsystem_M03_AXI_0": {
+        "interface_ports": [
+          "Processing_Subsystem/M03_AXI_0",
+          "ADC_BRAM/ADC_BRAM_Reader"
         ]
       }
     },
@@ -963,7 +1626,9 @@
           "Processing_Subsystem/global_clk",
           "SPI_Control/clk",
           "LEDS/s_axi_aclk",
-          "ad4134_data_0/clk"
+          "ad4134_data_0/clk",
+          "bram_tester/clk",
+          "ADC_BRAM/clk"
         ]
       },
       "Processing_Subsystem_global_rst_n": {
@@ -971,7 +1636,9 @@
           "Processing_Subsystem/global_rst_n",
           "SPI_Control/rstn",
           "LEDS/s_axi_aresetn",
-          "ad4134_data_0/rst_n"
+          "ad4134_data_0/rst_n",
+          "bram_tester/rst_n",
+          "ADC_BRAM/rst_n"
         ]
       },
       "ad4134_clock_generat_0_spi_clk": {
@@ -986,6 +1653,36 @@
           "debug"
         ]
       },
+      "ad4134_data_0_data_out0": {
+        "ports": [
+          "ad4134_data_0/data_out0",
+          "ADC_BRAM/data_in0_0"
+        ]
+      },
+      "ad4134_data_0_data_out1": {
+        "ports": [
+          "ad4134_data_0/data_out1",
+          "ADC_BRAM/data_in1_0"
+        ]
+      },
+      "ad4134_data_0_data_out2": {
+        "ports": [
+          "ad4134_data_0/data_out2",
+          "ADC_BRAM/data_in2_0"
+        ]
+      },
+      "ad4134_data_0_data_out3": {
+        "ports": [
+          "ad4134_data_0/data_out3",
+          "ADC_BRAM/data_in3_0"
+        ]
+      },
+      "ad4134_data_0_data_rdy": {
+        "ports": [
+          "ad4134_data_0/data_rdy",
+          "ADC_BRAM/data_rdy_0"
+        ]
+      },
       "ad4134_data_0_dclk_out": {
         "ports": [
           "ad4134_data_0/dclk_out",
@@ -996,6 +1693,30 @@
         "ports": [
           "ad4134_data_0/odr_out",
           "odr_out"
+        ]
+      },
+      "data_in0_1": {
+        "ports": [
+          "data_in0",
+          "ad4134_data_0/data_in0"
+        ]
+      },
+      "data_in1_1": {
+        "ports": [
+          "data_in1",
+          "ad4134_data_0/data_in1"
+        ]
+      },
+      "data_in2_1": {
+        "ports": [
+          "data_in2",
+          "ad4134_data_0/data_in2"
+        ]
+      },
+      "data_in3_1": {
+        "ports": [
+          "data_in3",
+          "ad4134_data_0/data_in3"
         ]
       },
       "miso_1": {
@@ -1034,9 +1755,24 @@
         "address_spaces": {
           "Data": {
             "segments": {
+              "SEG_axi_bram_ctrl_0_Mem0": {
+                "address_block": "/bram_tester/bram_read/S_AXI/Mem0",
+                "offset": "0x40000000",
+                "range": "8K"
+              },
+              "SEG_axi_bram_ctrl_0_Mem0_1": {
+                "address_block": "/ADC_BRAM/ADC_BRAM_READ/S_AXI/Mem0",
+                "offset": "0x42000000",
+                "range": "8K"
+              },
               "SEG_axi_gpio_0_Reg": {
                 "address_block": "/LEDS/axi_gpio_0/S_AXI/Reg",
                 "offset": "0x41200000",
+                "range": "64K"
+              },
+              "SEG_bram_test_control_Reg": {
+                "address_block": "/bram_tester/bram_test_control/S_AXI/Reg",
+                "offset": "0x41210000",
                 "range": "64K"
               }
             }
