@@ -2,7 +2,7 @@
   "schema": "xilinx.com:schema:json_instance:1.0",
   "ip_inst": {
     "xci_name": "ad4134fw_ad4134_to_bram_0_0",
-    "cell_name": "ADC_BRAM/ad4134_to_bram_0",
+    "cell_name": "ad4134_to_bram_0",
     "component_reference": "xilinx.com:module_ref:ad4134_to_bram:1.0",
     "ip_revision": "1",
     "gen_directory": "../../../../../../ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_ad4134_to_bram_0_0",
@@ -50,7 +50,9 @@
         "addra": [ { "direction": "out", "size_left": "14", "size_right": "0" } ],
         "dia": [ { "direction": "out", "size_left": "31", "size_right": "0" } ],
         "wea": [ { "direction": "out" } ],
-        "done": [ { "direction": "out" } ]
+        "done": [ { "direction": "out" } ],
+        "bram_enable": [ { "direction": "in" } ],
+        "debug": [ { "direction": "out", "size_left": "3", "size_right": "0" } ]
       },
       "interfaces": {
         "rst_n": {

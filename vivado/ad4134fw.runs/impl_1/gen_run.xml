@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z010clg400-1" LaunchTime="1762113055">
-  <File Type="PA-DCP" Name="ad4134fw_wrapper.dcp"/>
+<GenRun Id="impl_1" LaunchPart="xc7z010clg400-1" LaunchTime="1762197261">
   <File Type="PA-TCL" Name="ad4134fw_wrapper.tcl"/>
   <File Type="REPORTS-TCL" Name="ad4134fw_wrapper_reports.tcl"/>
   <File Type="INIT-TIMING" Name="ad4134fw_wrapper_timing_summary_init.rpt"/>

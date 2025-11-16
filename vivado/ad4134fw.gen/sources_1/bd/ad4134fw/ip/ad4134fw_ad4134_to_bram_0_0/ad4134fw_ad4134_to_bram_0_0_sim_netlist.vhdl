@@ -2,7 +2,7 @@
 -- Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
--- Date        : Sun Nov  2 21:33:54 2025
+-- Date        : Mon Nov  3 21:15:44 2025
 -- Host        : DESKTOP-NG70LRJ running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_ad4134_to_bram_0_0/ad4134fw_ad4134_to_bram_0_0_sim_netlist.vhdl
@@ -19,17 +19,24 @@ entity ad4134fw_ad4134_to_bram_0_0_ad4134_to_bram is
   port (
     addra : out STD_LOGIC_VECTOR ( 12 downto 0 );
     dia : out STD_LOGIC_VECTOR ( 23 downto 0 );
+    debug : out STD_LOGIC_VECTOR ( 2 downto 0 );
     wea : out STD_LOGIC;
     clk : in STD_LOGIC;
     data_rdy : in STD_LOGIC;
     data_in0 : in STD_LOGIC_VECTOR ( 23 downto 0 );
-    rst_n : in STD_LOGIC
+    rst_n : in STD_LOGIC;
+    bram_enable : in STD_LOGIC
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of ad4134fw_ad4134_to_bram_0_0_ad4134_to_bram : entity is "ad4134_to_bram";
 end ad4134fw_ad4134_to_bram_0_0_ad4134_to_bram;
 
 architecture STRUCTURE of ad4134fw_ad4134_to_bram_0_0_ad4134_to_bram is
+  signal \FSM_onehot_state[0]_i_1_n_0\ : STD_LOGIC;
+  signal \FSM_onehot_state[1]_i_1_n_0\ : STD_LOGIC;
+  signal \FSM_onehot_state_reg_n_0_[0]\ : STD_LOGIC;
+  signal \FSM_onehot_state_reg_n_0_[1]\ : STD_LOGIC;
+  signal \FSM_onehot_state_reg_n_0_[2]\ : STD_LOGIC;
   signal \addr_cnt[12]_i_1_n_0\ : STD_LOGIC;
   signal addr_cnt_shifted : STD_LOGIC_VECTOR ( 14 downto 2 );
   signal \addra[14]_i_2_n_0\ : STD_LOGIC;
@@ -37,6 +44,8 @@ architecture STRUCTURE of ad4134fw_ad4134_to_bram_0_0_ad4134_to_bram is
   signal \addra[14]_i_4_n_0\ : STD_LOGIC;
   signal data_rdy_r1 : STD_LOGIC;
   signal data_rdy_r2 : STD_LOGIC;
+  signal \debug[0]_i_1_n_0\ : STD_LOGIC;
+  signal \debug[1]_i_1_n_0\ : STD_LOGIC;
   signal dia0 : STD_LOGIC;
   signal p_1_in : STD_LOGIC_VECTOR ( 14 downto 2 );
   signal plusOp : STD_LOGIC_VECTOR ( 12 downto 0 );
@@ -51,47 +60,60 @@ architecture STRUCTURE of ad4134fw_ad4134_to_bram_0_0_ad4134_to_bram is
   signal plusOp_carry_n_1 : STD_LOGIC;
   signal plusOp_carry_n_2 : STD_LOGIC;
   signal plusOp_carry_n_3 : STD_LOGIC;
-  signal state : STD_LOGIC_VECTOR ( 1 downto 0 );
-  signal \state__0\ : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal \^wea\ : STD_LOGIC;
   signal wea_i_1_n_0 : STD_LOGIC;
   signal wea_i_2_n_0 : STD_LOGIC;
   signal \NLW_plusOp_carry__1_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 to 3 );
-  attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \FSM_sequential_state[0]_i_1\ : label is "soft_lutpair1";
-  attribute SOFT_HLUTNM of \FSM_sequential_state[1]_i_1\ : label is "soft_lutpair1";
   attribute FSM_ENCODED_STATES : string;
-  attribute FSM_ENCODED_STATES of \FSM_sequential_state_reg[0]\ : label is "finished_s:10,idle_s:00,write_s:01";
-  attribute FSM_ENCODED_STATES of \FSM_sequential_state_reg[1]\ : label is "finished_s:10,idle_s:00,write_s:01";
+  attribute FSM_ENCODED_STATES of \FSM_onehot_state_reg[0]\ : label is "finished_s:100,idle_s:001,write_s:010";
+  attribute FSM_ENCODED_STATES of \FSM_onehot_state_reg[1]\ : label is "finished_s:100,idle_s:001,write_s:010";
+  attribute FSM_ENCODED_STATES of \FSM_onehot_state_reg[2]\ : label is "finished_s:100,idle_s:001,write_s:010";
+  attribute SOFT_HLUTNM : string;
   attribute SOFT_HLUTNM of \addr_cnt[0]_i_1\ : label is "soft_lutpair0";
-  attribute SOFT_HLUTNM of \addra[14]_i_2\ : label is "soft_lutpair0";
+  attribute SOFT_HLUTNM of \addra[14]_i_4\ : label is "soft_lutpair0";
+  attribute SOFT_HLUTNM of \debug[0]_i_1\ : label is "soft_lutpair1";
   attribute ADDER_THRESHOLD : integer;
   attribute ADDER_THRESHOLD of plusOp_carry : label is 35;
   attribute ADDER_THRESHOLD of \plusOp_carry__0\ : label is 35;
   attribute ADDER_THRESHOLD of \plusOp_carry__1\ : label is 35;
+  attribute SOFT_HLUTNM of wea_i_1 : label is "soft_lutpair1";
 begin
   wea <= \^wea\;
-\FSM_sequential_state[0]_i_1\: unisim.vcomponents.LUT4
+\FSM_onehot_state[0]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"0100"
+      INIT => X"FFFFA2AA"
     )
         port map (
-      I0 => state(1),
-      I1 => state(0),
+      I0 => \FSM_onehot_state_reg_n_0_[0]\,
+      I1 => data_rdy_r1,
+      I2 => data_rdy_r2,
+      I3 => bram_enable,
+      I4 => \FSM_onehot_state_reg_n_0_[2]\,
+      O => \FSM_onehot_state[0]_i_1_n_0\
+    );
+\FSM_onehot_state[1]_i_1\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"0800"
+    )
+        port map (
+      I0 => \FSM_onehot_state_reg_n_0_[0]\,
+      I1 => bram_enable,
       I2 => data_rdy_r2,
       I3 => data_rdy_r1,
-      O => \state__0\(0)
+      O => \FSM_onehot_state[1]_i_1_n_0\
     );
-\FSM_sequential_state[1]_i_1\: unisim.vcomponents.LUT2
+\FSM_onehot_state_reg[0]\: unisim.vcomponents.FDPE
     generic map(
-      INIT => X"2"
+      INIT => '1'
     )
         port map (
-      I0 => state(0),
-      I1 => state(1),
-      O => \state__0\(1)
+      C => clk,
+      CE => '1',
+      D => \FSM_onehot_state[0]_i_1_n_0\,
+      PRE => wea_i_2_n_0,
+      Q => \FSM_onehot_state_reg_n_0_[0]\
     );
-\FSM_sequential_state_reg[0]\: unisim.vcomponents.FDCE
+\FSM_onehot_state_reg[1]\: unisim.vcomponents.FDCE
     generic map(
       INIT => '0'
     )
@@ -99,10 +121,10 @@ begin
       C => clk,
       CE => '1',
       CLR => wea_i_2_n_0,
-      D => \state__0\(0),
-      Q => state(0)
+      D => \FSM_onehot_state[1]_i_1_n_0\,
+      Q => \FSM_onehot_state_reg_n_0_[1]\
     );
-\FSM_sequential_state_reg[1]\: unisim.vcomponents.FDCE
+\FSM_onehot_state_reg[2]\: unisim.vcomponents.FDCE
     generic map(
       INIT => '0'
     )
@@ -110,8 +132,8 @@ begin
       C => clk,
       CE => '1',
       CLR => wea_i_2_n_0,
-      D => \state__0\(1),
-      Q => state(1)
+      D => \FSM_onehot_state_reg_n_0_[1]\,
+      Q => \FSM_onehot_state_reg_n_0_[2]\
     );
 \addr_cnt[0]_i_1\: unisim.vcomponents.LUT1
     generic map(
@@ -121,16 +143,13 @@ begin
       I0 => p_1_in(2),
       O => plusOp(0)
     );
-\addr_cnt[12]_i_1\: unisim.vcomponents.LUT5
+\addr_cnt[12]_i_1\: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"00FE0000"
+      INIT => X"8"
     )
         port map (
       I0 => \addra[14]_i_2_n_0\,
-      I1 => \addra[14]_i_3_n_0\,
-      I2 => \addra[14]_i_4_n_0\,
-      I3 => state(1),
-      I4 => state(0),
+      I1 => \FSM_onehot_state_reg_n_0_[1]\,
       O => \addr_cnt[12]_i_1_n_0\
     );
 \addr_cnt_reg[0]\: unisim.vcomponents.FDPE
@@ -419,20 +438,41 @@ begin
       D => p_1_in(9),
       Q => addr_cnt_shifted(9)
     );
-\addra[14]_i_1\: unisim.vcomponents.LUT6
+\addra[14]_i_1\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"00000000FE000000"
+      INIT => X"80"
     )
         port map (
       I0 => \addra[14]_i_2_n_0\,
-      I1 => \addra[14]_i_3_n_0\,
-      I2 => \addra[14]_i_4_n_0\,
-      I3 => rst_n,
-      I4 => state(0),
-      I5 => state(1),
+      I1 => \FSM_onehot_state_reg_n_0_[1]\,
+      I2 => rst_n,
       O => dia0
     );
-\addra[14]_i_2\: unisim.vcomponents.LUT5
+\addra[14]_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFFFFFFFBFFFFFFF"
+    )
+        port map (
+      I0 => \addra[14]_i_3_n_0\,
+      I1 => p_1_in(6),
+      I2 => p_1_in(5),
+      I3 => p_1_in(8),
+      I4 => p_1_in(7),
+      I5 => \addra[14]_i_4_n_0\,
+      O => \addra[14]_i_2_n_0\
+    );
+\addra[14]_i_3\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"7FFF"
+    )
+        port map (
+      I0 => p_1_in(10),
+      I1 => p_1_in(9),
+      I2 => p_1_in(12),
+      I3 => p_1_in(11),
+      O => \addra[14]_i_3_n_0\
+    );
+\addra[14]_i_4\: unisim.vcomponents.LUT5
     generic map(
       INIT => X"7FFFFFFF"
     )
@@ -442,28 +482,6 @@ begin
       I2 => p_1_in(14),
       I3 => p_1_in(4),
       I4 => p_1_in(3),
-      O => \addra[14]_i_2_n_0\
-    );
-\addra[14]_i_3\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"7FFF"
-    )
-        port map (
-      I0 => p_1_in(6),
-      I1 => p_1_in(5),
-      I2 => p_1_in(8),
-      I3 => p_1_in(7),
-      O => \addra[14]_i_3_n_0\
-    );
-\addra[14]_i_4\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"7FFF"
-    )
-        port map (
-      I0 => p_1_in(10),
-      I1 => p_1_in(9),
-      I2 => p_1_in(12),
-      I3 => p_1_in(11),
       O => \addra[14]_i_4_n_0\
     );
 \addra_reg[10]\: unisim.vcomponents.FDRE
@@ -585,6 +603,49 @@ data_rdy_r2_reg: unisim.vcomponents.FDCE
       CLR => wea_i_2_n_0,
       D => data_rdy_r1,
       Q => data_rdy_r2
+    );
+\debug[0]_i_1\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"FE"
+    )
+        port map (
+      I0 => \FSM_onehot_state_reg_n_0_[2]\,
+      I1 => \FSM_onehot_state_reg_n_0_[1]\,
+      I2 => \FSM_onehot_state_reg_n_0_[0]\,
+      O => \debug[0]_i_1_n_0\
+    );
+\debug[1]_i_1\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"E"
+    )
+        port map (
+      I0 => \FSM_onehot_state_reg_n_0_[1]\,
+      I1 => \FSM_onehot_state_reg_n_0_[2]\,
+      O => \debug[1]_i_1_n_0\
+    );
+\debug_reg[0]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => '1',
+      CLR => wea_i_2_n_0,
+      D => \debug[0]_i_1_n_0\,
+      Q => debug(0)
+    );
+\debug_reg[1]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => '1',
+      CLR => wea_i_2_n_0,
+      D => \debug[1]_i_1_n_0\,
+      Q => debug(1)
+    );
+\debug_reg[2]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => '1',
+      CLR => wea_i_2_n_0,
+      D => \FSM_onehot_state_reg_n_0_[2]\,
+      Q => debug(2)
     );
 \dia_reg[0]\: unisim.vcomponents.FDRE
      port map (
@@ -814,17 +875,16 @@ plusOp_carry: unisim.vcomponents.CARRY4
       O(3 downto 0) => plusOp(12 downto 9),
       S(3 downto 0) => p_1_in(14 downto 11)
     );
-wea_i_1: unisim.vcomponents.LUT6
+wea_i_1: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"AAABAAA80000AAA8"
+      INIT => X"AB11AA00"
     )
         port map (
-      I0 => state(1),
-      I1 => \addra[14]_i_4_n_0\,
-      I2 => \addra[14]_i_3_n_0\,
+      I0 => \FSM_onehot_state_reg_n_0_[2]\,
+      I1 => \FSM_onehot_state_reg_n_0_[0]\,
+      I2 => \FSM_onehot_state_reg_n_0_[1]\,
       I3 => \addra[14]_i_2_n_0\,
-      I4 => state(0),
-      I5 => \^wea\,
+      I4 => \^wea\,
       O => wea_i_1_n_0
     );
 wea_i_2: unisim.vcomponents.LUT1
@@ -860,7 +920,9 @@ entity ad4134fw_ad4134_to_bram_0_0 is
     addra : out STD_LOGIC_VECTOR ( 14 downto 0 );
     dia : out STD_LOGIC_VECTOR ( 31 downto 0 );
     wea : out STD_LOGIC;
-    done : out STD_LOGIC
+    done : out STD_LOGIC;
+    bram_enable : in STD_LOGIC;
+    debug : out STD_LOGIC_VECTOR ( 3 downto 0 )
   );
   attribute NotValidForBitStream : boolean;
   attribute NotValidForBitStream of ad4134fw_ad4134_to_bram_0_0 : entity is true;
@@ -877,6 +939,7 @@ end ad4134fw_ad4134_to_bram_0_0;
 architecture STRUCTURE of ad4134fw_ad4134_to_bram_0_0 is
   signal \<const0>\ : STD_LOGIC;
   signal \^addra\ : STD_LOGIC_VECTOR ( 14 downto 2 );
+  signal \^debug\ : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal \^dia\ : STD_LOGIC_VECTOR ( 23 downto 0 );
   attribute x_interface_info : string;
   attribute x_interface_info of clk : signal is "xilinx.com:signal:clock:1.0 clk CLK";
@@ -891,6 +954,8 @@ begin
   addra(14 downto 2) <= \^addra\(14 downto 2);
   addra(1) <= \<const0>\;
   addra(0) <= \<const0>\;
+  debug(3) <= \<const0>\;
+  debug(2 downto 0) <= \^debug\(2 downto 0);
   dia(31) <= \<const0>\;
   dia(30) <= \<const0>\;
   dia(29) <= \<const0>\;
@@ -908,9 +973,11 @@ GND: unisim.vcomponents.GND
 U0: entity work.ad4134fw_ad4134_to_bram_0_0_ad4134_to_bram
      port map (
       addra(12 downto 0) => \^addra\(14 downto 2),
+      bram_enable => bram_enable,
       clk => clk,
       data_in0(23 downto 0) => data_in0(23 downto 0),
       data_rdy => data_rdy,
+      debug(2 downto 0) => \^debug\(2 downto 0),
       dia(23 downto 0) => \^dia\(23 downto 0),
       rst_n => rst_n,
       wea => wea

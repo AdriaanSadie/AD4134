@@ -8,7 +8,7 @@
   **** SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
   **** IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
   **** SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-  **** Start of session at: Sun Nov  2 21:37:20 2025
+  **** Start of session at: Mon Nov  3 21:19:39 2025
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 
@@ -19,6 +19,7 @@ INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'E:/Xilinx/Vivado/2024.2/dat
 INFO: [Project 1-5578] Found utility IPs instantiated in block design C:/work/AD4134/vivado/ad4134fw.srcs/sources_1/bd/ad4134fw/ad4134fw.bd which have equivalent inline hdl with improved performance and reduced diskspace.
 It is recommended to migrate these utility IPs to inline hdl  using the command upgrade_project -migrate_to_inline_hdl.  The utility IPs may be deprecated in future releases.
 More information on inline hdl is available in UG994. 
+add_files: Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 418.262 ; gain = 54.383
 Command: read_checkpoint -auto_incremental -incremental C:/work/AD4134/vivado/ad4134fw.srcs/utils_1/imports/synth_1/ad4134fw_wrapper.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from C:/work/AD4134/vivado/ad4134fw.srcs/utils_1/imports/synth_1/ad4134fw_wrapper.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -31,136 +32,79 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 18068
+INFO: [Synth 8-7075] Helper process launched with PID 2388
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1103.824 ; gain = 467.242
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1108.137 ; gain = 467.312
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'ad4134fw_wrapper' [C:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/hdl/ad4134fw_wrapper.vhd:33]
-INFO: [Synth 8-3491] module 'ad4134fw' declared at 'c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:1361' bound to instance 'ad4134fw_i' of component 'ad4134fw' [C:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/hdl/ad4134fw_wrapper.vhd:52]
-INFO: [Synth 8-638] synthesizing module 'ad4134fw' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:1383]
-INFO: [Synth 8-638] synthesizing module 'ADC_BRAM_imp_3GMY3Y' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:59]
-INFO: [Synth 8-3491] module 'ad4134fw_axi_bram_ctrl_0_2' declared at 'C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-14972-DESKTOP-NG70LRJ/realtime/ad4134fw_axi_bram_ctrl_0_2_stub.vhdl:6' bound to instance 'ADC_BRAM_READ' of component 'ad4134fw_axi_bram_ctrl_0_2' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:145]
-INFO: [Synth 8-638] synthesizing module 'ad4134fw_axi_bram_ctrl_0_2' [C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-14972-DESKTOP-NG70LRJ/realtime/ad4134fw_axi_bram_ctrl_0_2_stub.vhdl:58]
-INFO: [Synth 8-3491] module 'ad4134fw_ad4134_to_bram_0_0' declared at 'C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-14972-DESKTOP-NG70LRJ/realtime/ad4134fw_ad4134_to_bram_0_0_stub.vhdl:6' bound to instance 'ad4134_to_bram_0' of component 'ad4134fw_ad4134_to_bram_0_0' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:188]
-INFO: [Synth 8-638] synthesizing module 'ad4134fw_ad4134_to_bram_0_0' [C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-14972-DESKTOP-NG70LRJ/realtime/ad4134fw_ad4134_to_bram_0_0_stub.vhdl:31]
-INFO: [Synth 8-3491] module 'ad4134fw_blk_mem_gen_0_2' declared at 'C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-14972-DESKTOP-NG70LRJ/realtime/ad4134fw_blk_mem_gen_0_2_stub.vhdl:6' bound to instance 'blk_mem_gen_0' of component 'ad4134fw_blk_mem_gen_0_2' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:202]
-INFO: [Synth 8-638] synthesizing module 'ad4134fw_blk_mem_gen_0_2' [C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-14972-DESKTOP-NG70LRJ/realtime/ad4134fw_blk_mem_gen_0_2_stub.vhdl:25]
-INFO: [Synth 8-256] done synthesizing module 'ADC_BRAM_imp_3GMY3Y' (0#1) [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:59]
-INFO: [Synth 8-638] synthesizing module 'LEDS_imp_1273PJO' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:244]
-INFO: [Synth 8-3491] module 'ad4134fw_axi_gpio_0_0' declared at 'C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-14972-DESKTOP-NG70LRJ/realtime/ad4134fw_axi_gpio_0_0_stub.vhdl:6' bound to instance 'axi_gpio_0' of component 'ad4134fw_axi_gpio_0_0' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:290]
-INFO: [Synth 8-638] synthesizing module 'ad4134fw_axi_gpio_0_0' [C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-14972-DESKTOP-NG70LRJ/realtime/ad4134fw_axi_gpio_0_0_stub.vhdl:38]
-INFO: [Synth 8-3491] module 'ad4134fw_c_counter_binary_0_0' declared at 'C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-14972-DESKTOP-NG70LRJ/realtime/ad4134fw_c_counter_binary_0_0_stub.vhdl:6' bound to instance 'c_counter_binary_0' of component 'ad4134fw_c_counter_binary_0_0' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:313]
-INFO: [Synth 8-638] synthesizing module 'ad4134fw_c_counter_binary_0_0' [C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-14972-DESKTOP-NG70LRJ/realtime/ad4134fw_c_counter_binary_0_0_stub.vhdl:20]
-INFO: [Synth 8-3491] module 'ad4134fw_xlslice_0_0' declared at 'c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_xlslice_0_0/synth/ad4134fw_xlslice_0_0.v:53' bound to instance 'xlslice_0' of component 'ad4134fw_xlslice_0_0' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:318]
-INFO: [Synth 8-6157] synthesizing module 'ad4134fw_xlslice_0_0' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_xlslice_0_0/synth/ad4134fw_xlslice_0_0.v:53]
+INFO: [Synth 8-3491] module 'ad4134fw' declared at 'c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:1500' bound to instance 'ad4134fw_i' of component 'ad4134fw' [C:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/hdl/ad4134fw_wrapper.vhd:52]
+INFO: [Synth 8-638] synthesizing module 'ad4134fw' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:1522]
+INFO: [Synth 8-638] synthesizing module 'ADC_BRAM_imp_3GMY3Y' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:77]
+INFO: [Synth 8-3491] module 'ad4134fw_axi_bram_ctrl_0_2' declared at 'C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-5272-DESKTOP-NG70LRJ/realtime/ad4134fw_axi_bram_ctrl_0_2_stub.vhdl:6' bound to instance 'ADC_BRAM_READ' of component 'ad4134fw_axi_bram_ctrl_0_2' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:197]
+INFO: [Synth 8-638] synthesizing module 'ad4134fw_axi_bram_ctrl_0_2' [C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-5272-DESKTOP-NG70LRJ/realtime/ad4134fw_axi_bram_ctrl_0_2_stub.vhdl:58]
+INFO: [Synth 8-3491] module 'ad4134fw_ad4134_to_bram_0_0' declared at 'C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-5272-DESKTOP-NG70LRJ/realtime/ad4134fw_ad4134_to_bram_0_0_stub.vhdl:6' bound to instance 'ad4134_to_bram_0' of component 'ad4134fw_ad4134_to_bram_0_0' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:240]
+INFO: [Synth 8-638] synthesizing module 'ad4134fw_ad4134_to_bram_0_0' [C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-5272-DESKTOP-NG70LRJ/realtime/ad4134fw_ad4134_to_bram_0_0_stub.vhdl:33]
+INFO: [Synth 8-3491] module 'ad4134fw_axi_gpio_0_2' declared at 'C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-5272-DESKTOP-NG70LRJ/realtime/ad4134fw_axi_gpio_0_2_stub.vhdl:6' bound to instance 'adc_bram_enable' of component 'ad4134fw_axi_gpio_0_2' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:256]
+INFO: [Synth 8-638] synthesizing module 'ad4134fw_axi_gpio_0_2' [C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-5272-DESKTOP-NG70LRJ/realtime/ad4134fw_axi_gpio_0_2_stub.vhdl:38]
+INFO: [Synth 8-3491] module 'ad4134fw_blk_mem_gen_0_2' declared at 'C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-5272-DESKTOP-NG70LRJ/realtime/ad4134fw_blk_mem_gen_0_2_stub.vhdl:6' bound to instance 'blk_mem_gen_0' of component 'ad4134fw_blk_mem_gen_0_2' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:279]
+INFO: [Synth 8-638] synthesizing module 'ad4134fw_blk_mem_gen_0_2' [C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-5272-DESKTOP-NG70LRJ/realtime/ad4134fw_blk_mem_gen_0_2_stub.vhdl:25]
+INFO: [Synth 8-3491] module 'ad4134fw_xlslice_0_2' declared at 'c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_xlslice_0_2/synth/ad4134fw_xlslice_0_2.v:53' bound to instance 'xlslice_0' of component 'ad4134fw_xlslice_0_2' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:290]
+INFO: [Synth 8-6157] synthesizing module 'ad4134fw_xlslice_0_2' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_xlslice_0_2/synth/ad4134fw_xlslice_0_2.v:53]
 INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_4_xlslice' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ipshared/a97c/hdl/xlslice_v1_0_vl_rfs.v:58]
 INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_4_xlslice' (0#1) [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ipshared/a97c/hdl/xlslice_v1_0_vl_rfs.v:58]
-INFO: [Synth 8-6155] done synthesizing module 'ad4134fw_xlslice_0_0' (0#1) [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_xlslice_0_0/synth/ad4134fw_xlslice_0_0.v:53]
-INFO: [Synth 8-3491] module 'ad4134fw_xlslice_1_0' declared at 'c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_xlslice_1_0/synth/ad4134fw_xlslice_1_0.v:53' bound to instance 'xlslice_1' of component 'ad4134fw_xlslice_1_0' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:323]
-INFO: [Synth 8-6157] synthesizing module 'ad4134fw_xlslice_1_0' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_xlslice_1_0/synth/ad4134fw_xlslice_1_0.v:53]
+INFO: [Synth 8-6155] done synthesizing module 'ad4134fw_xlslice_0_2' (0#1) [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_xlslice_0_2/synth/ad4134fw_xlslice_0_2.v:53]
+INFO: [Synth 8-256] done synthesizing module 'ADC_BRAM_imp_3GMY3Y' (0#1) [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:77]
+INFO: [Synth 8-638] synthesizing module 'LEDS_imp_1273PJO' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:326]
+INFO: [Synth 8-3491] module 'ad4134fw_axi_gpio_0_0' declared at 'C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-5272-DESKTOP-NG70LRJ/realtime/ad4134fw_axi_gpio_0_0_stub.vhdl:6' bound to instance 'axi_gpio_0' of component 'ad4134fw_axi_gpio_0_0' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:372]
+INFO: [Synth 8-638] synthesizing module 'ad4134fw_axi_gpio_0_0' [C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-5272-DESKTOP-NG70LRJ/realtime/ad4134fw_axi_gpio_0_0_stub.vhdl:38]
+INFO: [Synth 8-3491] module 'ad4134fw_c_counter_binary_0_0' declared at 'C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-5272-DESKTOP-NG70LRJ/realtime/ad4134fw_c_counter_binary_0_0_stub.vhdl:6' bound to instance 'c_counter_binary_0' of component 'ad4134fw_c_counter_binary_0_0' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:395]
+INFO: [Synth 8-638] synthesizing module 'ad4134fw_c_counter_binary_0_0' [C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-5272-DESKTOP-NG70LRJ/realtime/ad4134fw_c_counter_binary_0_0_stub.vhdl:20]
+INFO: [Synth 8-3491] module 'ad4134fw_xlslice_0_0' declared at 'c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_xlslice_0_0/synth/ad4134fw_xlslice_0_0.v:53' bound to instance 'xlslice_0' of component 'ad4134fw_xlslice_0_0' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:400]
+INFO: [Synth 8-6157] synthesizing module 'ad4134fw_xlslice_0_0' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_xlslice_0_0/synth/ad4134fw_xlslice_0_0.v:53]
 INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_4_xlslice__parameterized0' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ipshared/a97c/hdl/xlslice_v1_0_vl_rfs.v:58]
 INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_4_xlslice__parameterized0' (0#1) [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ipshared/a97c/hdl/xlslice_v1_0_vl_rfs.v:58]
-INFO: [Synth 8-6155] done synthesizing module 'ad4134fw_xlslice_1_0' (0#1) [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_xlslice_1_0/synth/ad4134fw_xlslice_1_0.v:53]
-INFO: [Synth 8-256] done synthesizing module 'LEDS_imp_1273PJO' (0#1) [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:244]
-INFO: [Synth 8-638] synthesizing module 'Processing_Subsystem_imp_12DOFPS' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:436]
-INFO: [Synth 8-3491] module 'ad4134fw_clk_wiz_0_0' declared at 'C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-14972-DESKTOP-NG70LRJ/realtime/ad4134fw_clk_wiz_0_0_stub.vhdl:6' bound to instance 'clk_wiz_0' of component 'ad4134fw_clk_wiz_0_0' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:761]
-INFO: [Synth 8-638] synthesizing module 'ad4134fw_clk_wiz_0_0' [C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-14972-DESKTOP-NG70LRJ/realtime/ad4134fw_clk_wiz_0_0_stub.vhdl:16]
-INFO: [Synth 8-3491] module 'ad4134fw_proc_sys_reset_0_0' declared at 'C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-14972-DESKTOP-NG70LRJ/realtime/ad4134fw_proc_sys_reset_0_0_stub.vhdl:6' bound to instance 'proc_sys_reset_0' of component 'ad4134fw_proc_sys_reset_0_0' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:766]
-INFO: [Synth 8-638] synthesizing module 'ad4134fw_proc_sys_reset_0_0' [C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-14972-DESKTOP-NG70LRJ/realtime/ad4134fw_proc_sys_reset_0_0_stub.vhdl:28]
-INFO: [Synth 8-3491] module 'ad4134fw_processing_system7_0_0' declared at 'C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-14972-DESKTOP-NG70LRJ/realtime/ad4134fw_processing_system7_0_0_stub.vhdl:6' bound to instance 'processing_system7_0' of component 'ad4134fw_processing_system7_0_0' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:779]
-INFO: [Synth 8-638] synthesizing module 'ad4134fw_processing_system7_0_0' [C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-14972-DESKTOP-NG70LRJ/realtime/ad4134fw_processing_system7_0_0_stub.vhdl:80]
-INFO: [Synth 8-3491] module 'ad4134fw_smartconnect_0_0' declared at 'C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-14972-DESKTOP-NG70LRJ/realtime/ad4134fw_smartconnect_0_0_stub.vhdl:6' bound to instance 'smartconnect_0' of component 'ad4134fw_smartconnect_0_0' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:844]
-INFO: [Synth 8-638] synthesizing module 'ad4134fw_smartconnect_0_0' [C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-14972-DESKTOP-NG70LRJ/realtime/ad4134fw_smartconnect_0_0_stub.vhdl:162]
-INFO: [Synth 8-256] done synthesizing module 'Processing_Subsystem_imp_12DOFPS' (0#1) [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:436]
-INFO: [Synth 8-638] synthesizing module 'SPI_Control_imp_1JN7NK1' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:1008]
-INFO: [Synth 8-3491] module 'ad4134fw_ad4134_clock_generat_0_0' declared at 'C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-14972-DESKTOP-NG70LRJ/realtime/ad4134fw_ad4134_clock_generat_0_0_stub.vhdl:6' bound to instance 'ad4134_clock_generator' of component 'ad4134fw_ad4134_clock_generat_0_0' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:1055]
-INFO: [Synth 8-638] synthesizing module 'ad4134fw_ad4134_clock_generat_0_0' [C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-14972-DESKTOP-NG70LRJ/realtime/ad4134fw_ad4134_clock_generat_0_0_stub.vhdl:24]
-INFO: [Synth 8-3491] module 'ad4134fw_ad4134_control_0_0' declared at 'C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-14972-DESKTOP-NG70LRJ/realtime/ad4134fw_ad4134_control_0_0_stub.vhdl:6' bound to instance 'ad4134_control_0' of component 'ad4134fw_ad4134_control_0_0' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:1062]
-INFO: [Synth 8-638] synthesizing module 'ad4134fw_ad4134_control_0_0' [C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-14972-DESKTOP-NG70LRJ/realtime/ad4134fw_ad4134_control_0_0_stub.vhdl:31]
-INFO: [Synth 8-3491] module 'ad4134fw_spi_controller_0_0' declared at 'C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-14972-DESKTOP-NG70LRJ/realtime/ad4134fw_spi_controller_0_0_stub.vhdl:6' bound to instance 'spi_controller_0' of component 'ad4134fw_spi_controller_0_0' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:1076]
-INFO: [Synth 8-638] synthesizing module 'ad4134fw_spi_controller_0_0' [C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-14972-DESKTOP-NG70LRJ/realtime/ad4134fw_spi_controller_0_0_stub.vhdl:31]
-INFO: [Synth 8-256] done synthesizing module 'SPI_Control_imp_1JN7NK1' (0#1) [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:1008]
-INFO: [Synth 8-3491] module 'ad4134fw_ad4134_data_0_0' declared at 'C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-14972-DESKTOP-NG70LRJ/realtime/ad4134fw_ad4134_data_0_0_stub.vhdl:6' bound to instance 'ad4134_data_0' of component 'ad4134fw_ad4134_data_0_0' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:1683]
-INFO: [Synth 8-638] synthesizing module 'ad4134fw_ad4134_data_0_0' [C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-14972-DESKTOP-NG70LRJ/realtime/ad4134fw_ad4134_data_0_0_stub.vhdl:33]
-INFO: [Synth 8-638] synthesizing module 'bram_tester_imp_1TQERNJ' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:1150]
-INFO: [Synth 8-3491] module 'ad4134fw_blk_mem_gen_0_0' declared at 'C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-14972-DESKTOP-NG70LRJ/realtime/ad4134fw_blk_mem_gen_0_0_stub.vhdl:6' bound to instance 'blk_mem_gen_0' of component 'ad4134fw_blk_mem_gen_0_0' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:1265]
-INFO: [Synth 8-638] synthesizing module 'ad4134fw_blk_mem_gen_0_0' [C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-14972-DESKTOP-NG70LRJ/realtime/ad4134fw_blk_mem_gen_0_0_stub.vhdl:25]
-INFO: [Synth 8-3491] module 'ad4134fw_axi_bram_ctrl_0_0' declared at 'C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-14972-DESKTOP-NG70LRJ/realtime/ad4134fw_axi_bram_ctrl_0_0_stub.vhdl:6' bound to instance 'bram_read' of component 'ad4134fw_axi_bram_ctrl_0_0' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:1275]
-INFO: [Synth 8-638] synthesizing module 'ad4134fw_axi_bram_ctrl_0_0' [C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-14972-DESKTOP-NG70LRJ/realtime/ad4134fw_axi_bram_ctrl_0_0_stub.vhdl:58]
-INFO: [Synth 8-3491] module 'ad4134fw_axi_gpio_0_1' declared at 'C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-14972-DESKTOP-NG70LRJ/realtime/ad4134fw_axi_gpio_0_1_stub.vhdl:6' bound to instance 'bram_test_control' of component 'ad4134fw_axi_gpio_0_1' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:1318]
-INFO: [Synth 8-638] synthesizing module 'ad4134fw_axi_gpio_0_1' [C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-14972-DESKTOP-NG70LRJ/realtime/ad4134fw_axi_gpio_0_1_stub.vhdl:38]
-INFO: [Synth 8-3491] module 'ad4134fw_bram_writer_0_0' declared at 'C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-14972-DESKTOP-NG70LRJ/realtime/ad4134fw_bram_writer_0_0_stub.vhdl:6' bound to instance 'bram_writer_0' of component 'ad4134fw_bram_writer_0_0' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:1341]
-INFO: [Synth 8-638] synthesizing module 'ad4134fw_bram_writer_0_0' [C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-14972-DESKTOP-NG70LRJ/realtime/ad4134fw_bram_writer_0_0_stub.vhdl:27]
-INFO: [Synth 8-3491] module 'ad4134fw_xlslice_0_1' declared at 'c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_xlslice_0_1/synth/ad4134fw_xlslice_0_1.v:53' bound to instance 'xlslice_0' of component 'ad4134fw_xlslice_0_1' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:1351]
-INFO: [Synth 8-6157] synthesizing module 'ad4134fw_xlslice_0_1' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_xlslice_0_1/synth/ad4134fw_xlslice_0_1.v:53]
+INFO: [Synth 8-6155] done synthesizing module 'ad4134fw_xlslice_0_0' (0#1) [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_xlslice_0_0/synth/ad4134fw_xlslice_0_0.v:53]
+INFO: [Synth 8-3491] module 'ad4134fw_xlslice_1_0' declared at 'c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_xlslice_1_0/synth/ad4134fw_xlslice_1_0.v:53' bound to instance 'xlslice_1' of component 'ad4134fw_xlslice_1_0' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:405]
+INFO: [Synth 8-6157] synthesizing module 'ad4134fw_xlslice_1_0' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_xlslice_1_0/synth/ad4134fw_xlslice_1_0.v:53]
 INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_4_xlslice__parameterized1' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ipshared/a97c/hdl/xlslice_v1_0_vl_rfs.v:58]
 INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_4_xlslice__parameterized1' (0#1) [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ipshared/a97c/hdl/xlslice_v1_0_vl_rfs.v:58]
+INFO: [Synth 8-6155] done synthesizing module 'ad4134fw_xlslice_1_0' (0#1) [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_xlslice_1_0/synth/ad4134fw_xlslice_1_0.v:53]
+INFO: [Synth 8-256] done synthesizing module 'LEDS_imp_1273PJO' (0#1) [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:326]
+INFO: [Synth 8-638] synthesizing module 'Processing_Subsystem_imp_12DOFPS' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:535]
+INFO: [Synth 8-3491] module 'ad4134fw_clk_wiz_0_0' declared at 'C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-5272-DESKTOP-NG70LRJ/realtime/ad4134fw_clk_wiz_0_0_stub.vhdl:6' bound to instance 'clk_wiz_0' of component 'ad4134fw_clk_wiz_0_0' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:881]
+INFO: [Synth 8-638] synthesizing module 'ad4134fw_clk_wiz_0_0' [C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-5272-DESKTOP-NG70LRJ/realtime/ad4134fw_clk_wiz_0_0_stub.vhdl:16]
+INFO: [Synth 8-3491] module 'ad4134fw_proc_sys_reset_0_0' declared at 'C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-5272-DESKTOP-NG70LRJ/realtime/ad4134fw_proc_sys_reset_0_0_stub.vhdl:6' bound to instance 'proc_sys_reset_0' of component 'ad4134fw_proc_sys_reset_0_0' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:886]
+INFO: [Synth 8-638] synthesizing module 'ad4134fw_proc_sys_reset_0_0' [C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-5272-DESKTOP-NG70LRJ/realtime/ad4134fw_proc_sys_reset_0_0_stub.vhdl:28]
+INFO: [Synth 8-3491] module 'ad4134fw_processing_system7_0_0' declared at 'C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-5272-DESKTOP-NG70LRJ/realtime/ad4134fw_processing_system7_0_0_stub.vhdl:6' bound to instance 'processing_system7_0' of component 'ad4134fw_processing_system7_0_0' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:899]
+INFO: [Synth 8-638] synthesizing module 'ad4134fw_processing_system7_0_0' [C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-5272-DESKTOP-NG70LRJ/realtime/ad4134fw_processing_system7_0_0_stub.vhdl:80]
+INFO: [Synth 8-3491] module 'ad4134fw_smartconnect_0_0' declared at 'C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-5272-DESKTOP-NG70LRJ/realtime/ad4134fw_smartconnect_0_0_stub.vhdl:6' bound to instance 'smartconnect_0' of component 'ad4134fw_smartconnect_0_0' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:964]
+INFO: [Synth 8-638] synthesizing module 'ad4134fw_smartconnect_0_0' [C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-5272-DESKTOP-NG70LRJ/realtime/ad4134fw_smartconnect_0_0_stub.vhdl:181]
+INFO: [Synth 8-256] done synthesizing module 'Processing_Subsystem_imp_12DOFPS' (0#1) [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:535]
+INFO: [Synth 8-638] synthesizing module 'SPI_Control_imp_1JN7NK1' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:1147]
+INFO: [Synth 8-3491] module 'ad4134fw_ad4134_clock_generat_0_0' declared at 'C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-5272-DESKTOP-NG70LRJ/realtime/ad4134fw_ad4134_clock_generat_0_0_stub.vhdl:6' bound to instance 'ad4134_clock_generator' of component 'ad4134fw_ad4134_clock_generat_0_0' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:1194]
+INFO: [Synth 8-638] synthesizing module 'ad4134fw_ad4134_clock_generat_0_0' [C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-5272-DESKTOP-NG70LRJ/realtime/ad4134fw_ad4134_clock_generat_0_0_stub.vhdl:24]
+INFO: [Synth 8-3491] module 'ad4134fw_ad4134_control_0_0' declared at 'C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-5272-DESKTOP-NG70LRJ/realtime/ad4134fw_ad4134_control_0_0_stub.vhdl:6' bound to instance 'ad4134_control_0' of component 'ad4134fw_ad4134_control_0_0' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:1201]
+INFO: [Synth 8-638] synthesizing module 'ad4134fw_ad4134_control_0_0' [C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-5272-DESKTOP-NG70LRJ/realtime/ad4134fw_ad4134_control_0_0_stub.vhdl:31]
+INFO: [Synth 8-3491] module 'ad4134fw_spi_controller_0_0' declared at 'C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-5272-DESKTOP-NG70LRJ/realtime/ad4134fw_spi_controller_0_0_stub.vhdl:6' bound to instance 'spi_controller_0' of component 'ad4134fw_spi_controller_0_0' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:1215]
+INFO: [Synth 8-638] synthesizing module 'ad4134fw_spi_controller_0_0' [C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-5272-DESKTOP-NG70LRJ/realtime/ad4134fw_spi_controller_0_0_stub.vhdl:31]
+INFO: [Synth 8-256] done synthesizing module 'SPI_Control_imp_1JN7NK1' (0#1) [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:1147]
+INFO: [Synth 8-3491] module 'ad4134fw_ad4134_data_0_0' declared at 'C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-5272-DESKTOP-NG70LRJ/realtime/ad4134fw_ad4134_data_0_0_stub.vhdl:6' bound to instance 'ad4134_data_0' of component 'ad4134fw_ad4134_data_0_0' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:1875]
+INFO: [Synth 8-638] synthesizing module 'ad4134fw_ad4134_data_0_0' [C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-5272-DESKTOP-NG70LRJ/realtime/ad4134fw_ad4134_data_0_0_stub.vhdl:33]
+INFO: [Synth 8-638] synthesizing module 'bram_tester_imp_1TQERNJ' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:1289]
+INFO: [Synth 8-3491] module 'ad4134fw_blk_mem_gen_0_0' declared at 'C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-5272-DESKTOP-NG70LRJ/realtime/ad4134fw_blk_mem_gen_0_0_stub.vhdl:6' bound to instance 'blk_mem_gen_0' of component 'ad4134fw_blk_mem_gen_0_0' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:1404]
+INFO: [Synth 8-638] synthesizing module 'ad4134fw_blk_mem_gen_0_0' [C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-5272-DESKTOP-NG70LRJ/realtime/ad4134fw_blk_mem_gen_0_0_stub.vhdl:25]
+INFO: [Synth 8-3491] module 'ad4134fw_axi_bram_ctrl_0_0' declared at 'C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-5272-DESKTOP-NG70LRJ/realtime/ad4134fw_axi_bram_ctrl_0_0_stub.vhdl:6' bound to instance 'bram_read' of component 'ad4134fw_axi_bram_ctrl_0_0' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:1414]
+INFO: [Synth 8-638] synthesizing module 'ad4134fw_axi_bram_ctrl_0_0' [C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-5272-DESKTOP-NG70LRJ/realtime/ad4134fw_axi_bram_ctrl_0_0_stub.vhdl:58]
+INFO: [Synth 8-3491] module 'ad4134fw_axi_gpio_0_1' declared at 'C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-5272-DESKTOP-NG70LRJ/realtime/ad4134fw_axi_gpio_0_1_stub.vhdl:6' bound to instance 'bram_test_control' of component 'ad4134fw_axi_gpio_0_1' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:1457]
+INFO: [Synth 8-638] synthesizing module 'ad4134fw_axi_gpio_0_1' [C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-5272-DESKTOP-NG70LRJ/realtime/ad4134fw_axi_gpio_0_1_stub.vhdl:38]
+INFO: [Synth 8-3491] module 'ad4134fw_bram_writer_0_0' declared at 'C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-5272-DESKTOP-NG70LRJ/realtime/ad4134fw_bram_writer_0_0_stub.vhdl:6' bound to instance 'bram_writer_0' of component 'ad4134fw_bram_writer_0_0' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:1480]
+INFO: [Synth 8-638] synthesizing module 'ad4134fw_bram_writer_0_0' [C:/work/AD4134/vivado/ad4134fw.runs/synth_1/.Xil/Vivado-5272-DESKTOP-NG70LRJ/realtime/ad4134fw_bram_writer_0_0_stub.vhdl:27]
+INFO: [Synth 8-3491] module 'ad4134fw_xlslice_0_1' declared at 'c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_xlslice_0_1/synth/ad4134fw_xlslice_0_1.v:53' bound to instance 'xlslice_0' of component 'ad4134fw_xlslice_0_1' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:1490]
+INFO: [Synth 8-6157] synthesizing module 'ad4134fw_xlslice_0_1' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_xlslice_0_1/synth/ad4134fw_xlslice_0_1.v:53]
 INFO: [Synth 8-6155] done synthesizing module 'ad4134fw_xlslice_0_1' (0#1) [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_xlslice_0_1/synth/ad4134fw_xlslice_0_1.v:53]
-INFO: [Synth 8-256] done synthesizing module 'bram_tester_imp_1TQERNJ' (0#1) [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:1150]
-INFO: [Synth 8-256] done synthesizing module 'ad4134fw' (0#1) [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:1383]
+INFO: [Synth 8-256] done synthesizing module 'bram_tester_imp_1TQERNJ' (0#1) [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:1289]
+INFO: [Synth 8-256] done synthesizing module 'ad4134fw' (0#1) [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/synth/ad4134fw.vhd:1522]
 INFO: [Synth 8-256] done synthesizing module 'ad4134fw_wrapper' (0#1) [C:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/hdl/ad4134fw_wrapper.vhd:33]
-WARNING: [Synth 8-7129] Port Din[31] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[30] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[29] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[28] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[27] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[26] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[25] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[24] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[23] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[22] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[21] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[20] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[19] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[18] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[17] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[16] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[15] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[14] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[13] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[12] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[11] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[10] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[9] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[8] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[7] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[6] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[5] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[4] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[3] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[2] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[1] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[31] in module xlslice_v1_0_4_xlslice__parameterized0 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[30] in module xlslice_v1_0_4_xlslice__parameterized0 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[29] in module xlslice_v1_0_4_xlslice__parameterized0 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[28] in module xlslice_v1_0_4_xlslice__parameterized0 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[27] in module xlslice_v1_0_4_xlslice__parameterized0 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[26] in module xlslice_v1_0_4_xlslice__parameterized0 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[24] in module xlslice_v1_0_4_xlslice__parameterized0 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[23] in module xlslice_v1_0_4_xlslice__parameterized0 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[22] in module xlslice_v1_0_4_xlslice__parameterized0 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[21] in module xlslice_v1_0_4_xlslice__parameterized0 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[20] in module xlslice_v1_0_4_xlslice__parameterized0 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[19] in module xlslice_v1_0_4_xlslice__parameterized0 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[18] in module xlslice_v1_0_4_xlslice__parameterized0 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[17] in module xlslice_v1_0_4_xlslice__parameterized0 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[16] in module xlslice_v1_0_4_xlslice__parameterized0 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[15] in module xlslice_v1_0_4_xlslice__parameterized0 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[14] in module xlslice_v1_0_4_xlslice__parameterized0 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[13] in module xlslice_v1_0_4_xlslice__parameterized0 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[12] in module xlslice_v1_0_4_xlslice__parameterized0 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[11] in module xlslice_v1_0_4_xlslice__parameterized0 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[10] in module xlslice_v1_0_4_xlslice__parameterized0 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[9] in module xlslice_v1_0_4_xlslice__parameterized0 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[8] in module xlslice_v1_0_4_xlslice__parameterized0 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[7] in module xlslice_v1_0_4_xlslice__parameterized0 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[6] in module xlslice_v1_0_4_xlslice__parameterized0 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[5] in module xlslice_v1_0_4_xlslice__parameterized0 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[4] in module xlslice_v1_0_4_xlslice__parameterized0 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[3] in module xlslice_v1_0_4_xlslice__parameterized0 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[2] in module xlslice_v1_0_4_xlslice__parameterized0 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[1] in module xlslice_v1_0_4_xlslice__parameterized0 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Din[0] in module xlslice_v1_0_4_xlslice__parameterized0 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port Din[31] in module xlslice_v1_0_4_xlslice is either unconnected or has no load
 WARNING: [Synth 8-7129] Port Din[30] in module xlslice_v1_0_4_xlslice is either unconnected or has no load
 WARNING: [Synth 8-7129] Port Din[29] in module xlslice_v1_0_4_xlslice is either unconnected or has no load
@@ -186,19 +130,81 @@ WARNING: [Synth 8-7129] Port Din[10] in module xlslice_v1_0_4_xlslice is either 
 WARNING: [Synth 8-7129] Port Din[9] in module xlslice_v1_0_4_xlslice is either unconnected or has no load
 WARNING: [Synth 8-7129] Port Din[8] in module xlslice_v1_0_4_xlslice is either unconnected or has no load
 WARNING: [Synth 8-7129] Port Din[7] in module xlslice_v1_0_4_xlslice is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[6] in module xlslice_v1_0_4_xlslice is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[5] in module xlslice_v1_0_4_xlslice is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[4] in module xlslice_v1_0_4_xlslice is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[3] in module xlslice_v1_0_4_xlslice is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[2] in module xlslice_v1_0_4_xlslice is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[1] in module xlslice_v1_0_4_xlslice is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[31] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[30] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[29] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[28] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[27] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[26] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[24] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[23] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[22] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[21] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[20] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[19] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[18] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[17] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[16] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[15] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[14] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[13] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[12] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[11] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[10] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[9] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[8] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[7] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[6] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[5] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[4] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[3] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[2] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[1] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[0] in module xlslice_v1_0_4_xlslice__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[31] in module xlslice_v1_0_4_xlslice__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[30] in module xlslice_v1_0_4_xlslice__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[29] in module xlslice_v1_0_4_xlslice__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[28] in module xlslice_v1_0_4_xlslice__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[27] in module xlslice_v1_0_4_xlslice__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[26] in module xlslice_v1_0_4_xlslice__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[25] in module xlslice_v1_0_4_xlslice__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[24] in module xlslice_v1_0_4_xlslice__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[23] in module xlslice_v1_0_4_xlslice__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[22] in module xlslice_v1_0_4_xlslice__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[21] in module xlslice_v1_0_4_xlslice__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[20] in module xlslice_v1_0_4_xlslice__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[19] in module xlslice_v1_0_4_xlslice__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[18] in module xlslice_v1_0_4_xlslice__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[17] in module xlslice_v1_0_4_xlslice__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[16] in module xlslice_v1_0_4_xlslice__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[15] in module xlslice_v1_0_4_xlslice__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[14] in module xlslice_v1_0_4_xlslice__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[13] in module xlslice_v1_0_4_xlslice__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[12] in module xlslice_v1_0_4_xlslice__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[11] in module xlslice_v1_0_4_xlslice__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[10] in module xlslice_v1_0_4_xlslice__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[9] in module xlslice_v1_0_4_xlslice__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[8] in module xlslice_v1_0_4_xlslice__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[7] in module xlslice_v1_0_4_xlslice__parameterized0 is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1220.992 ; gain = 584.410
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1226.430 ; gain = 585.605
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1220.992 ; gain = 584.410
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1226.430 ; gain = 585.605
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1220.992 ; gain = 584.410
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1226.430 ; gain = 585.605
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.028 . Memory (MB): peak = 1220.992 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.030 . Memory (MB): peak = 1226.430 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -237,6 +243,8 @@ Parsing XDC File [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad
 Finished Parsing XDC File [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_axi_bram_ctrl_0_2/ad4134fw_axi_bram_ctrl_0_2/ad4134fw_axi_bram_ctrl_0_0_in_context.xdc] for cell 'ad4134fw_i/ADC_BRAM/ADC_BRAM_READ'
 Parsing XDC File [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_ad4134_to_bram_0_0/ad4134fw_ad4134_to_bram_0_0/ad4134fw_ad4134_to_bram_0_0_in_context.xdc] for cell 'ad4134fw_i/ADC_BRAM/ad4134_to_bram_0'
 Finished Parsing XDC File [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_ad4134_to_bram_0_0/ad4134fw_ad4134_to_bram_0_0/ad4134fw_ad4134_to_bram_0_0_in_context.xdc] for cell 'ad4134fw_i/ADC_BRAM/ad4134_to_bram_0'
+Parsing XDC File [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_axi_gpio_0_2/ad4134fw_axi_gpio_0_2/ad4134fw_axi_gpio_0_0_in_context.xdc] for cell 'ad4134fw_i/ADC_BRAM/adc_bram_enable'
+Finished Parsing XDC File [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_axi_gpio_0_2/ad4134fw_axi_gpio_0_2/ad4134fw_axi_gpio_0_0_in_context.xdc] for cell 'ad4134fw_i/ADC_BRAM/adc_bram_enable'
 Parsing XDC File [C:/work/AD4134/constraints/io.xdc]
 Finished Parsing XDC File [C:/work/AD4134/constraints/io.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/work/AD4134/constraints/io.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/ad4134fw_wrapper_propImpl.xdc].
@@ -245,22 +253,22 @@ Parsing XDC File [C:/work/AD4134/vivado/ad4134fw.runs/synth_1/dont_touch.xdc]
 Finished Parsing XDC File [C:/work/AD4134/vivado/ad4134fw.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1220.992 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1226.430 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1220.992 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1226.430 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1220.992 ; gain = 584.410
+Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1226.430 ; gain = 585.605
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1220.992 ; gain = 584.410
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1226.430 ; gain = 585.605
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -286,11 +294,13 @@ Applied set_property KEEP_HIERARCHY = SOFT for ad4134fw_i/bram_tester/xlslice_0.
 Applied set_property KEEP_HIERARCHY = SOFT for ad4134fw_i/ADC_BRAM/blk_mem_gen_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for ad4134fw_i/ADC_BRAM/ADC_BRAM_READ. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for ad4134fw_i/ADC_BRAM/ad4134_to_bram_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for ad4134fw_i/ADC_BRAM/adc_bram_enable. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for ad4134fw_i/ADC_BRAM/xlslice_0. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1220.992 ; gain = 584.410
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1226.430 ; gain = 585.605
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1220.992 ; gain = 584.410
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1226.430 ; gain = 585.605
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -327,25 +337,25 @@ WARNING: [Synth 8-7129] Port Din[20] in module ad4134fw_xlslice_0_1 is either un
 WARNING: [Synth 8-7129] Port Din[19] in module ad4134fw_xlslice_0_1 is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1220.992 ; gain = 584.410
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1226.430 ; gain = 585.605
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 1388.555 ; gain = 751.973
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1398.156 ; gain = 757.332
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 1388.777 ; gain = 752.195
+Finished Timing Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1398.156 ; gain = 757.332
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 1399.258 ; gain = 762.676
+Finished Technology Mapping : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1409.203 ; gain = 768.379
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -363,37 +373,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1615.652 ; gain = 979.070
+Finished IO Insertion : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1624.852 ; gain = 984.027
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1615.652 ; gain = 979.070
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1624.852 ; gain = 984.027
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1615.652 ; gain = 979.070
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1624.852 ; gain = 984.027
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1615.652 ; gain = 979.070
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1624.852 ; gain = 984.027
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1615.652 ; gain = 979.070
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1624.852 ; gain = 984.027
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1615.652 ; gain = 979.070
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1624.852 ; gain = 984.027
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -406,20 +416,21 @@ Report BlackBoxes:
 |1     |ad4134fw_ad4134_data_0_0          |         1|
 |2     |ad4134fw_axi_bram_ctrl_0_2        |         1|
 |3     |ad4134fw_ad4134_to_bram_0_0       |         1|
-|4     |ad4134fw_blk_mem_gen_0_2          |         1|
-|5     |ad4134fw_clk_wiz_0_0              |         1|
-|6     |ad4134fw_proc_sys_reset_0_0       |         1|
-|7     |ad4134fw_processing_system7_0_0   |         1|
-|8     |ad4134fw_smartconnect_0_0         |         1|
-|9     |ad4134fw_ad4134_clock_generat_0_0 |         1|
-|10    |ad4134fw_ad4134_control_0_0       |         1|
-|11    |ad4134fw_spi_controller_0_0       |         1|
-|12    |ad4134fw_blk_mem_gen_0_0          |         1|
-|13    |ad4134fw_axi_bram_ctrl_0_0        |         1|
-|14    |ad4134fw_axi_gpio_0_1             |         1|
-|15    |ad4134fw_bram_writer_0_0          |         1|
-|16    |ad4134fw_axi_gpio_0_0             |         1|
-|17    |ad4134fw_c_counter_binary_0_0     |         1|
+|4     |ad4134fw_axi_gpio_0_2             |         1|
+|5     |ad4134fw_blk_mem_gen_0_2          |         1|
+|6     |ad4134fw_clk_wiz_0_0              |         1|
+|7     |ad4134fw_proc_sys_reset_0_0       |         1|
+|8     |ad4134fw_processing_system7_0_0   |         1|
+|9     |ad4134fw_smartconnect_0_0         |         1|
+|10    |ad4134fw_ad4134_clock_generat_0_0 |         1|
+|11    |ad4134fw_ad4134_control_0_0       |         1|
+|12    |ad4134fw_spi_controller_0_0       |         1|
+|13    |ad4134fw_blk_mem_gen_0_0          |         1|
+|14    |ad4134fw_axi_bram_ctrl_0_0        |         1|
+|15    |ad4134fw_axi_gpio_0_1             |         1|
+|16    |ad4134fw_bram_writer_0_0          |         1|
+|17    |ad4134fw_axi_gpio_0_0             |         1|
+|18    |ad4134fw_c_counter_binary_0_0     |         1|
 +------+----------------------------------+----------+
 
 Report Cell Usage: 
@@ -434,38 +445,39 @@ Report Cell Usage:
 |6     |ad4134fw_axi_bram_ctrl_0_2_bbox        |     1|
 |7     |ad4134fw_axi_gpio_0_0_bbox             |     1|
 |8     |ad4134fw_axi_gpio_0_1_bbox             |     1|
-|9     |ad4134fw_blk_mem_gen_0_0_bbox          |     1|
-|10    |ad4134fw_blk_mem_gen_0_2_bbox          |     1|
-|11    |ad4134fw_bram_writer_0_0_bbox          |     1|
-|12    |ad4134fw_c_counter_binary_0_0_bbox     |     1|
-|13    |ad4134fw_clk_wiz_0_0_bbox              |     1|
-|14    |ad4134fw_proc_sys_reset_0_0_bbox       |     1|
-|15    |ad4134fw_processing_system7_0_0_bbox   |     1|
-|16    |ad4134fw_smartconnect_0_0_bbox         |     1|
-|17    |ad4134fw_spi_controller_0_0_bbox       |     1|
-|18    |IBUF                                   |     5|
-|19    |OBUF                                   |    17|
+|9     |ad4134fw_axi_gpio_0_2_bbox             |     1|
+|10    |ad4134fw_blk_mem_gen_0_0_bbox          |     1|
+|11    |ad4134fw_blk_mem_gen_0_2_bbox          |     1|
+|12    |ad4134fw_bram_writer_0_0_bbox          |     1|
+|13    |ad4134fw_c_counter_binary_0_0_bbox     |     1|
+|14    |ad4134fw_clk_wiz_0_0_bbox              |     1|
+|15    |ad4134fw_proc_sys_reset_0_0_bbox       |     1|
+|16    |ad4134fw_processing_system7_0_0_bbox   |     1|
+|17    |ad4134fw_smartconnect_0_0_bbox         |     1|
+|18    |ad4134fw_spi_controller_0_0_bbox       |     1|
+|19    |IBUF                                   |     5|
+|20    |OBUF                                   |    17|
 +------+---------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1615.652 ; gain = 979.070
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1624.852 ; gain = 984.027
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 88 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:29 . Memory (MB): peak = 1615.652 ; gain = 979.070
-Synthesis Optimization Complete : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1615.652 ; gain = 979.070
+Synthesis finished with 0 errors, 0 critical warnings and 119 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:29 . Memory (MB): peak = 1624.852 ; gain = 984.027
+Synthesis Optimization Complete : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1624.852 ; gain = 984.027
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.028 . Memory (MB): peak = 1624.723 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.031 . Memory (MB): peak = 1633.973 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1628.406 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1637.609 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: e883fe2f
+Synth Design complete | Checksum: b7418fa0
 INFO: [Common 17-83] Releasing license: Synthesis
-88 Infos, 101 Warnings, 0 Critical Warnings and 0 Errors encountered.
+93 Infos, 101 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:35 ; elapsed = 00:00:46 . Memory (MB): peak = 1628.406 ; gain = 1207.973
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1628.406 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:34 ; elapsed = 00:00:46 . Memory (MB): peak = 1637.609 ; gain = 1214.281
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1637.609 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/work/AD4134/vivado/ad4134fw.runs/synth_1/ad4134fw_wrapper.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file ad4134fw_wrapper_utilization_synth.rpt -pb ad4134fw_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sun Nov  2 21:38:15 2025...
+INFO: [Common 17-206] Exiting Vivado at Mon Nov  3 21:20:37 2025...

@@ -65,7 +65,9 @@ ENTITY ad4134fw_ad4134_to_bram_0_0 IS
     addra : OUT STD_LOGIC_VECTOR(14 DOWNTO 0);
     dia : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
     wea : OUT STD_LOGIC;
-    done : OUT STD_LOGIC
+    done : OUT STD_LOGIC;
+    bram_enable : IN STD_LOGIC;
+    debug : OUT STD_LOGIC_VECTOR(3 DOWNTO 0)
   );
 END ad4134fw_ad4134_to_bram_0_0;
 
@@ -87,7 +89,9 @@ ARCHITECTURE ad4134fw_ad4134_to_bram_0_0_arch OF ad4134fw_ad4134_to_bram_0_0 IS
       addra : OUT STD_LOGIC_VECTOR(14 DOWNTO 0);
       dia : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
       wea : OUT STD_LOGIC;
-      done : OUT STD_LOGIC
+      done : OUT STD_LOGIC;
+      bram_enable : IN STD_LOGIC;
+      debug : OUT STD_LOGIC_VECTOR(3 DOWNTO 0)
     );
   END COMPONENT ad4134_to_bram;
   ATTRIBUTE X_CORE_INFO : STRING;
@@ -123,6 +127,8 @@ BEGIN
       addra => addra,
       dia => dia,
       wea => wea,
-      done => done
+      done => done,
+      bram_enable => bram_enable,
+      debug => debug
     );
 END ad4134fw_ad4134_to_bram_0_0_arch;

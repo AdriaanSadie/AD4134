@@ -2,7 +2,7 @@
 // Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-// Date        : Sun Nov  2 21:33:54 2025
+// Date        : Mon Nov  3 21:15:44 2025
 // Host        : DESKTOP-NG70LRJ running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_ad4134_to_bram_0_0/ad4134fw_ad4134_to_bram_0_0_sim_netlist.v
@@ -27,7 +27,9 @@ module ad4134fw_ad4134_to_bram_0_0
     addra,
     dia,
     wea,
-    done);
+    done,
+    bram_enable,
+    debug);
   (* x_interface_info = "xilinx.com:signal:clock:1.0 clk CLK" *) (* x_interface_mode = "slave clk" *) (* x_interface_parameter = "XIL_INTERFACENAME clk, FREQ_HZ 50000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /Processing_Subsystem/clk_wiz_0_clk_out1, INSERT_VIP 0" *) input clk;
   (* x_interface_info = "xilinx.com:signal:reset:1.0 rst_n RST" *) (* x_interface_mode = "slave rst_n" *) (* x_interface_parameter = "XIL_INTERFACENAME rst_n, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input rst_n;
   input [23:0]data_in0;
@@ -39,12 +41,16 @@ module ad4134fw_ad4134_to_bram_0_0
   output [31:0]dia;
   output wea;
   output done;
+  input bram_enable;
+  output [3:0]debug;
 
   wire \<const0> ;
   wire [14:2]\^addra ;
+  wire bram_enable;
   wire clk;
   wire [23:0]data_in0;
   wire data_rdy;
+  wire [2:0]\^debug ;
   wire [23:0]\^dia ;
   wire rst_n;
   wire wea;
@@ -52,6 +58,8 @@ module ad4134fw_ad4134_to_bram_0_0
   assign addra[14:2] = \^addra [14:2];
   assign addra[1] = \<const0> ;
   assign addra[0] = \<const0> ;
+  assign debug[3] = \<const0> ;
+  assign debug[2:0] = \^debug [2:0];
   assign dia[31] = \<const0> ;
   assign dia[30] = \<const0> ;
   assign dia[29] = \<const0> ;
@@ -66,9 +74,11 @@ module ad4134fw_ad4134_to_bram_0_0
        (.G(\<const0> ));
   ad4134fw_ad4134_to_bram_0_0_ad4134_to_bram U0
        (.addra(\^addra ),
+        .bram_enable(bram_enable),
         .clk(clk),
         .data_in0(data_in0),
         .data_rdy(data_rdy),
+        .debug(\^debug ),
         .dia(\^dia ),
         .rst_n(rst_n),
         .wea(wea));
@@ -78,30 +88,43 @@ endmodule
 module ad4134fw_ad4134_to_bram_0_0_ad4134_to_bram
    (addra,
     dia,
+    debug,
     wea,
     clk,
     data_rdy,
     data_in0,
-    rst_n);
+    rst_n,
+    bram_enable);
   output [12:0]addra;
   output [23:0]dia;
+  output [2:0]debug;
   output wea;
   input clk;
   input data_rdy;
   input [23:0]data_in0;
   input rst_n;
+  input bram_enable;
 
+  wire \FSM_onehot_state[0]_i_1_n_0 ;
+  wire \FSM_onehot_state[1]_i_1_n_0 ;
+  wire \FSM_onehot_state_reg_n_0_[0] ;
+  wire \FSM_onehot_state_reg_n_0_[1] ;
+  wire \FSM_onehot_state_reg_n_0_[2] ;
   wire \addr_cnt[12]_i_1_n_0 ;
   wire [14:2]addr_cnt_shifted;
   wire [12:0]addra;
   wire \addra[14]_i_2_n_0 ;
   wire \addra[14]_i_3_n_0 ;
   wire \addra[14]_i_4_n_0 ;
+  wire bram_enable;
   wire clk;
   wire [23:0]data_in0;
   wire data_rdy;
   wire data_rdy_r1;
   wire data_rdy_r2;
+  wire [2:0]debug;
+  wire \debug[0]_i_1_n_0 ;
+  wire \debug[1]_i_1_n_0 ;
   wire [23:0]dia;
   wire dia0;
   wire [14:2]p_1_in;
@@ -118,61 +141,66 @@ module ad4134fw_ad4134_to_bram_0_0_ad4134_to_bram
   wire plusOp_carry_n_2;
   wire plusOp_carry_n_3;
   wire rst_n;
-  wire [1:0]state;
-  wire [1:0]state__0;
   wire wea;
   wire wea_i_1_n_0;
   wire wea_i_2_n_0;
   wire [3:3]NLW_plusOp_carry__1_CO_UNCONNECTED;
 
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  LUT5 #(
+    .INIT(32'hFFFFA2AA)) 
+    \FSM_onehot_state[0]_i_1 
+       (.I0(\FSM_onehot_state_reg_n_0_[0] ),
+        .I1(data_rdy_r1),
+        .I2(data_rdy_r2),
+        .I3(bram_enable),
+        .I4(\FSM_onehot_state_reg_n_0_[2] ),
+        .O(\FSM_onehot_state[0]_i_1_n_0 ));
   LUT4 #(
-    .INIT(16'h0100)) 
-    \FSM_sequential_state[0]_i_1 
-       (.I0(state[1]),
-        .I1(state[0]),
+    .INIT(16'h0800)) 
+    \FSM_onehot_state[1]_i_1 
+       (.I0(\FSM_onehot_state_reg_n_0_[0] ),
+        .I1(bram_enable),
         .I2(data_rdy_r2),
         .I3(data_rdy_r1),
-        .O(state__0[0]));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
-    \FSM_sequential_state[1]_i_1 
-       (.I0(state[0]),
-        .I1(state[1]),
-        .O(state__0[1]));
-  (* FSM_ENCODED_STATES = "finished_s:10,idle_s:00,write_s:01" *) 
+        .O(\FSM_onehot_state[1]_i_1_n_0 ));
+  (* FSM_ENCODED_STATES = "finished_s:100,idle_s:001,write_s:010" *) 
+  FDPE #(
+    .INIT(1'b1)) 
+    \FSM_onehot_state_reg[0] 
+       (.C(clk),
+        .CE(1'b1),
+        .D(\FSM_onehot_state[0]_i_1_n_0 ),
+        .PRE(wea_i_2_n_0),
+        .Q(\FSM_onehot_state_reg_n_0_[0] ));
+  (* FSM_ENCODED_STATES = "finished_s:100,idle_s:001,write_s:010" *) 
   FDCE #(
     .INIT(1'b0)) 
-    \FSM_sequential_state_reg[0] 
+    \FSM_onehot_state_reg[1] 
        (.C(clk),
         .CE(1'b1),
         .CLR(wea_i_2_n_0),
-        .D(state__0[0]),
-        .Q(state[0]));
-  (* FSM_ENCODED_STATES = "finished_s:10,idle_s:00,write_s:01" *) 
+        .D(\FSM_onehot_state[1]_i_1_n_0 ),
+        .Q(\FSM_onehot_state_reg_n_0_[1] ));
+  (* FSM_ENCODED_STATES = "finished_s:100,idle_s:001,write_s:010" *) 
   FDCE #(
     .INIT(1'b0)) 
-    \FSM_sequential_state_reg[1] 
+    \FSM_onehot_state_reg[2] 
        (.C(clk),
         .CE(1'b1),
         .CLR(wea_i_2_n_0),
-        .D(state__0[1]),
-        .Q(state[1]));
+        .D(\FSM_onehot_state_reg_n_0_[1] ),
+        .Q(\FSM_onehot_state_reg_n_0_[2] ));
   (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT1 #(
     .INIT(2'h1)) 
     \addr_cnt[0]_i_1 
        (.I0(p_1_in[2]),
         .O(plusOp[0]));
-  LUT5 #(
-    .INIT(32'h00FE0000)) 
+  LUT2 #(
+    .INIT(4'h8)) 
     \addr_cnt[12]_i_1 
        (.I0(\addra[14]_i_2_n_0 ),
-        .I1(\addra[14]_i_3_n_0 ),
-        .I2(\addra[14]_i_4_n_0 ),
-        .I3(state[1]),
-        .I4(state[0]),
+        .I1(\FSM_onehot_state_reg_n_0_[1] ),
         .O(\addr_cnt[12]_i_1_n_0 ));
   FDPE #(
     .INIT(1'b0)) 
@@ -382,41 +410,40 @@ module ad4134fw_ad4134_to_bram_0_0_ad4134_to_bram
         .CLR(wea_i_2_n_0),
         .D(p_1_in[9]),
         .Q(addr_cnt_shifted[9]));
-  LUT6 #(
-    .INIT(64'h00000000FE000000)) 
+  LUT3 #(
+    .INIT(8'h80)) 
     \addra[14]_i_1 
        (.I0(\addra[14]_i_2_n_0 ),
-        .I1(\addra[14]_i_3_n_0 ),
-        .I2(\addra[14]_i_4_n_0 ),
-        .I3(rst_n),
-        .I4(state[0]),
-        .I5(state[1]),
+        .I1(\FSM_onehot_state_reg_n_0_[1] ),
+        .I2(rst_n),
         .O(dia0));
+  LUT6 #(
+    .INIT(64'hFFFFFFFFBFFFFFFF)) 
+    \addra[14]_i_2 
+       (.I0(\addra[14]_i_3_n_0 ),
+        .I1(p_1_in[6]),
+        .I2(p_1_in[5]),
+        .I3(p_1_in[8]),
+        .I4(p_1_in[7]),
+        .I5(\addra[14]_i_4_n_0 ),
+        .O(\addra[14]_i_2_n_0 ));
+  LUT4 #(
+    .INIT(16'h7FFF)) 
+    \addra[14]_i_3 
+       (.I0(p_1_in[10]),
+        .I1(p_1_in[9]),
+        .I2(p_1_in[12]),
+        .I3(p_1_in[11]),
+        .O(\addra[14]_i_3_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT5 #(
     .INIT(32'h7FFFFFFF)) 
-    \addra[14]_i_2 
+    \addra[14]_i_4 
        (.I0(p_1_in[2]),
         .I1(p_1_in[13]),
         .I2(p_1_in[14]),
         .I3(p_1_in[4]),
         .I4(p_1_in[3]),
-        .O(\addra[14]_i_2_n_0 ));
-  LUT4 #(
-    .INIT(16'h7FFF)) 
-    \addra[14]_i_3 
-       (.I0(p_1_in[6]),
-        .I1(p_1_in[5]),
-        .I2(p_1_in[8]),
-        .I3(p_1_in[7]),
-        .O(\addra[14]_i_3_n_0 ));
-  LUT4 #(
-    .INIT(16'h7FFF)) 
-    \addra[14]_i_4 
-       (.I0(p_1_in[10]),
-        .I1(p_1_in[9]),
-        .I2(p_1_in[12]),
-        .I3(p_1_in[11]),
         .O(\addra[14]_i_4_n_0 ));
   FDRE \addra_reg[10] 
        (.C(clk),
@@ -508,6 +535,38 @@ module ad4134fw_ad4134_to_bram_0_0_ad4134_to_bram
         .CLR(wea_i_2_n_0),
         .D(data_rdy_r1),
         .Q(data_rdy_r2));
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  LUT3 #(
+    .INIT(8'hFE)) 
+    \debug[0]_i_1 
+       (.I0(\FSM_onehot_state_reg_n_0_[2] ),
+        .I1(\FSM_onehot_state_reg_n_0_[1] ),
+        .I2(\FSM_onehot_state_reg_n_0_[0] ),
+        .O(\debug[0]_i_1_n_0 ));
+  LUT2 #(
+    .INIT(4'hE)) 
+    \debug[1]_i_1 
+       (.I0(\FSM_onehot_state_reg_n_0_[1] ),
+        .I1(\FSM_onehot_state_reg_n_0_[2] ),
+        .O(\debug[1]_i_1_n_0 ));
+  FDCE \debug_reg[0] 
+       (.C(clk),
+        .CE(1'b1),
+        .CLR(wea_i_2_n_0),
+        .D(\debug[0]_i_1_n_0 ),
+        .Q(debug[0]));
+  FDCE \debug_reg[1] 
+       (.C(clk),
+        .CE(1'b1),
+        .CLR(wea_i_2_n_0),
+        .D(\debug[1]_i_1_n_0 ),
+        .Q(debug[1]));
+  FDCE \debug_reg[2] 
+       (.C(clk),
+        .CE(1'b1),
+        .CLR(wea_i_2_n_0),
+        .D(\FSM_onehot_state_reg_n_0_[2] ),
+        .Q(debug[2]));
   FDRE \dia_reg[0] 
        (.C(clk),
         .CE(dia0),
@@ -676,15 +735,15 @@ module ad4134fw_ad4134_to_bram_0_0_ad4134_to_bram
         .DI({1'b0,1'b0,1'b0,1'b0}),
         .O(plusOp[12:9]),
         .S(p_1_in[14:11]));
-  LUT6 #(
-    .INIT(64'hAAABAAA80000AAA8)) 
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  LUT5 #(
+    .INIT(32'hAB11AA00)) 
     wea_i_1
-       (.I0(state[1]),
-        .I1(\addra[14]_i_4_n_0 ),
-        .I2(\addra[14]_i_3_n_0 ),
+       (.I0(\FSM_onehot_state_reg_n_0_[2] ),
+        .I1(\FSM_onehot_state_reg_n_0_[0] ),
+        .I2(\FSM_onehot_state_reg_n_0_[1] ),
         .I3(\addra[14]_i_2_n_0 ),
-        .I4(state[0]),
-        .I5(wea),
+        .I4(wea),
         .O(wea_i_1_n_0));
   LUT1 #(
     .INIT(2'h1)) 

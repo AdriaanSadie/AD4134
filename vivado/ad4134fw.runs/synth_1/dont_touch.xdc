@@ -66,4 +66,10 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==ad4134fw_ax
 # IP: bd/ad4134fw/ip/ad4134fw_ad4134_to_bram_0_0/ad4134fw_ad4134_to_bram_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==ad4134fw_ad4134_to_bram_0_0 || ORIG_REF_NAME==ad4134fw_ad4134_to_bram_0_0} -quiet] -quiet
 
+# IP: bd/ad4134fw/ip/ad4134fw_axi_gpio_0_2/ad4134fw_axi_gpio_0_2.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==ad4134fw_axi_gpio_0_2 || ORIG_REF_NAME==ad4134fw_axi_gpio_0_2} -quiet] -quiet
+
+# IP: bd/ad4134fw/ip/ad4134fw_xlslice_0_2/ad4134fw_xlslice_0_2.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==ad4134fw_xlslice_0_2 || ORIG_REF_NAME==ad4134fw_xlslice_0_2} -quiet] -quiet
+
 # XDC: c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ad4134fw_ooc.xdc

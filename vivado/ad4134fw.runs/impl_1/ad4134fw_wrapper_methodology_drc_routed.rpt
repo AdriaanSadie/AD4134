@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-| Date         : Sun Nov  2 21:52:59 2025
+| Date         : Mon Nov  3 21:23:05 2025
 | Host         : DESKTOP-NG70LRJ running 64-bit major release  (build 9200)
 | Command      : report_methodology -file ad4134fw_wrapper_methodology_drc_routed.rpt -pb ad4134fw_wrapper_methodology_drc_routed.pb -rpx ad4134fw_wrapper_methodology_drc_routed.rpx
 | Design       : ad4134fw_wrapper
@@ -20,7 +20,7 @@ Table of Contents
 1. REPORT SUMMARY
 -----------------
             Netlist: netlist
-          Floorplan: checkpoint_ad4134fw_wrapper
+          Floorplan: design_1
       Design limits: <entire design considered>
              Max checks: <unlimited>
              Checks found: 29
@@ -180,7 +180,7 @@ Related violations: <none>
 
 ULMTCS-1#1 Warning
 Control Sets use limits recommend reduction  
-This design uses 506 control sets (vs. available limit of 4400, determined by 1 control set per CLB). This exceeds the control set use guideline of 7.5 percent. This is at a level where reduction is RECOMMENDED (see UG949). Use report_control_sets to get more details.
+This design uses 577 control sets (vs. available limit of 4400, determined by 1 control set per CLB). This exceeds the control set use guideline of 7.5 percent. This is at a level where reduction is RECOMMENDED (see UG949). Use report_control_sets to get more details.
 Related violations: <none>
 
 

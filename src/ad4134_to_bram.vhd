@@ -20,7 +20,11 @@ entity ad4134_to_bram is
         addra : out std_logic_vector(14 downto 0);
         dia : out std_logic_vector(31 downto 0);
         wea : out std_logic;
-        done : out std_logic
+        done : out std_logic;
+        -- Control signals:
+        bram_enable : in std_logic;
+
+        debug : out std_logic_vector(3 downto 0)
     );
 end ad4134_to_bram;
 
@@ -58,6 +62,8 @@ begin
             addr_cnt <= to_unsigned(1, 15); -- Initiate at 1, otherwise the bitshifted address writes to 0000 twice
             addr_cnt_shifted <= (others => '0');
 
+            debug <= (others => '0');
+
         elsif (rising_edge(clk)) then
 
             -- Double clock in registers:
@@ -68,7 +74,7 @@ begin
 
                 when IDLE_S =>
 
-                    if (data_rdy_r1 = '1' and data_rdy_r2 = '0') then
+                    if (data_rdy_r1 = '1' and data_rdy_r2 = '0' and bram_enable = '1') then
 
                         
                         state <= WRITE_S;
@@ -78,6 +84,8 @@ begin
                     end if;
 
                     wea <= '0';
+
+                    debug <= b"0001";
 
                 when WRITE_S =>
 
@@ -94,6 +102,7 @@ begin
                     
                     state <= FINISHED_S;
                     
+                    debug <= b"0011";
 
                 when FINISHED_S =>
 
@@ -105,9 +114,13 @@ begin
 
                     state <= IDLE_S;
 
+                    debug <= b"0111";
+
                 when others =>
 
                     state <= IDLE_S;
+
+                    debug <= (others => '0');
 
             end case;
 

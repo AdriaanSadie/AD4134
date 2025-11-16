@@ -2,7 +2,7 @@
 -- Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
--- Date        : Sun Nov  2 21:33:54 2025
+-- Date        : Mon Nov  3 21:15:44 2025
 -- Host        : DESKTOP-NG70LRJ running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub
 --               c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_ad4134_to_bram_0_0/ad4134fw_ad4134_to_bram_0_0_stub.vhdl
@@ -25,7 +25,9 @@ entity ad4134fw_ad4134_to_bram_0_0 is
     addra : out STD_LOGIC_VECTOR ( 14 downto 0 );
     dia : out STD_LOGIC_VECTOR ( 31 downto 0 );
     wea : out STD_LOGIC;
-    done : out STD_LOGIC
+    done : out STD_LOGIC;
+    bram_enable : in STD_LOGIC;
+    debug : out STD_LOGIC_VECTOR ( 3 downto 0 )
   );
 
   attribute CHECK_LICENSE_TYPE : string;
@@ -42,7 +44,7 @@ architecture stub of ad4134fw_ad4134_to_bram_0_0 is
   attribute syn_black_box : boolean;
   attribute black_box_pad_pin : string;
   attribute syn_black_box of stub : architecture is true;
-  attribute black_box_pad_pin of stub : architecture is "clk,rst_n,data_in0[23:0],data_in1[23:0],data_in2[23:0],data_in3[23:0],data_rdy,addra[14:0],dia[31:0],wea,done";
+  attribute black_box_pad_pin of stub : architecture is "clk,rst_n,data_in0[23:0],data_in1[23:0],data_in2[23:0],data_in3[23:0],data_rdy,addra[14:0],dia[31:0],wea,done,bram_enable,debug[3:0]";
   attribute x_interface_info : string;
   attribute x_interface_info of clk : signal is "xilinx.com:signal:clock:1.0 clk CLK";
   attribute x_interface_mode : string;

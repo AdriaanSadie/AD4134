@@ -2,7 +2,7 @@
   "schema": "xilinx.com:schema:json_instance:1.0",
   "ip_inst": {
     "xci_name": "ad4134fw_axi_bram_ctrl_0_2",
-    "cell_name": "ADC_BRAM_READ",
+    "cell_name": "ADC_BRAM/ADC_BRAM_READ",
     "component_reference": "xilinx.com:ip:axi_bram_ctrl:4.1",
     "ip_revision": "11",
     "gen_directory": "../../../../../../ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_axi_bram_ctrl_0_2",
@@ -194,7 +194,7 @@
             "MEM_ECC": [ { "value": "NONE", "value_src": "user", "value_permission": "bd", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
             "READ_WRITE_MODE": [ { "value": "READ_WRITE", "value_src": "user", "value_permission": "bd", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
             "READ_LATENCY": [ { "value": "1", "value_src": "user", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
-            "MEM_ADDRESS_MODE": [ { "value": "", "value_src": "weak", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ]
+            "MEM_ADDRESS_MODE": [ { "value": "", "value_src": "weak", "value_permission": "bd", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ]
           },
           "port_maps": {
             "ADDR": [ { "physical_name": "bram_addr_a" } ],

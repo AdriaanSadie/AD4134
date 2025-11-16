@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="ad4134fw_ad4134_to_bram_0_0_synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1762111978">
+<GenRun Id="ad4134fw_ad4134_to_bram_0_0_synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1762197258">
   <File Type="PA-TCL" Name="ad4134fw_ad4134_to_bram_0_0.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="ad4134fw_ad4134_to_bram_0_0_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="ad4134fw_ad4134_to_bram_0_0_reports.tcl"/>
@@ -12,6 +12,7 @@
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ad4134fw_ad4134_to_bram_0_0" RelGenDir="$PGENDIR/ad4134fw_ad4134_to_bram_0_0">
     <File Path="$PSRCDIR/sources_1/bd/ad4134fw/ip/ad4134fw_ad4134_to_bram_0_0/ad4134fw_ad4134_to_bram_0_0.xci">
       <FileInfo>
+        <Attr Name="Library" Val="xil_defaultlib"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -25,6 +26,7 @@
   <FileSet Name="constrs_in" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ad4134fw_ad4134_to_bram_0_0" RelGenDir="$PGENDIR/ad4134fw_ad4134_to_bram_0_0">
     <File Path="$PSRCDIR/sources_1/bd/ad4134fw/ip/ad4134fw_ad4134_to_bram_0_0/ad4134fw_ad4134_to_bram_0_0.xci">
       <FileInfo>
+        <Attr Name="Library" Val="xil_defaultlib"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>

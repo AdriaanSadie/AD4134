@@ -2,7 +2,7 @@
 --Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
---Date        : Sun Nov  2 21:32:44 2025
+--Date        : Mon Nov  3 21:14:00 2025
 --Host        : DESKTOP-NG70LRJ running 64-bit major release  (build 9200)
 --Command     : generate_target ad4134fw_wrapper.bd
 --Design      : ad4134fw_wrapper

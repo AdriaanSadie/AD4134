@@ -2,7 +2,7 @@
 --Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
---Date        : Sun Nov  2 21:32:44 2025
+--Date        : Mon Nov  3 21:13:59 2025
 --Host        : DESKTOP-NG70LRJ running 64-bit major release  (build 9200)
 --Command     : generate_target ad4134fw.bd
 --Design      : ad4134fw
@@ -45,12 +45,30 @@ entity ADC_BRAM_imp_3GMY3Y is
     ADC_BRAM_Reader_wready : out STD_LOGIC;
     ADC_BRAM_Reader_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
     ADC_BRAM_Reader_wvalid : in STD_LOGIC;
+    adc_bram_enable_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    adc_bram_enable_arready : out STD_LOGIC;
+    adc_bram_enable_arvalid : in STD_LOGIC;
+    adc_bram_enable_awaddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    adc_bram_enable_awready : out STD_LOGIC;
+    adc_bram_enable_awvalid : in STD_LOGIC;
+    adc_bram_enable_bready : in STD_LOGIC;
+    adc_bram_enable_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    adc_bram_enable_bvalid : out STD_LOGIC;
+    adc_bram_enable_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    adc_bram_enable_rready : in STD_LOGIC;
+    adc_bram_enable_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    adc_bram_enable_rvalid : out STD_LOGIC;
+    adc_bram_enable_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    adc_bram_enable_wready : out STD_LOGIC;
+    adc_bram_enable_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    adc_bram_enable_wvalid : in STD_LOGIC;
     clk : in STD_LOGIC;
     data_in0_0 : in STD_LOGIC_VECTOR ( 23 downto 0 );
     data_in1_0 : in STD_LOGIC_VECTOR ( 23 downto 0 );
     data_in2_0 : in STD_LOGIC_VECTOR ( 23 downto 0 );
     data_in3_0 : in STD_LOGIC_VECTOR ( 23 downto 0 );
     data_rdy_0 : in STD_LOGIC;
+    debug_0 : out STD_LOGIC_VECTOR ( 3 downto 0 );
     done_0 : out STD_LOGIC;
     rst_n : in STD_LOGIC
   );
@@ -124,15 +142,49 @@ architecture STRUCTURE of ADC_BRAM_imp_3GMY3Y is
     addra : out STD_LOGIC_VECTOR ( 14 downto 0 );
     dia : out STD_LOGIC_VECTOR ( 31 downto 0 );
     wea : out STD_LOGIC;
-    done : out STD_LOGIC
+    done : out STD_LOGIC;
+    bram_enable : in STD_LOGIC;
+    debug : out STD_LOGIC_VECTOR ( 3 downto 0 )
   );
   end component ad4134fw_ad4134_to_bram_0_0;
+  component ad4134fw_axi_gpio_0_2 is
+  port (
+    s_axi_aclk : in STD_LOGIC;
+    s_axi_aresetn : in STD_LOGIC;
+    s_axi_awaddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    s_axi_awvalid : in STD_LOGIC;
+    s_axi_awready : out STD_LOGIC;
+    s_axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    s_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    s_axi_wvalid : in STD_LOGIC;
+    s_axi_wready : out STD_LOGIC;
+    s_axi_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s_axi_bvalid : out STD_LOGIC;
+    s_axi_bready : in STD_LOGIC;
+    s_axi_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    s_axi_arvalid : in STD_LOGIC;
+    s_axi_arready : out STD_LOGIC;
+    s_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    s_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s_axi_rvalid : out STD_LOGIC;
+    s_axi_rready : in STD_LOGIC;
+    gpio_io_o : out STD_LOGIC_VECTOR ( 31 downto 0 )
+  );
+  end component ad4134fw_axi_gpio_0_2;
+  component ad4134fw_xlslice_0_2 is
+  port (
+    Din : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    Dout : out STD_LOGIC_VECTOR ( 0 to 0 )
+  );
+  end component ad4134fw_xlslice_0_2;
   signal ad4134_to_bram_0_addra : STD_LOGIC_VECTOR ( 14 downto 0 );
   signal ad4134_to_bram_0_dia : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal ad4134_to_bram_0_wea : STD_LOGIC;
+  signal adc_bram_enable_gpio_io_o : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal axi_bram_ctrl_0_BRAM_PORTA_ADDR : STD_LOGIC_VECTOR ( 12 downto 0 );
   signal axi_bram_ctrl_0_BRAM_PORTA_CLK : STD_LOGIC;
   signal axi_bram_ctrl_0_BRAM_PORTA_DOUT : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal xlslice_0_Dout : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_ADC_BRAM_READ_bram_en_a_UNCONNECTED : STD_LOGIC;
   signal NLW_ADC_BRAM_READ_bram_rst_a_UNCONNECTED : STD_LOGIC;
   signal NLW_ADC_BRAM_READ_bram_we_a_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -188,16 +240,41 @@ ADC_BRAM_READ: component ad4134fw_axi_bram_ctrl_0_2
 ad4134_to_bram_0: component ad4134fw_ad4134_to_bram_0_0
      port map (
       addra(14 downto 0) => ad4134_to_bram_0_addra(14 downto 0),
+      bram_enable => xlslice_0_Dout(0),
       clk => clk,
       data_in0(23 downto 0) => data_in0_0(23 downto 0),
       data_in1(23 downto 0) => data_in1_0(23 downto 0),
       data_in2(23 downto 0) => data_in2_0(23 downto 0),
       data_in3(23 downto 0) => data_in3_0(23 downto 0),
       data_rdy => data_rdy_0,
+      debug(3 downto 0) => debug_0(3 downto 0),
       dia(31 downto 0) => ad4134_to_bram_0_dia(31 downto 0),
       done => done_0,
       rst_n => rst_n,
       wea => ad4134_to_bram_0_wea
+    );
+adc_bram_enable: component ad4134fw_axi_gpio_0_2
+     port map (
+      gpio_io_o(31 downto 0) => adc_bram_enable_gpio_io_o(31 downto 0),
+      s_axi_aclk => clk,
+      s_axi_araddr(8 downto 0) => adc_bram_enable_araddr(8 downto 0),
+      s_axi_aresetn => rst_n,
+      s_axi_arready => adc_bram_enable_arready,
+      s_axi_arvalid => adc_bram_enable_arvalid,
+      s_axi_awaddr(8 downto 0) => adc_bram_enable_awaddr(8 downto 0),
+      s_axi_awready => adc_bram_enable_awready,
+      s_axi_awvalid => adc_bram_enable_awvalid,
+      s_axi_bready => adc_bram_enable_bready,
+      s_axi_bresp(1 downto 0) => adc_bram_enable_bresp(1 downto 0),
+      s_axi_bvalid => adc_bram_enable_bvalid,
+      s_axi_rdata(31 downto 0) => adc_bram_enable_rdata(31 downto 0),
+      s_axi_rready => adc_bram_enable_rready,
+      s_axi_rresp(1 downto 0) => adc_bram_enable_rresp(1 downto 0),
+      s_axi_rvalid => adc_bram_enable_rvalid,
+      s_axi_wdata(31 downto 0) => adc_bram_enable_wdata(31 downto 0),
+      s_axi_wready => adc_bram_enable_wready,
+      s_axi_wstrb(3 downto 0) => adc_bram_enable_wstrb(3 downto 0),
+      s_axi_wvalid => adc_bram_enable_wvalid
     );
 blk_mem_gen_0: component ad4134fw_blk_mem_gen_0_2
      port map (
@@ -209,6 +286,11 @@ blk_mem_gen_0: component ad4134fw_blk_mem_gen_0_2
       dina(31 downto 0) => ad4134_to_bram_0_dia(31 downto 0),
       doutb(31 downto 0) => axi_bram_ctrl_0_BRAM_PORTA_DOUT(31 downto 0),
       wea(0) => ad4134_to_bram_0_wea
+    );
+xlslice_0: component ad4134fw_xlslice_0_2
+     port map (
+      Din(31 downto 0) => adc_bram_enable_gpio_io_o(31 downto 0),
+      Dout(0) => xlslice_0_Dout(0)
     );
 end STRUCTURE;
 library IEEE;
@@ -428,6 +510,23 @@ entity Processing_Subsystem_imp_12DOFPS is
     M03_AXI_0_wready : in STD_LOGIC;
     M03_AXI_0_wstrb : out STD_LOGIC_VECTOR ( 3 downto 0 );
     M03_AXI_0_wvalid : out STD_LOGIC;
+    M04_AXI_0_araddr : out STD_LOGIC_VECTOR ( 8 downto 0 );
+    M04_AXI_0_arready : in STD_LOGIC;
+    M04_AXI_0_arvalid : out STD_LOGIC;
+    M04_AXI_0_awaddr : out STD_LOGIC_VECTOR ( 8 downto 0 );
+    M04_AXI_0_awready : in STD_LOGIC;
+    M04_AXI_0_awvalid : out STD_LOGIC;
+    M04_AXI_0_bready : out STD_LOGIC;
+    M04_AXI_0_bresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    M04_AXI_0_bvalid : in STD_LOGIC;
+    M04_AXI_0_rdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    M04_AXI_0_rready : out STD_LOGIC;
+    M04_AXI_0_rresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    M04_AXI_0_rvalid : in STD_LOGIC;
+    M04_AXI_0_wdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    M04_AXI_0_wready : in STD_LOGIC;
+    M04_AXI_0_wstrb : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    M04_AXI_0_wvalid : out STD_LOGIC;
     global_clk : out STD_LOGIC;
     global_rst_n : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
@@ -665,7 +764,26 @@ architecture STRUCTURE of Processing_Subsystem_imp_12DOFPS is
     M03_AXI_rresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
     M03_AXI_rlast : in STD_LOGIC;
     M03_AXI_rvalid : in STD_LOGIC;
-    M03_AXI_rready : out STD_LOGIC
+    M03_AXI_rready : out STD_LOGIC;
+    M04_AXI_awaddr : out STD_LOGIC_VECTOR ( 8 downto 0 );
+    M04_AXI_awprot : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    M04_AXI_awvalid : out STD_LOGIC;
+    M04_AXI_awready : in STD_LOGIC;
+    M04_AXI_wdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    M04_AXI_wstrb : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    M04_AXI_wvalid : out STD_LOGIC;
+    M04_AXI_wready : in STD_LOGIC;
+    M04_AXI_bresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    M04_AXI_bvalid : in STD_LOGIC;
+    M04_AXI_bready : out STD_LOGIC;
+    M04_AXI_araddr : out STD_LOGIC_VECTOR ( 8 downto 0 );
+    M04_AXI_arprot : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    M04_AXI_arvalid : out STD_LOGIC;
+    M04_AXI_arready : in STD_LOGIC;
+    M04_AXI_rdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    M04_AXI_rresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    M04_AXI_rvalid : in STD_LOGIC;
+    M04_AXI_rready : out STD_LOGIC
   );
   end component ad4134fw_smartconnect_0_0;
   signal \^m02_axi_0_arlock\ : STD_LOGIC_VECTOR ( 0 to 0 );
@@ -747,6 +865,8 @@ architecture STRUCTURE of Processing_Subsystem_imp_12DOFPS is
   signal NLW_smartconnect_0_M02_AXI_awqos_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal NLW_smartconnect_0_M03_AXI_arqos_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal NLW_smartconnect_0_M03_AXI_awqos_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal NLW_smartconnect_0_M04_AXI_arprot_UNCONNECTED : STD_LOGIC_VECTOR ( 2 downto 0 );
+  signal NLW_smartconnect_0_M04_AXI_awprot_UNCONNECTED : STD_LOGIC_VECTOR ( 2 downto 0 );
   attribute BMM_INFO_PROCESSOR : string;
   attribute BMM_INFO_PROCESSOR of processing_system7_0 : label is "arm > ad4134fw bram_tester/bram_read ad4134fw ADC_BRAM/ADC_BRAM_READ";
   attribute KEEP_HIERARCHY : string;
@@ -947,6 +1067,25 @@ smartconnect_0: component ad4134fw_smartconnect_0_0
       M03_AXI_wready => M03_AXI_0_wready,
       M03_AXI_wstrb(3 downto 0) => M03_AXI_0_wstrb(3 downto 0),
       M03_AXI_wvalid => M03_AXI_0_wvalid,
+      M04_AXI_araddr(8 downto 0) => M04_AXI_0_araddr(8 downto 0),
+      M04_AXI_arprot(2 downto 0) => NLW_smartconnect_0_M04_AXI_arprot_UNCONNECTED(2 downto 0),
+      M04_AXI_arready => M04_AXI_0_arready,
+      M04_AXI_arvalid => M04_AXI_0_arvalid,
+      M04_AXI_awaddr(8 downto 0) => M04_AXI_0_awaddr(8 downto 0),
+      M04_AXI_awprot(2 downto 0) => NLW_smartconnect_0_M04_AXI_awprot_UNCONNECTED(2 downto 0),
+      M04_AXI_awready => M04_AXI_0_awready,
+      M04_AXI_awvalid => M04_AXI_0_awvalid,
+      M04_AXI_bready => M04_AXI_0_bready,
+      M04_AXI_bresp(1 downto 0) => M04_AXI_0_bresp(1 downto 0),
+      M04_AXI_bvalid => M04_AXI_0_bvalid,
+      M04_AXI_rdata(31 downto 0) => M04_AXI_0_rdata(31 downto 0),
+      M04_AXI_rready => M04_AXI_0_rready,
+      M04_AXI_rresp(1 downto 0) => M04_AXI_0_rresp(1 downto 0),
+      M04_AXI_rvalid => M04_AXI_0_rvalid,
+      M04_AXI_wdata(31 downto 0) => M04_AXI_0_wdata(31 downto 0),
+      M04_AXI_wready => M04_AXI_0_wready,
+      M04_AXI_wstrb(3 downto 0) => M04_AXI_0_wstrb(3 downto 0),
+      M04_AXI_wvalid => M04_AXI_0_wvalid,
       S00_AXI_araddr(31 downto 0) => processing_system7_0_M_AXI_GP0_ARADDR(31 downto 0),
       S00_AXI_arburst(1 downto 0) => processing_system7_0_M_AXI_GP0_ARBURST(1 downto 0),
       S00_AXI_arcache(3 downto 0) => processing_system7_0_M_AXI_GP0_ARCACHE(3 downto 0),
@@ -1375,7 +1514,7 @@ entity ad4134fw is
     spi_cs_n : out STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of ad4134fw : entity is "ad4134fw,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=ad4134fw,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=25,numReposBlks=20,numNonXlnxBlks=0,numHierBlks=5,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=6,numPkgbdBlks=0,bdsource=USER,synth_mode=Hierarchical}";
+  attribute CORE_GENERATION_INFO of ad4134fw : entity is "ad4134fw,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=ad4134fw,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=27,numReposBlks=22,numNonXlnxBlks=0,numHierBlks=5,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=6,numPkgbdBlks=0,bdsource=USER,synth_mode=Hierarchical}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of ad4134fw : entity is "ad4134fw.hwdef";
 end ad4134fw;
@@ -1494,6 +1633,23 @@ architecture STRUCTURE of ad4134fw is
   signal Processing_Subsystem_M03_AXI_0_WREADY : STD_LOGIC;
   signal Processing_Subsystem_M03_AXI_0_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal Processing_Subsystem_M03_AXI_0_WVALID : STD_LOGIC;
+  signal Processing_Subsystem_M04_AXI_0_ARADDR : STD_LOGIC_VECTOR ( 8 downto 0 );
+  signal Processing_Subsystem_M04_AXI_0_ARREADY : STD_LOGIC;
+  signal Processing_Subsystem_M04_AXI_0_ARVALID : STD_LOGIC;
+  signal Processing_Subsystem_M04_AXI_0_AWADDR : STD_LOGIC_VECTOR ( 8 downto 0 );
+  signal Processing_Subsystem_M04_AXI_0_AWREADY : STD_LOGIC;
+  signal Processing_Subsystem_M04_AXI_0_AWVALID : STD_LOGIC;
+  signal Processing_Subsystem_M04_AXI_0_BREADY : STD_LOGIC;
+  signal Processing_Subsystem_M04_AXI_0_BRESP : STD_LOGIC_VECTOR ( 1 downto 0 );
+  signal Processing_Subsystem_M04_AXI_0_BVALID : STD_LOGIC;
+  signal Processing_Subsystem_M04_AXI_0_RDATA : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal Processing_Subsystem_M04_AXI_0_RREADY : STD_LOGIC;
+  signal Processing_Subsystem_M04_AXI_0_RRESP : STD_LOGIC_VECTOR ( 1 downto 0 );
+  signal Processing_Subsystem_M04_AXI_0_RVALID : STD_LOGIC;
+  signal Processing_Subsystem_M04_AXI_0_WDATA : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal Processing_Subsystem_M04_AXI_0_WREADY : STD_LOGIC;
+  signal Processing_Subsystem_M04_AXI_0_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal Processing_Subsystem_M04_AXI_0_WVALID : STD_LOGIC;
   signal Processing_Subsystem_global_clk : STD_LOGIC;
   signal Processing_Subsystem_global_rst_n : STD_LOGIC_VECTOR ( 0 to 0 );
   signal ad4134_data_0_data_out0 : STD_LOGIC_VECTOR ( 23 downto 0 );
@@ -1502,6 +1658,7 @@ architecture STRUCTURE of ad4134fw is
   signal ad4134_data_0_data_out3 : STD_LOGIC_VECTOR ( 23 downto 0 );
   signal ad4134_data_0_data_rdy : STD_LOGIC;
   signal NLW_ADC_BRAM_done_0_UNCONNECTED : STD_LOGIC;
+  signal NLW_SPI_Control_debug_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
 begin
 ADC_BRAM: entity work.ADC_BRAM_imp_3GMY3Y
      port map (
@@ -1536,12 +1693,30 @@ ADC_BRAM: entity work.ADC_BRAM_imp_3GMY3Y
       ADC_BRAM_Reader_wready => Processing_Subsystem_M03_AXI_0_WREADY,
       ADC_BRAM_Reader_wstrb(3 downto 0) => Processing_Subsystem_M03_AXI_0_WSTRB(3 downto 0),
       ADC_BRAM_Reader_wvalid => Processing_Subsystem_M03_AXI_0_WVALID,
+      adc_bram_enable_araddr(8 downto 0) => Processing_Subsystem_M04_AXI_0_ARADDR(8 downto 0),
+      adc_bram_enable_arready => Processing_Subsystem_M04_AXI_0_ARREADY,
+      adc_bram_enable_arvalid => Processing_Subsystem_M04_AXI_0_ARVALID,
+      adc_bram_enable_awaddr(8 downto 0) => Processing_Subsystem_M04_AXI_0_AWADDR(8 downto 0),
+      adc_bram_enable_awready => Processing_Subsystem_M04_AXI_0_AWREADY,
+      adc_bram_enable_awvalid => Processing_Subsystem_M04_AXI_0_AWVALID,
+      adc_bram_enable_bready => Processing_Subsystem_M04_AXI_0_BREADY,
+      adc_bram_enable_bresp(1 downto 0) => Processing_Subsystem_M04_AXI_0_BRESP(1 downto 0),
+      adc_bram_enable_bvalid => Processing_Subsystem_M04_AXI_0_BVALID,
+      adc_bram_enable_rdata(31 downto 0) => Processing_Subsystem_M04_AXI_0_RDATA(31 downto 0),
+      adc_bram_enable_rready => Processing_Subsystem_M04_AXI_0_RREADY,
+      adc_bram_enable_rresp(1 downto 0) => Processing_Subsystem_M04_AXI_0_RRESP(1 downto 0),
+      adc_bram_enable_rvalid => Processing_Subsystem_M04_AXI_0_RVALID,
+      adc_bram_enable_wdata(31 downto 0) => Processing_Subsystem_M04_AXI_0_WDATA(31 downto 0),
+      adc_bram_enable_wready => Processing_Subsystem_M04_AXI_0_WREADY,
+      adc_bram_enable_wstrb(3 downto 0) => Processing_Subsystem_M04_AXI_0_WSTRB(3 downto 0),
+      adc_bram_enable_wvalid => Processing_Subsystem_M04_AXI_0_WVALID,
       clk => Processing_Subsystem_global_clk,
       data_in0_0(23 downto 0) => ad4134_data_0_data_out0(23 downto 0),
       data_in1_0(23 downto 0) => ad4134_data_0_data_out1(23 downto 0),
       data_in2_0(23 downto 0) => ad4134_data_0_data_out2(23 downto 0),
       data_in3_0(23 downto 0) => ad4134_data_0_data_out3(23 downto 0),
       data_rdy_0 => ad4134_data_0_data_rdy,
+      debug_0(3 downto 0) => debug(3 downto 0),
       done_0 => NLW_ADC_BRAM_done_0_UNCONNECTED,
       rst_n => Processing_Subsystem_global_rst_n(0)
     );
@@ -1667,13 +1842,30 @@ Processing_Subsystem: entity work.Processing_Subsystem_imp_12DOFPS
       M03_AXI_0_wready => Processing_Subsystem_M03_AXI_0_WREADY,
       M03_AXI_0_wstrb(3 downto 0) => Processing_Subsystem_M03_AXI_0_WSTRB(3 downto 0),
       M03_AXI_0_wvalid => Processing_Subsystem_M03_AXI_0_WVALID,
+      M04_AXI_0_araddr(8 downto 0) => Processing_Subsystem_M04_AXI_0_ARADDR(8 downto 0),
+      M04_AXI_0_arready => Processing_Subsystem_M04_AXI_0_ARREADY,
+      M04_AXI_0_arvalid => Processing_Subsystem_M04_AXI_0_ARVALID,
+      M04_AXI_0_awaddr(8 downto 0) => Processing_Subsystem_M04_AXI_0_AWADDR(8 downto 0),
+      M04_AXI_0_awready => Processing_Subsystem_M04_AXI_0_AWREADY,
+      M04_AXI_0_awvalid => Processing_Subsystem_M04_AXI_0_AWVALID,
+      M04_AXI_0_bready => Processing_Subsystem_M04_AXI_0_BREADY,
+      M04_AXI_0_bresp(1 downto 0) => Processing_Subsystem_M04_AXI_0_BRESP(1 downto 0),
+      M04_AXI_0_bvalid => Processing_Subsystem_M04_AXI_0_BVALID,
+      M04_AXI_0_rdata(31 downto 0) => Processing_Subsystem_M04_AXI_0_RDATA(31 downto 0),
+      M04_AXI_0_rready => Processing_Subsystem_M04_AXI_0_RREADY,
+      M04_AXI_0_rresp(1 downto 0) => Processing_Subsystem_M04_AXI_0_RRESP(1 downto 0),
+      M04_AXI_0_rvalid => Processing_Subsystem_M04_AXI_0_RVALID,
+      M04_AXI_0_wdata(31 downto 0) => Processing_Subsystem_M04_AXI_0_WDATA(31 downto 0),
+      M04_AXI_0_wready => Processing_Subsystem_M04_AXI_0_WREADY,
+      M04_AXI_0_wstrb(3 downto 0) => Processing_Subsystem_M04_AXI_0_WSTRB(3 downto 0),
+      M04_AXI_0_wvalid => Processing_Subsystem_M04_AXI_0_WVALID,
       global_clk => Processing_Subsystem_global_clk,
       global_rst_n(0) => Processing_Subsystem_global_rst_n(0)
     );
 SPI_Control: entity work.SPI_Control_imp_1JN7NK1
      port map (
       clk => Processing_Subsystem_global_clk,
-      debug(3 downto 0) => debug(3 downto 0),
+      debug(3 downto 0) => NLW_SPI_Control_debug_UNCONNECTED(3 downto 0),
       miso => miso,
       mosi => mosi,
       rstn => Processing_Subsystem_global_rst_n(0),

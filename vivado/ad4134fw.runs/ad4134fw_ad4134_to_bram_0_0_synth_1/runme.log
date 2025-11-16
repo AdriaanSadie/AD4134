@@ -8,7 +8,7 @@
   **** SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
   **** IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
   **** SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-  **** Start of session at: Sun Nov  2 21:33:05 2025
+  **** Start of session at: Mon Nov  3 21:14:27 2025
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 
@@ -23,16 +23,16 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010
 INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 15280
+INFO: [Synth 8-7075] Helper process launched with PID 20104
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1055.449 ; gain = 466.570
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1057.020 ; gain = 466.719
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'ad4134fw_ad4134_to_bram_0_0' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_ad4134_to_bram_0_0/synth/ad4134fw_ad4134_to_bram_0_0.vhd:72]
+INFO: [Synth 8-638] synthesizing module 'ad4134fw_ad4134_to_bram_0_0' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_ad4134_to_bram_0_0/synth/ad4134fw_ad4134_to_bram_0_0.vhd:74]
 	Parameter DATA_WIDTH bound to: 24 - type: integer 
-INFO: [Synth 8-3491] module 'ad4134_to_bram' declared at 'C:/work/AD4134/src/ad4134_to_bram.vhd:5' bound to instance 'U0' of component 'ad4134_to_bram' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_ad4134_to_bram_0_0/synth/ad4134fw_ad4134_to_bram_0_0.vhd:111]
-INFO: [Synth 8-638] synthesizing module 'ad4134_to_bram' [C:/work/AD4134/src/ad4134_to_bram.vhd:27]
-INFO: [Synth 8-256] done synthesizing module 'ad4134_to_bram' (0#1) [C:/work/AD4134/src/ad4134_to_bram.vhd:27]
-INFO: [Synth 8-256] done synthesizing module 'ad4134fw_ad4134_to_bram_0_0' (0#1) [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_ad4134_to_bram_0_0/synth/ad4134fw_ad4134_to_bram_0_0.vhd:72]
+INFO: [Synth 8-3491] module 'ad4134_to_bram' declared at 'C:/work/AD4134/src/ad4134_to_bram.vhd:5' bound to instance 'U0' of component 'ad4134_to_bram' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_ad4134_to_bram_0_0/synth/ad4134fw_ad4134_to_bram_0_0.vhd:115]
+INFO: [Synth 8-638] synthesizing module 'ad4134_to_bram' [C:/work/AD4134/src/ad4134_to_bram.vhd:31]
+INFO: [Synth 8-256] done synthesizing module 'ad4134_to_bram' (0#1) [C:/work/AD4134/src/ad4134_to_bram.vhd:31]
+INFO: [Synth 8-256] done synthesizing module 'ad4134fw_ad4134_to_bram_0_0' (0#1) [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_ad4134_to_bram_0_0/synth/ad4134fw_ad4134_to_bram_0_0.vhd:74]
 WARNING: [Synth 8-3848] Net done in module/entity ad4134_to_bram does not have driver. [C:/work/AD4134/src/ad4134_to_bram.vhd:23]
 WARNING: [Synth 8-7129] Port done in module ad4134_to_bram is either unconnected or has no load
 WARNING: [Synth 8-7129] Port data_in1[23] in module ad4134_to_bram is either unconnected or has no load
@@ -108,57 +108,57 @@ WARNING: [Synth 8-7129] Port data_in3[2] in module ad4134_to_bram is either unco
 WARNING: [Synth 8-7129] Port data_in3[1] in module ad4134_to_bram is either unconnected or has no load
 WARNING: [Synth 8-7129] Port data_in3[0] in module ad4134_to_bram is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1166.664 ; gain = 577.785
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 1167.852 ; gain = 577.551
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1166.664 ; gain = 577.785
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 1167.852 ; gain = 577.551
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1166.664 ; gain = 577.785
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 1167.852 ; gain = 577.551
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1166.664 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1167.852 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1252.105 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1256.520 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.174 . Memory (MB): peak = 1252.328 ; gain = 0.223
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.174 . Memory (MB): peak = 1256.531 ; gain = 0.012
 INFO: [Designutils 20-5008] Incremental synthesis strategy off
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1252.328 ; gain = 663.449
+Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:21 . Memory (MB): peak = 1256.531 ; gain = 666.230
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1252.328 ; gain = 663.449
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:21 . Memory (MB): peak = 1256.531 ; gain = 666.230
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1252.328 ; gain = 663.449
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:21 . Memory (MB): peak = 1256.531 ; gain = 666.230
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'ad4134_to_bram'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
-                  idle_s |                               00 |                               00
-                 write_s |                               01 |                               01
-              finished_s |                               10 |                               10
+                  idle_s |                              001 |                               00
+                 write_s |                              010 |                               01
+              finished_s |                              100 |                               10
 ---------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'ad4134_to_bram'
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'ad4134_to_bram'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 1252.328 ; gain = 663.449
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:21 . Memory (MB): peak = 1256.531 ; gain = 666.230
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -169,10 +169,11 @@ Detailed RTL Component Info :
 +---Registers : 
 	               24 Bit    Registers := 1     
 	               15 Bit    Registers := 3     
+	                4 Bit    Registers := 1     
 	                1 Bit    Registers := 3     
 +---Muxes : 
-	   3 Input    2 Bit        Muxes := 1     
-	   2 Input    2 Bit        Muxes := 1     
+	   3 Input    3 Bit        Muxes := 2     
+	   2 Input    3 Bit        Muxes := 1     
 	   3 Input    1 Bit        Muxes := 3     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -227,25 +228,25 @@ WARNING: [Synth 8-7129] Port data_in2[23] in module ad4134fw_ad4134_to_bram_0_0 
 WARNING: [Synth 8-7129] Port data_in2[22] in module ad4134fw_ad4134_to_bram_0_0 is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 1252.328 ; gain = 663.449
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:23 . Memory (MB): peak = 1256.531 ; gain = 666.230
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 1359.832 ; gain = 770.953
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:30 . Memory (MB): peak = 1360.305 ; gain = 770.004
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 1359.832 ; gain = 770.953
+Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:30 . Memory (MB): peak = 1360.453 ; gain = 770.152
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 1369.910 ; gain = 781.031
+Finished Technology Mapping : Time (s): cpu = 00:00:25 ; elapsed = 00:00:30 . Memory (MB): peak = 1370.539 ; gain = 780.238
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -263,37 +264,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1586.113 ; gain = 997.234
+Finished IO Insertion : Time (s): cpu = 00:00:29 ; elapsed = 00:00:34 . Memory (MB): peak = 1586.887 ; gain = 996.586
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1586.113 ; gain = 997.234
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:29 ; elapsed = 00:00:34 . Memory (MB): peak = 1586.887 ; gain = 996.586
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1586.113 ; gain = 997.234
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:29 ; elapsed = 00:00:34 . Memory (MB): peak = 1586.887 ; gain = 996.586
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1586.113 ; gain = 997.234
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:29 ; elapsed = 00:00:34 . Memory (MB): peak = 1586.887 ; gain = 996.586
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1586.113 ; gain = 997.234
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:00:34 . Memory (MB): peak = 1586.887 ; gain = 996.586
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1586.113 ; gain = 997.234
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:29 ; elapsed = 00:00:34 . Memory (MB): peak = 1586.887 ; gain = 996.586
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -311,36 +312,37 @@ Report Cell Usage:
 +------+-------+------+
 |1     |CARRY4 |     3|
 |2     |LUT1   |     2|
-|3     |LUT2   |     1|
-|4     |LUT4   |     3|
-|5     |LUT5   |     2|
-|6     |LUT6   |     2|
-|7     |FDCE   |    30|
-|8     |FDPE   |     1|
-|9     |FDRE   |    37|
+|3     |LUT2   |     2|
+|4     |LUT3   |     2|
+|5     |LUT4   |     2|
+|6     |LUT5   |     3|
+|7     |LUT6   |     1|
+|8     |FDCE   |    33|
+|9     |FDPE   |     2|
+|10    |FDRE   |    37|
 +------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1586.113 ; gain = 997.234
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:29 ; elapsed = 00:00:34 . Memory (MB): peak = 1586.887 ; gain = 996.586
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 74 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:30 . Memory (MB): peak = 1586.113 ; gain = 911.570
-Synthesis Optimization Complete : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1586.113 ; gain = 997.234
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:32 . Memory (MB): peak = 1586.887 ; gain = 907.906
+Synthesis Optimization Complete : Time (s): cpu = 00:00:30 ; elapsed = 00:00:35 . Memory (MB): peak = 1586.887 ; gain = 996.586
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1586.113 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1586.887 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 3 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1586.113 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1586.887 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: 41466e6e
+Synth Design complete | Checksum: 47ec5e95
 INFO: [Common 17-83] Releasing license: Synthesis
 34 Infos, 102 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:34 ; elapsed = 00:00:42 . Memory (MB): peak = 1586.113 ; gain = 1204.859
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1586.113 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:33 ; elapsed = 00:00:46 . Memory (MB): peak = 1586.887 ; gain = 1206.398
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1586.887 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/work/AD4134/vivado/ad4134fw.runs/ad4134fw_ad4134_to_bram_0_0_synth_1/ad4134fw_ad4134_to_bram_0_0.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file ad4134fw_ad4134_to_bram_0_0_utilization_synth.rpt -pb ad4134fw_ad4134_to_bram_0_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sun Nov  2 21:33:55 2025...
+INFO: [Common 17-206] Exiting Vivado at Mon Nov  3 21:15:45 2025...

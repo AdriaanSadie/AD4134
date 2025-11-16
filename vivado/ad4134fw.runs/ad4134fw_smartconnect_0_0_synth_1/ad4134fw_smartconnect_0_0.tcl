@@ -112,6 +112,12 @@ set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/
 set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/bd_0/ip/ip_40/bd_5956_m03awn_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/bd_0/ip/ip_41/bd_5956_m03wn_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/bd_0/ip/ip_42/bd_5956_m03bn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/bd_0/ip/ip_44/bd_5956_m04s2a_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/bd_0/ip/ip_45/bd_5956_m04arn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/bd_0/ip/ip_46/bd_5956_m04rn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/bd_0/ip/ip_47/bd_5956_m04awn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/bd_0/ip/ip_48/bd_5956_m04wn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/bd_0/ip/ip_49/bd_5956_m04bn_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_smartconnect_0_0/smartconnect.xdc]
 
