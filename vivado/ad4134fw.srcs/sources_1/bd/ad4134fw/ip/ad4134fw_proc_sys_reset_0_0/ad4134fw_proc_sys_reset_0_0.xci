@@ -21,7 +21,7 @@
         "RESET_BOARD_INTERFACE": [ { "value": "Custom", "resolve_type": "user", "usage": "all" } ]
       },
       "model_parameters": {
-        "C_FAMILY": [ { "value": "zynq", "resolve_type": "generated", "usage": "all" } ],
+        "C_FAMILY": [ { "value": "zynquplus", "resolve_type": "generated", "usage": "all" } ],
         "C_EXT_RST_WIDTH": [ { "value": "4", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_AUX_RST_WIDTH": [ { "value": "4", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_EXT_RESET_HIGH": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
@@ -32,17 +32,17 @@
         "C_NUM_PERP_ARESETN": [ { "value": "1", "resolve_type": "generated", "format": "long", "usage": "all" } ]
       },
       "project_parameters": {
-        "ARCHITECTURE": [ { "value": "zynq" } ],
-        "BASE_BOARD_PART": [ { "value": "" } ],
+        "ARCHITECTURE": [ { "value": "zynquplus" } ],
+        "BASE_BOARD_PART": [ { "value": "xilinx.com:kr260_som:part0:1.1" } ],
         "BOARD_CONNECTIONS": [ { "value": "" } ],
-        "DEVICE": [ { "value": "xc7z010" } ],
-        "PACKAGE": [ { "value": "clg400" } ],
+        "DEVICE": [ { "value": "xck26" } ],
+        "PACKAGE": [ { "value": "sfvc784" } ],
         "PREFHDL": [ { "value": "VHDL" } ],
         "SILICON_REVISION": [ { "value": "" } ],
         "SIMULATOR_LANGUAGE": [ { "value": "MIXED" } ],
-        "SPEEDGRADE": [ { "value": "-1" } ],
+        "SPEEDGRADE": [ { "value": "-2LV" } ],
         "STATIC_POWER": [ { "value": "" } ],
-        "TEMPERATURE_GRADE": [ { "value": "" } ]
+        "TEMPERATURE_GRADE": [ { "value": "C" } ]
       },
       "runtime_parameters": {
         "IPCONTEXT": [ { "value": "IP_Integrator" } ],
@@ -75,10 +75,10 @@
           "mode": "slave",
           "parameters": {
             "ASSOCIATED_RESET": [ { "value": "mb_reset:bus_struct_reset:interconnect_aresetn:peripheral_aresetn:peripheral_reset", "value_src": "constant", "value_permission": "bd", "usage": "all" } ],
-            "FREQ_HZ": [ { "value": "50000000", "value_src": "user_prop", "value_permission": "bd", "resolve_type": "user", "format": "long", "usage": "all" } ],
+            "FREQ_HZ": [ { "value": "50000000", "value_src": "ip_propagated", "value_permission": "bd", "resolve_type": "user", "format": "long", "usage": "all" } ],
             "FREQ_TOLERANCE_HZ": [ { "value": "0", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
-            "PHASE": [ { "value": "0.0", "value_permission": "bd", "resolve_type": "generated", "format": "float", "is_ips_inferred": true, "is_static_object": false } ],
-            "CLK_DOMAIN": [ { "value": "ad4134fw_processing_system7_0_0_FCLK_CLK0", "value_src": "default_prop", "value_permission": "bd", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
+            "PHASE": [ { "value": "0.0", "value_src": "ip_propagated", "value_permission": "bd", "resolve_type": "generated", "format": "float", "is_ips_inferred": true, "is_static_object": false } ],
+            "CLK_DOMAIN": [ { "value": "/Processing_Subsystem/clk_wiz_0_clk_out1", "value_src": "ip_propagated", "value_permission": "bd", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
             "ASSOCIATED_BUSIF": [ { "value": "", "value_permission": "bd", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
             "ASSOCIATED_PORT": [ { "value": "", "value_permission": "bd", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
             "INSERT_VIP": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "simulation.rtl", "is_ips_inferred": true, "is_static_object": false } ]

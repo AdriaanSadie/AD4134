@@ -56,12 +56,10 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "ad4134fw_ad4134_data_0_0_synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 1
-set_param bd.open.in_stealth_mode 1
 set_param project.vivado.isBlockSynthRun true
 OPTRACE "Creating in-memory project" START { }
 set_param ips.modRefOverrideMrefDirPath c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/mref
-create_project -in_memory -part xc7z010clg400-1
+create_project -in_memory -part xck26-sfvc784-2LV-c
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
@@ -69,16 +67,17 @@ set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
 set_property webtalk.parent_dir C:/work/AD4134/vivado/ad4134fw.cache/wt [current_project]
 set_property parent.project_path C:/work/AD4134/vivado/ad4134fw.xpr [current_project]
-set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
+set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
+set_property board_part xilinx.com:kr260_som:part0:1.1 [current_project]
 update_ip_catalog
 set_property ip_output_repo c:/work/AD4134/vivado/ad4134fw.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_vhdl -library xil_defaultlib C:/work/AD4134/src/ad4134_data.vhd
-read_ip -quiet c:/work/AD4134/vivado/ad4134fw.srcs/sources_1/bd/ad4134fw/ip/ad4134fw_ad4134_data_0_0/ad4134fw_ad4134_data_0_0.xci
+read_ip -quiet C:/work/AD4134/vivado/ad4134fw.srcs/sources_1/bd/ad4134fw/ip/ad4134fw_ad4134_data_0_0/ad4134fw_ad4134_data_0_0.xci
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -93,7 +92,7 @@ set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
-synth_design -top ad4134fw_ad4134_data_0_0 -part xc7z010clg400-1 -incremental_mode off -mode out_of_context
+synth_design -top ad4134fw_ad4134_data_0_0 -part xck26-sfvc784-2LV-c -incremental_mode off -mode out_of_context
 OPTRACE "synth_design" END { }
 if { [get_msg_config -count -severity {CRITICAL WARNING}] > 0 } {
  send_msg_id runtcl-6 info "Synthesis results are not added to the cache due to CRITICAL_WARNING"

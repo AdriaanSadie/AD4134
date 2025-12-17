@@ -53,12 +53,12 @@
 //  Output     Output      Phase    Duty Cycle   Pk-to-Pk     Phase
 //   Clock     Freq (MHz)  (degrees)    (%)     Jitter (ps)  Error (ps)
 //----------------------------------------------------------------------------
-// clk_out1__50.00000______0.000______50.0______192.113____164.985
+// clk_out1__50.00000______0.000______50.0______207.962____222.305
 //
 //----------------------------------------------------------------------------
 // Input Clock   Freq (MHz)    Input Jitter (UI)
 //----------------------------------------------------------------------------
-// __primary__________50.000____________0.010
+// __primary__________25.000____________0.010
 
 `timescale 1ps/1ps
 
@@ -73,7 +73,7 @@ module ad4134fw_clk_wiz_0_0_clk_wiz
   //------------------------------------
 wire clk_in1_ad4134fw_clk_wiz_0_0;
 wire clk_in2_ad4134fw_clk_wiz_0_0;
-  IBUF clkin1_ibufg
+  IBUF clkin1_ibuf
    (.O (clk_in1_ad4134fw_clk_wiz_0_0),
     .I (clk_in1));
 
@@ -88,7 +88,7 @@ wire clk_in2_ad4134fw_clk_wiz_0_0;
   //    * Unused outputs are labeled unused
 
   wire        clk_out1_ad4134fw_clk_wiz_0_0;
-  wire        data_clk_ad4134fw_clk_wiz_0_0;
+  wire        clk_out2_ad4134fw_clk_wiz_0_0;
   wire        clk_out3_ad4134fw_clk_wiz_0_0;
   wire        clk_out4_ad4134fw_clk_wiz_0_0;
   wire        clk_out5_ad4134fw_clk_wiz_0_0;
@@ -115,21 +115,25 @@ wire clk_in2_ad4134fw_clk_wiz_0_0;
   wire        clkfbstopped_unused;
   wire        clkinstopped_unused;
 
-  MMCME2_ADV
+
+  
+    MMCME4_ADV
+
   #(.BANDWIDTH            ("OPTIMIZED"),
     .CLKOUT4_CASCADE      ("FALSE"),
-    .COMPENSATION         ("ZHOLD"),
+    .COMPENSATION         ("AUTO"),
     .STARTUP_WAIT         ("FALSE"),
     .DIVCLK_DIVIDE        (1),
-    .CLKFBOUT_MULT_F      (20.000),
+    .CLKFBOUT_MULT_F      (48.000),
     .CLKFBOUT_PHASE       (0.000),
     .CLKFBOUT_USE_FINE_PS ("FALSE"),
-    .CLKOUT0_DIVIDE_F     (20.000),
+    .CLKOUT0_DIVIDE_F     (24.000),
     .CLKOUT0_PHASE        (0.000),
     .CLKOUT0_DUTY_CYCLE   (0.500),
     .CLKOUT0_USE_FINE_PS  ("FALSE"),
-    .CLKIN1_PERIOD        (20.000))
-  mmcm_adv_inst
+    .CLKIN1_PERIOD        (40.000))
+  
+  mmcme4_adv_inst
     // Output clocks
    (
     .CLKFBOUT            (clkfbout_ad4134fw_clk_wiz_0_0),
@@ -159,6 +163,8 @@ wire clk_in2_ad4134fw_clk_wiz_0_0;
     .DO                  (do_unused),
     .DRDY                (drdy_unused),
     .DWE                 (1'b0),
+    .CDDCDONE            (),
+    .CDDCREQ             (1'b0),
     // Ports for dynamic phase shift
     .PSCLK               (1'b0),
     .PSEN                (1'b0),

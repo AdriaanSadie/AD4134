@@ -166,7 +166,7 @@ ARCHITECTURE ad4134fw_axi_gpio_0_0_arch OF ad4134fw_axi_gpio_0_0 IS
 BEGIN
   U0 : axi_gpio
     GENERIC MAP (
-      C_FAMILY => "zynq",
+      C_FAMILY => "zynquplus",
       C_S_AXI_ADDR_WIDTH => 9,
       C_S_AXI_DATA_WIDTH => 32,
       C_GPIO_WIDTH => 32,

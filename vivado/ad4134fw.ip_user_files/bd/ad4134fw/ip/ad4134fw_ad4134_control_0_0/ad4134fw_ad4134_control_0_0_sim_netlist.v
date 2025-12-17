@@ -2,14 +2,14 @@
 // Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-// Date        : Tue Oct 28 21:30:46 2025
+// Date        : Sun Nov 16 21:37:04 2025
 // Host        : DESKTOP-NG70LRJ running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_ad4134_control_0_0/ad4134fw_ad4134_control_0_0_sim_netlist.v
 // Design      : ad4134fw_ad4134_control_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
-// Device      : xc7z010clg400-1
+// Device      : xck26-sfvc784-2LV-c
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
@@ -28,7 +28,7 @@ module ad4134fw_ad4134_control_0_0
     spi_clk_en,
     spidone,
     debug);
-  (* x_interface_info = "xilinx.com:signal:clock:1.0 clk CLK" *) (* x_interface_mode = "slave clk" *) (* x_interface_parameter = "XIL_INTERFACENAME clk, ASSOCIATED_RESET rstn, FREQ_HZ 50000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /Processing_Subsystem/clk_wiz_0_clk_out1, INSERT_VIP 0" *) input clk;
+  (* x_interface_info = "xilinx.com:signal:clock:1.0 clk CLK" *) (* x_interface_mode = "slave clk" *) (* x_interface_parameter = "XIL_INTERFACENAME clk, ASSOCIATED_RESET rstn, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, INSERT_VIP 0" *) input clk;
   (* x_interface_info = "xilinx.com:signal:reset:1.0 rstn RST" *) (* x_interface_mode = "slave rstn" *) (* x_interface_parameter = "XIL_INTERFACENAME rstn, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input rstn;
   output write;
   output read;
@@ -105,8 +105,7 @@ module ad4134fw_ad4134_control_0_0_ad4134_control
   wire \FSM_onehot_setup_state_reg_n_0_[7] ;
   wire \FSM_onehot_setup_state_reg_n_0_[8] ;
   wire \FSM_onehot_setup_state_reg_n_0_[9] ;
-  wire \ODR_COUNT[0]_i_1_n_0 ;
-  wire \ODR_COUNT[1]_i_1_n_0 ;
+  wire [2:0]ODR_COUNT;
   wire \ODR_COUNT[2]_i_1_n_0 ;
   wire \ODR_COUNT_reg_n_0_[0] ;
   wire \ODR_COUNT_reg_n_0_[1] ;
@@ -128,34 +127,20 @@ module ad4134fw_ad4134_control_0_0_ad4134_control
   wire \debug[2]_i_1_n_0 ;
   wire \debug[3]_i_1_n_0 ;
   wire \debug[3]_i_2_n_0 ;
+  wire [12:0]p_0_in;
   wire reset_count;
-  wire \reset_count[0]_i_3_n_0 ;
+  wire reset_count0_carry__0_n_5;
+  wire reset_count0_carry__0_n_6;
+  wire reset_count0_carry__0_n_7;
+  wire reset_count0_carry_n_0;
+  wire reset_count0_carry_n_1;
+  wire reset_count0_carry_n_2;
+  wire reset_count0_carry_n_3;
+  wire reset_count0_carry_n_4;
+  wire reset_count0_carry_n_5;
+  wire reset_count0_carry_n_6;
+  wire reset_count0_carry_n_7;
   wire [12:0]reset_count_reg;
-  wire \reset_count_reg[0]_i_2_n_0 ;
-  wire \reset_count_reg[0]_i_2_n_1 ;
-  wire \reset_count_reg[0]_i_2_n_2 ;
-  wire \reset_count_reg[0]_i_2_n_3 ;
-  wire \reset_count_reg[0]_i_2_n_4 ;
-  wire \reset_count_reg[0]_i_2_n_5 ;
-  wire \reset_count_reg[0]_i_2_n_6 ;
-  wire \reset_count_reg[0]_i_2_n_7 ;
-  wire \reset_count_reg[12]_i_1_n_7 ;
-  wire \reset_count_reg[4]_i_1_n_0 ;
-  wire \reset_count_reg[4]_i_1_n_1 ;
-  wire \reset_count_reg[4]_i_1_n_2 ;
-  wire \reset_count_reg[4]_i_1_n_3 ;
-  wire \reset_count_reg[4]_i_1_n_4 ;
-  wire \reset_count_reg[4]_i_1_n_5 ;
-  wire \reset_count_reg[4]_i_1_n_6 ;
-  wire \reset_count_reg[4]_i_1_n_7 ;
-  wire \reset_count_reg[8]_i_1_n_0 ;
-  wire \reset_count_reg[8]_i_1_n_1 ;
-  wire \reset_count_reg[8]_i_1_n_2 ;
-  wire \reset_count_reg[8]_i_1_n_3 ;
-  wire \reset_count_reg[8]_i_1_n_4 ;
-  wire \reset_count_reg[8]_i_1_n_5 ;
-  wire \reset_count_reg[8]_i_1_n_6 ;
-  wire \reset_count_reg[8]_i_1_n_7 ;
   wire rstn;
   wire setup_done;
   wire setup_done_i_1_n_0;
@@ -182,8 +167,8 @@ module ad4134fw_ad4134_control_0_0_ad4134_control
   wire write_i_i_2_n_0;
   wire write_i_i_3_n_0;
   wire write_i_i_4_n_0;
-  wire [3:0]\NLW_reset_count_reg[12]_i_1_CO_UNCONNECTED ;
-  wire [3:1]\NLW_reset_count_reg[12]_i_1_O_UNCONNECTED ;
+  wire [7:3]NLW_reset_count0_carry__0_CO_UNCONNECTED;
+  wire [7:4]NLW_reset_count0_carry__0_O_UNCONNECTED;
 
   LUT2 #(
     .INIT(4'h2)) 
@@ -201,7 +186,7 @@ module ad4134fw_ad4134_control_0_0_ad4134_control
         .I4(\FSM_onehot_setup_state_reg_n_0_[7] ),
         .I5(\FSM_onehot_setup_state[12]_i_4_n_0 ),
         .O(\FSM_onehot_setup_state[12]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
   LUT3 #(
     .INIT(8'hF8)) 
     \FSM_onehot_setup_state[12]_i_2 
@@ -219,7 +204,7 @@ module ad4134fw_ad4134_control_0_0_ad4134_control
         .I4(reset_count_reg[5]),
         .I5(\FSM_onehot_setup_state[12]_i_6_n_0 ),
         .O(\FSM_onehot_setup_state[12]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT2 #(
     .INIT(4'hB)) 
     \FSM_onehot_setup_state[12]_i_4 
@@ -234,6 +219,7 @@ module ad4134fw_ad4134_control_0_0_ad4134_control
         .I2(reset_count_reg[10]),
         .I3(reset_count_reg[9]),
         .O(\FSM_onehot_setup_state[12]_i_5_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT5 #(
     .INIT(32'hFFFFFFFE)) 
     \FSM_onehot_setup_state[12]_i_6 
@@ -360,28 +346,28 @@ module ad4134fw_ad4134_control_0_0_ad4134_control
         .CLR(write_i_i_2_n_0),
         .D(\FSM_onehot_setup_state_reg_n_0_[8] ),
         .Q(\FSM_onehot_setup_state_reg_n_0_[9] ));
-  LUT6 #(
-    .INIT(64'hFAEAFFFF5A4AFAFA)) 
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  LUT5 #(
+    .INIT(32'hDCDCFCDC)) 
     \ODR_COUNT[0]_i_1 
        (.I0(\ODR_COUNT_reg_n_0_[0] ),
-        .I1(\ODR_COUNT_reg_n_0_[1] ),
+        .I1(\FSM_onehot_setup_state_reg_n_0_[6] ),
         .I2(\FSM_onehot_setup_state_reg_n_0_[7] ),
-        .I3(\ODR_COUNT_reg_n_0_[2] ),
-        .I4(\FSM_onehot_setup_state[12]_i_4_n_0 ),
-        .I5(\FSM_onehot_setup_state_reg_n_0_[6] ),
-        .O(\ODR_COUNT[0]_i_1_n_0 ));
+        .I3(spidone_post),
+        .I4(spidone_pre),
+        .O(ODR_COUNT[0]));
   LUT6 #(
-    .INIT(64'hFCECFFFF9C8CFCFC)) 
+    .INIT(64'hF9F0F9F0FFF0F9F0)) 
     \ODR_COUNT[1]_i_1 
        (.I0(\ODR_COUNT_reg_n_0_[0] ),
         .I1(\ODR_COUNT_reg_n_0_[1] ),
-        .I2(\FSM_onehot_setup_state_reg_n_0_[7] ),
-        .I3(\ODR_COUNT_reg_n_0_[2] ),
-        .I4(\FSM_onehot_setup_state[12]_i_4_n_0 ),
-        .I5(\FSM_onehot_setup_state_reg_n_0_[6] ),
-        .O(\ODR_COUNT[1]_i_1_n_0 ));
+        .I2(\FSM_onehot_setup_state_reg_n_0_[6] ),
+        .I3(\FSM_onehot_setup_state_reg_n_0_[7] ),
+        .I4(spidone_post),
+        .I5(spidone_pre),
+        .O(ODR_COUNT[1]));
   LUT6 #(
-    .INIT(64'hFFE0FFFFEF00FFF0)) 
+    .INIT(64'hF0E0FFFFF0E0F0F0)) 
     \ODR_COUNT[2]_i_1 
        (.I0(\ODR_COUNT_reg_n_0_[0] ),
         .I1(\ODR_COUNT_reg_n_0_[1] ),
@@ -390,31 +376,41 @@ module ad4134fw_ad4134_control_0_0_ad4134_control
         .I4(\FSM_onehot_setup_state[12]_i_4_n_0 ),
         .I5(\FSM_onehot_setup_state_reg_n_0_[6] ),
         .O(\ODR_COUNT[2]_i_1_n_0 ));
+  LUT6 #(
+    .INIT(64'hFFA8FF00FFFFFF00)) 
+    \ODR_COUNT[2]_i_2 
+       (.I0(\ODR_COUNT_reg_n_0_[2] ),
+        .I1(\ODR_COUNT_reg_n_0_[0] ),
+        .I2(\ODR_COUNT_reg_n_0_[1] ),
+        .I3(\FSM_onehot_setup_state_reg_n_0_[6] ),
+        .I4(\FSM_onehot_setup_state_reg_n_0_[7] ),
+        .I5(\FSM_onehot_setup_state[12]_i_4_n_0 ),
+        .O(ODR_COUNT[2]));
   FDCE #(
     .INIT(1'b0)) 
     \ODR_COUNT_reg[0] 
        (.C(clk),
-        .CE(1'b1),
+        .CE(\ODR_COUNT[2]_i_1_n_0 ),
         .CLR(write_i_i_2_n_0),
-        .D(\ODR_COUNT[0]_i_1_n_0 ),
+        .D(ODR_COUNT[0]),
         .Q(\ODR_COUNT_reg_n_0_[0] ));
   FDCE #(
     .INIT(1'b0)) 
     \ODR_COUNT_reg[1] 
        (.C(clk),
-        .CE(1'b1),
+        .CE(\ODR_COUNT[2]_i_1_n_0 ),
         .CLR(write_i_i_2_n_0),
-        .D(\ODR_COUNT[1]_i_1_n_0 ),
+        .D(ODR_COUNT[1]),
         .Q(\ODR_COUNT_reg_n_0_[1] ));
   FDCE #(
     .INIT(1'b0)) 
     \ODR_COUNT_reg[2] 
        (.C(clk),
-        .CE(1'b1),
+        .CE(\ODR_COUNT[2]_i_1_n_0 ),
         .CLR(write_i_i_2_n_0),
-        .D(\ODR_COUNT[2]_i_1_n_0 ),
+        .D(ODR_COUNT[2]),
         .Q(\ODR_COUNT_reg_n_0_[2] ));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT3 #(
     .INIT(8'hFE)) 
     \datain_i[0]_i_1 
@@ -432,7 +428,7 @@ module ad4134fw_ad4134_control_0_0_ad4134_control
         .I4(\FSM_onehot_setup_state_reg_n_0_[5] ),
         .I5(\FSM_onehot_setup_state_reg_n_0_[4] ),
         .O(\datain_i[1]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT4 #(
     .INIT(16'hFF80)) 
     \datain_i[2]_i_1 
@@ -441,7 +437,7 @@ module ad4134fw_ad4134_control_0_0_ad4134_control
         .I2(\FSM_onehot_setup_state_reg_n_0_[7] ),
         .I3(\FSM_onehot_setup_state_reg_n_0_[4] ),
         .O(\datain_i[2]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT5 #(
     .INIT(32'hFEFFFEFE)) 
     \datain_i[3]_i_1 
@@ -451,7 +447,7 @@ module ad4134fw_ad4134_control_0_0_ad4134_control
         .I3(\ODR_COUNT_reg_n_0_[0] ),
         .I4(\datain_i[3]_i_2_n_0 ),
         .O(\datain_i[3]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
   LUT3 #(
     .INIT(8'h80)) 
     \datain_i[3]_i_2 
@@ -459,7 +455,7 @@ module ad4134fw_ad4134_control_0_0_ad4134_control
         .I1(\ODR_COUNT_reg_n_0_[2] ),
         .I2(\ODR_COUNT_reg_n_0_[1] ),
         .O(\datain_i[3]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT4 #(
     .INIT(16'hFF80)) 
     \datain_i[4]_i_1 
@@ -468,7 +464,7 @@ module ad4134fw_ad4134_control_0_0_ad4134_control
         .I2(\FSM_onehot_setup_state_reg_n_0_[7] ),
         .I3(\FSM_onehot_setup_state_reg_n_0_[0] ),
         .O(\datain_i[4]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT5 #(
     .INIT(32'hFFFFFF80)) 
     \datain_i[5]_i_1 
@@ -487,7 +483,7 @@ module ad4134fw_ad4134_control_0_0_ad4134_control
         .I3(\ODR_COUNT_reg_n_0_[0] ),
         .I4(write_i_i_3_n_0),
         .O(\datain_i[7]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \datain_i[7]_i_2 
@@ -614,40 +610,49 @@ module ad4134fw_ad4134_control_0_0_ad4134_control
         .CLR(write_i_i_2_n_0),
         .D(\debug[3]_i_2_n_0 ),
         .Q(debug[3]));
+  (* ADDER_THRESHOLD = "35" *) 
+  CARRY8 reset_count0_carry
+       (.CI(reset_count_reg[0]),
+        .CI_TOP(1'b0),
+        .CO({reset_count0_carry_n_0,reset_count0_carry_n_1,reset_count0_carry_n_2,reset_count0_carry_n_3,reset_count0_carry_n_4,reset_count0_carry_n_5,reset_count0_carry_n_6,reset_count0_carry_n_7}),
+        .DI({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .O(p_0_in[8:1]),
+        .S(reset_count_reg[8:1]));
+  (* ADDER_THRESHOLD = "35" *) 
+  CARRY8 reset_count0_carry__0
+       (.CI(reset_count0_carry_n_0),
+        .CI_TOP(1'b0),
+        .CO({NLW_reset_count0_carry__0_CO_UNCONNECTED[7:3],reset_count0_carry__0_n_5,reset_count0_carry__0_n_6,reset_count0_carry__0_n_7}),
+        .DI({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .O({NLW_reset_count0_carry__0_O_UNCONNECTED[7:4],p_0_in[12:9]}),
+        .S({1'b0,1'b0,1'b0,1'b0,reset_count_reg[12:9]}));
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  LUT1 #(
+    .INIT(2'h1)) 
+    \reset_count[0]_i_1 
+       (.I0(reset_count_reg[0]),
+        .O(p_0_in[0]));
   LUT2 #(
     .INIT(4'h8)) 
-    \reset_count[0]_i_1 
+    \reset_count[12]_i_1 
        (.I0(\FSM_onehot_setup_state[12]_i_3_n_0 ),
         .I1(\FSM_onehot_setup_state_reg_n_0_[1] ),
         .O(reset_count));
-  LUT1 #(
-    .INIT(2'h1)) 
-    \reset_count[0]_i_3 
-       (.I0(reset_count_reg[0]),
-        .O(\reset_count[0]_i_3_n_0 ));
   FDCE #(
     .INIT(1'b0)) 
     \reset_count_reg[0] 
        (.C(clk),
         .CE(reset_count),
         .CLR(write_i_i_2_n_0),
-        .D(\reset_count_reg[0]_i_2_n_7 ),
+        .D(p_0_in[0]),
         .Q(reset_count_reg[0]));
-  (* ADDER_THRESHOLD = "11" *) 
-  CARRY4 \reset_count_reg[0]_i_2 
-       (.CI(1'b0),
-        .CO({\reset_count_reg[0]_i_2_n_0 ,\reset_count_reg[0]_i_2_n_1 ,\reset_count_reg[0]_i_2_n_2 ,\reset_count_reg[0]_i_2_n_3 }),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b1}),
-        .O({\reset_count_reg[0]_i_2_n_4 ,\reset_count_reg[0]_i_2_n_5 ,\reset_count_reg[0]_i_2_n_6 ,\reset_count_reg[0]_i_2_n_7 }),
-        .S({reset_count_reg[3:1],\reset_count[0]_i_3_n_0 }));
   FDCE #(
     .INIT(1'b0)) 
     \reset_count_reg[10] 
        (.C(clk),
         .CE(reset_count),
         .CLR(write_i_i_2_n_0),
-        .D(\reset_count_reg[8]_i_1_n_5 ),
+        .D(p_0_in[10]),
         .Q(reset_count_reg[10]));
   FDCE #(
     .INIT(1'b0)) 
@@ -655,7 +660,7 @@ module ad4134fw_ad4134_control_0_0_ad4134_control
        (.C(clk),
         .CE(reset_count),
         .CLR(write_i_i_2_n_0),
-        .D(\reset_count_reg[8]_i_1_n_4 ),
+        .D(p_0_in[11]),
         .Q(reset_count_reg[11]));
   FDCE #(
     .INIT(1'b0)) 
@@ -663,23 +668,15 @@ module ad4134fw_ad4134_control_0_0_ad4134_control
        (.C(clk),
         .CE(reset_count),
         .CLR(write_i_i_2_n_0),
-        .D(\reset_count_reg[12]_i_1_n_7 ),
+        .D(p_0_in[12]),
         .Q(reset_count_reg[12]));
-  (* ADDER_THRESHOLD = "11" *) 
-  CARRY4 \reset_count_reg[12]_i_1 
-       (.CI(\reset_count_reg[8]_i_1_n_0 ),
-        .CO(\NLW_reset_count_reg[12]_i_1_CO_UNCONNECTED [3:0]),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O({\NLW_reset_count_reg[12]_i_1_O_UNCONNECTED [3:1],\reset_count_reg[12]_i_1_n_7 }),
-        .S({1'b0,1'b0,1'b0,reset_count_reg[12]}));
   FDCE #(
     .INIT(1'b0)) 
     \reset_count_reg[1] 
        (.C(clk),
         .CE(reset_count),
         .CLR(write_i_i_2_n_0),
-        .D(\reset_count_reg[0]_i_2_n_6 ),
+        .D(p_0_in[1]),
         .Q(reset_count_reg[1]));
   FDCE #(
     .INIT(1'b0)) 
@@ -687,7 +684,7 @@ module ad4134fw_ad4134_control_0_0_ad4134_control
        (.C(clk),
         .CE(reset_count),
         .CLR(write_i_i_2_n_0),
-        .D(\reset_count_reg[0]_i_2_n_5 ),
+        .D(p_0_in[2]),
         .Q(reset_count_reg[2]));
   FDCE #(
     .INIT(1'b0)) 
@@ -695,7 +692,7 @@ module ad4134fw_ad4134_control_0_0_ad4134_control
        (.C(clk),
         .CE(reset_count),
         .CLR(write_i_i_2_n_0),
-        .D(\reset_count_reg[0]_i_2_n_4 ),
+        .D(p_0_in[3]),
         .Q(reset_count_reg[3]));
   FDCE #(
     .INIT(1'b0)) 
@@ -703,23 +700,15 @@ module ad4134fw_ad4134_control_0_0_ad4134_control
        (.C(clk),
         .CE(reset_count),
         .CLR(write_i_i_2_n_0),
-        .D(\reset_count_reg[4]_i_1_n_7 ),
+        .D(p_0_in[4]),
         .Q(reset_count_reg[4]));
-  (* ADDER_THRESHOLD = "11" *) 
-  CARRY4 \reset_count_reg[4]_i_1 
-       (.CI(\reset_count_reg[0]_i_2_n_0 ),
-        .CO({\reset_count_reg[4]_i_1_n_0 ,\reset_count_reg[4]_i_1_n_1 ,\reset_count_reg[4]_i_1_n_2 ,\reset_count_reg[4]_i_1_n_3 }),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O({\reset_count_reg[4]_i_1_n_4 ,\reset_count_reg[4]_i_1_n_5 ,\reset_count_reg[4]_i_1_n_6 ,\reset_count_reg[4]_i_1_n_7 }),
-        .S(reset_count_reg[7:4]));
   FDCE #(
     .INIT(1'b0)) 
     \reset_count_reg[5] 
        (.C(clk),
         .CE(reset_count),
         .CLR(write_i_i_2_n_0),
-        .D(\reset_count_reg[4]_i_1_n_6 ),
+        .D(p_0_in[5]),
         .Q(reset_count_reg[5]));
   FDCE #(
     .INIT(1'b0)) 
@@ -727,7 +716,7 @@ module ad4134fw_ad4134_control_0_0_ad4134_control
        (.C(clk),
         .CE(reset_count),
         .CLR(write_i_i_2_n_0),
-        .D(\reset_count_reg[4]_i_1_n_5 ),
+        .D(p_0_in[6]),
         .Q(reset_count_reg[6]));
   FDCE #(
     .INIT(1'b0)) 
@@ -735,7 +724,7 @@ module ad4134fw_ad4134_control_0_0_ad4134_control
        (.C(clk),
         .CE(reset_count),
         .CLR(write_i_i_2_n_0),
-        .D(\reset_count_reg[4]_i_1_n_4 ),
+        .D(p_0_in[7]),
         .Q(reset_count_reg[7]));
   FDCE #(
     .INIT(1'b0)) 
@@ -743,25 +732,16 @@ module ad4134fw_ad4134_control_0_0_ad4134_control
        (.C(clk),
         .CE(reset_count),
         .CLR(write_i_i_2_n_0),
-        .D(\reset_count_reg[8]_i_1_n_7 ),
+        .D(p_0_in[8]),
         .Q(reset_count_reg[8]));
-  (* ADDER_THRESHOLD = "11" *) 
-  CARRY4 \reset_count_reg[8]_i_1 
-       (.CI(\reset_count_reg[4]_i_1_n_0 ),
-        .CO({\reset_count_reg[8]_i_1_n_0 ,\reset_count_reg[8]_i_1_n_1 ,\reset_count_reg[8]_i_1_n_2 ,\reset_count_reg[8]_i_1_n_3 }),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O({\reset_count_reg[8]_i_1_n_4 ,\reset_count_reg[8]_i_1_n_5 ,\reset_count_reg[8]_i_1_n_6 ,\reset_count_reg[8]_i_1_n_7 }),
-        .S(reset_count_reg[11:8]));
   FDCE #(
     .INIT(1'b0)) 
     \reset_count_reg[9] 
        (.C(clk),
         .CE(reset_count),
         .CLR(write_i_i_2_n_0),
-        .D(\reset_count_reg[8]_i_1_n_6 ),
+        .D(p_0_in[9]),
         .Q(reset_count_reg[9]));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT5 #(
     .INIT(32'hFFFF00E0)) 
     setup_done_i_1
@@ -803,7 +783,7 @@ module ad4134fw_ad4134_control_0_0_ad4134_control
         .I4(\FSM_onehot_setup_state_reg_n_0_[1] ),
         .I5(\spiaddr_i[0]_i_2_n_0 ),
         .O(\spiaddr_i[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT4 #(
     .INIT(16'h3200)) 
     \spiaddr_i[0]_i_2 
@@ -822,14 +802,14 @@ module ad4134fw_ad4134_control_0_0_ad4134_control
         .I4(\spiaddr_i[1]_i_3_n_0 ),
         .I5(\FSM_onehot_setup_state_reg_n_0_[2] ),
         .O(\spiaddr_i[1]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \spiaddr_i[1]_i_2 
        (.I0(\FSM_onehot_setup_state_reg_n_0_[9] ),
         .I1(\FSM_onehot_setup_state_reg_n_0_[11] ),
         .O(\spiaddr_i[1]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \spiaddr_i[1]_i_3 
@@ -856,7 +836,7 @@ module ad4134fw_ad4134_control_0_0_ad4134_control
         .I4(\FSM_onehot_setup_state_reg_n_0_[7] ),
         .I5(\ODR_COUNT_reg_n_0_[2] ),
         .O(\spiaddr_i[3]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT3 #(
     .INIT(8'hFE)) 
     \spiaddr_i[3]_i_2 
@@ -874,7 +854,7 @@ module ad4134fw_ad4134_control_0_0_ad4134_control
         .I4(\FSM_onehot_setup_state_reg_n_0_[7] ),
         .I5(\FSM_onehot_setup_state_reg_n_0_[6] ),
         .O(\spiaddr_i[4]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT3 #(
     .INIT(8'hFE)) 
     \spiaddr_i[4]_i_2 
@@ -882,7 +862,7 @@ module ad4134fw_ad4134_control_0_0_ad4134_control
         .I1(\FSM_onehot_setup_state_reg_n_0_[4] ),
         .I2(\FSM_onehot_setup_state_reg_n_0_[3] ),
         .O(\spiaddr_i[4]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT3 #(
     .INIT(8'hFE)) 
     \spiaddr_i[5]_i_1 
@@ -890,7 +870,7 @@ module ad4134fw_ad4134_control_0_0_ad4134_control
         .I1(\FSM_onehot_setup_state_reg_n_0_[1] ),
         .I2(\FSM_onehot_setup_state_reg_n_0_[10] ),
         .O(\spiaddr_i[5]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \spiaddr_i[6]_i_1 
@@ -975,7 +955,7 @@ module ad4134fw_ad4134_control_0_0_ad4134_control
         .I4(\FSM_onehot_setup_state_reg_n_0_[3] ),
         .I5(write_i_i_4_n_0),
         .O(write_i_i_3_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT5 #(
     .INIT(32'hFFFFFFFE)) 
     write_i_i_4

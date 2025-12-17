@@ -1,37 +1,45 @@
 {
    "ActiveEmotionalView":"Default View",
    "Default View_ScaleFactor":"1.0",
-   "Default View_TopLeft":"-283,-180",
+   "Default View_TopLeft":"-349,-106",
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0
 #  -string -flagsOSRD
 preplace port ADC_BRAM_Reader -pg 1 -lvl 0 -x 0 -y 290 -defaultsOSRD
+preplace port adc_bram_enable -pg 1 -lvl 0 -x 0 -y -90 -defaultsOSRD
 preplace port port-id_clk -pg 1 -lvl 0 -x 0 -y 20 -defaultsOSRD
 preplace port port-id_rst_n -pg 1 -lvl 0 -x 0 -y 90 -defaultsOSRD
 preplace port port-id_data_rdy_0 -pg 1 -lvl 0 -x 0 -y 190 -defaultsOSRD
-preplace port port-id_done_0 -pg 1 -lvl 3 -x 560 -y 240 -defaultsOSRD
+preplace port port-id_done_0 -pg 1 -lvl 5 -x 720 -y 240 -defaultsOSRD
 preplace portBus data_in0_0 -pg 1 -lvl 0 -x 0 -y 110 -defaultsOSRD
 preplace portBus data_in1_0 -pg 1 -lvl 0 -x 0 -y 130 -defaultsOSRD
 preplace portBus data_in2_0 -pg 1 -lvl 0 -x 0 -y 150 -defaultsOSRD
 preplace portBus data_in3_0 -pg 1 -lvl 0 -x 0 -y 170 -defaultsOSRD
-preplace inst blk_mem_gen_0 -pg 1 -lvl 2 -x 440 -y 130 -defaultsOSRD
-preplace inst ADC_BRAM_READ -pg 1 -lvl 1 -x 170 -y 310 -defaultsOSRD
-preplace inst ad4134_to_bram_0 -pg 1 -lvl 1 -x 170 -y 130 -defaultsOSRD
-preplace netloc ad4134_to_bram_0_addra 1 1 1 N 100
-preplace netloc ad4134_to_bram_0_dia 1 1 1 330 120n
-preplace netloc ad4134_to_bram_0_done 1 1 2 310J 240 NJ
-preplace netloc ad4134_to_bram_0_wea 1 1 1 320 140n
-preplace netloc clk_1 1 0 2 30 10 340J
-preplace netloc data_in0_0_1 1 0 1 NJ 110
-preplace netloc data_in1_0_1 1 0 1 NJ 130
-preplace netloc data_in2_0_1 1 0 1 NJ 150
-preplace netloc data_in3_0_1 1 0 1 NJ 170
-preplace netloc data_rdy_0_1 1 0 1 NJ 190
-preplace netloc rst_n_1 1 0 1 20 90n
-preplace netloc Conn1 1 0 1 NJ 290
-preplace netloc axi_bram_ctrl_0_BRAM_PORTA 1 1 1 340 180n
-levelinfo -pg 1 0 170 440 560
-pagesize -pg 1 -db -bbox -sgen -170 0 660 380
+preplace portBus debug_0 -pg 1 -lvl 5 -x 720 -y 260 -defaultsOSRD
+preplace inst blk_mem_gen_0 -pg 1 -lvl 2 -x 500 -y 130 -defaultsOSRD
+preplace inst ADC_BRAM_READ -pg 1 -lvl 1 -x 210 -y 340 -defaultsOSRD
+preplace inst ad4134_to_bram_0 -pg 1 -lvl 1 -x 210 -y 150 -defaultsOSRD
+preplace inst adc_bram_enable -pg 1 -lvl 1 -x 210 -y -70 -defaultsOSRD
+preplace inst xlslice_0 -pg 1 -lvl 2 -x 500 -y 300 -defaultsOSRD
+preplace netloc ad4134_to_bram_0_addra 1 1 1 370 100n
+preplace netloc ad4134_to_bram_0_debug 1 1 4 360 360 620J 260 NJ 260 NJ
+preplace netloc ad4134_to_bram_0_dia 1 1 1 390 130n
+preplace netloc ad4134_to_bram_0_done 1 1 4 370J 240 NJ 240 NJ 240 NJ
+preplace netloc ad4134_to_bram_0_wea 1 1 1 370 150n
+preplace netloc adc_bram_enable_gpio_io_o 1 1 1 380 -60n
+preplace netloc clk_1 1 0 2 30 10 390J
+preplace netloc data_in0_0_1 1 0 1 50J 110n
+preplace netloc data_in1_0_1 1 0 1 50J 130n
+preplace netloc data_in2_0_1 1 0 1 50J 150n
+preplace netloc data_in3_0_1 1 0 1 20J 170n
+preplace netloc data_rdy_0_1 1 0 1 20J 190n
+preplace netloc rst_n_1 1 0 1 40 -50n
+preplace netloc xlslice_0_Dout 1 0 3 60 20 NJ 20 610J
+preplace netloc Conn1 1 0 1 20J 290n
+preplace netloc Conn2 1 0 1 N -90
+preplace netloc axi_bram_ctrl_0_BRAM_PORTA 1 1 1 390 180n
+levelinfo -pg 1 0 210 500 640 680 720
+pagesize -pg 1 -db -bbox -sgen -170 -140 860 410
 "
 }
 0

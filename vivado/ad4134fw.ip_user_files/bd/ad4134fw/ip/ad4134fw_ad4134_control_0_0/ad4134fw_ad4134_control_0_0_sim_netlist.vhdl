@@ -2,14 +2,14 @@
 -- Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
--- Date        : Tue Oct 28 21:30:46 2025
+-- Date        : Sun Nov 16 21:37:04 2025
 -- Host        : DESKTOP-NG70LRJ running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_ad4134_control_0_0/ad4134fw_ad4134_control_0_0_sim_netlist.vhdl
 -- Design      : ad4134fw_ad4134_control_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
--- Device      : xc7z010clg400-1
+-- Device      : xck26-sfvc784-2LV-c
 -- --------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -51,8 +51,7 @@ architecture STRUCTURE of ad4134fw_ad4134_control_0_0_ad4134_control is
   signal \FSM_onehot_setup_state_reg_n_0_[7]\ : STD_LOGIC;
   signal \FSM_onehot_setup_state_reg_n_0_[8]\ : STD_LOGIC;
   signal \FSM_onehot_setup_state_reg_n_0_[9]\ : STD_LOGIC;
-  signal \ODR_COUNT[0]_i_1_n_0\ : STD_LOGIC;
-  signal \ODR_COUNT[1]_i_1_n_0\ : STD_LOGIC;
+  signal ODR_COUNT : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal \ODR_COUNT[2]_i_1_n_0\ : STD_LOGIC;
   signal \ODR_COUNT_reg_n_0_[0]\ : STD_LOGIC;
   signal \ODR_COUNT_reg_n_0_[1]\ : STD_LOGIC;
@@ -71,34 +70,20 @@ architecture STRUCTURE of ad4134fw_ad4134_control_0_0_ad4134_control is
   signal \debug[2]_i_1_n_0\ : STD_LOGIC;
   signal \debug[3]_i_1_n_0\ : STD_LOGIC;
   signal \debug[3]_i_2_n_0\ : STD_LOGIC;
+  signal p_0_in : STD_LOGIC_VECTOR ( 12 downto 0 );
   signal reset_count : STD_LOGIC;
-  signal \reset_count[0]_i_3_n_0\ : STD_LOGIC;
+  signal \reset_count0_carry__0_n_5\ : STD_LOGIC;
+  signal \reset_count0_carry__0_n_6\ : STD_LOGIC;
+  signal \reset_count0_carry__0_n_7\ : STD_LOGIC;
+  signal reset_count0_carry_n_0 : STD_LOGIC;
+  signal reset_count0_carry_n_1 : STD_LOGIC;
+  signal reset_count0_carry_n_2 : STD_LOGIC;
+  signal reset_count0_carry_n_3 : STD_LOGIC;
+  signal reset_count0_carry_n_4 : STD_LOGIC;
+  signal reset_count0_carry_n_5 : STD_LOGIC;
+  signal reset_count0_carry_n_6 : STD_LOGIC;
+  signal reset_count0_carry_n_7 : STD_LOGIC;
   signal reset_count_reg : STD_LOGIC_VECTOR ( 12 downto 0 );
-  signal \reset_count_reg[0]_i_2_n_0\ : STD_LOGIC;
-  signal \reset_count_reg[0]_i_2_n_1\ : STD_LOGIC;
-  signal \reset_count_reg[0]_i_2_n_2\ : STD_LOGIC;
-  signal \reset_count_reg[0]_i_2_n_3\ : STD_LOGIC;
-  signal \reset_count_reg[0]_i_2_n_4\ : STD_LOGIC;
-  signal \reset_count_reg[0]_i_2_n_5\ : STD_LOGIC;
-  signal \reset_count_reg[0]_i_2_n_6\ : STD_LOGIC;
-  signal \reset_count_reg[0]_i_2_n_7\ : STD_LOGIC;
-  signal \reset_count_reg[12]_i_1_n_7\ : STD_LOGIC;
-  signal \reset_count_reg[4]_i_1_n_0\ : STD_LOGIC;
-  signal \reset_count_reg[4]_i_1_n_1\ : STD_LOGIC;
-  signal \reset_count_reg[4]_i_1_n_2\ : STD_LOGIC;
-  signal \reset_count_reg[4]_i_1_n_3\ : STD_LOGIC;
-  signal \reset_count_reg[4]_i_1_n_4\ : STD_LOGIC;
-  signal \reset_count_reg[4]_i_1_n_5\ : STD_LOGIC;
-  signal \reset_count_reg[4]_i_1_n_6\ : STD_LOGIC;
-  signal \reset_count_reg[4]_i_1_n_7\ : STD_LOGIC;
-  signal \reset_count_reg[8]_i_1_n_0\ : STD_LOGIC;
-  signal \reset_count_reg[8]_i_1_n_1\ : STD_LOGIC;
-  signal \reset_count_reg[8]_i_1_n_2\ : STD_LOGIC;
-  signal \reset_count_reg[8]_i_1_n_3\ : STD_LOGIC;
-  signal \reset_count_reg[8]_i_1_n_4\ : STD_LOGIC;
-  signal \reset_count_reg[8]_i_1_n_5\ : STD_LOGIC;
-  signal \reset_count_reg[8]_i_1_n_6\ : STD_LOGIC;
-  signal \reset_count_reg[8]_i_1_n_7\ : STD_LOGIC;
   signal setup_done : STD_LOGIC;
   signal setup_done_i_1_n_0 : STD_LOGIC;
   signal \^spi_clk_en\ : STD_LOGIC;
@@ -122,11 +107,12 @@ architecture STRUCTURE of ad4134fw_ad4134_control_0_0_ad4134_control is
   signal write_i_i_2_n_0 : STD_LOGIC;
   signal write_i_i_3_n_0 : STD_LOGIC;
   signal write_i_i_4_n_0 : STD_LOGIC;
-  signal \NLW_reset_count_reg[12]_i_1_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal \NLW_reset_count_reg[12]_i_1_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 1 );
+  signal \NLW_reset_count0_carry__0_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 7 downto 3 );
+  signal \NLW_reset_count0_carry__0_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 7 downto 4 );
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \FSM_onehot_setup_state[12]_i_2\ : label is "soft_lutpair8";
-  attribute SOFT_HLUTNM of \FSM_onehot_setup_state[12]_i_4\ : label is "soft_lutpair3";
+  attribute SOFT_HLUTNM of \FSM_onehot_setup_state[12]_i_2\ : label is "soft_lutpair9";
+  attribute SOFT_HLUTNM of \FSM_onehot_setup_state[12]_i_4\ : label is "soft_lutpair0";
+  attribute SOFT_HLUTNM of \FSM_onehot_setup_state[12]_i_6\ : label is "soft_lutpair1";
   attribute FSM_ENCODED_STATES : string;
   attribute FSM_ENCODED_STATES of \FSM_onehot_setup_state_reg[0]\ : label is "odrconfig:0000010000000,odrchannel:0000100000000,adreset:0000000000001,gpioconfig:0010000000000,transferregister:0100000000000,filterconfig:0001000000000,resetwait:0000000000010,idle:1000000000000,powercontrol:0000001000000,datapacketconfig:0000000010000,digitalinterfaceconfig:0000000100000,deviceconfig_1:0000000001000,deviceconfig_0:0000000000100";
   attribute FSM_ENCODED_STATES of \FSM_onehot_setup_state_reg[10]\ : label is "odrconfig:0000010000000,odrchannel:0000100000000,adreset:0000000000001,gpioconfig:0010000000000,transferregister:0100000000000,filterconfig:0001000000000,resetwait:0000000000010,idle:1000000000000,powercontrol:0000001000000,datapacketconfig:0000000010000,digitalinterfaceconfig:0000000100000,deviceconfig_1:0000000001000,deviceconfig_0:0000000000100";
@@ -141,27 +127,26 @@ architecture STRUCTURE of ad4134fw_ad4134_control_0_0_ad4134_control is
   attribute FSM_ENCODED_STATES of \FSM_onehot_setup_state_reg[7]\ : label is "odrconfig:0000010000000,odrchannel:0000100000000,adreset:0000000000001,gpioconfig:0010000000000,transferregister:0100000000000,filterconfig:0001000000000,resetwait:0000000000010,idle:1000000000000,powercontrol:0000001000000,datapacketconfig:0000000010000,digitalinterfaceconfig:0000000100000,deviceconfig_1:0000000001000,deviceconfig_0:0000000000100";
   attribute FSM_ENCODED_STATES of \FSM_onehot_setup_state_reg[8]\ : label is "odrconfig:0000010000000,odrchannel:0000100000000,adreset:0000000000001,gpioconfig:0010000000000,transferregister:0100000000000,filterconfig:0001000000000,resetwait:0000000000010,idle:1000000000000,powercontrol:0000001000000,datapacketconfig:0000000010000,digitalinterfaceconfig:0000000100000,deviceconfig_1:0000000001000,deviceconfig_0:0000000000100";
   attribute FSM_ENCODED_STATES of \FSM_onehot_setup_state_reg[9]\ : label is "odrconfig:0000010000000,odrchannel:0000100000000,adreset:0000000000001,gpioconfig:0010000000000,transferregister:0100000000000,filterconfig:0001000000000,resetwait:0000000000010,idle:1000000000000,powercontrol:0000001000000,datapacketconfig:0000000010000,digitalinterfaceconfig:0000000100000,deviceconfig_1:0000000001000,deviceconfig_0:0000000000100";
-  attribute SOFT_HLUTNM of \datain_i[0]_i_1\ : label is "soft_lutpair5";
-  attribute SOFT_HLUTNM of \datain_i[2]_i_1\ : label is "soft_lutpair2";
-  attribute SOFT_HLUTNM of \datain_i[3]_i_1\ : label is "soft_lutpair1";
-  attribute SOFT_HLUTNM of \datain_i[3]_i_2\ : label is "soft_lutpair7";
-  attribute SOFT_HLUTNM of \datain_i[4]_i_1\ : label is "soft_lutpair4";
-  attribute SOFT_HLUTNM of \datain_i[5]_i_1\ : label is "soft_lutpair2";
-  attribute SOFT_HLUTNM of \datain_i[7]_i_2\ : label is "soft_lutpair1";
+  attribute SOFT_HLUTNM of \ODR_COUNT[0]_i_1\ : label is "soft_lutpair0";
+  attribute SOFT_HLUTNM of \datain_i[0]_i_1\ : label is "soft_lutpair6";
+  attribute SOFT_HLUTNM of \datain_i[2]_i_1\ : label is "soft_lutpair4";
+  attribute SOFT_HLUTNM of \datain_i[3]_i_1\ : label is "soft_lutpair3";
+  attribute SOFT_HLUTNM of \datain_i[3]_i_2\ : label is "soft_lutpair8";
+  attribute SOFT_HLUTNM of \datain_i[4]_i_1\ : label is "soft_lutpair5";
+  attribute SOFT_HLUTNM of \datain_i[5]_i_1\ : label is "soft_lutpair4";
+  attribute SOFT_HLUTNM of \datain_i[7]_i_2\ : label is "soft_lutpair3";
   attribute ADDER_THRESHOLD : integer;
-  attribute ADDER_THRESHOLD of \reset_count_reg[0]_i_2\ : label is 11;
-  attribute ADDER_THRESHOLD of \reset_count_reg[12]_i_1\ : label is 11;
-  attribute ADDER_THRESHOLD of \reset_count_reg[4]_i_1\ : label is 11;
-  attribute ADDER_THRESHOLD of \reset_count_reg[8]_i_1\ : label is 11;
-  attribute SOFT_HLUTNM of setup_done_i_1 : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of \spiaddr_i[0]_i_2\ : label is "soft_lutpair4";
-  attribute SOFT_HLUTNM of \spiaddr_i[1]_i_2\ : label is "soft_lutpair8";
-  attribute SOFT_HLUTNM of \spiaddr_i[1]_i_3\ : label is "soft_lutpair7";
-  attribute SOFT_HLUTNM of \spiaddr_i[3]_i_2\ : label is "soft_lutpair0";
-  attribute SOFT_HLUTNM of \spiaddr_i[4]_i_2\ : label is "soft_lutpair5";
-  attribute SOFT_HLUTNM of \spiaddr_i[5]_i_1\ : label is "soft_lutpair6";
-  attribute SOFT_HLUTNM of \spiaddr_i[6]_i_1\ : label is "soft_lutpair6";
-  attribute SOFT_HLUTNM of write_i_i_4 : label is "soft_lutpair0";
+  attribute ADDER_THRESHOLD of reset_count0_carry : label is 35;
+  attribute ADDER_THRESHOLD of \reset_count0_carry__0\ : label is 35;
+  attribute SOFT_HLUTNM of \reset_count[0]_i_1\ : label is "soft_lutpair1";
+  attribute SOFT_HLUTNM of \spiaddr_i[0]_i_2\ : label is "soft_lutpair5";
+  attribute SOFT_HLUTNM of \spiaddr_i[1]_i_2\ : label is "soft_lutpair9";
+  attribute SOFT_HLUTNM of \spiaddr_i[1]_i_3\ : label is "soft_lutpair8";
+  attribute SOFT_HLUTNM of \spiaddr_i[3]_i_2\ : label is "soft_lutpair2";
+  attribute SOFT_HLUTNM of \spiaddr_i[4]_i_2\ : label is "soft_lutpair6";
+  attribute SOFT_HLUTNM of \spiaddr_i[5]_i_1\ : label is "soft_lutpair7";
+  attribute SOFT_HLUTNM of \spiaddr_i[6]_i_1\ : label is "soft_lutpair7";
+  attribute SOFT_HLUTNM of write_i_i_4 : label is "soft_lutpair2";
 begin
   spi_clk_en <= \^spi_clk_en\;
   write <= \^write\;
@@ -385,35 +370,34 @@ begin
       D => \FSM_onehot_setup_state_reg_n_0_[8]\,
       Q => \FSM_onehot_setup_state_reg_n_0_[9]\
     );
-\ODR_COUNT[0]_i_1\: unisim.vcomponents.LUT6
+\ODR_COUNT[0]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"FAEAFFFF5A4AFAFA"
+      INIT => X"DCDCFCDC"
     )
         port map (
       I0 => \ODR_COUNT_reg_n_0_[0]\,
-      I1 => \ODR_COUNT_reg_n_0_[1]\,
+      I1 => \FSM_onehot_setup_state_reg_n_0_[6]\,
       I2 => \FSM_onehot_setup_state_reg_n_0_[7]\,
-      I3 => \ODR_COUNT_reg_n_0_[2]\,
-      I4 => \FSM_onehot_setup_state[12]_i_4_n_0\,
-      I5 => \FSM_onehot_setup_state_reg_n_0_[6]\,
-      O => \ODR_COUNT[0]_i_1_n_0\
+      I3 => spidone_post,
+      I4 => spidone_pre,
+      O => ODR_COUNT(0)
     );
 \ODR_COUNT[1]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"FCECFFFF9C8CFCFC"
+      INIT => X"F9F0F9F0FFF0F9F0"
     )
         port map (
       I0 => \ODR_COUNT_reg_n_0_[0]\,
       I1 => \ODR_COUNT_reg_n_0_[1]\,
-      I2 => \FSM_onehot_setup_state_reg_n_0_[7]\,
-      I3 => \ODR_COUNT_reg_n_0_[2]\,
-      I4 => \FSM_onehot_setup_state[12]_i_4_n_0\,
-      I5 => \FSM_onehot_setup_state_reg_n_0_[6]\,
-      O => \ODR_COUNT[1]_i_1_n_0\
+      I2 => \FSM_onehot_setup_state_reg_n_0_[6]\,
+      I3 => \FSM_onehot_setup_state_reg_n_0_[7]\,
+      I4 => spidone_post,
+      I5 => spidone_pre,
+      O => ODR_COUNT(1)
     );
 \ODR_COUNT[2]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"FFE0FFFFEF00FFF0"
+      INIT => X"F0E0FFFFF0E0F0F0"
     )
         port map (
       I0 => \ODR_COUNT_reg_n_0_[0]\,
@@ -424,15 +408,28 @@ begin
       I5 => \FSM_onehot_setup_state_reg_n_0_[6]\,
       O => \ODR_COUNT[2]_i_1_n_0\
     );
+\ODR_COUNT[2]_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFA8FF00FFFFFF00"
+    )
+        port map (
+      I0 => \ODR_COUNT_reg_n_0_[2]\,
+      I1 => \ODR_COUNT_reg_n_0_[0]\,
+      I2 => \ODR_COUNT_reg_n_0_[1]\,
+      I3 => \FSM_onehot_setup_state_reg_n_0_[6]\,
+      I4 => \FSM_onehot_setup_state_reg_n_0_[7]\,
+      I5 => \FSM_onehot_setup_state[12]_i_4_n_0\,
+      O => ODR_COUNT(2)
+    );
 \ODR_COUNT_reg[0]\: unisim.vcomponents.FDCE
     generic map(
       INIT => '0'
     )
         port map (
       C => clk,
-      CE => '1',
+      CE => \ODR_COUNT[2]_i_1_n_0\,
       CLR => write_i_i_2_n_0,
-      D => \ODR_COUNT[0]_i_1_n_0\,
+      D => ODR_COUNT(0),
       Q => \ODR_COUNT_reg_n_0_[0]\
     );
 \ODR_COUNT_reg[1]\: unisim.vcomponents.FDCE
@@ -441,9 +438,9 @@ begin
     )
         port map (
       C => clk,
-      CE => '1',
+      CE => \ODR_COUNT[2]_i_1_n_0\,
       CLR => write_i_i_2_n_0,
-      D => \ODR_COUNT[1]_i_1_n_0\,
+      D => ODR_COUNT(1),
       Q => \ODR_COUNT_reg_n_0_[1]\
     );
 \ODR_COUNT_reg[2]\: unisim.vcomponents.FDCE
@@ -452,9 +449,9 @@ begin
     )
         port map (
       C => clk,
-      CE => '1',
+      CE => \ODR_COUNT[2]_i_1_n_0\,
       CLR => write_i_i_2_n_0,
-      D => \ODR_COUNT[2]_i_1_n_0\,
+      D => ODR_COUNT(2),
       Q => \ODR_COUNT_reg_n_0_[2]\
     );
 \datain_i[0]_i_1\: unisim.vcomponents.LUT3
@@ -716,7 +713,45 @@ begin
       D => \debug[3]_i_2_n_0\,
       Q => debug(3)
     );
-\reset_count[0]_i_1\: unisim.vcomponents.LUT2
+reset_count0_carry: unisim.vcomponents.CARRY8
+     port map (
+      CI => reset_count_reg(0),
+      CI_TOP => '0',
+      CO(7) => reset_count0_carry_n_0,
+      CO(6) => reset_count0_carry_n_1,
+      CO(5) => reset_count0_carry_n_2,
+      CO(4) => reset_count0_carry_n_3,
+      CO(3) => reset_count0_carry_n_4,
+      CO(2) => reset_count0_carry_n_5,
+      CO(1) => reset_count0_carry_n_6,
+      CO(0) => reset_count0_carry_n_7,
+      DI(7 downto 0) => B"00000000",
+      O(7 downto 0) => p_0_in(8 downto 1),
+      S(7 downto 0) => reset_count_reg(8 downto 1)
+    );
+\reset_count0_carry__0\: unisim.vcomponents.CARRY8
+     port map (
+      CI => reset_count0_carry_n_0,
+      CI_TOP => '0',
+      CO(7 downto 3) => \NLW_reset_count0_carry__0_CO_UNCONNECTED\(7 downto 3),
+      CO(2) => \reset_count0_carry__0_n_5\,
+      CO(1) => \reset_count0_carry__0_n_6\,
+      CO(0) => \reset_count0_carry__0_n_7\,
+      DI(7 downto 0) => B"00000000",
+      O(7 downto 4) => \NLW_reset_count0_carry__0_O_UNCONNECTED\(7 downto 4),
+      O(3 downto 0) => p_0_in(12 downto 9),
+      S(7 downto 4) => B"0000",
+      S(3 downto 0) => reset_count_reg(12 downto 9)
+    );
+\reset_count[0]_i_1\: unisim.vcomponents.LUT1
+    generic map(
+      INIT => X"1"
+    )
+        port map (
+      I0 => reset_count_reg(0),
+      O => p_0_in(0)
+    );
+\reset_count[12]_i_1\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"8"
     )
@@ -724,14 +759,6 @@ begin
       I0 => \FSM_onehot_setup_state[12]_i_3_n_0\,
       I1 => \FSM_onehot_setup_state_reg_n_0_[1]\,
       O => reset_count
-    );
-\reset_count[0]_i_3\: unisim.vcomponents.LUT1
-    generic map(
-      INIT => X"1"
-    )
-        port map (
-      I0 => reset_count_reg(0),
-      O => \reset_count[0]_i_3_n_0\
     );
 \reset_count_reg[0]\: unisim.vcomponents.FDCE
     generic map(
@@ -741,24 +768,8 @@ begin
       C => clk,
       CE => reset_count,
       CLR => write_i_i_2_n_0,
-      D => \reset_count_reg[0]_i_2_n_7\,
+      D => p_0_in(0),
       Q => reset_count_reg(0)
-    );
-\reset_count_reg[0]_i_2\: unisim.vcomponents.CARRY4
-     port map (
-      CI => '0',
-      CO(3) => \reset_count_reg[0]_i_2_n_0\,
-      CO(2) => \reset_count_reg[0]_i_2_n_1\,
-      CO(1) => \reset_count_reg[0]_i_2_n_2\,
-      CO(0) => \reset_count_reg[0]_i_2_n_3\,
-      CYINIT => '0',
-      DI(3 downto 0) => B"0001",
-      O(3) => \reset_count_reg[0]_i_2_n_4\,
-      O(2) => \reset_count_reg[0]_i_2_n_5\,
-      O(1) => \reset_count_reg[0]_i_2_n_6\,
-      O(0) => \reset_count_reg[0]_i_2_n_7\,
-      S(3 downto 1) => reset_count_reg(3 downto 1),
-      S(0) => \reset_count[0]_i_3_n_0\
     );
 \reset_count_reg[10]\: unisim.vcomponents.FDCE
     generic map(
@@ -768,7 +779,7 @@ begin
       C => clk,
       CE => reset_count,
       CLR => write_i_i_2_n_0,
-      D => \reset_count_reg[8]_i_1_n_5\,
+      D => p_0_in(10),
       Q => reset_count_reg(10)
     );
 \reset_count_reg[11]\: unisim.vcomponents.FDCE
@@ -779,7 +790,7 @@ begin
       C => clk,
       CE => reset_count,
       CLR => write_i_i_2_n_0,
-      D => \reset_count_reg[8]_i_1_n_4\,
+      D => p_0_in(11),
       Q => reset_count_reg(11)
     );
 \reset_count_reg[12]\: unisim.vcomponents.FDCE
@@ -790,19 +801,8 @@ begin
       C => clk,
       CE => reset_count,
       CLR => write_i_i_2_n_0,
-      D => \reset_count_reg[12]_i_1_n_7\,
+      D => p_0_in(12),
       Q => reset_count_reg(12)
-    );
-\reset_count_reg[12]_i_1\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \reset_count_reg[8]_i_1_n_0\,
-      CO(3 downto 0) => \NLW_reset_count_reg[12]_i_1_CO_UNCONNECTED\(3 downto 0),
-      CYINIT => '0',
-      DI(3 downto 0) => B"0000",
-      O(3 downto 1) => \NLW_reset_count_reg[12]_i_1_O_UNCONNECTED\(3 downto 1),
-      O(0) => \reset_count_reg[12]_i_1_n_7\,
-      S(3 downto 1) => B"000",
-      S(0) => reset_count_reg(12)
     );
 \reset_count_reg[1]\: unisim.vcomponents.FDCE
     generic map(
@@ -812,7 +812,7 @@ begin
       C => clk,
       CE => reset_count,
       CLR => write_i_i_2_n_0,
-      D => \reset_count_reg[0]_i_2_n_6\,
+      D => p_0_in(1),
       Q => reset_count_reg(1)
     );
 \reset_count_reg[2]\: unisim.vcomponents.FDCE
@@ -823,7 +823,7 @@ begin
       C => clk,
       CE => reset_count,
       CLR => write_i_i_2_n_0,
-      D => \reset_count_reg[0]_i_2_n_5\,
+      D => p_0_in(2),
       Q => reset_count_reg(2)
     );
 \reset_count_reg[3]\: unisim.vcomponents.FDCE
@@ -834,7 +834,7 @@ begin
       C => clk,
       CE => reset_count,
       CLR => write_i_i_2_n_0,
-      D => \reset_count_reg[0]_i_2_n_4\,
+      D => p_0_in(3),
       Q => reset_count_reg(3)
     );
 \reset_count_reg[4]\: unisim.vcomponents.FDCE
@@ -845,23 +845,8 @@ begin
       C => clk,
       CE => reset_count,
       CLR => write_i_i_2_n_0,
-      D => \reset_count_reg[4]_i_1_n_7\,
+      D => p_0_in(4),
       Q => reset_count_reg(4)
-    );
-\reset_count_reg[4]_i_1\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \reset_count_reg[0]_i_2_n_0\,
-      CO(3) => \reset_count_reg[4]_i_1_n_0\,
-      CO(2) => \reset_count_reg[4]_i_1_n_1\,
-      CO(1) => \reset_count_reg[4]_i_1_n_2\,
-      CO(0) => \reset_count_reg[4]_i_1_n_3\,
-      CYINIT => '0',
-      DI(3 downto 0) => B"0000",
-      O(3) => \reset_count_reg[4]_i_1_n_4\,
-      O(2) => \reset_count_reg[4]_i_1_n_5\,
-      O(1) => \reset_count_reg[4]_i_1_n_6\,
-      O(0) => \reset_count_reg[4]_i_1_n_7\,
-      S(3 downto 0) => reset_count_reg(7 downto 4)
     );
 \reset_count_reg[5]\: unisim.vcomponents.FDCE
     generic map(
@@ -871,7 +856,7 @@ begin
       C => clk,
       CE => reset_count,
       CLR => write_i_i_2_n_0,
-      D => \reset_count_reg[4]_i_1_n_6\,
+      D => p_0_in(5),
       Q => reset_count_reg(5)
     );
 \reset_count_reg[6]\: unisim.vcomponents.FDCE
@@ -882,7 +867,7 @@ begin
       C => clk,
       CE => reset_count,
       CLR => write_i_i_2_n_0,
-      D => \reset_count_reg[4]_i_1_n_5\,
+      D => p_0_in(6),
       Q => reset_count_reg(6)
     );
 \reset_count_reg[7]\: unisim.vcomponents.FDCE
@@ -893,7 +878,7 @@ begin
       C => clk,
       CE => reset_count,
       CLR => write_i_i_2_n_0,
-      D => \reset_count_reg[4]_i_1_n_4\,
+      D => p_0_in(7),
       Q => reset_count_reg(7)
     );
 \reset_count_reg[8]\: unisim.vcomponents.FDCE
@@ -904,23 +889,8 @@ begin
       C => clk,
       CE => reset_count,
       CLR => write_i_i_2_n_0,
-      D => \reset_count_reg[8]_i_1_n_7\,
+      D => p_0_in(8),
       Q => reset_count_reg(8)
-    );
-\reset_count_reg[8]_i_1\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \reset_count_reg[4]_i_1_n_0\,
-      CO(3) => \reset_count_reg[8]_i_1_n_0\,
-      CO(2) => \reset_count_reg[8]_i_1_n_1\,
-      CO(1) => \reset_count_reg[8]_i_1_n_2\,
-      CO(0) => \reset_count_reg[8]_i_1_n_3\,
-      CYINIT => '0',
-      DI(3 downto 0) => B"0000",
-      O(3) => \reset_count_reg[8]_i_1_n_4\,
-      O(2) => \reset_count_reg[8]_i_1_n_5\,
-      O(1) => \reset_count_reg[8]_i_1_n_6\,
-      O(0) => \reset_count_reg[8]_i_1_n_7\,
-      S(3 downto 0) => reset_count_reg(11 downto 8)
     );
 \reset_count_reg[9]\: unisim.vcomponents.FDCE
     generic map(
@@ -930,7 +900,7 @@ begin
       C => clk,
       CE => reset_count,
       CLR => write_i_i_2_n_0,
-      D => \reset_count_reg[8]_i_1_n_6\,
+      D => p_0_in(9),
       Q => reset_count_reg(9)
     );
 setup_done_i_1: unisim.vcomponents.LUT5
@@ -1271,7 +1241,7 @@ architecture STRUCTURE of ad4134fw_ad4134_control_0_0 is
   attribute x_interface_mode : string;
   attribute x_interface_mode of clk : signal is "slave clk";
   attribute x_interface_parameter : string;
-  attribute x_interface_parameter of clk : signal is "XIL_INTERFACENAME clk, ASSOCIATED_RESET rstn, FREQ_HZ 50000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /Processing_Subsystem/clk_wiz_0_clk_out1, INSERT_VIP 0";
+  attribute x_interface_parameter of clk : signal is "XIL_INTERFACENAME clk, ASSOCIATED_RESET rstn, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, INSERT_VIP 0";
   attribute x_interface_info of rstn : signal is "xilinx.com:signal:reset:1.0 rstn RST";
   attribute x_interface_mode of rstn : signal is "slave rstn";
   attribute x_interface_parameter of rstn : signal is "XIL_INTERFACENAME rstn, POLARITY ACTIVE_LOW, INSERT_VIP 0";

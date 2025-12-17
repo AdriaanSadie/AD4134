@@ -337,7 +337,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:c42b8935</spirit:value>
+            <spirit:value>9:60b58292</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -351,11 +351,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Oct 28 19:32:01 UTC 2025</spirit:value>
+            <spirit:value>Sun Nov 16 19:41:04 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:c42b8935</spirit:value>
+            <spirit:value>9:60b58292</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -369,11 +369,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Oct 28 19:29:16 UTC 2025</spirit:value>
+            <spirit:value>Sun Nov 16 19:34:15 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:c42b8935</spirit:value>
+            <spirit:value>9:60b58292</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -404,11 +404,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sat Oct 25 13:01:54 UTC 2025</spirit:value>
+            <spirit:value>Sun Nov 16 19:34:15 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:0581f2c3</spirit:value>
+            <spirit:value>9:93f79810</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -424,11 +424,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Oct 28 19:29:16 UTC 2025</spirit:value>
+            <spirit:value>Tue Nov 18 19:25:02 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:0581f2c3</spirit:value>
+            <spirit:value>9:93f79810</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -459,11 +459,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sat Oct 25 13:01:54 UTC 2025</spirit:value>
+            <spirit:value>Sun Nov 16 19:34:15 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:c42b8935</spirit:value>
+            <spirit:value>9:60b58292</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -479,11 +479,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Oct 28 19:29:16 UTC 2025</spirit:value>
+            <spirit:value>Sun Nov 16 19:34:15 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:c42b8935</spirit:value>
+            <spirit:value>9:60b58292</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -722,7 +722,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="string">
         <spirit:name>C_XDEVICEFAMILY</spirit:name>
-        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_XDEVICEFAMILY">zynq</spirit:value>
+        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_XDEVICEFAMILY">zynquplus</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_WIDTH</spirit:name>

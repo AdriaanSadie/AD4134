@@ -78,7 +78,7 @@ ad4134fw_axi_bram_ctrl_0_2_sc::ad4134fw_axi_bram_ctrl_0_2_sc(const sc_core::sc_m
     model_param_props.addLong("C_ECC_ONOFF_RESET_VALUE", "0");
     model_param_props.addString("C_BRAM_INST_MODE", "EXTERNAL");
     model_param_props.addString("C_S_AXI_PROTOCOL", "AXI4");
-    model_param_props.addString("C_FAMILY", "zynq");
+    model_param_props.addString("C_FAMILY", "zynquplus");
     model_param_props.addString("COMPONENT_NAME", "ad4134fw_axi_bram_ctrl_0_2");
 
   mp_impl = new axi_bram_ctrl("inst", model_param_props);

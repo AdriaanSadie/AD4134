@@ -2,14 +2,14 @@
 // Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-// Date        : Tue Oct 28 21:30:46 2025
+// Date        : Sun Nov 16 21:40:50 2025
 // Host        : DESKTOP-NG70LRJ running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_proc_sys_reset_0_0/ad4134fw_proc_sys_reset_0_0_sim_netlist.v
 // Design      : ad4134fw_proc_sys_reset_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
-// Device      : xc7z010clg400-1
+// Device      : xck26-sfvc784-2LV-c
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
@@ -26,7 +26,7 @@ module ad4134fw_proc_sys_reset_0_0
     peripheral_reset,
     interconnect_aresetn,
     peripheral_aresetn);
-  (* x_interface_info = "xilinx.com:signal:clock:1.0 clock CLK" *) (* x_interface_mode = "slave clock" *) (* x_interface_parameter = "XIL_INTERFACENAME clock, ASSOCIATED_RESET mb_reset:bus_struct_reset:interconnect_aresetn:peripheral_aresetn:peripheral_reset, FREQ_HZ 50000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN ad4134fw_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *) input slowest_sync_clk;
+  (* x_interface_info = "xilinx.com:signal:clock:1.0 clock CLK" *) (* x_interface_mode = "slave clock" *) (* x_interface_parameter = "XIL_INTERFACENAME clock, ASSOCIATED_RESET mb_reset:bus_struct_reset:interconnect_aresetn:peripheral_aresetn:peripheral_reset, FREQ_HZ 50000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, INSERT_VIP 0" *) input slowest_sync_clk;
   (* x_interface_info = "xilinx.com:signal:reset:1.0 ext_reset RST" *) (* x_interface_mode = "slave ext_reset" *) (* x_interface_parameter = "XIL_INTERFACENAME ext_reset, BOARD.ASSOCIATED_PARAM RESET_BOARD_INTERFACE, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input ext_reset_in;
   (* x_interface_info = "xilinx.com:signal:reset:1.0 aux_reset RST" *) (* x_interface_mode = "slave aux_reset" *) (* x_interface_parameter = "XIL_INTERFACENAME aux_reset, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input aux_reset_in;
   (* x_interface_info = "xilinx.com:signal:reset:1.0 dbg_reset RST" *) (* x_interface_mode = "slave dbg_reset" *) (* x_interface_parameter = "XIL_INTERFACENAME dbg_reset, POLARITY ACTIVE_HIGH, INSERT_VIP 0" *) input mb_debug_sys_rst;
@@ -52,7 +52,7 @@ module ad4134fw_proc_sys_reset_0_0
   (* C_AUX_RST_WIDTH = "4" *) 
   (* C_EXT_RESET_HIGH = "1'b0" *) 
   (* C_EXT_RST_WIDTH = "4" *) 
-  (* C_FAMILY = "zynq" *) 
+  (* C_FAMILY = "zynquplus" *) 
   (* C_NUM_BUS_RST = "1" *) 
   (* C_NUM_INTERCONNECT_ARESETN = "1" *) 
   (* C_NUM_PERP_ARESETN = "1" *) 
@@ -419,7 +419,7 @@ module ad4134fw_proc_sys_reset_0_0_lpf
 endmodule
 
 (* C_AUX_RESET_HIGH = "1'b0" *) (* C_AUX_RST_WIDTH = "4" *) (* C_EXT_RESET_HIGH = "1'b0" *) 
-(* C_EXT_RST_WIDTH = "4" *) (* C_FAMILY = "zynq" *) (* C_NUM_BUS_RST = "1" *) 
+(* C_EXT_RST_WIDTH = "4" *) (* C_FAMILY = "zynquplus" *) (* C_NUM_BUS_RST = "1" *) 
 (* C_NUM_INTERCONNECT_ARESETN = "1" *) (* C_NUM_PERP_ARESETN = "1" *) (* C_NUM_PERP_RST = "1" *) 
 (* ORIG_REF_NAME = "proc_sys_reset" *) 
 module ad4134fw_proc_sys_reset_0_0_proc_sys_reset
@@ -582,19 +582,19 @@ module ad4134fw_proc_sys_reset_0_0_sequence_psr
   wire seq_cnt_en;
   wire slowest_sync_clk;
 
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT1 #(
     .INIT(2'h1)) 
     \ACTIVE_LOW_BSR_OUT_DFF[0].FDRE_BSR_N_i_1 
        (.I0(Bsr_out),
         .O(bsr_reg_0));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT1 #(
     .INIT(2'h1)) 
     \ACTIVE_LOW_PR_OUT_DFF[0].FDRE_PER_N_i_1 
        (.I0(Pr_out),
         .O(pr_reg_0));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT2 #(
     .INIT(4'h2)) 
     Core_i_1
@@ -623,7 +623,7 @@ module ad4134fw_proc_sys_reset_0_0_sequence_psr
         .I2(seq_cnt[3]),
         .I3(seq_cnt[5]),
         .O(p_5_out[0]));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \bsr_dec[2]_i_1 
@@ -646,7 +646,7 @@ module ad4134fw_proc_sys_reset_0_0_sequence_psr
         .D(p_5_out[2]),
         .Q(\bsr_dec_reg_n_0_[2] ),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT2 #(
     .INIT(4'h2)) 
     bsr_i_1
@@ -670,7 +670,7 @@ module ad4134fw_proc_sys_reset_0_0_sequence_psr
         .I2(seq_cnt[3]),
         .I3(seq_cnt[5]),
         .O(\core_dec[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \core_dec[2]_i_1 
@@ -701,7 +701,7 @@ module ad4134fw_proc_sys_reset_0_0_sequence_psr
         .D(\core_dec[2]_i_1_n_0 ),
         .Q(p_0_in),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT2 #(
     .INIT(4'h8)) 
     from_sys_i_1
@@ -754,7 +754,7 @@ module ad4134fw_proc_sys_reset_0_0_sequence_psr
         .D(p_3_out[2]),
         .Q(\pr_dec_reg_n_0_[2] ),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT2 #(
     .INIT(4'h2)) 
     pr_i_1

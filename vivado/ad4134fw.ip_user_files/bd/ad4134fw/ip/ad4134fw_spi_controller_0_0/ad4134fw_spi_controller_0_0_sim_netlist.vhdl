@@ -2,14 +2,14 @@
 -- Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
--- Date        : Tue Oct 28 21:31:55 2025
+-- Date        : Sun Nov 16 21:40:49 2025
 -- Host        : DESKTOP-NG70LRJ running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_spi_controller_0_0/ad4134fw_spi_controller_0_0_sim_netlist.vhdl
 -- Design      : ad4134fw_spi_controller_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
--- Device      : xc7z010clg400-1
+-- Device      : xck26-sfvc784-2LV-c
 -- --------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -21,11 +21,11 @@ entity ad4134fw_spi_controller_0_0_spi_controller is
     dataout : out STD_LOGIC_VECTOR ( 7 downto 0 );
     mosi : out STD_LOGIC;
     cs_n : out STD_LOGIC;
-    write : in STD_LOGIC;
     clk : in STD_LOGIC;
     miso : in STD_LOGIC;
     rstn : in STD_LOGIC;
     read : in STD_LOGIC;
+    write : in STD_LOGIC;
     datain : in STD_LOGIC_VECTOR ( 7 downto 0 );
     spiaddr : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
@@ -34,14 +34,10 @@ entity ad4134fw_spi_controller_0_0_spi_controller is
 end ad4134fw_spi_controller_0_0_spi_controller;
 
 architecture STRUCTURE of ad4134fw_spi_controller_0_0_spi_controller is
-  signal \FSM_sequential_spi_state[0]_i_1_n_0\ : STD_LOGIC;
-  signal \FSM_sequential_spi_state[1]_i_1_n_0\ : STD_LOGIC;
   signal \FSM_sequential_spi_state[2]_i_1_n_0\ : STD_LOGIC;
-  signal \FSM_sequential_spi_state[2]_i_2_n_0\ : STD_LOGIC;
   signal \FSM_sequential_spi_state[2]_i_3_n_0\ : STD_LOGIC;
   signal \FSM_sequential_spi_state[2]_i_4_n_0\ : STD_LOGIC;
   signal \^cs_n\ : STD_LOGIC;
-  signal cs_n_i : STD_LOGIC;
   signal cs_n_i_i_1_n_0 : STD_LOGIC;
   signal cs_n_i_i_2_n_0 : STD_LOGIC;
   signal \^dataout\ : STD_LOGIC_VECTOR ( 7 downto 0 );
@@ -60,6 +56,7 @@ architecture STRUCTURE of ad4134fw_spi_controller_0_0_spi_controller is
   signal \dataout_i[7]_i_1_n_0\ : STD_LOGIC;
   signal \dataout_i[7]_i_3_n_0\ : STD_LOGIC;
   signal \^mosi\ : STD_LOGIC;
+  signal mosi0 : STD_LOGIC;
   signal mosi_i_1_n_0 : STD_LOGIC;
   signal mosi_i_5_n_0 : STD_LOGIC;
   signal mosi_i_6_n_0 : STD_LOGIC;
@@ -67,9 +64,9 @@ architecture STRUCTURE of ad4134fw_spi_controller_0_0_spi_controller is
   signal mosi_i_8_n_0 : STD_LOGIC;
   signal mosi_reg_i_2_n_0 : STD_LOGIC;
   signal mosi_reg_i_3_n_0 : STD_LOGIC;
-  signal mosi_reg_i_4_n_0 : STD_LOGIC;
   signal p_0_in : STD_LOGIC;
   signal \spi_state__0\ : STD_LOGIC_VECTOR ( 2 downto 0 );
+  signal \spi_state__1\ : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal \spibitcount[0]_i_1_n_0\ : STD_LOGIC;
   signal \spibitcount[1]_i_1_n_0\ : STD_LOGIC;
   signal \spibitcount[2]_i_1_n_0\ : STD_LOGIC;
@@ -94,7 +91,6 @@ architecture STRUCTURE of ad4134fw_spi_controller_0_0_spi_controller is
   signal \spiendcount_reg_n_0_[3]\ : STD_LOGIC;
   attribute SOFT_HLUTNM : string;
   attribute SOFT_HLUTNM of \FSM_sequential_spi_state[1]_i_1\ : label is "soft_lutpair8";
-  attribute SOFT_HLUTNM of \FSM_sequential_spi_state[2]_i_1\ : label is "soft_lutpair8";
   attribute SOFT_HLUTNM of \FSM_sequential_spi_state[2]_i_3\ : label is "soft_lutpair4";
   attribute SOFT_HLUTNM of \FSM_sequential_spi_state[2]_i_4\ : label is "soft_lutpair0";
   attribute FSM_ENCODED_STATES : string;
@@ -108,6 +104,7 @@ architecture STRUCTURE of ad4134fw_spi_controller_0_0_spi_controller is
   attribute SOFT_HLUTNM of \dataout_i[6]_i_2\ : label is "soft_lutpair5";
   attribute SOFT_HLUTNM of \dataout_i[7]_i_1\ : label is "soft_lutpair2";
   attribute SOFT_HLUTNM of \dataout_i[7]_i_3\ : label is "soft_lutpair5";
+  attribute SOFT_HLUTNM of mosi_i_4 : label is "soft_lutpair8";
   attribute SOFT_HLUTNM of \spibitcount[1]_i_1\ : label is "soft_lutpair6";
   attribute SOFT_HLUTNM of \spibitcount[2]_i_1\ : label is "soft_lutpair6";
   attribute SOFT_HLUTNM of \spibitcount[3]_i_3\ : label is "soft_lutpair0";
@@ -124,53 +121,28 @@ begin
   spidone_i_reg_0 <= \^spidone_i_reg_0\;
 \FSM_sequential_spi_state[0]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"AAABFFFFAAAA0000"
+      INIT => X"000000F300000FF2"
     )
         port map (
-      I0 => cs_n_i,
-      I1 => \spi_state__0\(2),
-      I2 => \spi_state__0\(1),
-      I3 => write,
-      I4 => \FSM_sequential_spi_state[2]_i_2_n_0\,
-      I5 => \spi_state__0\(0),
-      O => \FSM_sequential_spi_state[0]_i_1_n_0\
+      I0 => read,
+      I1 => \^spidone_i_reg_0\,
+      I2 => \spi_state__0\(2),
+      I3 => \spi_state__0\(0),
+      I4 => \spi_state__0\(1),
+      I5 => write,
+      O => \spi_state__1\(0)
     );
-\FSM_sequential_spi_state[0]_i_2\: unisim.vcomponents.LUT6
+\FSM_sequential_spi_state[1]_i_1\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"1111111101010100"
+      INIT => X"04"
     )
         port map (
       I0 => \spi_state__0\(1),
       I1 => \spi_state__0\(0),
-      I2 => \^spidone_i_reg_0\,
-      I3 => write,
-      I4 => read,
-      I5 => \spi_state__0\(2),
-      O => cs_n_i
+      I2 => \spi_state__0\(2),
+      O => \spi_state__1\(1)
     );
-\FSM_sequential_spi_state[1]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"0F20"
-    )
-        port map (
-      I0 => \spi_state__0\(0),
-      I1 => \spi_state__0\(2),
-      I2 => \FSM_sequential_spi_state[2]_i_2_n_0\,
-      I3 => \spi_state__0\(1),
-      O => \FSM_sequential_spi_state[1]_i_1_n_0\
-    );
-\FSM_sequential_spi_state[2]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"1FC0"
-    )
-        port map (
-      I0 => \spi_state__0\(0),
-      I1 => \spi_state__0\(1),
-      I2 => \FSM_sequential_spi_state[2]_i_2_n_0\,
-      I3 => \spi_state__0\(2),
-      O => \FSM_sequential_spi_state[2]_i_1_n_0\
-    );
-\FSM_sequential_spi_state[2]_i_2\: unisim.vcomponents.LUT6
+\FSM_sequential_spi_state[2]_i_1\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"FF00DF000000DD00"
     )
@@ -181,7 +153,17 @@ begin
       I3 => rstn,
       I4 => \spi_state__0\(1),
       I5 => \FSM_sequential_spi_state[2]_i_4_n_0\,
-      O => \FSM_sequential_spi_state[2]_i_2_n_0\
+      O => \FSM_sequential_spi_state[2]_i_1_n_0\
+    );
+\FSM_sequential_spi_state[2]_i_2\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"34"
+    )
+        port map (
+      I0 => \spi_state__0\(0),
+      I1 => \spi_state__0\(2),
+      I2 => \spi_state__0\(1),
+      O => \spi_state__1\(2)
     );
 \FSM_sequential_spi_state[2]_i_3\: unisim.vcomponents.LUT5
     generic map(
@@ -213,8 +195,8 @@ begin
     )
         port map (
       C => clk,
-      CE => '1',
-      D => \FSM_sequential_spi_state[0]_i_1_n_0\,
+      CE => \FSM_sequential_spi_state[2]_i_1_n_0\,
+      D => \spi_state__1\(0),
       Q => \spi_state__0\(0),
       R => '0'
     );
@@ -224,8 +206,8 @@ begin
     )
         port map (
       C => clk,
-      CE => '1',
-      D => \FSM_sequential_spi_state[1]_i_1_n_0\,
+      CE => \FSM_sequential_spi_state[2]_i_1_n_0\,
+      D => \spi_state__1\(1),
       Q => \spi_state__0\(1),
       R => '0'
     );
@@ -235,8 +217,8 @@ begin
     )
         port map (
       C => clk,
-      CE => '1',
-      D => \FSM_sequential_spi_state[2]_i_1_n_0\,
+      CE => \FSM_sequential_spi_state[2]_i_1_n_0\,
+      D => \spi_state__1\(2),
       Q => \spi_state__0\(2),
       R => '0'
     );
@@ -511,16 +493,27 @@ cs_n_i_reg: unisim.vcomponents.FDPE
     );
 mosi_i_1: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"FFFFFBBF00000880"
+      INIT => X"00E2FFFF00E20000"
     )
         port map (
       I0 => mosi_reg_i_2_n_0,
-      I1 => rstn,
-      I2 => \spi_state__0\(0),
-      I3 => \spi_state__0\(1),
-      I4 => \spi_state__0\(2),
+      I1 => \spi_state__0\(1),
+      I2 => mosi_reg_i_3_n_0,
+      I3 => \spi_state__0\(2),
+      I4 => mosi0,
       I5 => \^mosi\,
       O => mosi_i_1_n_0
+    );
+mosi_i_4: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"0028"
+    )
+        port map (
+      I0 => rstn,
+      I1 => \spi_state__0\(0),
+      I2 => \spi_state__0\(1),
+      I3 => \spi_state__0\(2),
+      O => mosi0
     );
 mosi_i_5: unisim.vcomponents.LUT6
     generic map(
@@ -582,25 +575,18 @@ mosi_reg: unisim.vcomponents.FDRE
       Q => \^mosi\,
       R => '0'
     );
-mosi_reg_i_2: unisim.vcomponents.MUXF8
-     port map (
-      I0 => mosi_reg_i_3_n_0,
-      I1 => mosi_reg_i_4_n_0,
-      O => mosi_reg_i_2_n_0,
-      S => \spi_state__0\(1)
-    );
-mosi_reg_i_3: unisim.vcomponents.MUXF7
+mosi_reg_i_2: unisim.vcomponents.MUXF7
      port map (
       I0 => mosi_i_5_n_0,
       I1 => mosi_i_6_n_0,
-      O => mosi_reg_i_3_n_0,
+      O => mosi_reg_i_2_n_0,
       S => \spibitcount_reg_n_0_[2]\
     );
-mosi_reg_i_4: unisim.vcomponents.MUXF7
+mosi_reg_i_3: unisim.vcomponents.MUXF7
      port map (
       I0 => mosi_i_7_n_0,
       I1 => mosi_i_8_n_0,
-      O => mosi_reg_i_4_n_0,
+      O => mosi_reg_i_3_n_0,
       S => \spibitcount_reg_n_0_[2]\
     );
 \spibitcount[0]_i_1\: unisim.vcomponents.LUT3
@@ -882,7 +868,7 @@ architecture STRUCTURE of ad4134fw_spi_controller_0_0 is
   attribute x_interface_mode : string;
   attribute x_interface_mode of clk : signal is "slave clk";
   attribute x_interface_parameter : string;
-  attribute x_interface_parameter of clk : signal is "XIL_INTERFACENAME clk, ASSOCIATED_RESET rstn, FREQ_HZ 50000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /Processing_Subsystem/clk_wiz_0_clk_out1, INSERT_VIP 0";
+  attribute x_interface_parameter of clk : signal is "XIL_INTERFACENAME clk, ASSOCIATED_RESET rstn, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, INSERT_VIP 0";
   attribute x_interface_info of rstn : signal is "xilinx.com:signal:reset:1.0 rstn RST";
   attribute x_interface_mode of rstn : signal is "slave rstn";
   attribute x_interface_parameter of rstn : signal is "XIL_INTERFACENAME rstn, POLARITY ACTIVE_LOW, INSERT_VIP 0";

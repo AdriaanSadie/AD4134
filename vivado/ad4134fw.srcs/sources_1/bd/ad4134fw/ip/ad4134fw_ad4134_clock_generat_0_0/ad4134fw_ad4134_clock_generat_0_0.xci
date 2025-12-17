@@ -11,17 +11,17 @@
         "Component_Name": [ { "value": "ad4134fw_ad4134_clock_generat_0_0", "resolve_type": "user", "usage": "all" } ]
       },
       "project_parameters": {
-        "ARCHITECTURE": [ { "value": "zynq" } ],
-        "BASE_BOARD_PART": [ { "value": "" } ],
+        "ARCHITECTURE": [ { "value": "zynquplus" } ],
+        "BASE_BOARD_PART": [ { "value": "xilinx.com:kr260_som:part0:1.1" } ],
         "BOARD_CONNECTIONS": [ { "value": "" } ],
-        "DEVICE": [ { "value": "xc7z010" } ],
-        "PACKAGE": [ { "value": "clg400" } ],
+        "DEVICE": [ { "value": "xck26" } ],
+        "PACKAGE": [ { "value": "sfvc784" } ],
         "PREFHDL": [ { "value": "VHDL" } ],
         "SILICON_REVISION": [ { "value": "" } ],
         "SIMULATOR_LANGUAGE": [ { "value": "MIXED" } ],
-        "SPEEDGRADE": [ { "value": "-1" } ],
+        "SPEEDGRADE": [ { "value": "-2LV" } ],
         "STATIC_POWER": [ { "value": "" } ],
-        "TEMPERATURE_GRADE": [ { "value": "" } ]
+        "TEMPERATURE_GRADE": [ { "value": "C" } ]
       },
       "runtime_parameters": {
         "IPCONTEXT": [ { "value": "IP_Integrator" } ],

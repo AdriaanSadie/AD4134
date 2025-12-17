@@ -2,6 +2,9 @@
 2020.2
 Nov  8 2024
 22:36:57
-C:/work/AD4134/src/ad4134_to_bram.vhd,1762111591,vhdl,C:/work/AD4134/src/ad4134_to_bram_tb.vhd,,,ad4134_to_bram,,,,,,,,
-C:/work/AD4134/src/ad4134_to_bram_tb.vhd,1762110331,vhdl,,,,ad4134_to_bram_tb,,,,,,,,
-C:/work/AD4134/vivado/ad4134fw.sim/sim_1/behav/xsim/glbl.v,1724786425,verilog,,,,glbl,,axi_vip_v1_1_19;processing_system7_vip_v1_0_21;smartconnect_v1_0;xilinx_vip,,,,,,
+C:/work/AD4134/src/ad4134_clock_generator.vhd,1760987457,vhdl,,,,ad4134_clock_generator,,,,,,,,
+C:/work/AD4134/src/ad4134_control.vhd,1761249411,vhdl,,,,ad4134_control,,,,,,,,
+C:/work/AD4134/src/ad4134_tb.vhd,1759905771,vhdl,,,,ad4134_tb,,,,,,,,
+C:/work/AD4134/src/ad4134_tester.vhd,1759905771,vhdl,,,,ad4134_tester,,,,,,,,
+C:/work/AD4134/src/spi_controller.vhd,1759905771,vhdl,,,,spi_controller,,,,,,,,
+C:/work/AD4134/vivado/ad4134fw.sim/sim_1/behav/xsim/glbl.v,1724786425,verilog,,,,glbl,,axi_vip_v1_1_19;smartconnect_v1_0;xilinx_vip;zynq_ultra_ps_e_vip_v1_0_19,,,,,,

@@ -1,7 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  \
-"../../../../../src/ad4134_to_bram.vhd" \
-"../../../../../src/ad4134_to_bram_tb.vhd" \
-
-# Do not sort compile order
-nosort

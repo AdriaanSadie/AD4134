@@ -2,14 +2,14 @@
 // Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-// Date        : Tue Oct 28 21:31:55 2025
+// Date        : Sun Nov 16 21:40:49 2025
 // Host        : DESKTOP-NG70LRJ running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_spi_controller_0_0/ad4134fw_spi_controller_0_0_sim_netlist.v
 // Design      : ad4134fw_spi_controller_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
-// Device      : xc7z010clg400-1
+// Device      : xck26-sfvc784-2LV-c
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
@@ -28,7 +28,7 @@ module ad4134fw_spi_controller_0_0
     mosi,
     miso,
     cs_n);
-  (* x_interface_info = "xilinx.com:signal:clock:1.0 clk CLK" *) (* x_interface_mode = "slave clk" *) (* x_interface_parameter = "XIL_INTERFACENAME clk, ASSOCIATED_RESET rstn, FREQ_HZ 50000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /Processing_Subsystem/clk_wiz_0_clk_out1, INSERT_VIP 0" *) input clk;
+  (* x_interface_info = "xilinx.com:signal:clock:1.0 clk CLK" *) (* x_interface_mode = "slave clk" *) (* x_interface_parameter = "XIL_INTERFACENAME clk, ASSOCIATED_RESET rstn, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, INSERT_VIP 0" *) input clk;
   (* x_interface_info = "xilinx.com:signal:reset:1.0 rstn RST" *) (* x_interface_mode = "slave rstn" *) (* x_interface_parameter = "XIL_INTERFACENAME rstn, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input rstn;
   input write;
   input read;
@@ -72,34 +72,30 @@ module ad4134fw_spi_controller_0_0_spi_controller
     dataout,
     mosi,
     cs_n,
-    write,
     clk,
     miso,
     rstn,
     read,
+    write,
     datain,
     spiaddr);
   output spidone_i_reg_0;
   output [7:0]dataout;
   output mosi;
   output cs_n;
-  input write;
   input clk;
   input miso;
   input rstn;
   input read;
+  input write;
   input [7:0]datain;
   input [7:0]spiaddr;
 
-  wire \FSM_sequential_spi_state[0]_i_1_n_0 ;
-  wire \FSM_sequential_spi_state[1]_i_1_n_0 ;
   wire \FSM_sequential_spi_state[2]_i_1_n_0 ;
-  wire \FSM_sequential_spi_state[2]_i_2_n_0 ;
   wire \FSM_sequential_spi_state[2]_i_3_n_0 ;
   wire \FSM_sequential_spi_state[2]_i_4_n_0 ;
   wire clk;
   wire cs_n;
-  wire cs_n_i;
   wire cs_n_i_i_1_n_0;
   wire cs_n_i_i_2_n_0;
   wire [7:0]datain;
@@ -120,6 +116,7 @@ module ad4134fw_spi_controller_0_0_spi_controller
   wire \dataout_i[7]_i_3_n_0 ;
   wire miso;
   wire mosi;
+  wire mosi0;
   wire mosi_i_1_n_0;
   wire mosi_i_5_n_0;
   wire mosi_i_6_n_0;
@@ -127,11 +124,11 @@ module ad4134fw_spi_controller_0_0_spi_controller
   wire mosi_i_8_n_0;
   wire mosi_reg_i_2_n_0;
   wire mosi_reg_i_3_n_0;
-  wire mosi_reg_i_4_n_0;
   wire p_0_in;
   wire read;
   wire rstn;
   wire [2:0]spi_state__0;
+  wire [2:0]spi_state__1;
   wire [7:0]spiaddr;
   wire \spibitcount[0]_i_1_n_0 ;
   wire \spibitcount[1]_i_1_n_0 ;
@@ -158,53 +155,40 @@ module ad4134fw_spi_controller_0_0_spi_controller
   wire write;
 
   LUT6 #(
-    .INIT(64'hAAABFFFFAAAA0000)) 
+    .INIT(64'h000000F300000FF2)) 
     \FSM_sequential_spi_state[0]_i_1 
-       (.I0(cs_n_i),
-        .I1(spi_state__0[2]),
-        .I2(spi_state__0[1]),
-        .I3(write),
-        .I4(\FSM_sequential_spi_state[2]_i_2_n_0 ),
-        .I5(spi_state__0[0]),
-        .O(\FSM_sequential_spi_state[0]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'h1111111101010100)) 
-    \FSM_sequential_spi_state[0]_i_2 
+       (.I0(read),
+        .I1(spidone_i_reg_0),
+        .I2(spi_state__0[2]),
+        .I3(spi_state__0[0]),
+        .I4(spi_state__0[1]),
+        .I5(write),
+        .O(spi_state__1[0]));
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  LUT3 #(
+    .INIT(8'h04)) 
+    \FSM_sequential_spi_state[1]_i_1 
        (.I0(spi_state__0[1]),
         .I1(spi_state__0[0]),
-        .I2(spidone_i_reg_0),
-        .I3(write),
-        .I4(read),
-        .I5(spi_state__0[2]),
-        .O(cs_n_i));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
-  LUT4 #(
-    .INIT(16'h0F20)) 
-    \FSM_sequential_spi_state[1]_i_1 
-       (.I0(spi_state__0[0]),
-        .I1(spi_state__0[2]),
-        .I2(\FSM_sequential_spi_state[2]_i_2_n_0 ),
-        .I3(spi_state__0[1]),
-        .O(\FSM_sequential_spi_state[1]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
-  LUT4 #(
-    .INIT(16'h1FC0)) 
-    \FSM_sequential_spi_state[2]_i_1 
-       (.I0(spi_state__0[0]),
-        .I1(spi_state__0[1]),
-        .I2(\FSM_sequential_spi_state[2]_i_2_n_0 ),
-        .I3(spi_state__0[2]),
-        .O(\FSM_sequential_spi_state[2]_i_1_n_0 ));
+        .I2(spi_state__0[2]),
+        .O(spi_state__1[1]));
   LUT6 #(
     .INIT(64'hFF00DF000000DD00)) 
-    \FSM_sequential_spi_state[2]_i_2 
+    \FSM_sequential_spi_state[2]_i_1 
        (.I0(spi_state__0[0]),
         .I1(\FSM_sequential_spi_state[2]_i_3_n_0 ),
         .I2(cs_n_i_i_2_n_0),
         .I3(rstn),
         .I4(spi_state__0[1]),
         .I5(\FSM_sequential_spi_state[2]_i_4_n_0 ),
-        .O(\FSM_sequential_spi_state[2]_i_2_n_0 ));
+        .O(\FSM_sequential_spi_state[2]_i_1_n_0 ));
+  LUT3 #(
+    .INIT(8'h34)) 
+    \FSM_sequential_spi_state[2]_i_2 
+       (.I0(spi_state__0[0]),
+        .I1(spi_state__0[2]),
+        .I2(spi_state__0[1]),
+        .O(spi_state__1[2]));
   (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT5 #(
     .INIT(32'h00000002)) 
@@ -230,8 +214,8 @@ module ad4134fw_spi_controller_0_0_spi_controller
     .INIT(1'b0)) 
     \FSM_sequential_spi_state_reg[0] 
        (.C(clk),
-        .CE(1'b1),
-        .D(\FSM_sequential_spi_state[0]_i_1_n_0 ),
+        .CE(\FSM_sequential_spi_state[2]_i_1_n_0 ),
+        .D(spi_state__1[0]),
         .Q(spi_state__0[0]),
         .R(1'b0));
   (* FSM_ENCODED_STATES = "spi_cs:100,spi_end:101,init:000,spi_addr:001,spi_read:011,spi_write:010" *) 
@@ -239,8 +223,8 @@ module ad4134fw_spi_controller_0_0_spi_controller
     .INIT(1'b0)) 
     \FSM_sequential_spi_state_reg[1] 
        (.C(clk),
-        .CE(1'b1),
-        .D(\FSM_sequential_spi_state[1]_i_1_n_0 ),
+        .CE(\FSM_sequential_spi_state[2]_i_1_n_0 ),
+        .D(spi_state__1[1]),
         .Q(spi_state__0[1]),
         .R(1'b0));
   (* FSM_ENCODED_STATES = "spi_cs:100,spi_end:101,init:000,spi_addr:001,spi_read:011,spi_write:010" *) 
@@ -248,8 +232,8 @@ module ad4134fw_spi_controller_0_0_spi_controller
     .INIT(1'b0)) 
     \FSM_sequential_spi_state_reg[2] 
        (.C(clk),
-        .CE(1'b1),
-        .D(\FSM_sequential_spi_state[2]_i_1_n_0 ),
+        .CE(\FSM_sequential_spi_state[2]_i_1_n_0 ),
+        .D(spi_state__1[2]),
         .Q(spi_state__0[2]),
         .R(1'b0));
   LUT6 #(
@@ -460,15 +444,24 @@ module ad4134fw_spi_controller_0_0_spi_controller
         .D(\dataout_i[7]_i_1_n_0 ),
         .Q(dataout[7]));
   LUT6 #(
-    .INIT(64'hFFFFFBBF00000880)) 
+    .INIT(64'h00E2FFFF00E20000)) 
     mosi_i_1
        (.I0(mosi_reg_i_2_n_0),
-        .I1(rstn),
-        .I2(spi_state__0[0]),
-        .I3(spi_state__0[1]),
-        .I4(spi_state__0[2]),
+        .I1(spi_state__0[1]),
+        .I2(mosi_reg_i_3_n_0),
+        .I3(spi_state__0[2]),
+        .I4(mosi0),
         .I5(mosi),
         .O(mosi_i_1_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  LUT4 #(
+    .INIT(16'h0028)) 
+    mosi_i_4
+       (.I0(rstn),
+        .I1(spi_state__0[0]),
+        .I2(spi_state__0[1]),
+        .I3(spi_state__0[2]),
+        .O(mosi0));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     mosi_i_5
@@ -515,20 +508,15 @@ module ad4134fw_spi_controller_0_0_spi_controller
         .D(mosi_i_1_n_0),
         .Q(mosi),
         .R(1'b0));
-  MUXF8 mosi_reg_i_2
-       (.I0(mosi_reg_i_3_n_0),
-        .I1(mosi_reg_i_4_n_0),
-        .O(mosi_reg_i_2_n_0),
-        .S(spi_state__0[1]));
-  MUXF7 mosi_reg_i_3
+  MUXF7 mosi_reg_i_2
        (.I0(mosi_i_5_n_0),
         .I1(mosi_i_6_n_0),
-        .O(mosi_reg_i_3_n_0),
+        .O(mosi_reg_i_2_n_0),
         .S(\spibitcount_reg_n_0_[2] ));
-  MUXF7 mosi_reg_i_4
+  MUXF7 mosi_reg_i_3
        (.I0(mosi_i_7_n_0),
         .I1(mosi_i_8_n_0),
-        .O(mosi_reg_i_4_n_0),
+        .O(mosi_reg_i_3_n_0),
         .S(\spibitcount_reg_n_0_[2] ));
   LUT3 #(
     .INIT(8'h37)) 

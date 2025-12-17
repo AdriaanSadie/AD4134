@@ -60,7 +60,7 @@ set_param bd.open.in_stealth_mode 1
 set_param project.vivado.isBlockSynthRun true
 set_msg_config -msgmgr_mode ooc_run
 OPTRACE "Creating in-memory project" START { }
-create_project -in_memory -part xc7z010clg400-1
+create_project -in_memory -part xck26-sfvc784-2LV-c
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
@@ -71,6 +71,7 @@ set_property parent.project_path C:/work/AD4134/vivado/ad4134fw.xpr [current_pro
 set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
+set_property board_part xilinx.com:kr260_som:part0:1.1 [current_project]
 set_property ip_output_repo c:/work/AD4134/vivado/ad4134fw.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
@@ -101,7 +102,7 @@ if { $cacheID == "" } {
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
-synth_design -top ad4134fw_axi_gpio_0_0 -part xc7z010clg400-1 -incremental_mode off -mode out_of_context
+synth_design -top ad4134fw_axi_gpio_0_0 -part xck26-sfvc784-2LV-c -incremental_mode off -mode out_of_context
 OPTRACE "synth_design" END { }
 OPTRACE "Write IP Cache" START { }
 

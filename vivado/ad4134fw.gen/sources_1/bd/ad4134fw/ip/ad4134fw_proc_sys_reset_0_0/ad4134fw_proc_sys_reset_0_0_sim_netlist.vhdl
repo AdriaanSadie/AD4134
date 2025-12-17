@@ -2,14 +2,14 @@
 -- Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
--- Date        : Tue Oct 28 21:30:46 2025
+-- Date        : Sun Nov 16 21:40:50 2025
 -- Host        : DESKTOP-NG70LRJ running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_proc_sys_reset_0_0/ad4134fw_proc_sys_reset_0_0_sim_netlist.vhdl
 -- Design      : ad4134fw_proc_sys_reset_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
--- Device      : xc7z010clg400-1
+-- Device      : xck26-sfvc784-2LV-c
 -- --------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -632,16 +632,16 @@ architecture STRUCTURE of ad4134fw_proc_sys_reset_0_0_sequence_psr is
   signal seq_cnt : STD_LOGIC_VECTOR ( 5 downto 0 );
   signal seq_cnt_en : STD_LOGIC;
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \ACTIVE_LOW_BSR_OUT_DFF[0].FDRE_BSR_N_i_1\ : label is "soft_lutpair4";
-  attribute SOFT_HLUTNM of \ACTIVE_LOW_PR_OUT_DFF[0].FDRE_PER_N_i_1\ : label is "soft_lutpair5";
-  attribute SOFT_HLUTNM of Core_i_1 : label is "soft_lutpair3";
+  attribute SOFT_HLUTNM of \ACTIVE_LOW_BSR_OUT_DFF[0].FDRE_BSR_N_i_1\ : label is "soft_lutpair5";
+  attribute SOFT_HLUTNM of \ACTIVE_LOW_PR_OUT_DFF[0].FDRE_PER_N_i_1\ : label is "soft_lutpair6";
+  attribute SOFT_HLUTNM of Core_i_1 : label is "soft_lutpair4";
   attribute SOFT_HLUTNM of \bsr_dec[0]_i_1\ : label is "soft_lutpair2";
-  attribute SOFT_HLUTNM of \bsr_dec[2]_i_1\ : label is "soft_lutpair6";
-  attribute SOFT_HLUTNM of bsr_i_1 : label is "soft_lutpair4";
+  attribute SOFT_HLUTNM of \bsr_dec[2]_i_1\ : label is "soft_lutpair3";
+  attribute SOFT_HLUTNM of bsr_i_1 : label is "soft_lutpair5";
   attribute SOFT_HLUTNM of \core_dec[0]_i_1\ : label is "soft_lutpair2";
-  attribute SOFT_HLUTNM of \core_dec[2]_i_1\ : label is "soft_lutpair6";
-  attribute SOFT_HLUTNM of from_sys_i_1 : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of pr_i_1 : label is "soft_lutpair5";
+  attribute SOFT_HLUTNM of \core_dec[2]_i_1\ : label is "soft_lutpair3";
+  attribute SOFT_HLUTNM of from_sys_i_1 : label is "soft_lutpair4";
+  attribute SOFT_HLUTNM of pr_i_1 : label is "soft_lutpair6";
 begin
   Bsr_out <= \^bsr_out\;
   MB_out <= \^mb_out\;
@@ -935,7 +935,7 @@ entity ad4134fw_proc_sys_reset_0_0_proc_sys_reset is
   attribute C_EXT_RST_WIDTH : integer;
   attribute C_EXT_RST_WIDTH of ad4134fw_proc_sys_reset_0_0_proc_sys_reset : entity is 4;
   attribute C_FAMILY : string;
-  attribute C_FAMILY of ad4134fw_proc_sys_reset_0_0_proc_sys_reset : entity is "zynq";
+  attribute C_FAMILY of ad4134fw_proc_sys_reset_0_0_proc_sys_reset : entity is "zynquplus";
   attribute C_NUM_BUS_RST : integer;
   attribute C_NUM_BUS_RST of ad4134fw_proc_sys_reset_0_0_proc_sys_reset : entity is 1;
   attribute C_NUM_INTERCONNECT_ARESETN : integer;
@@ -1089,7 +1089,7 @@ architecture STRUCTURE of ad4134fw_proc_sys_reset_0_0 is
   attribute C_EXT_RST_WIDTH : integer;
   attribute C_EXT_RST_WIDTH of U0 : label is 4;
   attribute C_FAMILY : string;
-  attribute C_FAMILY of U0 : label is "zynq";
+  attribute C_FAMILY of U0 : label is "zynquplus";
   attribute C_NUM_BUS_RST : integer;
   attribute C_NUM_BUS_RST of U0 : label is 1;
   attribute C_NUM_INTERCONNECT_ARESETN : integer;
@@ -1115,7 +1115,7 @@ architecture STRUCTURE of ad4134fw_proc_sys_reset_0_0 is
   attribute x_interface_parameter of mb_reset : signal is "XIL_INTERFACENAME mb_rst, POLARITY ACTIVE_HIGH, TYPE PROCESSOR, INSERT_VIP 0";
   attribute x_interface_info of slowest_sync_clk : signal is "xilinx.com:signal:clock:1.0 clock CLK";
   attribute x_interface_mode of slowest_sync_clk : signal is "slave clock";
-  attribute x_interface_parameter of slowest_sync_clk : signal is "XIL_INTERFACENAME clock, ASSOCIATED_RESET mb_reset:bus_struct_reset:interconnect_aresetn:peripheral_aresetn:peripheral_reset, FREQ_HZ 50000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN ad4134fw_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0";
+  attribute x_interface_parameter of slowest_sync_clk : signal is "XIL_INTERFACENAME clock, ASSOCIATED_RESET mb_reset:bus_struct_reset:interconnect_aresetn:peripheral_aresetn:peripheral_reset, FREQ_HZ 50000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, INSERT_VIP 0";
   attribute x_interface_info of bus_struct_reset : signal is "xilinx.com:signal:reset:1.0 bus_struct_reset RST";
   attribute x_interface_mode of bus_struct_reset : signal is "master bus_struct_reset";
   attribute x_interface_parameter of bus_struct_reset : signal is "XIL_INTERFACENAME bus_struct_reset, POLARITY ACTIVE_HIGH, TYPE INTERCONNECT, INSERT_VIP 0";

@@ -1,7 +1,7 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"0.828169",
-   "Default View_TopLeft":"-215,-21",
+   "Default View_ScaleFactor":"0.761823",
+   "Default View_TopLeft":"20,60",
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0
 #  -string -flagsOSRD
@@ -15,41 +15,44 @@ preplace port port-id_data_in0 -pg 1 -lvl 0 -x -30 -y 400 -defaultsOSRD
 preplace port port-id_data_in1 -pg 1 -lvl 0 -x -30 -y 330 -defaultsOSRD
 preplace port port-id_data_in2 -pg 1 -lvl 0 -x -30 -y 350 -defaultsOSRD
 preplace port port-id_data_in3 -pg 1 -lvl 0 -x -30 -y 450 -defaultsOSRD
+preplace port port-id_clk -pg 1 -lvl 0 -x -30 -y 160 -defaultsOSRD
 preplace portBus debug -pg 1 -lvl 4 -x 1200 -y 580 -defaultsOSRD
 preplace portBus LEDS -pg 1 -lvl 4 -x 1200 -y 70 -defaultsOSRD
 preplace portBus hb_led -pg 1 -lvl 4 -x 1200 -y 90 -defaultsOSRD
 preplace inst Processing_Subsystem -pg 1 -lvl 1 -x 130 -y 210 -defaultsOSRD
-preplace inst SPI_Control -pg 1 -lvl 2 -x 460 -y 590 -defaultsOSRD
-preplace inst LEDS -pg 1 -lvl 2 -x 460 -y 80 -defaultsOSRD
-preplace inst ad4134_data_0 -pg 1 -lvl 2 -x 460 -y 400 -defaultsOSRD
-preplace inst bram_tester -pg 1 -lvl 2 -x 460 -y 220 -defaultsOSRD
-preplace inst ADC_BRAM -pg 1 -lvl 3 -x 840 -y 440 -defaultsOSRD
-preplace netloc Processing_Subsystem_global_clk 1 1 2 310 670 650
-preplace netloc Processing_Subsystem_global_rst_n 1 1 2 320 680 660
-preplace netloc ad4134_clock_generat_0_spi_clk 1 2 2 590J 570 1010
-preplace netloc ad4134_data_0_data_out0 1 2 1 670 380n
-preplace netloc ad4134_data_0_data_out1 1 2 1 610 400n
-preplace netloc ad4134_data_0_data_out2 1 2 1 630 420n
-preplace netloc ad4134_data_0_data_out3 1 2 1 600 440n
-preplace netloc ad4134_data_0_data_rdy 1 2 1 590 460n
-preplace netloc ad4134_data_0_dclk_out 1 2 2 640J 580 990
-preplace netloc ad4134_data_0_odr_out 1 2 2 620J 590 1020
-preplace netloc data_in0_1 1 0 2 NJ 400 330J
-preplace netloc data_in1_1 1 0 2 NJ 330 260J
+preplace inst SPI_Control -pg 1 -lvl 2 -x 450 -y 590 -defaultsOSRD
+preplace inst LEDS -pg 1 -lvl 2 -x 450 -y 80 -defaultsOSRD
+preplace inst ad4134_data_0 -pg 1 -lvl 2 -x 450 -y 400 -defaultsOSRD
+preplace inst bram_tester -pg 1 -lvl 2 -x 450 -y 220 -defaultsOSRD
+preplace inst ADC_BRAM -pg 1 -lvl 3 -x 870 -y 520 -defaultsOSRD
+preplace inst ila_0 -pg 1 -lvl 3 -x 870 -y 280 -defaultsOSRD
+preplace netloc ADC_BRAM_debug_0 1 3 1 1040J 530n
+preplace netloc Processing_Subsystem_global_clk 1 1 2 290 -30 710
+preplace netloc Processing_Subsystem_global_rst_n 1 1 2 320 670 590
+preplace netloc ad4134_clock_generat_0_spi_clk 1 2 2 600J 670 1050
+preplace netloc ad4134_data_0_data_out0 1 2 1 680 380n
+preplace netloc ad4134_data_0_data_out1 1 2 1 650 400n
+preplace netloc ad4134_data_0_data_out2 1 2 1 640 420n
+preplace netloc ad4134_data_0_data_out3 1 2 1 630 440n
+preplace netloc ad4134_data_0_data_rdy 1 2 1 620 460n
+preplace netloc ad4134_data_0_dclk_out 1 2 2 580J 680 1030
+preplace netloc ad4134_data_0_odr_out 1 2 2 660J 660 1020
+preplace netloc clk_1 1 0 1 -10 160n
+preplace netloc data_in0_1 1 0 3 NJ 400 270J -20 720
+preplace netloc data_in1_1 1 0 2 NJ 330 250J
 preplace netloc data_in2_1 1 0 2 NJ 350 240J
 preplace netloc data_in3_1 1 0 2 NJ 450 NJ
 preplace netloc miso_1 1 0 2 NJ 610 NJ
-preplace netloc spi_controller_0_cs_n 1 2 2 NJ 620 N
-preplace netloc spi_controller_0_mosi 1 2 2 NJ 600 N
+preplace netloc spi_controller_0_cs_n 1 2 2 670J 690 1060
+preplace netloc spi_controller_0_mosi 1 2 2 610J 650 1040
 preplace netloc xlslice_0_Dout 1 2 2 NJ 70 N
 preplace netloc xlslice_1_Dout 1 2 2 NJ 90 N
-preplace netloc ADC_BRAM_debug_0 1 3 1 1000J 450n
-preplace netloc Processing_Subsystem_AXI_GPIO 1 1 1 250 60n
-preplace netloc Processing_Subsystem_M01_AXI_0 1 1 1 280 170n
-preplace netloc Processing_Subsystem_M02_AXI_0 1 1 1 270 190n
-preplace netloc Processing_Subsystem_M03_AXI_0 1 1 2 240J -10 690
-preplace netloc Processing_Subsystem_M04_AXI_0 1 1 2 260J 0 680
-levelinfo -pg 1 -30 130 460 840 1200
+preplace netloc Processing_Subsystem_AXI_GPIO 1 1 1 280 60n
+preplace netloc Processing_Subsystem_M01_AXI_0 1 1 1 310 170n
+preplace netloc Processing_Subsystem_M02_AXI_0 1 1 1 300 190n
+preplace netloc Processing_Subsystem_M03_AXI_0 1 1 2 240J -10 700
+preplace netloc Processing_Subsystem_M04_AXI_0 1 1 2 250J 0 690
+levelinfo -pg 1 -30 130 450 870 1200
 pagesize -pg 1 -db -bbox -sgen -190 -90 1340 750
 "
 }

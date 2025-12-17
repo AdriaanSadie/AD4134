@@ -18,7 +18,8 @@ module ad4134fw (
   data_in0,
   data_in1,
   data_in2,
-  data_in3
+  data_in3,
+  clk
 );
 
   (* X_INTERFACE_IGNORE = "true" *)
@@ -47,6 +48,10 @@ module ad4134fw (
   input data_in2;
   (* X_INTERFACE_IGNORE = "true" *)
   input data_in3;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.CLK CLK" *)
+  (* X_INTERFACE_MODE = "slave CLK.CLK" *)
+  (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.CLK, FREQ_HZ 25000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN ad4134fw_clk, INSERT_VIP 0" *)
+  input clk;
 
   // stub module has no contents
 

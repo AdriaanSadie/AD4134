@@ -3,8 +3,8 @@
 # SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
 # IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
 # SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Thu Oct 30 23:02:42 2025
-# Process ID         : 15648
+# Start of session at: Sun Nov 16 21:37:14 2025
+# Process ID         : 5444
 # Current directory  : C:/work/AD4134/vivado/ad4134fw.runs/ad4134fw_bram_writer_0_0_synth_1
 # Command line       : vivado.exe -log ad4134fw_bram_writer_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ad4134fw_bram_writer_0_0.tcl
 # Log file           : C:/work/AD4134/vivado/ad4134fw.runs/ad4134fw_bram_writer_0_0_synth_1/ad4134fw_bram_writer_0_0.vds
@@ -19,68 +19,70 @@
 # Host memory        : 17119 MB
 # Swap memory        : 6174 MB
 # Total Virtual      : 23293 MB
-# Available Virtual  : 6436 MB
+# Available Virtual  : 8636 MB
 #-----------------------------------------------------------
 source ad4134fw_bram_writer_0_0.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'E:/Xilinx/Vivado/2024.2/data/ip'.
-Command: synth_design -top ad4134fw_bram_writer_0_0 -part xc7z010clg400-1 -incremental_mode off -mode out_of_context
+Command: synth_design -top ad4134fw_bram_writer_0_0 -part xck26-sfvc784-2LV-c -incremental_mode off -mode out_of_context
 Starting synth_design
-Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
-INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
-INFO: [Device 21-403] Loading part xc7z010clg400-1
+Attempting to get a license for feature 'Synthesis' and/or device 'xck26'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xck26'
+INFO: [Device 21-403] Loading part xck26-sfvc784-2LV-c
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 14936
+INFO: [Synth 8-7075] Helper process launched with PID 8572
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 1055.008 ; gain = 465.188
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 1598.074 ; gain = 180.770
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'ad4134fw_bram_writer_0_0' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_bram_writer_0_0/synth/ad4134fw_bram_writer_0_0.vhd:68]
 INFO: [Synth 8-3491] module 'bram_writer' declared at 'C:/work/AD4134/src/bram_tester.vhd:5' bound to instance 'U0' of component 'bram_writer' [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_bram_writer_0_0/synth/ad4134fw_bram_writer_0_0.vhd:100]
 INFO: [Synth 8-638] synthesizing module 'bram_writer' [C:/work/AD4134/src/bram_tester.vhd:19]
 INFO: [Synth 8-256] done synthesizing module 'bram_writer' (0#1) [C:/work/AD4134/src/bram_tester.vhd:19]
 INFO: [Synth 8-256] done synthesizing module 'ad4134fw_bram_writer_0_0' (0#1) [c:/work/AD4134/vivado/ad4134fw.gen/sources_1/bd/ad4134fw/ip/ad4134fw_bram_writer_0_0/synth/ad4134fw_bram_writer_0_0.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element data_cnt_reg was removed.  [C:/work/AD4134/src/bram_tester.vhd:38]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:12 . Memory (MB): peak = 1165.152 ; gain = 575.332
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 1705.227 ; gain = 287.922
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:12 . Memory (MB): peak = 1165.152 ; gain = 575.332
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 1705.227 ; gain = 287.922
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:12 . Memory (MB): peak = 1165.152 ; gain = 575.332
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 1705.227 ; gain = 287.922
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1165.152 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1705.227 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1244.602 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1766.211 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.258 . Memory (MB): peak = 1244.777 ; gain = 0.176
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.048 . Memory (MB): peak = 1785.066 ; gain = 18.855
 INFO: [Designutils 20-5008] Incremental synthesis strategy off
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:23 . Memory (MB): peak = 1244.777 ; gain = 654.957
+Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:21 . Memory (MB): peak = 1785.066 ; gain = 367.762
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
-Loading part: xc7z010clg400-1
+Loading part: xck26-sfvc784-2LV-c
+INFO: [Synth 8-6742] Reading net delay rules and data
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:23 . Memory (MB): peak = 1244.777 ; gain = 654.957
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:21 . Memory (MB): peak = 1785.066 ; gain = 367.762
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:23 . Memory (MB): peak = 1244.777 ; gain = 654.957
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:21 . Memory (MB): peak = 1785.066 ; gain = 367.762
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'bram_writer'
 ---------------------------------------------------------------------------------------------------
@@ -92,21 +94,18 @@ INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'bram_
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'bram_writer'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:23 . Memory (MB): peak = 1244.777 ; gain = 654.957
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:22 . Memory (MB): peak = 1785.066 ; gain = 367.762
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input   32 Bit       Adders := 1     
 	   2 Input   13 Bit       Adders := 1     
 +---Registers : 
-	               32 Bit    Registers := 1     
 	               13 Bit    Registers := 1     
 	                1 Bit    Registers := 3     
 +---Muxes : 
-	   3 Input   32 Bit        Muxes := 1     
 	   3 Input   13 Bit        Muxes := 1     
 	   3 Input    1 Bit        Muxes := 2     
 ---------------------------------------------------------------------------------
@@ -116,8 +115,8 @@ Finished RTL Component Statistics
 Start Part Resource Summary
 ---------------------------------------------------------------------------------
 Part Resources:
-DSPs: 80 (col length:40)
-BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+DSPs: 1248 (col length:96)
+BRAMs: 288 (col length: RAMB18 96 RAMB36 48)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
@@ -127,26 +126,58 @@ Start Cross Boundary and Area Optimization
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 INFO: [Synth 8-3917] design ad4134fw_bram_writer_0_0 has port addra[1] driven by constant 0
 INFO: [Synth 8-3917] design ad4134fw_bram_writer_0_0 has port addra[0] driven by constant 0
+INFO: [Synth 8-3917] design ad4134fw_bram_writer_0_0 has port dia[31] driven by constant 1
+INFO: [Synth 8-3917] design ad4134fw_bram_writer_0_0 has port dia[30] driven by constant 1
+INFO: [Synth 8-3917] design ad4134fw_bram_writer_0_0 has port dia[29] driven by constant 0
+INFO: [Synth 8-3917] design ad4134fw_bram_writer_0_0 has port dia[28] driven by constant 1
+INFO: [Synth 8-3917] design ad4134fw_bram_writer_0_0 has port dia[27] driven by constant 1
+INFO: [Synth 8-3917] design ad4134fw_bram_writer_0_0 has port dia[26] driven by constant 1
+INFO: [Synth 8-3917] design ad4134fw_bram_writer_0_0 has port dia[25] driven by constant 1
+INFO: [Synth 8-3917] design ad4134fw_bram_writer_0_0 has port dia[24] driven by constant 0
+INFO: [Synth 8-3917] design ad4134fw_bram_writer_0_0 has port dia[23] driven by constant 1
+INFO: [Synth 8-3917] design ad4134fw_bram_writer_0_0 has port dia[22] driven by constant 0
+INFO: [Synth 8-3917] design ad4134fw_bram_writer_0_0 has port dia[21] driven by constant 1
+INFO: [Synth 8-3917] design ad4134fw_bram_writer_0_0 has port dia[20] driven by constant 0
+INFO: [Synth 8-3917] design ad4134fw_bram_writer_0_0 has port dia[19] driven by constant 1
+INFO: [Synth 8-3917] design ad4134fw_bram_writer_0_0 has port dia[18] driven by constant 1
+INFO: [Synth 8-3917] design ad4134fw_bram_writer_0_0 has port dia[17] driven by constant 0
+INFO: [Synth 8-3917] design ad4134fw_bram_writer_0_0 has port dia[16] driven by constant 1
+INFO: [Synth 8-3917] design ad4134fw_bram_writer_0_0 has port dia[15] driven by constant 1
+INFO: [Synth 8-3917] design ad4134fw_bram_writer_0_0 has port dia[14] driven by constant 0
+INFO: [Synth 8-3917] design ad4134fw_bram_writer_0_0 has port dia[13] driven by constant 1
+INFO: [Synth 8-3917] design ad4134fw_bram_writer_0_0 has port dia[12] driven by constant 1
+INFO: [Synth 8-3917] design ad4134fw_bram_writer_0_0 has port dia[11] driven by constant 1
+INFO: [Synth 8-3917] design ad4134fw_bram_writer_0_0 has port dia[10] driven by constant 1
+INFO: [Synth 8-3917] design ad4134fw_bram_writer_0_0 has port dia[9] driven by constant 1
+INFO: [Synth 8-3917] design ad4134fw_bram_writer_0_0 has port dia[8] driven by constant 0
+INFO: [Synth 8-3917] design ad4134fw_bram_writer_0_0 has port dia[7] driven by constant 1
+INFO: [Synth 8-3917] design ad4134fw_bram_writer_0_0 has port dia[6] driven by constant 1
+INFO: [Synth 8-3917] design ad4134fw_bram_writer_0_0 has port dia[5] driven by constant 1
+INFO: [Synth 8-3917] design ad4134fw_bram_writer_0_0 has port dia[4] driven by constant 0
+INFO: [Synth 8-3917] design ad4134fw_bram_writer_0_0 has port dia[3] driven by constant 1
+INFO: [Synth 8-3917] design ad4134fw_bram_writer_0_0 has port dia[2] driven by constant 1
+INFO: [Synth 8-3917] design ad4134fw_bram_writer_0_0 has port dia[1] driven by constant 1
+INFO: [Synth 8-3917] design ad4134fw_bram_writer_0_0 has port dia[0] driven by constant 1
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:26 . Memory (MB): peak = 1244.777 ; gain = 654.957
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:25 . Memory (MB): peak = 1785.066 ; gain = 367.762
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:33 . Memory (MB): peak = 1355.801 ; gain = 765.980
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:32 ; elapsed = 00:00:44 . Memory (MB): peak = 2451.301 ; gain = 1033.996
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:33 . Memory (MB): peak = 1355.875 ; gain = 766.055
+Finished Timing Optimization : Time (s): cpu = 00:00:32 ; elapsed = 00:00:44 . Memory (MB): peak = 2451.301 ; gain = 1033.996
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:25 ; elapsed = 00:00:33 . Memory (MB): peak = 1365.535 ; gain = 775.715
+Finished Technology Mapping : Time (s): cpu = 00:00:32 ; elapsed = 00:00:44 . Memory (MB): peak = 2460.855 ; gain = 1043.551
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -164,37 +195,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:30 ; elapsed = 00:00:38 . Memory (MB): peak = 1582.152 ; gain = 992.332
+Finished IO Insertion : Time (s): cpu = 00:00:37 ; elapsed = 00:01:00 . Memory (MB): peak = 2677.516 ; gain = 1260.211
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:30 ; elapsed = 00:00:38 . Memory (MB): peak = 1582.152 ; gain = 992.332
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:37 ; elapsed = 00:01:00 . Memory (MB): peak = 2677.516 ; gain = 1260.211
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:30 ; elapsed = 00:00:38 . Memory (MB): peak = 1582.152 ; gain = 992.332
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:37 ; elapsed = 00:01:01 . Memory (MB): peak = 2677.516 ; gain = 1260.211
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:30 ; elapsed = 00:00:38 . Memory (MB): peak = 1582.152 ; gain = 992.332
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:37 ; elapsed = 00:01:01 . Memory (MB): peak = 2677.516 ; gain = 1260.211
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:30 ; elapsed = 00:00:38 . Memory (MB): peak = 1582.152 ; gain = 992.332
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:37 ; elapsed = 00:01:01 . Memory (MB): peak = 2677.516 ; gain = 1260.211
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:30 ; elapsed = 00:00:38 . Memory (MB): peak = 1582.152 ; gain = 992.332
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:37 ; elapsed = 00:01:01 . Memory (MB): peak = 2677.516 ; gain = 1260.211
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -207,43 +238,39 @@ Report BlackBoxes:
 +-+--------------+----------+
 
 Report Cell Usage: 
-+------+-------+------+
-|      |Cell   |Count |
-+------+-------+------+
-|1     |CARRY4 |    11|
-|2     |LUT1   |     1|
-|3     |LUT2   |    44|
-|4     |LUT3   |     3|
-|5     |LUT4   |     2|
-|6     |LUT5   |     2|
-|7     |LUT6   |     2|
-|8     |FDCE   |    46|
-|9     |FDPE   |     2|
-|10    |FDRE   |     3|
-+------+-------+------+
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |LUT1 |     1|
+|2     |LUT2 |     1|
+|3     |LUT3 |     3|
+|4     |LUT4 |     5|
+|5     |LUT5 |     6|
+|6     |LUT6 |     4|
+|7     |FDCE |    15|
+|8     |FDPE |     1|
+|9     |FDRE |     3|
++------+-----+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:30 ; elapsed = 00:00:38 . Memory (MB): peak = 1582.152 ; gain = 992.332
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:37 ; elapsed = 00:01:02 . Memory (MB): peak = 2677.516 ; gain = 1260.211
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:21 ; elapsed = 00:00:34 . Memory (MB): peak = 1582.152 ; gain = 912.707
-Synthesis Optimization Complete : Time (s): cpu = 00:00:30 ; elapsed = 00:00:38 . Memory (MB): peak = 1582.152 ; gain = 992.332
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:28 ; elapsed = 00:01:04 . Memory (MB): peak = 2677.516 ; gain = 1180.371
+Synthesis Optimization Complete : Time (s): cpu = 00:00:38 ; elapsed = 00:01:06 . Memory (MB): peak = 2677.516 ; gain = 1260.211
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1582.152 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 11 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.084 . Memory (MB): peak = 2677.516 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1583.328 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2677.516 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: b6442fd9
+Synth Design complete | Checksum: fa7ae24d
 INFO: [Common 17-83] Releasing license: Synthesis
-27 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+58 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:35 ; elapsed = 00:01:00 . Memory (MB): peak = 1583.328 ; gain = 1203.160
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.631 . Memory (MB): peak = 1583.328 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:45 ; elapsed = 00:01:38 . Memory (MB): peak = 2677.516 ; gain = 2253.094
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.319 . Memory (MB): peak = 2677.516 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/work/AD4134/vivado/ad4134fw.runs/ad4134fw_bram_writer_0_0_synth_1/ad4134fw_bram_writer_0_0.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 1583.328 ; gain = 0.000
 INFO: [Vivado 12-24828] Executing command : report_utilization -file ad4134fw_bram_writer_0_0_utilization_synth.rpt -pb ad4134fw_bram_writer_0_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Oct 30 23:04:24 2025...
+INFO: [Common 17-206] Exiting Vivado at Sun Nov 16 21:39:05 2025...

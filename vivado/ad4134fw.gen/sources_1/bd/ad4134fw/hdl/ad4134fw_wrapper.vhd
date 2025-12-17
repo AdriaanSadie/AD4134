@@ -2,7 +2,7 @@
 --Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
---Date        : Mon Nov  3 21:14:00 2025
+--Date        : Tue Dec  2 20:25:06 2025
 --Host        : DESKTOP-NG70LRJ running 64-bit major release  (build 9200)
 --Command     : generate_target ad4134fw_wrapper.bd
 --Design      : ad4134fw_wrapper
@@ -15,6 +15,7 @@ use UNISIM.VCOMPONENTS.ALL;
 entity ad4134fw_wrapper is
   port (
     LEDS : out STD_LOGIC_VECTOR ( 6 downto 0 );
+    clk : in STD_LOGIC;
     data_in0 : in STD_LOGIC;
     data_in1 : in STD_LOGIC;
     data_in2 : in STD_LOGIC;
@@ -45,13 +46,15 @@ architecture STRUCTURE of ad4134fw_wrapper is
     data_in0 : in STD_LOGIC;
     data_in1 : in STD_LOGIC;
     data_in2 : in STD_LOGIC;
-    data_in3 : in STD_LOGIC
+    data_in3 : in STD_LOGIC;
+    clk : in STD_LOGIC
   );
   end component ad4134fw;
 begin
 ad4134fw_i: component ad4134fw
      port map (
       LEDS(6 downto 0) => LEDS(6 downto 0),
+      clk => clk,
       data_in0 => data_in0,
       data_in1 => data_in1,
       data_in2 => data_in2,
