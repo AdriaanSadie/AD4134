@@ -2,10 +2,10 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity tb_spi_master is
+entity spi_master_tb is
 end entity;
 
-architecture sim of tb_spi_master is
+architecture sim of spi_master_tb is
 
     ------------------------------------------------------------------
     -- DUT signals
